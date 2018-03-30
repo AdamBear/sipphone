@@ -1,0 +1,97 @@
+<ui version="4.0" >
+ <class>CDlgIPModeStatus</class>
+ <widget class="QDialog" name="CDlgIPModeStatus" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>549</width>
+    <height>295</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>CDlgIPModeStatus</string>
+  </property>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>40</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>WAN Type</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>80</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>WAN IP</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>120</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>WAN MASK</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>160</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Gateway</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>200</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Pri.DNS</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>240</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Sec.DNS</string>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <resources/>
+ <connections/>
+</ui>

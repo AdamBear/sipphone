@@ -1,0 +1,145 @@
+#ifndef __CWIRESSDEFINES_H
+#define __CWIRESSDEFINES_H
+
+#include <ylstring.h>
+#include <yllist.h>
+#include <ETLLib.hpp>
+#include "ETLMsgSystem.h"
+#include "devicelib/phonedevice.h"
+#include "dsklog/log.h"
+
+#define WIRE_SESSION_ID_INVAILED   -1
+#define BT_DEVICE_HANDLE_INVAILED  0
+#define WIFI_NET_ID_INVAILED       -1
+#define WIRE_INVAILD_TIMER         -1
+
+#ifndef SAFE_DELETE
+#define SAFE_DELETE(p) if (p != NULL) {delete p; p=NULL;}
+#endif
+
+#define TO_STR(arg) { arg, #arg }
+#define _MYCASE(x)  case x:return #x
+
+enum WIRELESS_SESSION_TYPE
+{
+    BT_SESSION,
+    WIFI_SESSION,
+    BT_TEST_SESSION,
+    WIFI_TEST_SESSION,
+    All_SESSION,
+};
+
+//会话状态
+enum WIRELESS_SESSION_STATE
+{
+    SESSION_PAIRING_STATE,
+    SESSION_CONNECTING_STATE,
+    SESSION_SCAN_STATE,
+    SESSION_CONNECTED_STATE,
+    SESSION_WPS_STATE,
+    SESSION_WPSPIN_STATE,
+    SESSION_UNINIT_STATE,
+    SESSION_CYCLE_SCAN_STATE,
+    SESSION_REMOTE_REQ_PAIRING_STATE
+};
+
+//网络状态
+enum WIRELESS_DEVICE_STATE
+{
+    WIRE_DEVICE_INIT_STATE,
+    WIRE_DEVICE_PAIRING_STATE,
+    WIRE_DEVICE_PAIRED_STATE,
+    WIRE_DEVICE_CONNECTING_STATE,
+    WIRE_DEVICE_CONNECTED_STATE,
+    WIRE_DEVICE_DISCONNECT_STATE,
+    WIRE_DEVICE_ANSWERPIN_STATE
+};
+
+enum WirelessSessionOption
+{
+    WIRELESS_OPTION_BEGIN,
+    WIRELESS_OPTION_BTTEST_ANSWERPIN,
+    WIRELESS_OPTION_BTTEST_PINCONFIRM,
+    WIRELESS_OPTION_BTTEST_CONNECT,
+    WIRELESS_OPTION_BT_ANSWERPIN,
+    WIRELESS_OPTION_BT_CONNECTING,
+    WIRELESS_OPTION_BT_DEVICECALLIN,
+    WIRELESS_OPTION_BT_DEVICECALLOUT,
+    WIRELESS_OPTION_BT_DEVICECALLANSWER,
+    WIRELESS_OPTION_BT_DEVICECALLEND,
+    WIRELESS_OPTION_BT_DEVICECALLHOLD,
+    WIRELESS_OPTION_UPDATESPONOR,
+    WIRELESS_OPTION_BT_SETFOUCS,
+    WIRELESS_OPTION_BT_CANCEL,
+    WIRELESS_OPTION_BT_PLAY,
+    WIRELESS_OPTION_BT_HEADSET_EVENT,
+    WIRELESS_OPTION_BT_DEVICE_REPAIR,
+    WIRELESS_OPTION_BT_SCAN_RESULT,
+    WIRELESS_OPTION_BT_STOP_SCAN,
+    WIRELESS_OPTION_WIFI_AUTHRIZE,
+    WIRELESS_OPTION_END
+};
+
+struct WirelessSessionData
+{
+    unsigned long ulMessage;
+    WPARAM wParam;
+    LPARAM lParam;
+    void * pData;
+
+    WirelessSessionData()
+    {
+        ulMessage = 0;
+        wParam = -1;
+        lParam = -1;
+        pData = NULL;
+    }
+};
+
+struct WirelessFoucsSessionInfo
+{
+    int iSessionID;
+    WIRELESS_SESSION_TYPE eType;
+
+    WirelessFoucsSessionInfo()
+    {
+        iSessionID = BT_DEVICE_HANDLE_INVAILED;
+        eType = All_SESSION;
+    }
+};
+
+/***************************debug msg*************************************************/
+typedef struct
+{
+    int    type;
+    const  char * txt;
+} DEBUG_STATE_MAP;
+
+static const DEBUG_STATE_MAP test_sessionstate_name_map[] =
+{
+    TO_STR(SESSION_PAIRING_STATE),
+    TO_STR(SESSION_CONNECTING_STATE),
+    TO_STR(SESSION_SCAN_STATE),
+    TO_STR(SESSION_CONNECTED_STATE),
+    TO_STR(SESSION_WPS_STATE),
+    TO_STR(SESSION_WPSPIN_STATE),
+    TO_STR(SESSION_UNINIT_STATE),
+    {0, NULL}
+};
+
+static const DEBUG_STATE_MAP test_devstate_name_map[] =
+{
+    TO_STR(WIRE_DEVICE_INIT_STATE),
+    TO_STR(WIRE_DEVICE_PAIRING_STATE),
+    TO_STR(WIRE_DEVICE_ANSWERPIN_STATE),
+    TO_STR(WIRE_DEVICE_PAIRED_STATE),
+    TO_STR(WIRE_DEVICE_CONNECTING_STATE),
+    TO_STR(WIRE_DEVICE_CONNECTED_STATE),
+    TO_STR(WIRE_DEVICE_DISCONNECT_STATE),
+    {0, NULL}
+};
+
+// 状态打印成字符串
+const char * DeviceStateToString(WIRELESS_DEVICE_STATE eState);
+
+#endif//__CWIRESSDEFINES_H

@@ -1,0 +1,7 @@
+<root_menu>
+
+<!-- Phone Lock菜单开始 -->
+<item id_name="phone_lock" display_name="Keypad Lock" icon_name="" click_action="OpenSubPage(phone_lock)" long_click_action="" />
+<!-- Phone Lock菜单结束 -->
+
+</root_menu>

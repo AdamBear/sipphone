@@ -1,0 +1,12 @@
+<root_menu>
+
+<!-- Call Log菜单开始 -->
+<item id_name="call_log_1" display_name="All Calls" icon_name="" click_action="OpenSubPage(call_log_1)" long_click_action="" />
+<item id_name="call_log_2" display_name="Missed Calls" icon_name="" click_action="OpenSubPage(call_log_2)" long_click_action="" />
+<item id_name="call_log_3" display_name="Dialed Calls" icon_name="" click_action="OpenSubPage(call_log_3)" long_click_action="" />
+<item id_name="call_log_4" display_name="Recieved Calls" icon_name="" click_action="OpenSubPage(call_log_4)" long_click_action="" />
+<item id_name="call_log_5" display_name="Forwarded Calls" icon_name="" click_action="OpenSubPage(call_log_5)" long_click_action="" />
+<!-- Call Log菜单结束 -->
+
+</root_menu>	
+

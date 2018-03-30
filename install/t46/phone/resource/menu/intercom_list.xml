@@ -1,0 +1,7 @@
+<root_menu>
+
+<!-- Intercom菜单开始 -->
+<item id_name="intercom" display_name="Intercom" icon_name="" click_action="OpenSubPage(intercom)" long_click_action="" />
+<!-- Intercom菜单结束 -->
+
+</root_menu>

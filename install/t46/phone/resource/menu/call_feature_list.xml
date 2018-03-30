@@ -1,0 +1,15 @@
+<root_menu>
+
+<!-- Features菜单开始 -->
+<item id_name="call_forward" display_name="Call Forward" icon_name="menu_call_forward.png" click_action="OpenPage(call_forward_list.xml)" long_click_action="" />
+<item id_name="call_waiting" display_name="Call Waiting" icon_name="menu_call_waiting.png" click_action="OpenSubPage(call_waiting)" long_click_action="" />
+<item id_name="auto_answer" display_name="Auto Answer" icon_name="menu_aa.png" click_action="OpenPage(auto_answer_list.xml)" long_click_action="" />
+<item id_name="dss_keys" display_name="DSS Keys" icon_name="menu_dss.png" click_action="OpenMenu(dss_key_list.xml)" long_click_action="" />
+<item id_name="dnd" display_name="DND" icon_name="menu_dnd.png" click_action="OpenSubPage(dnd)" long_click_action="" />
+<item id_name="intercom" display_name="Intercom" icon_name="menu_intercom.png" click_action="OpenSubPage(intercom)" long_click_action="" />
+<item id_name="anonymous_call" display_name="Anonymous" icon_name="menu_anonymous.png" click_action="OpenPage(anonymous_call_list.xml)" long_click_action="" />
+<item id_name="advanced" display_name="Others" icon_name="menu_advanced.png" click_action="OpenPage(advanced_call_feature_list.xml)" long_click_action="" />
+<item id_name="broadsoft_directory" display_name="BST Directory" icon_name="menu_broadsoft_directory.png" click_action="OpenPage(broadsoft_directory_list.xml)" long_click_action="" />
+<!-- Features菜单结束 -->
+
+</root_menu>

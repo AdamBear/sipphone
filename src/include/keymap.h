@@ -1,0 +1,133 @@
+#ifndef __KEYMAP_DEFINE_H__
+#define __KEYMAP_DEFINE_H__
+
+/*-------------Logic Key Begin----------------*/
+enum PHONE_KEY_CODE
+{
+    PHONE_KEY_NONE      = 0xff,
+    //number key
+    PHONE_KEY_0         = 0x30,
+    PHONE_KEY_1,
+    PHONE_KEY_2,
+    PHONE_KEY_3,
+    PHONE_KEY_4,
+    PHONE_KEY_5,
+    PHONE_KEY_6,
+    PHONE_KEY_7,
+    PHONE_KEY_8,
+    PHONE_KEY_9,
+    PHONE_KEY_STAR      = 0x2a,
+    PHONE_KEY_POUND     = 0x23,
+    PHONE_KEY_A         = 0x41,
+    PHONE_KEY_B,
+    PHONE_KEY_C,
+    PHONE_KEY_D,
+    PHONE_KEY_E,
+    PHONE_KEY_TOUCH,
+#if IF_BUG_32044
+    PHONE_KEY_FULLDSSKEY_BACK,
+#endif
+    //function key
+    PHONE_KEY_FN1       = 0x01000030,
+    PHONE_KEY_FN2,
+    PHONE_KEY_FN3,
+    PHONE_KEY_FN4,
+
+    //Line Key
+
+    //cursor key
+    PHONE_KEY_LEFT      = 0x01000012,
+    PHONE_KEY_UP,
+    PHONE_KEY_RIGHT,
+    PHONE_KEY_DOWN,
+
+    //system key
+    PHONE_KEY_OK        = 0x01000004,
+    PHONE_KEY_BACKSPACE = 0x01000003,
+    PHONE_KEY_CANCEL    = 0x0100003c,
+
+    //volume key
+    PHONE_KEY_VOLUME_DECREASE   = 0x0100003d,
+    PHONE_KEY_VOLUME_INCREASE   = 0x0100003e,
+
+    //misc key
+    PHONE_KEY_CAMERA    = 0x01000034,
+    PHONE_KEY_PHONEBOOK = 0x01000035,
+    PHONE_KEY_MUTE      = 0x01000036,
+    PHONE_KEY_TRANSFER  = 0x01000037,
+    PHONE_KEY_REDIAL    = 0x01000038,
+    PHONE_KEY_HANDFREE  = 0x01000039,
+    PHONE_KEY_HANDSET   = 0x0100003a,
+
+    PHONE_KEY_MESSAGE       = 0x0100003f,
+    PHONE_KEY_HEADSET_CTRL  = 0x01000040,
+    PHONE_KEY_DND           = 0x01000041,
+    PHONE_KEY_MENU          = 0x01000042,
+    PHONE_KEY_HOLD          = 0x01000043,
+    PHONE_KEY_CONFERENCE    = 0x01000044,
+    PHONE_KEY_VIDEO         = 0x01000046,
+    //channel key
+    PHONE_KEY_HANDSET_ON_HOOK   = 0x80 + 0x02000000,
+    PHONE_KEY_HANDSET_OFF_HOOK,
+
+    PHONE_KEY_HEADSET_OUT,
+    PHONE_KEY_HEADSET_IN,
+
+    PHONE_KEY_EHS_OPEN,
+    PHONE_KEY_EHS_CLOSE,
+
+    PHONE_KEY_HISTORY,     //for t6x
+    PHONE_KEY_INTERCOM,    //for t60=t20
+    PHONE_KEY_SWITCH,           //for t80 combox控件
+    PHONE_KEY_HOLD_PUBLIC,
+    PHONE_KEY_HOLD_PRIVATE,
+    PHONE_KEY_GROUP_LISTEN,
+    PHONE_KEY_CALLEND,
+    PHONE_KEY_BLUETOOTH,
+
+    //virtual key
+    PHONE_KEY_ANSWER        = 0x100 + 0x02000000,
+
+    //InputMethod
+    PHONE_KEY_INPUTMETHOD_HIDEFULLKEYBOARD  = 0x120 + 0x02000100,
+    PHONE_KEY_INPUTMETHOD_CHANGEINPUTBASE   = 0x120 + 0x02000101,
+    PHONE_KEY_INPUTMETHOD_CHANGEFONTBASE    = 0x120 + 0x02000102,
+
+    PHONE_KEY_INPUTMETHOD_CUSTOM_KEYBOARD   = 0x120 + 0x02000103,
+
+    //line key
+    PHONE_KEY_LINE1         = 0x01000045 + 0x00100000,
+    PHONE_KEY_LINE2,
+    PHONE_KEY_LINE3,
+    PHONE_KEY_LINE4,
+    PHONE_KEY_LINE5,
+    PHONE_KEY_LINE6,
+    PHONE_KEY_LINE7,
+    PHONE_KEY_LINE8,
+    PHONE_KEY_LINE9,
+    PHONE_KEY_LINE10,
+
+    //memory key
+    PHONE_KEY_MEMORY1       = 0x01000045 + 0x0010000a,
+    PHONE_KEY_MEMORY2,
+    PHONE_KEY_MEMORY3,
+    PHONE_KEY_MEMORY4,
+    PHONE_KEY_MEMORY5,
+    PHONE_KEY_MEMORY6,
+    PHONE_KEY_MEMORY7,
+    PHONE_KEY_MEMORY8,
+    PHONE_KEY_MEMORY9,
+    PHONE_KEY_MEMORY10,
+
+    //line device
+    PHONE_KEY_LINEDEVICE_ON_HOOK,
+    PHONE_KEY_LINEDEVICE_OFF_HOOK,
+};
+
+#define IsUIDigitKey(iKey) ((iKey) >= PHONE_KEY_0 && (iKey) <= PHONE_KEY_9 \
+    || (iKey) == PHONE_KEY_STAR \
+    || (iKey) == PHONE_KEY_POUND\
+    || ((iKey) >= PHONE_KEY_A && (iKey) <= PHONE_KEY_D))
+
+/*-------------Logic Key End----------------*/
+#endif //__KEYMAP_DEFINE_H__

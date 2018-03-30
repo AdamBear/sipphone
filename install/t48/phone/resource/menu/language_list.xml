@@ -1,0 +1,7 @@
+<root_menu>
+
+<!-- Language菜单开始 -->
+<item id_name="language" display_name="Language" icon_name="" click_action="OpenSubPage(language)" long_click_action="" />
+<!-- Language菜单结束 -->
+
+</root_menu>

@@ -1,0 +1,18 @@
+#ifndef DEFINE_ACTIONUR_H_
+#define DEFINE_ACTIONUR_H_
+
+#include "messagedefine.h"
+
+// Action URL/URI消息定义.
+enum ActionURMessage
+{
+    ACTION_UR_MESSAGE_BEGIN = PHONE_MESSAGE_ACTION_URL_MESSAGE_BEGIN,
+
+    // Action uri按键消息, LPARAM-按键的值, 为PHONE_KEY_CODE.
+    ACTION_URI_KEY_MESSAGE = ACTION_UR_MESSAGE_BEGIN + 1,
+
+    ACTION_UR_MESSAGE_END = PHONE_MESSAGE_ACTION_URL_MESSAGE_END
+};
+
+
+#endif  // DEFINE_ACTIONUR_H_

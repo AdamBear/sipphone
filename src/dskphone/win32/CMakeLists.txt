@@ -1,0 +1,5 @@
+if(MSVC)
+	add_all_subdirectories()
+	include_directories(.)
+    include(win32_include.cmake)
+endif()

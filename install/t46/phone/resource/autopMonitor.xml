@@ -1,0 +1,8 @@
+<autopMonitor>
+	<section file="/config/data/AutoDST.xml" action="msgBroadcastPostMessage(0x00002011, 0, 0)" />
+	
+	<section file="/data/userdata/contact-image/" action="msgBroadcastPostMessage(0x10007, 50, 0)" />
+  <section file="/data/userdata/wallpaper/" action="msgBroadcastPostMessage(0x10007, 44, 1)" />
+  <section file="/data/userdata/sound/" action="msgBroadcastPostMessage(0x10007, 46, 1)" />
+</autopMonitor>
+

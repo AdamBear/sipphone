@@ -1,0 +1,9 @@
+<root_menu>
+
+<!-- Sound菜单开始 -->
+<item id_name="ringtone" display_name="Ring Tones" icon_name="" click_action="OpenSubPage(sound_ringtone)" long_click_action="" />
+<item id_name="general" display_name="Key Tone" icon_name="" click_action="OpenSubPage(sound_general)" long_click_action="" />
+<item id_name="blfringtype" display_name="BLF Ring Type" icon_name="" click_action="OpenSubPage(blf_ring_type)" long_click_action="" />
+<!-- Sound菜单结束 -->
+
+</root_menu>

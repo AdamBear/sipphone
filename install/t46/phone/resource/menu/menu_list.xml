@@ -1,0 +1,14 @@
+﻿<root_menu>
+
+<!-- menu菜单开始 -->
+<item id_name="status" display_name="Status" normal_icon_name="menu_status_normal.png" selected_icon_name="menu_status_selected.png" click_action="OpenSubPage(status_list)" long_click_action="" user_level="" />
+<item id_name="call_feature" display_name="Features" normal_icon_name="menu_features_normal.png" selected_icon_name="menu_features_selected.png" click_action="OpenMenu(call_feature_list.xml)" long_click_action="" user_level="" />
+<item id_name="directory" display_name="Directory" normal_icon_name="menu_directory_normal.png" selected_icon_name="menu_directory_selected.png" click_action="OpenDynamic(directory)" long_click_action="" user_level="" />
+<item id_name="call_log" display_name="History" normal_icon_name="menu_history_normal.png" selected_icon_name="menu_history_selected.png" click_action="OpenDynamic(calllog)" long_click_action="" user_level="" />
+<item id_name="message" display_name="Message" normal_icon_name="menu_message_normal.png" selected_icon_name="menu_message_selected.png" click_action="OpenMenu(message_list.xml)" long_click_action="" user_level="" />
+<item id_name="basic_setting" display_name="Basic Setting" normal_icon_name="menu_setting_normal.png" selected_icon_name="menu_setting_selected.png" click_action="OpenMenu(basic_setting_list.xml)" long_click_action="" user_level="" />
+<item id_name="advanced_setting" display_name="Advanced Setting" normal_icon_name="menu_Advanced_normal.png" selected_icon_name="menu_Advanced_selected.png" click_action="OpenMenu(advanced_setting_list.xml)" long_click_action="" user_level="" />
+<item id_name="userMode" display_name="UserMode" normal_icon_name="menu_user_normal.png" selected_icon_name="menu_user_selected.png" click_action="OpenSubPage(userMode)" long_click_action="" user_level = ""/>
+<!-- menu菜单结束 -->
+
+</root_menu>	

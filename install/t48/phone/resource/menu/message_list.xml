@@ -1,0 +1,8 @@
+<root_menu>
+
+<!-- Message菜单开始 -->
+<item id_name="voice_mail" display_name="Voice Mail" icon_name="menu_voice_mail.png" click_action="OpenPage(voice_mail_list.xml)" long_click_action="" />
+<item id_name="text_message" display_name="Text Message" icon_name="menu_text_message.png" click_action="OpenPage(text_message_list.xml)" long_click_action="" />
+<!-- Message菜单结束 -->
+
+</root_menu>

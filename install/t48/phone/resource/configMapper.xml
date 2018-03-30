@@ -1,0 +1,1203 @@
+<IniConfig>
+		<Common>
+		<item name="BLFLedMode" filepath="/config/user/user.ini" section="BLFLed" key="BLFLedMode" defvalue="0"/>
+		<item name="FeaturesBLFLedMode" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="blf-led-mode" defvalue="0"/>
+		<item name="NetworkPCPortSwitch" filepath="/config/system/system.ini" section="Network" key="UsePcPort" defvalue="1"/>
+		<item name="PCPortActive" filepath="/config/user/WebItemsLevel.cfg" section="Network-PCPort" key="pcport-active" defvalue="0"/>
+			<item name="CommonPowerLightOn" filepath="/config/user/user.ini" section="PowerLed" key="PowerLed_Common" defvalue="0"/>
+			<item name="RingPowerLightFlash" filepath="/config/user/user.ini" section="PowerLed" key="PowerLed_Ring" defvalue="1"/>
+			<item name="MailPowerLightFlash" filepath="/config/user/user.ini" section="PowerLed" key="PowerLed_Mail" defvalue="1"/>
+			<item name="MutePowerLightFlash" filepath="/config/user/user.ini" section="PowerLed" key="PowerLed_Mute" defvalue="0"/>
+			<item name="HoldPowerLightFlash" filepath="/config/user/user.ini" section="PowerLed" key="PowerLed_HoldHeld" defvalue="0"/>
+			<item name="TalkPowerLightFlash" filepath="/config/user/user.ini" section="PowerLed" key="PowerLed_TalkDial" defvalue="0"/>
+			<item name="BLFListVersionActive" filepath="/config/user/user.ini" section="Features" key="IsBLFListVersion" defvalue="0"/> 
+			<item name="NetworkPCPortSwitch" filepath="/config/system/system.ini" section="Network" key="UsePcPort" defvalue="1"/>
+			<item name="StatusChangeIsNotPopWind" filepath="/config/user/user.ini" section="Features" key="StatusChangeIsNotPopWind" defvalue="0"/>
+	
+			<item name="NetworkWanStaticDNSEnable" filepath="/config/system/system.ini" section="Network" key="bEnableStaticDNS" defvalue="0"/>
+      <item name="NetworkIPv6WanStaticDNSEnable" filepath="/config/system/system.ini" section="Network" key="IPv6StaticDNS" defvalue="0"/>
+      <item name="NTPPriority" filepath="/config/system/system.ini" section="LocalTime" key="NtpCfgPriorDhcp" defvalue="0"/>
+				<item name="features-powerled" filepath="/config/user/WebItemsLevel.cfg" section="Features" key="features-powerled" defvalue="0"/>
+		<item name="FeaturesCommonPowerLightOn" filepath="/config/user/WebItemsLevel.cfg" section="Features-PowerLED" key="common-power-light-on" defvalue="0"/>
+		<item name="FeaturesRingPowerLightFlash" filepath="/config/user/WebItemsLevel.cfg" section="Features-PowerLED" key="ring-power-light-flash" defvalue="0"/>
+		<item name="FeaturesMailPowerLightFlash" filepath="/config/user/WebItemsLevel.cfg" section="Features-PowerLED" key="mail-power-light-flash" defvalue="0"/>
+		<item name="FeaturesMutePowerLightFlash" filepath="/config/user/WebItemsLevel.cfg" section="Features-PowerLED" key="mute-power-light-flash" defvalue="0"/>
+		<item name="FeaturesHoldPowerLightFlash" filepath="/config/user/WebItemsLevel.cfg" section="Features-PowerLED" key="hold-power-light-flash" defvalue="0"/>
+		<item name="FeaturesTalkPowerLightFlash" filepath="/config/user/WebItemsLevel.cfg" section="Features-PowerLED" key="talk-power-light-flash" defvalue="0"/>			
+      <item name="DefaultAccountID" filepath="/config/user/user.ini" section="Account" key="DefaultAccount" defvalue="0"/> 
+      <item name="EnableNewVoiceMailPopWind" filepath="/config/user/user.ini" section="Features" key="NewVoiceMailPopWind" defvalue="1"/> 
+		<item name="ContactSearchDefaultIME" filepath="/config/user/user.ini" section="Features" key="ContactSearchDefaultIME" defvalue=""/> 
+		<item name="AutoBlfListSequenceType" filepath="/config/user/user.ini" section="AutoBlflist" key="SequenceType" defvalue="1"/>
+		<item name="AutoBlfListEnable" filepath="/config/user/user.ini" section="AutoBlflist" key="Enable" defvalue="0"/>
+		<item name="EnablePageTips" filepath="/config/user/user.ini" section="Page" key="PageTip" defvalue="0"/>
+		<item name="ACDAutoAvailableTime" filepath="/config/user/user.ini" section="Features" key="AutoAvailableTimer" defvalue="60"/>
+		<item name="AUAnswerNewInCall" filepath="/config/user/user.ini" section="ActionUrl" key="AnswerNewInCall" defvalue=""/>
+		<item name="AUAttendedTransfer" filepath="/config/user/user.ini" section="ActionUrl" key="AttendedTransfer" defvalue=""/>
+		<item name="AUBlindTransfer" filepath="/config/user/user.ini" section="ActionUrl" key="BlindTransfer" defvalue=""/>
+		<item name="AUBusyToIdle" filepath="/config/user/user.ini" section="ActionUrl" key="BusyToIdle" defvalue=""/>
+		<item name="AUCallOut" filepath="/config/user/user.ini" section="ActionUrl" key="CallOut" defvalue=""/>
+		<item name="AUCallRemoteCanceled" filepath="/config/user/user.ini" section="ActionUrl" key="CallRemoteCanceled" defvalue=""/>
+		<item name="AUCancelCallOut" filepath="/config/user/user.ini" section="ActionUrl" key="CancelCallOut" defvalue=""/>
+		<item name="AUCloseAlwaysForward" filepath="/config/user/user.ini" section="ActionUrl" key="CloseAlwaysForward" defvalue=""/>
+		<item name="AUCloseBusyForward" filepath="/config/user/user.ini" section="ActionUrl" key="CloseBusyForward" defvalue=""/>
+		<item name="AUCloseDnd" filepath="/config/user/user.ini" section="ActionUrl" key="CloseDnd" defvalue=""/>
+		<item name="AUCloseNoAnswerForward" filepath="/config/user/user.ini" section="ActionUrl" key="CloseNoAnswerForward" defvalue=""/>
+		<item name="AUEstablished" filepath="/config/user/user.ini" section="ActionUrl" key="Established" defvalue=""/>
+		<item name="AUForwardIncomingCall" filepath="/config/user/user.ini" section="ActionUrl" key="ForwardIncomingCall" defvalue=""/>
+		<item name="AUHold" filepath="/config/user/user.ini" section="ActionUrl" key="Hold" defvalue=""/>
+		<item name="AUIdleToBusy" filepath="/config/user/user.ini" section="ActionUrl" key="IdleToBusy" defvalue=""/>
+		<item name="AUIncomingCall" filepath="/config/user/user.ini" section="ActionUrl" key="IncomingCall" defvalue=""/>
+		<item name="AUIpChanged" filepath="/config/user/user.ini" section="ActionUrl" key="IpChanged" defvalue=""/>
+		<item name="AULogOff" filepath="/config/user/user.ini" section="ActionUrl" key="LogOff" defvalue=""/>
+		<item name="AULogOn" filepath="/config/user/user.ini" section="ActionUrl" key="LogOn" defvalue=""/>
+		<item name="AUMissedCall" filepath="/config/user/user.ini" section="ActionUrl" key="MissedCall" defvalue=""/>
+		<item name="AUMute" filepath="/config/user/user.ini" section="ActionUrl" key="Mute" defvalue=""/>
+		<item name="AUOffHook" filepath="/config/user/user.ini" section="ActionUrl" key="OffHook" defvalue=""/>
+		<item name="AUOnHook" filepath="/config/user/user.ini" section="ActionUrl" key="OnHook" defvalue=""/>
+		<item name="AUOpenAlwaysForward" filepath="/config/user/user.ini" section="ActionUrl" key="OpenAlwaysForward" defvalue=""/>
+		<item name="AUOpenBusyForward" filepath="/config/user/user.ini" section="ActionUrl" key="OpenBusyForward" defvalue=""/>
+		<item name="AUOpenDnd" filepath="/config/user/user.ini" section="ActionUrl" key="OpenDnd" defvalue=""/>
+		<item name="AUOpenNoAnswerForward" filepath="/config/user/user.ini" section="ActionUrl" key="OpenNoAnswerForward" defvalue=""/>
+		<item name="AURILimitIP" filepath="/config/user/user.ini" section="ActionURI" key="LimitIP" defvalue=""/>
+		<item name="AURIShowMsgBoxEnable" filepath="/config/user/user.ini" section="Features" key="bActionURIShowMsgBox" defvalue="1"/>
+		<item name="AURegisterFailed" filepath="/config/user/user.ini" section="ActionUrl" key="RegisterFailed" defvalue=""/>
+		<item name="AURejectIncomingCall" filepath="/config/user/user.ini" section="ActionUrl" key="RejectIncomingCall" defvalue=""/>
+		<item name="AURejectNewInCall" filepath="/config/user/user.ini" section="ActionUrl" key="RejectNewInCall" defvalue=""/>
+		<item name="AURemoteBusy" filepath="/config/user/user.ini" section="ActionUrl" key="RemoteBusy" defvalue=""/>
+		<item name="AUSetupCompleted" filepath="/config/user/user.ini" section="ActionUrl" key="SetupCompleted" defvalue=""/>
+		<item name="AUTerminated" filepath="/config/user/user.ini" section="ActionUrl" key="Terminated" defvalue=""/>
+		<item name="AUTransferCall" filepath="/config/user/user.ini" section="ActionUrl" key="TransferCall" defvalue=""/>
+		<item name="AUTransferFailed" filepath="/config/user/user.ini" section="ActionUrl" key="TransferFailed" defvalue=""/>		
+		<item name="AUTransferFinished" filepath="/config/user/user.ini" section="ActionUrl" key="TransferFinished" defvalue=""/>
+		<item name="AUUnHold" filepath="/config/user/user.ini" section="ActionUrl" key="UnHold" defvalue=""/>
+		<item name="AUUnMute" filepath="/config/user/user.ini" section="ActionUrl" key="UnMute" defvalue=""/>
+		
+		<item name="AURemoteIP" filepath="/config/user/user.ini" section="ActionUrl" key="RemoteIP" defvalue=""/>
+		<item name="AUUCServer" filepath="/config/user/user.ini" section="ActionUrl" key="UCServer" defvalue=""/>
+		
+		<item name="ActiveLevel" filepath="/config/user/user.ini" section="Backlight" key="nActiveLevel" defvalue="6"/>
+		<item name="AdvancedVarEnabled" filepath="/config/user/user.ini" section="Advanced" key="var_enabled" defvalue="0"/>
+		<item name="AlertInfo" filepath="/config/user/user.ini" section="Features" key="AlertInfoTone" defvalue="0"/>
+		<item name="AlertInfo0Ringer" filepath="/config/user/user.ini" section="AlertInfo0" key="Ringer" defvalue="1"/>
+		<item name="AlertInfo0Text" filepath="/config/user/user.ini" section="AlertInfo0" key="Text" defvalue=""/>
+		<item name="AlertInfo1Ringer" filepath="/config/user/user.ini" section="AlertInfo1" key="Ringer" defvalue="1"/>
+		<item name="AlertInfo1Text" filepath="/config/user/user.ini" section="AlertInfo1" key="Text" defvalue=""/>
+		<item name="AlertInfo2Ringer" filepath="/config/user/user.ini" section="AlertInfo2" key="Ringer" defvalue="1"/>
+		<item name="AlertInfo2Text" filepath="/config/user/user.ini" section="AlertInfo2" key="Text" defvalue=""/>
+		<item name="AlertInfo3Ringer" filepath="/config/user/user.ini" section="AlertInfo3" key="Ringer" defvalue="1"/>
+		<item name="AlertInfo3Text" filepath="/config/user/user.ini" section="AlertInfo3" key="Text" defvalue=""/>
+		<item name="AlertInfo4Ringer" filepath="/config/user/user.ini" section="AlertInfo4" key="Ringer" defvalue="1"/>
+		<item name="AlertInfo4Text" filepath="/config/user/user.ini" section="AlertInfo4" key="Text" defvalue=""/>
+		<item name="AlertInfo5Ringer" filepath="/config/user/user.ini" section="AlertInfo5" key="Ringer" defvalue="1"/>
+		<item name="AlertInfo5Text" filepath="/config/user/user.ini" section="AlertInfo5" key="Text" defvalue=""/>
+		<item name="AlertInfo6Ringer" filepath="/config/user/user.ini" section="AlertInfo6" key="Ringer" defvalue="1"/>
+		<item name="AlertInfo6Text" filepath="/config/user/user.ini" section="AlertInfo6" key="Text" defvalue=""/>
+		<item name="AlertInfo7Ringer" filepath="/config/user/user.ini" section="AlertInfo7" key="Ringer" defvalue="1"/>
+		<item name="AlertInfo7Text" filepath="/config/user/user.ini" section="AlertInfo7" key="Text" defvalue=""/>
+		<item name="AlertInfo8Ringer" filepath="/config/user/user.ini" section="AlertInfo8" key="Ringer" defvalue="1"/>
+		<item name="AlertInfo8Text" filepath="/config/user/user.ini" section="AlertInfo8" key="Text" defvalue=""/>
+		<item name="AlertInfo9Ringer" filepath="/config/user/user.ini" section="AlertInfo9" key="Ringer" defvalue="1"/>
+		<item name="AlertInfo9Text" filepath="/config/user/user.ini" section="AlertInfo9" key="Text" defvalue=""/>
+		<item name="AllowMute" filepath="/config/user/user.ini" section="PhoneSetting" key="AllowMute" defvalue="1"/>
+		<item name="AllowTransExistCall" filepath="/config/user/user.ini" section="Transfer" key="BeAllowTransExistCall" defvalue="1"/>
+		<item name="AlwaysForwardOffCode" filepath="/config/user/user.ini" section="AlwaysForward" key="strOffCode" defvalue="0"/>
+		<item name="AlwaysForwardOnCode" filepath="/config/user/user.ini" section="AlwaysForward" key="strOnCode" defvalue="0"/>
+		<item name="AlwaysForwardSwitch" filepath="/config/user/user.ini" section="AlwaysForward" key="bEnable" defvalue="0"/>
+		<item name="AlwaysForwardTarget" filepath="/config/user/user.ini" section="AlwaysForward" key="strTarget" defvalue=""/>
+		<item name="AnyWhere&RmoteOfficeEnable" filepath="/config/user/user.ini" section="Features" key="AnyWhere&RmoteOfficeOn" defvalue="1"/>
+		<item name="AreaCode" filepath="/config/user/user.ini" section="AreaCode" key="strcode" defvalue=""/>
+		<item name="AreaCodeAccount" filepath="/config/user/user.ini" section="AreaCode" key="strLineID" defvalue=""/>
+		<item name="AreaCodeMaxLen" filepath="/config/user/user.ini" section="AreaCode" key="strmaxlen" defvalue="15"/>
+		<item name="AreaCodeMinLen" filepath="/config/user/user.ini" section="AreaCode" key="strminlen" defvalue="1"/>
+		<item name="AutoAnswerDelay" filepath="/config/user/user.ini" section="Features" key="AutoAnswerDelay" defvalue="3"/>
+		<item name="EnableUC" filepath="/config/user/user.ini" section="Features" key="bEnabledUC" defvalue="0"/>
+		<item name="PresenceJID" filepath="/config/user/user.ini" section="Presence" key="strUserID" defvalue=""/>
+		<item name="PresencePassword" filepath="/config/user/user.ini" section="Presence" key="strPassWord" defvalue="" encrypt="1"/>
+		<item name="EnableAutoFavorite" filepath="/config/user/user.ini" section="Dsskey" key="EnableAutoFavorite" defvalue="1"/>
+		<item name="AutoProvisionAESKey16" filepath="/config/system/system.ini" section="AutoProvision" key="strKeyAES16" defvalue="" encrypt="1"/>
+		<item name="AutoProvisionAESKey16MAC" filepath="/config/system/system.ini" section="AutoProvision" key="strKeyAES16MAC" defvalue="" encrypt="1"/>
+		<item name="AutoProvisionEnableDHCPOption" filepath="/config/system/system.ini" section="AutoProvision" key="bEnableDHCPOption" defvalue="1"/>
+		<item name="AutoProvisionEnablePNP" filepath="/config/system/system.ini" section="AutoProvision" key="bEnablePNP" defvalue="1"/>
+		<item name="AutoProvisionEnableWeekly" filepath="/config/system/system.ini" section="AutoProvision" key="bEnableWeekly" defvalue="0"/>
+		<item name="AutoProvisionOptionType" filepath="/config/system/system.ini" section="AutoProvision" key="listUserOptions" defvalue="128"/>
+		<item name="AutoProvisionPassword" filepath="/config/system/system.ini" section="AutoProvision" key="strPassword" defvalue="" encrypt="1"/>
+		<item name="AutoProvisionPowerOn" filepath="/config/system/system.ini" section="AutoProvision" key="bEnablePowerOn" defvalue="0"/>
+		<item name="AutoProvisionRepeat" filepath="/config/system/system.ini" section="AutoProvision" key="bEnableRepeat" defvalue="0"/>
+		<item name="AutoProvisionRepeatMinutes" filepath="/config/system/system.ini" section="AutoProvision" key="nRepeatMinutes" defvalue="1440"/>
+		<item name="AutoProvisionServerURL" filepath="/config/system/system.ini" section="AutoProvision" key="strServerURL" defvalue=""/>
+		<item name="AutoProvisionTPGOptionPNP" filepath="/config/system/system.ini" section="TPG" key="Option_PNP" defvalue=""/>	
+		<item name="AutoProvisionUser" filepath="/config/system/system.ini" section="AutoProvision" key="strUserName" defvalue=""/>
+		<item name="AutoProvisionWeeklyBeginTime" filepath="/config/system/system.ini" section="AutoProvision" key="strWeeklyBeginTime" defvalue="0:0"/>
+		<item name="AutoProvisionWeeklyEndTime" filepath="/config/system/system.ini" section="AutoProvision" key="strWeeklyEndTime" defvalue="0:0"/>
+		<item name="AutoProvisionWeeklyMask" filepath="/config/system/system.ini" section="AutoProvision" key="strWeeklyMask" defvalue=""/>
+		<item name="AutoProvisionCommonName" filepath="/config/system/system.ini" section="AutoProvision" key="strCommName" defvalue=""/>
+		<item name="AutoProvisionFctCommonName" filepath="/phone/factory/system/system.ini" section="AutoProvision" key="strCommName" defvalue=""/>
+		<item name="AutoRedialInterval" filepath="/config/user/user.ini" section="AutoRedial" key="nInterval" defvalue="1"/>
+		<item name="AutoRedialSwitch" filepath="/config/user/user.ini" section="AutoRedial" key="bEnable" defvalue="0"/>
+		<item name="AutoRedialTimes" filepath="/config/user/user.ini" section="AutoRedial" key="nTimes" defvalue="1"/>
+		<item name="AutoRefuseTime" filepath="/config/user/user.ini" section="Features" key="AutoRefuseTime" defvalue="120"/>
+		<item name="AutoReleaseLineBySrv" filepath="/config/user/user.ini" section="Features" key="AutoReleaseLineBySrv" defvalue="0"/>
+		<item name="AutopNow" filepath="/config/user/user.ini" section="Zero" key="AutopNow" defvalue="0"/>
+		<item name="BLFLedOffInIdle" filepath="/config/user/user.ini" section="Features" key="BLFLedOffIdle" defvalue="0"/>
+		<item name="BLfNotifyType" filepath="/config/user/user.ini" section="Features" key="BLfNotifyType" defvalue="0"/>
+		<item name="BSCallLogAddCountryCode" filepath="/config/user/user.ini" section="BroadSoft" key="bAddCountryCode" defvalue="0"/>
+		<item name="BSFTActive" filepath="/config/user/user.ini" section="Directory" key="bBroadsoftActive" defvalue="0"/>
+		<item name="BWCallLogandDir" filepath="/config/user/user.ini" section="BroadSoft" key="BWCallLogandDir" defvalue="0"/>
+		<item name="BacklightLevel" filepath="/config/user/user.ini" section="PhoneSetting" key="BackLight" defvalue="2"/>
+		<item name="BacklightTime" filepath="/config/user/user.ini" section="Backlight" key="nBacklightTime" defvalue="1"/>	
+		<item name="BeChangeSec183to180" filepath="/phone/factory/user/WebItemsLevel.cfg" section="Nology" key="BeChange183to180" defvalue="0"/>
+		<item name="BeHaveBWDir" filepath="/config/user/user.ini" section="BroadSoft" key="BeHaveBWDir" defvalue="0"/>
+		<item name="BeHaveCallLog" filepath="/config/user/user.ini" section="BroadSoft" key="BeHaveCallLog" defvalue="0"/>
+		<item name="BlockOut1" filepath="/config/user/user.ini" section="BlockOut" key="1" defvalue=""/>
+		<item name="BlockOut10" filepath="/config/user/user.ini" section="BlockOut" key="10" defvalue=""/>
+		<item name="BlockOut2" filepath="/config/user/user.ini" section="BlockOut" key="2" defvalue=""/>
+		<item name="BlockOut3" filepath="/config/user/user.ini" section="BlockOut" key="3" defvalue=""/>
+		<item name="BlockOut4" filepath="/config/user/user.ini" section="BlockOut" key="4" defvalue=""/>
+		<item name="BlockOut5" filepath="/config/user/user.ini" section="BlockOut" key="5" defvalue=""/>
+		<item name="BlockOut6" filepath="/config/user/user.ini" section="BlockOut" key="6" defvalue=""/>
+		<item name="BlockOut7" filepath="/config/user/user.ini" section="BlockOut" key="7" defvalue=""/>
+		<item name="BlockOut8" filepath="/config/user/user.ini" section="BlockOut" key="8" defvalue=""/>
+		<item name="BlockOut9" filepath="/config/user/user.ini" section="BlockOut" key="9" defvalue=""/>
+		<item name="BlockOutLineID1" filepath="/config/user/user.ini" section="BlockOutLineID" key="1" defvalue=""/>
+		<item name="BlockOutLineID10" filepath="/config/user/user.ini" section="BlockOutLineID" key="10" defvalue=""/>
+		<item name="BlockOutLineID2" filepath="/config/user/user.ini" section="BlockOutLineID" key="2" defvalue=""/>
+		<item name="BlockOutLineID3" filepath="/config/user/user.ini" section="BlockOutLineID" key="3" defvalue=""/>
+		<item name="BlockOutLineID4" filepath="/config/user/user.ini" section="BlockOutLineID" key="4" defvalue=""/>
+		<item name="BlockOutLineID5" filepath="/config/user/user.ini" section="BlockOutLineID" key="5" defvalue=""/>
+		<item name="BlockOutLineID6" filepath="/config/user/user.ini" section="BlockOutLineID" key="6" defvalue=""/>
+		<item name="BlockOutLineID7" filepath="/config/user/user.ini" section="BlockOutLineID" key="7" defvalue=""/>
+		<item name="BlockOutLineID8" filepath="/config/user/user.ini" section="BlockOutLineID" key="8" defvalue=""/>
+		<item name="BlockOutLineID9" filepath="/config/user/user.ini" section="BlockOutLineID" key="9" defvalue=""/>
+		<item name="BroadsoftFeatureKeySync" filepath="/config/user/user.ini" section="Features" key="bBroadsoftFeatureKeySync" defvalue="0"/>
+		<item name="BroadsoftSyncToAllAccout" filepath="/config/user/user.ini" section="Features" key="bSyncAllAccount" defvalue="1"/>
+		<item name="BsftCustom" filepath="/config/user/user.ini" section="Directory" key="EnableCustom" defvalue="0"/>
+		<item name="BsftCustomListAll" filepath="/tmp/Custom.cfg" section="List" key="CustomListAll" defvalue=""/>
+		<item name="BsftCustomListFailReason" filepath="/tmp/Custom.cfg" section="Info" key="strFailReason" defvalue=""/>
+		<item name="BsftCustomListStatus" filepath="/tmp/Custom.cfg" section="Info" key="eListStauts" defvalue="0"/>
+		<item name="BsftCustomListUse" filepath="/tmp/Custom.cfg" section="List" key="CustomListUse" defvalue=""/>
+		<item name="BsftEnterprise" filepath="/config/user/user.ini" section="BroadSoft" key="EnableEnterprise" defvalue="0"/>
+		<item name="BsftEnterpriseCommon" filepath="/config/user/user.ini" section="BroadSoft" key="EnableEnterpriseCommon" defvalue="0"/>
+		<item name="BsftGroup" filepath="/config/user/user.ini" section="BroadSoft" key="EnableGroup" defvalue="1"/>
+		<item name="BsftGroupCommon" filepath="/config/user/user.ini" section="BroadSoft" key="EnableGroupCommon" defvalue="0"/>
+		<item name="BsftPersonal" filepath="/config/user/user.ini" section="BroadSoft" key="EnablePersonal" defvalue="1"/>
+		<item name="BstDirUpdateInterVal" filepath="/config/user/user.ini" section="Directory" key="UpdateInterVal" defvalue="60"/>
+		<item name="BusyForwardOffCode" filepath="/config/user/user.ini" section="BusyForward" key="strOffCode" defvalue="0"/>
+		<item name="BusyForwardOnCode" filepath="/config/user/user.ini" section="BusyForward" key="strOnCode" defvalue="0"/>
+		<item name="BusyForwardSwitch" filepath="/config/user/user.ini" section="BusyForward" key="bEnable" defvalue="0"/>
+		<item name="BusyForwardTarget" filepath="/config/user/user.ini" section="BusyForward" key="strTarget" defvalue=""/>
+		<item name="BusytoneDelay" filepath="/config/user/user.ini" section="BusyTone" key="nBusyToneDelay" defvalue="3"/>
+		<item name="CallCompletionSwitch" filepath="/config/user/user.ini" section="Features" key="bCallCompletionEnable" defvalue="0"/>
+		<item name="CallInAnonymous" filepath="/config/user/user.ini" section="Features" key="CallInAnonymous" defvalue=""/>
+		<item name="CallNumFilter" filepath="/config/user/user.ini" section="Features" key="CallNumFilter" defvalue="-,"/>
+		<item name="CallParkRingNotifyType" filepath="/config/user/user.ini" section="CallPark" key="eParkRing" defvalue="0"/>
+		<item name="CallParkSwitch" filepath="/config/user/user.ini" section="CallPark" key="bEnabledCallPark" defvalue="0"/>
+		<item name="CallParkVisualNotifySwitch" filepath="/config/user/user.ini" section="CallPark" key="bEnabledParkVisualNotify" defvalue="0"/>	
+		<item name="CallReturnNumber" filepath="/config/user/user.ini" section="CallReturn" key="strNumber" defvalue=""/>
+		<item name="CallReturnServer" filepath="/config/user/user.ini" section="CallReturn" key="strServer" defvalue=""/>
+		<item name="CallReturnUser" filepath="/config/user/user.ini" section="CallReturn" key="strUser" defvalue=""/>
+		<item name="CallWaitingOffCode" filepath="/config/user/user.ini" section="Features" key="Call_WaitingOffCode" defvalue=""/>
+		<item name="CallWaitingOnCode" filepath="/config/user/user.ini" section="Features" key="Call_WaitingOnCode" defvalue=""/>
+		<item name="CallWaitingSwitch" filepath="/config/user/user.ini" section="CallWaiting" key="bEnable" defvalue="1"/>
+		<item name="CallWaitingToneSwitch" filepath="/config/user/user.ini" section="CallWaiting" key="bToneEnable" defvalue="1"/>
+		<item name="CalllogShowNumEnable" filepath="/config/user/user.ini" section="Features" key="CallListShowNum" defvalue="0"/>
+		<item name="ClosePowerLight" filepath="/config/user/user.ini" section="Features" key="ClosePowerLight" defvalue="0"/>
+		<item name="Code403Info" filepath="/config/user/user.ini" section="ShowCodeInfo" key="Code403" defvalue=""/>
+		<item name="ConflictedIP" filepath="/config/system/system.ini" section="BeIPConflicted" key="ConflictedIP" defvalue=""/>
+		<item name="ConflictedMAC" filepath="/config/system/system.ini" section="BeIPConflicted" key="ConflictedMAC" defvalue="00:00:00:00:00:00"/>
+		<item name="ContactDefaultIME" filepath="/phone/factory/user/user.ini" section="SpecialFunctions" key="Contact_Default_IME" defvalue=""/>
+		<item name="ContactDisplayFirst" filepath="/config/user/user.ini" section="Wildix" key="ContactDisplayFirst" defvalue="0"/>
+		<item name="ContactMenuHiddenItems" filepath="/config/user/user.ini" section="Contact" key="ContactMenuHiddenItems" defvalue=""/>
+		<item name="ContrastLevel" filepath="/config/user/user.ini" section="PhoneSetting" key="Contrast" defvalue="2"/>
+		<item name="CorrectAccount" filepath="/config/user/user.ini" section="Features" key="CorrectAccount" defvalue="1"/>
+		<item name="CurrentRing" filepath="/config/user/user.ini" section="Ring" key="strRingFile" defvalue="/phone/resource/sysdata/sound/Ring1.wav"/>
+		<item name="CurrentTheme" filepath="/config/user/user.ini" section="Theme" key="strCurrentTheme" defvalue=""/>
+		<item name="CurrentTimeZoneTime" filepath="/config/system/system.ini" section="LocalTime" key="strTimeName" defvalue=""/>
+		<item name="CurrentTimeZoneZone" filepath="/config/system/system.ini" section="LocalTime" key="strZoneName" defvalue=""/>
+		<item name="CurrentAuthority" filepath="/config/system/system.ini" section="Authority" key="CurrentAuthority" defvalue="admin"/>
+		<item name="CurrentWallpaper" filepath="/config/system/system.ini" section="Wallpaper" key="strCurrentWallpaper" defvalue=""/>
+		<item name="CustomSoftkeySwitch" filepath="/config/user/user.ini" section="PhoneSetting" key="IsDefineKey" defvalue="0"/>
+		<item name="DNDEmergencyNumberList" filepath="/config/user/user.ini" section="DNDEmergency" key="DND_Authorized_Numbers" defvalue=""/>
+		<item name="DNDEmergencySwitch" filepath="/config/user/user.ini" section="DNDEmergency" key="Enable" defvalue="0"/>
+		<item name="DNDRefuseCode" filepath="/config/user/user.ini" section="RefuseCode" key="nDNDRefuseCode" defvalue="480"/>
+		<item name="DPickupCode" filepath="/config/user/user.ini" section="Pickup" key="DPickupCode" defvalue=""/>
+		<item name="DPickupSwitch" filepath="/config/user/user.ini" section="Pickup" key="DPickup" defvalue="0"/>
+		<item name="DSTEndTime" filepath="/config/system/system.ini" section="LocalTime" key="EndTime" defvalue="12/31/23"/>
+		<item name="DSTOffSetTime" filepath="/config/system/system.ini" section="LocalTime" key="OffSetTime" defvalue="0"/>
+		<item name="DSTStartTime" filepath="/config/system/system.ini" section="LocalTime" key="StartTime" defvalue="01/01/00"/>
+		<item name="DSTTimeType" filepath="/config/system/system.ini" section="LocalTime" key="iDSTTimeType" defvalue="0"/>
+		<item name="DsskeyLength" filepath="/config/user/user.ini" section="Dsskey" key="DsskeyLength" defvalue="0"/>
+		<item name="DTMFPayload" filepath="/config/user/voip/sipAccount6.cfg" section="DTMF" key="DTMFPayload" defvalue="101"/>
+		<item name="Deal180After183" filepath="/config/user/user.ini" section="Features" key="bDeal180" defvalue="0"/>
+		<item name="DevtypeLoginNote" filepath="/phone/factory/user/user.ini" section="login_note" key="text" defvalue=""/>
+		<item name="DhcpOptionValue" filepath="/config/system/system.ini" section="dhcp_option_value" key="option60_value" defvalue="yealink"/>
+		<item name="DhcpHostnameValue" filepath="/config/system/system.ini" section="dhcp_option_value" key="option12_value" defvalue=""/>
+		<item name="DialNowDelay" filepath="/config/user/user.ini" section="Features" key="nDialNowDelay" defvalue="1"/>
+		<item name="DialingIMEName" filepath="/config/config/user/user.ini" section="Talk" key="strDialIMEName" defvalue="123_Dial"/>
+		<item name="Direct2LocalContact" filepath="/config/config/user/user.ini" section="Features" key="Direct2LocalContact" defvalue="0"/>
+		<item name="DisplayNameValue" filepath="/tmp/InitSave" section="DisplayName" key="Value" defvalue=""/>
+		<item name="DiversionEnable" filepath="/config/user/user.ini" section="Features" key="DiversionEnable" defvalue="1"/>
+		<item name="DndForbidden" filepath="/config/user/user.ini" section="Forbidden" key="DND" defvalue="0"/>
+		<item name="DndMode" filepath="/config/user/user.ini" section="Features" key="DNDMode" defvalue="0"/>
+		<item name="DndOffCode" filepath="/config/user/user.ini" section="DND" key="strOffCode" defvalue=""/>
+		<item name="DndOnCode" filepath="/config/user/user.ini" section="DND" key="strOnCode" defvalue=""/>
+		<item name="DndStatus" filepath="/config/user/user.ini" section="DND" key="bEnable" defvalue="0"/>
+		<item name="DssKeyFWDEnable" filepath="/config/user/user.ini" section="Features" key="IsDssKeyFWDEnable" defvalue="0"/>
+		<item name="DsskeyBlindTran" filepath="/config/user/user.ini" section="Transfer" key="DsskeyBlindTran" defvalue=""/>
+		<item name="Dtmfrep" filepath="/config/user/vpm.cfg" section="Profile" key="dtmf_rep" defvalue="3"/>
+		<item name="EmergencyNumberList" filepath="/config/user/user.ini" section="Emergency" key="strNumberList" defvalue=""/>
+		<item name="EmergencyRing" filepath="/config/user/user.ini" section="PhoneSetting" key="EmergencyRing" defvalue="Emergency.wav"/>
+		<item name="EnableACDAutoAvailable" filepath="/config/user/user.ini" section="Features" key="bEnableACD" defvalue="0"/>
+		<item name="EnableACDBroadsoft" filepath="/config/user/user.ini" section="ACD" key="Broadsoft" defvalue="0"/>
+		<item name="EnableAlwaysSetFWD" filepath="/config/user/user.ini" section="Features" key="AlwaysSetFWD" defvalue="0"/>
+		<item name="EnableAutoSetAccount" filepath="/config/user/user.ini" section="Features" key="AutoSetAccount" defvalue="0"/>
+		<item name="EnableDTMFDelay" filepath="/config/user/user.ini" section="Features" key="HideDTMFDelay" defvalue="0"/>
+		<item name="EnableDTMFReplaceTran" filepath="/config/user/user.ini" section="Features" key="DTMF_Replace_Tran" defvalue="0"/>
+		<item name="EnableDialPoundKey" filepath="/config/user/user.ini" section="PhoneSetting" key="SendPoundKey" defvalue="0"/>
+		<item name="EnableDirectIPCall" filepath="/config/user/user.ini" section="Features" key="bEnableDirectIP" defvalue="1"/>
+		<item name="EnableHideDTMF" filepath="/config/user/user.ini" section="Features" key="HideDTMF" defvalue="0"/>
+		<item name="EnableIdleDefaultAccount" filepath="/config/user/user.ini" section="Features" key="bShowDefaultAccount" defvalue="0"/>
+		<item name="EnablePSWDial" filepath="/config/user/user.ini" section="Features" key="PswDialEnable" defvalue="0"/>
+		<item name="EnablePartitionTone" filepath="/config/user/user.ini" section="PhoneSetting" key="PartitionTone" defvalue="0"/>
+		<item name="EnableReplaceAll" filepath="/config/user/user.ini" section="ReplaceRule" key="ReplaceAll" defvalue="0"/>
+		<item name="EnableSIPNotifyPushXML" filepath="/config/user/user.ini" section="PushXML" key="SIPNotify" defvalue="0"/>
+		<item name="EnableSendPoundKey" filepath="/config/user/user.ini" section="Features" key="bSendPoundKey" defvalue="0"/>
+		<item name="EnableSilenceMode" filepath="/phone/factory/user/user.ini" section="SpecialFunctions" key="EnableSilenceMode" defvalue="0"/>
+		<item name="EnableVoiceMailTone" filepath="/config/user/user.ini" section="Features" key="VoiceMailTone" defvalue="1"/>
+		<item name="EnableWatchDog" filepath="/config/system/system.ini" section="WatchDog" key="bEnable" defvalue="1"/>
+		<item name="EnableHebrew" filepath="/config/system/system.ini" section="Language" key="IsEnableHebrew" defvalue="0"/>
+		<item name="XmlBrowserUser" filepath="/config/user/user.ini" section="XmlBrowser" key="UserName" defvalue=""/>	
+		<item name="XmlBrowserPassword" filepath="/config/user/user.ini" section="XmlBrowser" key="Password" defvalue=""/>	
+		<item name="EnlockPWD" filepath="/config/user/user.ini" section="PhoneSetting" key="EnLock" defvalue="0"/>
+		<item name="EthernetPCPortLink" filepath="/config/system/system.ini" section="Ethernet" key="PCPortLink" defvalue="0"/>
+		<item name="EthernetWANPortLink" filepath="/config/system/system.ini" section="Ethernet" key="WANPortLink" defvalue="0"/>
+		<item name="FWDRefuseCode" filepath="/config/user/user.ini" section="RefuseCode" key="nFWDRefuseCode" defvalue="302"/>
+		<item name="FactoryConfigCustomEnabled" filepath="/config/system/system.ini" section="Factory" key="bEnableCustom" defvalue="0"/>
+		<item name="FactoryResetOption" filepath="/config/system/system.ini" section="Factory" key="eResetOption" defvalue="3"/>
+     <item name="FeaturesRecentCallEnable" filepath="/config/user/user.ini" section="Features" key="RecentCallEnable" defvalue="0"/>
+     <item name="ForbidBLFFWDIncoming" filepath="/config/user/user.ini" section="Features" key="IsForbidFWDIncoming" defvalue="1"/>
+		<item name="ForbidZeroSwitch" filepath="/config/user/user.ini" section="Zero" key="ForbidZero" defvalue="1"/>
+		<item name="ForceToPlayBusytone" filepath="/phone/factory/user/user.ini" section="SpecialFunctions" key="EnableForceToPlayBusytone" defvalue="1"/>
+		<item name="ForwardForbidden" filepath="/config/user/user.ini" section="Forbidden" key="FWD" defvalue="0"/>
+		<item name="ForwardInternationalEnable" filepath="/config/user/user.ini" section="Forward International" key="Enable" defvalue="1"/>
+		<item name="ForwardInternationalNumber" filepath="/config/user/user.ini" section="Forward International" key="Number" defvalue="00"/>
+		<item name="ForwardMode" filepath="/config/user/user.ini" section="Features" key="FWDMode" defvalue="0"/>
+		<item name="ForwardTypeLastSaved" filepath="/config/Features/Forward.cfg" section="Forward" key="LastType" defvalue="1"/>
+		<item name="GPickupCode" filepath="/config/user/user.ini" section="Pickup" key="GPickupCode" defvalue=""/>
+		<item name="GPickupSwitch" filepath="/config/user/user.ini" section="Pickup" key="GPickup" defvalue="0"/>
+		<item name="GetBalanceEnable" filepath="/phone/factory/user/user.ini" section="SpecialFunctions" key="GetBalanceEnable" defvalue="0"/>
+		<item name="GroupCallParkSwitch" filepath="/config/user/user.ini" section="CallPark" key="bEnabledGroupCallPark" defvalue="0"/>
+		<item name="HTTPSTrustCertificates" filepath="/config/system/system.ini" section="https" key="TrustCertificates" defvalue="1"/>
+		<item name="HttpsCNValidation" filepath="/config/system/system.ini" section="https" key="CNValidation" defvalue="0"/>
+		<item name="HttpsDevCert" filepath="/config/system/system.ini" section="https" key="DevCert" defvalue="0"/>
+		<item name="HttpsCaCert" filepath="/config/system/system.ini" section="https" key="CaCert" defvalue="0"/>
+		<item name="HandfreeSend" filepath="/config/user/vpm.cfg" section="Profile" key="handfree_send" defvalue="39"/>
+		<item name="HandsetSend" filepath="/config/user/vpm.cfg" section="Profile" key="handset_send" defvalue="27"/>
+		<item name="HangUpAfterSuccessTrans" filepath="/config/user/user.ini" section="Transfer" key="HangUpAfterSuccessTrans" defvalue="1"/>
+		<item name="HeadSetKeyInTalkSwitch" filepath="/config/user/user.ini" section="HeadSet" key="HeadSetKeyInTalk" defvalue="1"/>
+		<item name="HeadsetAsCancel" filepath="/config/user/user.ini" section="Features" key="HeadsetAsCancel" defvalue="0"/>
+		<item name="HeadsetPriorSwitch" filepath="/config/user/user.ini" section="Features" key="HeadsetPrior" defvalue="0"/>
+		<item name="HeadsetSend" filepath="/config/user/vpm.cfg" section="Profile" key="headset_send" defvalue="29"/>
+		<item name="HeadsetTrainingSwitch" filepath="/config/user/user.ini" section="PhoneSetting" key="HeadSetTraining" defvalue="0"/>
+		<item name="HistoryBlackListShowSwitch" filepath="/config/user/user.ini" section="History" key="bBlackListShow" defvalue="1"/>
+		<item name="HistorySavedSwitch" filepath="/config/user/user.ini" section="History" key="bSaved" defvalue="1"/>
+		<item name="HoldTranDelay" filepath="/config/user/user.ini" section="Features" key="HoldTranDelay" defvalue="0"/>
+		<item name="HotDeskingOutbound" filepath="/config/user/user.ini" section="HotDesking_Dsskey" key="Outbound" defvalue="1"/>
+		<item name="HotDeskingPassword" filepath="/config/user/user.ini" section="HotDesking_Dsskey" key="Password" defvalue="1"/>
+		<item name="HotDeskingRegisterName" filepath="/config/user/user.ini" section="HotDesking_Dsskey" key="RegisterName" defvalue="1"/>
+		<item name="HotDeskingSipServer" filepath="/config/user/user.ini" section="HotDesking_Dsskey" key="SipServer" defvalue="1"/>
+		<item name="HotDeskingUserName" filepath="/config/user/user.ini" section="HotDesking_Dsskey" key="UserName" defvalue="1"/>
+		<item name="Start_HotDeskingOutbound" filepath="/config/user/user.ini" section="HotDesking_StartUp" key="Outbound" defvalue="1"/>
+		<item name="Start_HotDeskingPassword" filepath="/config/user/user.ini" section="HotDesking_StartUp" key="Password" defvalue="1"/>
+		<item name="Start_HotDeskingRegisterName" filepath="/config/user/user.ini" section="HotDesking_StartUp" key="RegisterName" defvalue="1"/>
+		<item name="Start_HotDeskingSipServer" filepath="/config/user/user.ini" section="HotDesking_StartUp" key="SipServer" defvalue="1"/>
+		<item name="Start_HotDeskingUserName" filepath="/config/user/user.ini" section="HotDesking_StartUp" key="UserName" defvalue="1"/>
+		<item name="HotlineDelay" filepath="/config/user/user.ini" section="Hotline" key="nTimeDelay" defvalue="2"/>      
+		<item name="HotlineNumber" filepath="/config/user/user.ini" section="Hotline" key="strNumber" defvalue=""/>
+		<item name="HttpServerPort" filepath="/config/system/system.ini" section="HttpServer" key="nPort" defvalue="80"/>
+		<item name="HttpServerSwitch" filepath="/config/system/system.ini" section="HttpServer" key="bEnable" defvalue="1"/>
+		<item name="HttpsServerPort" filepath="/config/system/system.ini" section="HttpsServer" key="nPort" defvalue="443"/>
+		<item name="HttpsServerSwitch" filepath="/config/system/system.ini" section="HttpsServer" key="bEnable" defvalue="0"/>
+		<item name="IdleResetNeedPwd" filepath="/config/user/user.ini" section="reset" key="IdleResetNeedPwd" defvalue="0"/>
+		<item name="ILBCEnable" filepath="/config/user/user.ini" section="Features" key="ILBC_enabled" defvalue="0"/>	
+		<item name="IMEInDialUI" filepath="/config/user/user.ini" section="Features" key="IMEType" defvalue="1"/>
+		<item name="InactiveLevel" filepath="/config/user/user.ini" section="Backlight" key="nInactiveLevel" defvalue="1"/>
+		<item name="IndicationBLFPickup" filepath="/config/user/user.ini" section="Pickup" key="Indication_BLFPickup" defvalue="0"/>
+		<item name="InstallHebrewForAllEdit" filepath="/config/system/system.ini" section="Language" key="IsInstallHebrewForAllEdit" defvalue="0"/>
+		<item name="InterDigitTime" filepath="/config/user/user.ini" section="Features" key="nInterDigitTime" defvalue="4"/>
+		<item name="IntercomAllowance" filepath="/config/user/user.ini" section="Intercom" key="bAllowed" defvalue="1"/>
+		<item name="IntercomBargeSwitch" filepath="/config/user/user.ini" section="Intercom" key="bIntercomBargeEnable" defvalue="1"/>
+		<item name="IntercomLedEnable" filepath="/phone/factory/user/user.ini" section="Ergocom" key="IsIntercomLed" defvalue="0"/>
+		<item name="IntercomMuteSwitch" filepath="/config/user/user.ini" section="Intercom" key="bIntercomMuteEnable" defvalue="1"/>
+		<item name="IntercomToneSwitch" filepath="/config/user/user.ini" section="Intercom" key="bIntercomToneEnable" defvalue="1"/>
+		<item name="InvalidNetEndCall" filepath="/config/user/user.ini" section="PhoneSetting" key="InvalidNetEndCall" defvalue="0"/>
+		<item name="IsHotDeskAccount" filepath="/config/user/voip/sipAccount0.cfg" section="HotDesking" key="IsHotDeskAccount" defvalue="0"/>
+		<item name="IsJoyce" filepath="/phone/factory/user/user.ini" section="Joyce" key="IsJoyce" defvalue="0"/>
+		<item name="Islock" filepath="/config/user/user.ini" section="Phone_Lock" key="Is_lock" defvalue="1"/>
+		<item name="JitterAdaptive" filepath="/config/user/vpm.cfg" section="Jitter" key="Adaptive" defvalue="1"/>
+		<item name="JitterMax" filepath="/config/user/vpm.cfg" section="Jitter" key="Max" defvalue="300"/>
+		<item name="JitterMin" filepath="/config/user/vpm.cfg" section="Jitter" key="Min" defvalue="60"/>
+		<item name="JitterNominal" filepath="/config/user/vpm.cfg" section="Jitter" key="Nominal" defvalue="120"/>
+		<item name="KeyAsSendSwitch" filepath="/config/user/user.ini" section="KeyAsSend" key="eType" defvalue="1"/>
+		<item name="LCDLogo" filepath="/config/user/user.ini" section="Features" key="LCD_Logo" defvalue="1"/>
+		<item name="LDAPCallInLookup" filepath="/config/user/LDAP.cfg" section="LDAP" key="bLookup4CallIn" defvalue="1"/>
+		<item name="LDAPDialLookup" filepath="/config/user/LDAP.cfg" section="LDAP" key="bLookup4Dial" defvalue="1"/>
+		<item name="LDAPDisplayName" filepath="/config/user/LDAP.cfg" section="LDAP" key="strDisplayName" defvalue=""/>
+		<item name="LDAPMaxHits" filepath="/config/user/LDAP.cfg" section="LDAP" key="nMaxHits" defvalue="50"/>
+		<item name="LDAPNameAttr" filepath="/config/user/LDAP.cfg" section="LDAP" key="strNameAttr" defvalue=""/>	
+		<item name="LDAPNameFilter" filepath="/config/user/LDAP.cfg" section="LDAP" key="strNameFilter" defvalue=""/>
+		<item name="LDAPNumbAttr" filepath="/config/user/LDAP.cfg" section="LDAP" key="strNumbAttr" defvalue=""/>	
+		<item name="LDAPNumberFilter" filepath="/config/user/LDAP.cfg" section="LDAP" key="strNumberFilter" defvalue=""/>		
+		<item name="LDAPSearchDelay" filepath="/config/user/LDAP.cfg" section="LDAP" key="nSearchDelay" defvalue="0"/>	
+		<item name="LDAPSort" filepath="/config/user/LDAP.cfg" section="LDAP" key="bSortResult" defvalue="0"/>
+		<item name="LDAPbase" filepath="/config/user/LDAP.cfg" section="LDAP" key="strBase" defvalue=""/>
+		<item name="LDAPhost" filepath="/config/user/LDAP.cfg" section="LDAP" key="strServerName" defvalue="0.0.0.0"/>
+		<item name="LDAPport" filepath="/config/user/LDAP.cfg" section="LDAP" key="nServerPort" defvalue="389"/>
+		<item name="LDAPpswd" filepath="/config/user/LDAP.cfg" section="LDAP" key="strUserPin" defvalue="" encrypt="1"/>
+		<item name="LDAPuser" filepath="/config/user/LDAP.cfg" section="LDAP" key="strUserName" defvalue=""/>
+		<item name="LDAPversion" filepath="/config/user/LDAP.cfg" section="LDAP" key="nProtocolVersion" defvalue="3"/>
+		<item name="LDAPSwitch" filepath="/config/user/LDAP.cfg" section="LDAP" key="bEnable" defvalue="0"/>	
+		<item name="LDAPTLSMode" filepath="/config/user/LDAP.cfg" section="LDAP" key="TLS_mode" defvalue="0"/>	
+		<item name="LLDPPacketInterval" filepath="/config/system/system.ini" section="LLDP" key="nPacketInterval" defvalue="60"/>
+		<item name="LLDPSwitch" filepath="/config/system/system.ini" section="LLDP" key="bEnableLLDP" defvalue="0"/>
+		<item name="LanguageGuiLang" filepath="/config/user/user.ini" section="Language" key="ActiveWebLanguage" defvalue="English"/>
+		<item name="LanguageWebLang" filepath="/config/user/user.ini" section="Lang" key="WebLanguage" defvalue="English"/>
+		<item name="LastHeadSet" filepath="/config/user/user.ini" section="HeadSet" key="LastHeadSet" defvalue="0"/>
+		<item name="ListenAddress10IPAddress" filepath="/config/user/MulticastPage.cfg" section="ListenAddress10" key="IPAddress" defvalue=""/>
+		<item name="ListenAddress10Label" filepath="/config/user/MulticastPage.cfg" section="ListenAddress10" key="Label" defvalue=""/>
+		<item name="ListenAddress1IPAddress" filepath="/config/user/MulticastPage.cfg" section="ListenAddress1" key="IPAddress" defvalue=""/>
+		<item name="ListenAddress1Label" filepath="/config/user/MulticastPage.cfg" section="ListenAddress1" key="Label" defvalue=""/>
+		<item name="ListenAddress2IPAddress" filepath="/config/user/MulticastPage.cfg" section="ListenAddress2" key="IPAddress" defvalue=""/>
+		<item name="ListenAddress2Label" filepath="/config/user/MulticastPage.cfg" section="ListenAddress2" key="Label" defvalue=""/>
+		<item name="ListenAddress3IPAddress" filepath="/config/user/MulticastPage.cfg" section="ListenAddress3" key="IPAddress" defvalue=""/>
+		<item name="ListenAddress3Label" filepath="/config/user/MulticastPage.cfg" section="ListenAddress3" key="Label" defvalue=""/>
+		<item name="ListenAddress4IPAddress" filepath="/config/user/MulticastPage.cfg" section="ListenAddress4" key="IPAddress" defvalue=""/>
+		<item name="ListenAddress4Label" filepath="/config/user/MulticastPage.cfg" section="ListenAddress4" key="Label" defvalue=""/>
+		<item name="ListenAddress5IPAddress" filepath="/config/user/MulticastPage.cfg" section="ListenAddress5" key="IPAddress" defvalue=""/>
+		<item name="ListenAddress5Label" filepath="/config/user/MulticastPage.cfg" section="ListenAddress5" key="Label" defvalue=""/>
+		<item name="ListenAddress6IPAddress" filepath="/config/user/MulticastPage.cfg" section="ListenAddress6" key="IPAddress" defvalue=""/>
+		<item name="ListenAddress6Label" filepath="/config/user/MulticastPage.cfg" section="ListenAddress6" key="Label" defvalue=""/>
+		<item name="ListenAddress7IPAddress" filepath="/config/user/MulticastPage.cfg" section="ListenAddress7" key="IPAddress" defvalue=""/>
+		<item name="ListenAddress7Label" filepath="/config/user/MulticastPage.cfg" section="ListenAddress7" key="Label" defvalue=""/>
+		<item name="ListenAddress8IPAddress" filepath="/config/user/MulticastPage.cfg" section="ListenAddress8" key="IPAddress" defvalue=""/>
+		<item name="ListenAddress8Label" filepath="/config/user/MulticastPage.cfg" section="ListenAddress8" key="Label" defvalue=""/>
+		<item name="ListenAddress9IPAddress" filepath="/config/user/MulticastPage.cfg" section="ListenAddress9" key="IPAddress" defvalue=""/>
+		<item name="ListenAddress9Label" filepath="/config/user/MulticastPage.cfg" section="ListenAddress9" key="Label" defvalue=""/>		
+		<item name="LocalDtmfTone" filepath="/config/user/user.ini" section="Features" key="PLAY_LOCAL_DTMF_TONE" defvalue="0"/>
+		<item name="LocalTimeDateFormatType" filepath="/config/system/system.ini" section="LocalTime" key="eDateFormat" defvalue="0"/>
+		<item name="LocalTimeDaylightSaving" filepath="/config/system/system.ini" section="LocalTime" key="iDSTType" defvalue="0"/>
+		<item name="LocalTimeDhcpTimeSwitch" filepath="/config/system/system.ini" section="LocalTime" key="bEnableDHCPTime" defvalue="0"/>
+		<item name="LocalTimeServer1" filepath="/config/system/system.ini" section="LocalTime" key="strPrimaryNTPServer" defvalue=""/>
+		<item name="LocalTimeServer2" filepath="/config/system/system.ini" section="LocalTime" key="strSecondaryNTPServer" defvalue=""/>
+		<item name="LocalTimeTimeFormatType" filepath="/config/system/system.ini" section="LocalTime" key="eTimeFormat" defvalue="0"/>
+		<item name="LocalTimeType" filepath="/config/system/system.ini" section="LocalTime" key="bNTPEnable" defvalue="0"/>	
+		<item name="LockTimeout" filepath="/config/user/user.ini" section="Phone_Lock" key="lock_time_out" defvalue="0"/>
+		<item name="LogoDelayTime" filepath="/config/user/user.ini" section="Logo" key="DelayTime" defvalue="10"/>
+		<item name="LogonWizard" filepath="/config/user/user.ini" section="PhoneSetting" key="LogonWizard" defvalue="0"/>
+		<item name="MaxCallCount" filepath="/config/user/user.ini" section="Features" key="Max_Calls" defvalue="3"/>
+		<item name="MaxRTPPort" filepath="/config/system/system.ini" section="RTPPORT" key="MaxRTPPort" defvalue="11800"/>
+		<item name="MemoryLightDND" filepath="/config/vpPhone/vpPhone.ini" section="MemoryLight" key="DND" defvalue="-1"/>
+		<item name="MemoryLightFWD" filepath="/config/vpPhone/vpPhone.ini" section="MemoryLight" key="FWD" defvalue="-1"/>
+		<item name="MinRTPPort" filepath="/config/system/system.ini" section="RTPPORT" key="MinRTPPort" defvalue="11780"/>
+		<item name="Network802_1CA_FileName" filepath="/config/system/system.ini" section="802.1X" key="CA_FileName" defvalue=""/>
+		<item name="Network802_1Device_FileName" filepath="/config/system/system.ini" section="802.1X" key="Device_FileName" defvalue=""/>
+		<item name="Network802_1XIdentity" filepath="/config/system/system.ini" section="802.1X" key="nIdentity" defvalue=""/>
+		<item name="Network802_1XMD5Passwd" filepath="/config/system/system.ini" section="802.1X" key="strMD5Passwd" defvalue="" encrypt="1"/>
+		<item name="Network802_1XMode" filepath="/config/system/system.ini" section="802.1X" key="bEnable" defvalue="0"/>
+		<item name="NetworkCalllogSwitch" filepath="/config/user/user.ini" section="BroadSoft" key="bNetworkCallLogEnable" defvalue="0"/>
+		<item name="NetworkDirectoryEnterpriseCommonDisplayname" filepath="/config/user/user.ini" section="BroadSoft" key="NetworkDirectoryEnterpriseCommonDisplayname" defvalue="EnterpriseCommon"/>
+		<item name="NetworkDirectoryEnterpriseDisplayname" filepath="/config/user/user.ini" section="BroadSoft" key="NetworkDirectoryEnterpriseDisplayname" defvalue="Enterprise"/> 
+		<item name="NetworkDirectoryGroupCommonDisplayname" filepath="/config/user/user.ini" section="BroadSoft" key="NetworkDirectoryGroupCommonDisplayname" defvalue="GroupCommon"/>
+		<item name="NetworkDirectoryGroupDisplayname" filepath="/config/user/user.ini" section="BroadSoft" key="NetworkDirectoryGroupDisplayname" defvalue="Group"/> 
+		<item name="NetworkDirectoryPersonalDisplayname" filepath="/config/user/user.ini" section="BroadSoft" key="NetworkDirectoryPersonalDisplayname" defvalue="Personal"/>
+		<item name="NetworkDirectoryType" filepath="/config/user/user.ini" section="BroadSoft" key="NetworkDirectoryType" defvalue="0"/> 
+		<item name="NetworkIPAddressMode" filepath="/config/system/system.ini" section="Network" key="IPAddressMode" defvalue="2"/>
+		<item name="NetworkIPv6AutoIPConf" filepath="/config/system/system.ini" section="Network" key="IPv6AutoIPConf" defvalue=""/>
+		<item name="NetworkIPv6Prefix" filepath="/config/system/system.ini" section="Network" key="IPv6Prefix" defvalue="64"/>
+		<item name="NetworkIPv6WANType" filepath="/config/system/system.ini" section="Network" key="IPv6WANType" defvalue="0"/>
+		<item name="NetworkIPv6WanGateway" filepath="/config/system/system.ini" section="Network" key="IPv6WanGateway" defvalue=""/>
+		<item name="NetworkIPv6WanIP" filepath="/config/system/system.ini" section="Network" key="IPv6WanIP" defvalue=""/>
+		<item name="NetworkIPv6WanPrimaryDNS" filepath="/config/system/system.ini" section="Network" key="IPv6WanPrimaryDNS" defvalue=""/>
+		<item name="NetworkIPv6WanSecondaryDNS" filepath="/config/system/system.ini" section="Network" key="IPv6WanSecondaryDNS" defvalue="0"/>
+		<item name="NetworkLanDHCPEndIP" filepath="/config/system/system.ini" section="Network" key="strDHCPClientEnd" defvalue="10.0.0.100"/>
+		<item name="NetworkLanDHCPStartIP" filepath="/config/system/system.ini" section="Network" key="strDHCPClientBegin" defvalue="10.0.0.10"/>
+		<item name="NetworkLanEnableDHCP" filepath="/config/system/system.ini" section="Network" key="bLanDHCPServer" defvalue="0"/>
+		<item name="NetworkLanRouterIP" filepath="/config/system/system.ini" section="Network" key="strLanIP" defvalue="10.0.0.1"/>
+		<item name="NetworkLanSpanToPCPort" filepath="/config/system/system.ini" section="Network" key="SpanToPCPort" defvalue="0"/>
+		<item name="NetworkLanSubnetMask" filepath="/config/system/system.ini" section="Network" key="strLanMask" defvalue="255.255.255.0"/>
+		<item name="NetworkLanType" filepath="/config/system/system.ini" section="Network" key="bBridgeMode" defvalue="1"/>
+		<item name="NetworkMaxRTPPort" filepath="/config/system/system.ini" section="RTPPORT" key="MaxRTPPort" defvalue=""/>
+		<item name="NetworkMinRTPPort" filepath="/config/system/system.ini" section="RTPPORT" key="MinRTPPort" defvalue=""/>
+		<item name="NetworkPppoePin" filepath="/config/system/system.ini" section="Network" key="strPPPoEPin" defvalue="" encrypt="1"/>
+		<item name="NetworkPppoeUser" filepath="/config/system/system.ini" section="Network" key="strPPPoEUser" defvalue=""/>
+		<item name="NetworkRTPTOS" filepath="/config/system/system.ini" section="QoS" key="nRTPQoS" defvalue="46"/>
+		<item name="NetworkRegSurgePrevention" filepath="/config/system/system.ini" section="REGSURGE" key="RegSurgePrevention" defvalue="0"/>
+		<item name="NetworkSIGNALTOS" filepath="/config/system/system.ini" section="QoS" key="nSipQoS" defvalue="26"/>
+		<item name="NetworkWanStaticGateWay" filepath="/config/system/system.ini" section="Network" key="strWanGateway" defvalue=""/>
+		<item name="NetworkWanStaticIp" filepath="/config/system/system.ini" section="Network" key="strWanIP" defvalue=""/>
+		<item name="NetworkWanStaticMask" filepath="/config/system/system.ini" section="Network" key="strWanMask" defvalue=""/>
+		<item name="NetworkWanStaticPriDns" filepath="/config/system/system.ini" section="Network" key="strWanPrimaryDNS" defvalue=""/>
+		<item name="NetworkWanStaticSecDns" filepath="/config/system/system.ini" section="Network" key="strWanSecondaryDNS" defvalue=""/>
+		<item name="NetworkWanType" filepath="/config/system/system.ini" section="Network" key="eWANType" defvalue="0"/>
+		<item name="NetworkWebType" filepath="/config/system/system.ini" section="Webserver Type" key="WebType" defvalue="1"/>
+		<item name="NetworkhttpPort" filepath="/config/system/system.ini" section="HttpServer" key="nPort" defvalue="80"/>
+		<item name="NetworkhttpsPort" filepath="/config/system/system.ini" section="HttpsServer" key="nPort" defvalue="443"/>
+		<item name="NetworksnmpPort" filepath="/config/system/system.ini" section="SNMP" key="nPort" defvalue=""/>
+		<item name="NetworksnmpSwitch" filepath="/config/system/system.ini" section="SNMP" key="bEnable" defvalue="0"/>
+		<item name="NetworksnmpTrustedAddress" filepath="/config/system/system.ini" section="SNMP" key="strServerName" defvalue=""/>
+		<item name="NoAnswerForwardDelayTime" filepath="/config/user/user.ini" section="NoAnswerForward" key="Timeout" defvalue="20"/>
+		<item name="NoAnswerForwardOffCode" filepath="/config/user/user.ini" section="NoAnswerForward" key="strOffCode" defvalue="0"/>
+		<item name="NoAnswerForwardOnCode" filepath="/config/user/user.ini" section="NoAnswerForward" key="strOnCode" defvalue="0"/>
+		<item name="NoAnswerForwardRingCount" filepath="/config/user/user.ini" section="NoAnswerForward" key="nRingCount" defvalue="5"/>
+		<item name="NoAnswerForwardSwitch" filepath="/config/user/user.ini" section="NoAnswerForward" key="bEnable" defvalue="0"/>
+		<item name="NoAnswerForwardTarget" filepath="/config/user/user.ini" section="NoAnswerForward" key="strTarget" defvalue=""/>
+		<item name="NormalRefuseCode" filepath="/config/user/user.ini" section="RefuseCode" key="nNormalRefuseCode" defvalue="486"/>
+		<item name="NotHoldByIntercomCall" filepath="/phone/factory/user/user.ini" section="SpecialFunctions" key="NotHoldByIntercomCall" defvalue="0"/>
+		<item name="OLD_VERHwVer" filepath="/tmp/InitSave" section="OLD_VER" key="HwVer" defvalue="Unknown"/>
+		<item name="OnhookAttendTranSwitch" filepath="/config/user/user.ini" section="Transfer" key="bOnhookAttendTranEnable" defvalue="1"/>
+		<item name="OnhookBlindTranSwitch" filepath="/config/user/user.ini" section="Transfer" key="bOnhookBlindTranEnable" defvalue="1"/>
+		<item name="PSWDialLength" filepath="/config/user/user.ini" section="Features" key="PswLength" defvalue="0"/>
+		<item name="PSWDialPrefix" filepath="/config/user/user.ini" section="Features" key="PswPrefix" defvalue="60"/>
+		<item name="PacketCapClipFilePrefix" filepath="/config/user/user.ini" section="PacketCapture" key="strClipFilePrefix" defvalue="/tmp/log/data"/>
+		<item name="PacketCapFileCount" filepath="/config/user/user.ini" section="PacketCapture" key="nFileCount" defvalue="5"/>
+		<item name="PayloadType" filepath="/config/user/MulticastPage.cfg" section="audio" key="PayloadType" defvalue="G722"/>
+		<item name="PhoneFirmware" filepath="/phone/version" section="version" key="FIRMWARE_VERSION" defvalue=""/>
+		<item name="PhoneLock" filepath="/config/user/user.ini" section="Phone_Lock" key="Lock" defvalue="0"/>
+		<item name="PhoneProductId" filepath="/phone/version" section="date" key="date" defvalue=""/>
+		<item name="PickupAllowBlfRing" filepath="/config/user/user.ini" section="Pickup" key="AllowBlfRing" defvalue="0"/>
+		<item name="PlayHoldToneDelay" filepath="/config/user/user.ini" section="Features" key="PlayHoldToneDelay" defvalue="30"/>
+		<item name="PlayHoldToneSwitch" filepath="/config/user/user.ini" section="Features" key="PlayHoldTone" defvalue="1"/>
+		<item name="PredialAutodial" filepath="/config/user/user.ini" section="Features" key="bPredialAutodial" defvalue="0"/>
+		<item name="PressDigitTime" filepath="/config/user/user.ini" section="PhoneSetting" key="PressDigitTime" defvalue="1"/>
+		<item name="ProductName" filepath="/config/user/user.ini" section="PhoneSetting" key="ProductName" defvalue=""/>
+		<item name="PushXMLBlockInCalling" filepath="/config/user/user.ini" section="PushXML" key="BlockInCalling" defvalue="0"/>
+		<item name="PushXMLServerIP" filepath="/config/user/user.ini" section="PushXML" key="ServerIP" defvalue=""/>
+		<item name="ReDialtoneNumber" filepath="/config/user/user.ini" section="ReDialtone" key="strReDialtoneNumber" defvalue=""/>
+		<item name="ReLogOffTime" filepath="/config/user/user.ini" section="Features" key="ReLogOffTime" defvalue="5"/>
+		<item name="ReceiveActive" filepath="/config/user/MulticastPage.cfg" section="ReceivePriority" key="Active" defvalue="1"/>
+		<item name="ReceivePriority" filepath="/config/user/MulticastPage.cfg" section="ReceivePriority" key="Priority" defvalue="10"/>
+		<item name="RedialName" filepath="/config/user/user.ini" section="Redial" key="RedialDisplayName" defvalue=""/>
+		<item name="RedialNumber" filepath="/config/user/user.ini" section="Redial" key="RedialNum" defvalue=""/>
+		<item name="RedialServer" filepath="/config/user/user.ini" section="Redial" key="RedialServerName" defvalue=""/>
+		<item name="RedialUser" filepath="/config/user/user.ini" section="Redial" key="RedialUserName" defvalue=""/>
+		<item name="RedirectDelayTime" filepath="/config/system/system.ini" section="Redirect" key="DelayTime" defvalue="1000"/>
+		<item name="RedirectEnable" filepath="/config/system/system.ini" section="Redirect" key="bEnable" defvalue="0"/>
+		<item name="RedirectUser" filepath="/config/system/system.ini" section="Redirect" key="UserName" defvalue=""/>
+		<item name="RedirectPassword" filepath="/config/system/system.ini" section="Redirect" key="strPassword" defvalue="" encrypt="1"/>
+		<item name="RedirectWaitTimes" filepath="/config/system/system.ini" section="Redirect" key="WaitTimes" defvalue="5"/>			
+		<item name="RestartalkAfter183" filepath="/config/user/user.ini" section="Features" key="bRestartTalkAfter183" defvalue="1"/>
+		<item name="ResumeAfterTran" filepath="/config/user/user.ini" section="Features" key="ResumeAfterTran" defvalue="0"/>
+		<item name="RingForTranFailed" filepath="/config/user/user.ini" section="PhoneSetting" key="RingForTranFailed" defvalue="Ring1.wav"/>
+		<item name="RingerDevice" filepath="/config/user/user.ini" section="RingerDevice" key="eUseHeadSet" defvalue="0"/>
+		<item name="Ringtype" filepath="/config/user/user.ini" section="Ring" key="strRingFile" defvalue="/phone/resource/sysdata/sound/Ring1.wav"/>
+		<item name="SMSEnableInLock" filepath="/phone/factory/user/user.ini" section="SpecialFunctions" key="SMSEnableInLock" defvalue="1"/>
+		<item name="SRemoteNameFlashTime" filepath="/config/user/user.ini" section="SRemoteName" key="FlashTime" defvalue="3600"/>
+		<item name="SaveCallHistory" filepath="/config/user/user.ini" section="Features" key="bSaveCallHistory" defvalue="1"/>
+		<item name="SaveCallLogSwitch" filepath="/config/user/user.ini" section="Features" key="bSaveCallHistory" defvalue="1"/>
+		<item name="FeaturesBackGrounds" filepath="/config/user/user.ini" section="Features" key="BackGrounds" defvalue=""/>
+		<item name="ScreenSaverTime" filepath="/config/user/user.ini" section="ScreenSaver" key="nTimeout" defvalue="30"/>
+		<item name="ScreenSaverTimeout" filepath="/config/user/user.ini" section="ScreenSaver" key="nUsignTimeout" defvalue="30"/>
+		<item name="ScreenSaverType" filepath="/config/user/user.ini" section="ScreenSaver" key="eType" defvalue="1"/>
+		<item name="SearchNameFromRemoteSwitch" filepath="/config/user/user.ini" section="SRemoteName" key="Enable" defvalue="0"/>
+		<item name="SemiAttendedTranSwitch" filepath="/config/user/user.ini" section="Transfer" key="bSemiAttendedTranEnable" defvalue="1"/>		
+		<item name="SipRFC2543Hold" filepath="/config/system/system.ini" section="sipServerOptions" key="bRFC2543Hold" defvalue="0"/>
+		<item name="SipReservePound" filepath="/config/system/system.ini" section="sipServerOptions" key="bUse23AsPound" defvalue="0"/>
+		<item name="SipUseOutBoundInDialog" filepath="/config/system/system.ini" section="sipServerOptions" key="bUseOutBoundInDialog" defvalue="1"/>
+		<item name="SipVoiceEncryptType" filepath="/config/system/system.ini" section="sipServerOptions" key="VoiceEncryptType" defvalue="0"/>
+		<item name="SoftkeyChangedCallIncome" filepath="/phone/factory/user/user.ini" section="YUK" key="SoftkeyChangedCallIncome" defvalue="0"/>
+		<item name="SpecialAutoAnswerTone" filepath="/config/user/user.ini" section="Features" key="SpecialAutoAnswerTone" defvalue="0"/>
+		<item name="StarOnlyOnDialUI" filepath="/phone/factory/user/user.ini" section="YUK" key="StarOnlyStarDial" defvalue="0"/>		
+		<item name="SubscribeIntercom" filepath="/config/system/system.ini" section="sipServerOptions" key="bSubscribeIntercom" defvalue="0"/>
+		<item name="SuperSearchKeypadSwitch" filepath="/config/user/user.ini" section="SuperSearch" key="bSoftKeyboard" defvalue="0"/>
+		<item name="SupportKorean" filepath="/phone/factory/user/user.ini" section="SpecialFunctions" key="SupportKorean" defvalue="0"/>
+		<item name="SysLogLevel" filepath="/config/system/system.ini" section="Syslog" key="LogType" defvalue="0"/>
+		<item name="SyslogServerName" filepath="/config/system/system.ini" section="Syslog" key="SyslogServer" defvalue=""/>
+		<item name="TR069ConnectionRequestPassword" filepath="/config/TR069/tr069.ini" section="ManagementServer" key="ConnectionRequestPassword" defvalue="" encrypt="1"/>
+		<item name="TR069ConnectionRequestUsername" filepath="/config/TR069/tr069.ini" section="ManagementServer" key="ConnectionRequestUsername" defvalue=""/>
+		<item name="TR069DeviceManufacturerOUI" filepath="/config/TR069/tr069.ini" section="DeviceInfo" key="ManufacturerOUI" defvalue=""/>
+		<item name="TR069DeviceProductClass" filepath="/config/TR069/tr069.ini" section="DeviceInfo" key="ProductClass" defvalue=""/> 
+		<item name="TR069PeriodicInformInterval" filepath="/config/TR069/tr069.ini" section="ManagementServer" key="PeriodicInformInterval" defvalue="30"/>
+		<item name="TR069PeriodicInformSwitch" filepath="/config/TR069/tr069.ini" section="ManagementServer" key="PeriodicInformEnable" defvalue="1"/>
+		<item name="TR069ServerPassword" filepath="/config/TR069/tr069.ini" section="ManagementServer" key="Password" defvalue="" encrypt="1"/>
+		<item name="TR069ServerTR069Switch" filepath="/config/TR069/tr069.ini" section="ManagementServer" key="EnableTR069" defvalue="0"/>
+		<item name="TR069ServerURL" filepath="/config/TR069/tr069.ini" section="ManagementServer" key="URL" defvalue=""/>
+		<item name="TR069ServerUsername" filepath="/config/TR069/tr069.ini" section="ManagementServer" key="Username" defvalue=""/>
+		<item name="TelnetEnable" filepath="/config/system/system.ini" section="Telnet" key="bEnable" defvalue="0"/>
+		<item name="TextLogo" filepath="/config/user/user.ini" section="Logo" key="TextLogo" defvalue="Yealink"/>
+		<item name="TimeInterval" filepath="/config/system/system.ini" section="LocalTime" key="nNTPLeaseSeconds" defvalue=""/>
+		<item name="ToneAutoanswer" filepath="/config/user/vpm.cfg" section="Tone Param" key="autoanswer" defvalue=""/>
+		<item name="ToneBusy" filepath="/config/user/vpm.cfg" section="Tone Param" key="busy" defvalue="425/375,0/375"/>
+		<item name="ToneCallwaiting" filepath="/config/user/vpm.cfg" section="Tone Param" key="callwaiting" defvalue="425/200,0/200,425/200,0/4400"/>
+		<item name="ToneCallwaiting2" filepath="/config/user/vpm.cfg" section="Tone Param" key="callwaiting2" defvalue=""/>
+		<item name="ToneCallwaiting3" filepath="/config/user/vpm.cfg" section="Tone Param" key="callwaiting3" defvalue=""/>
+		<item name="ToneCallwaiting4" filepath="/config/user/vpm.cfg" section="Tone Param" key="callwaiting4" defvalue=""/>
+		<item name="ToneCongestion" filepath="/config/user/vpm.cfg" section="Tone Param" key="congestion" defvalue="425/375,0/375,420/375,0/375"/>
+		<item name="ToneCountry" filepath="/config/user/vpm.cfg" section="vpm_tone_Country" key="Country" defvalue="Custom"/>
+		<item name="ToneDial" filepath="/config/user/vpm.cfg" section="Tone Param" key="dial" defvalue="413+438/1000"/>
+		<item name="ToneDialrecall" filepath="/config/user/vpm.cfg" section="Tone Param" key="dialrecall" defvalue="413+438"/>
+		<item name="ToneInfo" filepath="/config/user/vpm.cfg" section="Tone Param" key="info" defvalue="425/2500,0/500"/>
+		<item name="ToneMessage" filepath="/config/user/vpm.cfg" section="Tone Param" key="message" defvalue=""/>
+		<item name="ToneRecord" filepath="/config/user/vpm.cfg" section="Tone Param" key="record" defvalue="!425/1000,!0/15000,425/360,0/15000"/>
+		<item name="ToneRing" filepath="/config/user/vpm.cfg" section="Tone Param" key="ring" defvalue="413+438/400,0/200,413+438/400,0/2000"/>
+		<item name="ToneStrategy" filepath="/config/user/user.ini" section="Profile" key="tone_strategy" defvalue="1"/>
+		<item name="ToneStutter" filepath="/config/user/vpm.cfg" section="Tone Param" key="stutter" defvalue="413+438/100,0/40"/>
+		<item name="TraceLevel" filepath="/config/user/MulticastPage.cfg" section="Trace" key="Level" defvalue="2"/>
+		<item name="TranAfterConfExitSwitch" filepath="/config/user/user.ini" section="Transfer" key="bTranAfterConfExitEnable" defvalue="0"/>
+		<item name="TransferDTMF" filepath="/config/user/user.ini" section="Features" key="TransferDTMF" defvalue=""/>
+		<item name="TransferModeViaDsskey" filepath="/config/user/user.ini" section="Transfer" key="DSSKeyDealType" defvalue="2"/>	
+		<item name="UCPassword" filepath="/config/user/user.ini" section="Broadsoft UC" key="strPassword" defvalue=""/>
+		<item name="UCUsername" filepath="/config/user/user.ini" section="Broadsoft UC" key="strUsername" defvalue=""/>
+		<item name="UnlockPIN" filepath="/config/user/user.ini" section="Phone_Lock" key="Unlock_PIN" defvalue="" encrypt="0"/>
+		<item name="LockEnable" filepath="/config/user/user.ini" section="Phone_Lock" key="Enable" defvalue=""/>
+		<item name="UpdateStatus" filepath="/tmp/UpdateStatus" section="PROC" key="STATUS" defvalue=""/>
+		<item name="UseLocalFwd" filepath="/config/Features/Forward.cfg" section="Forward" key="UseLocalFwd" defvalue="1"/>
+		<item name="UserEnable" filepath="/phone/factory/user/user.ini" section="SpecialFunctions" key="UserEnable" defvalue="1"/>
+		<item name="UserMode" filepath="/config/system/system.ini" section="Advanced" key="var_enabled" defvalue="0"/>
+		<item name="UserNameAdmin" filepath="/config/user/user.ini" section="UserName" key="admin" defvalue="admin"/>
+		<item name="UserNameUser" filepath="/config/user/user.ini" section="UserName" key="user" defvalue="user"/>
+		<item name="UserNameVar" filepath="/config/user/user.ini" section="UserName" key="var" defvalue="var"/>
+		<item name="VPMCNG" filepath="/config/user/vpm.cfg" section="Profile" key="CNG" defvalue="1"/>
+		<item name="VPMECHO" filepath="/config/user/vpm.cfg" section="Profile" key="ECHO" defvalue="1"/>
+		<item name="VPMVAD" filepath="/config/user/vpm.cfg" section="Profile" key="VAD" defvalue="0"/>
+		<item name="VlanDhcpOption" filepath="/config/system/system.ini" section="VLAN" key="DHCPOption" defvalue="132"/>
+		<item name="VlanDhcpSwitch" filepath="/config/system/system.ini" section="VLAN" key="VlanDHCP" defvalue="1"/>
+		<item name="VlanPcPriority" filepath="/config/system/system.ini" section="VLAN" key="nPcPriority" defvalue="0"/>
+		<item name="VlanPcSwitch" filepath="/config/system/system.ini" section="VLAN" key="bPcSwitch" defvalue="0"/>
+		<item name="VlanPcVid" filepath="/config/system/system.ini" section="VLAN" key="nPcVid" defvalue="1"/>
+		<item name="VlanWanPriority" filepath="/config/system/system.ini" section="VLAN" key="nPriority" defvalue="0"/>
+		<item name="VlanWanSwitch" filepath="/config/system/system.ini" section="VLAN" key="bEnable" defvalue="0"/>
+		<item name="VlanWanVid" filepath="/config/system/system.ini" section="VLAN" key="nID" defvalue="1"/>
+		<item name="NetworkWanStaticDNSEnable" filepath="/config/system/system.ini" section="Network" key="bEnableStaticDNS" defvalue="0"/>
+        <item name="NetworkIPv6WanStaticDNSEnable" filepath="/config/system/system.ini" section="Network" key="IPv6StaticDNS" defvalue="0"/>
+        <item name="NTPPriority" filepath="/config/system/system.ini" section="LocalTime" key="NtpCfgPriorDhcp" defvalue="0"/>
+		<item name="VolumeButtonSoundOn" filepath="/config/user/user.ini" section="Volume" key="bButtonSoundOn" defvalue="1"/>
+		<item name="VolumeColorRingback" filepath="/config/user/user.ini" section="Volume" key="nColorRingback" defvalue="5"/>
+		<item name="VolumeOutputGroup" filepath="/config/user/user.ini" section="PhoneSetting" key="GroupSpkVol" defvalue="8"/>
+		<item name="VolumeRing" filepath="/config/user/user.ini" section="Volume" key="nRing" defvalue="5"/>
+		<item name="VolumeSendKeySoundOn" filepath="/config/user/user.ini" section="Volume" key="bSendKeySoundOn" defvalue="1"/>
+		<item name="VolumeSetProfile" filepath="/config/system/system.ini" section="VolumeSet" key="bProfile" defvalue="1"/>		
+		<item name="VolumeTalkInputHandfree" filepath="/config/user/user.ini" section="Volume" key="nTalkInputHandfree" defvalue="5"/>
+		<item name="VolumeTalkInputHandset" filepath="/config/user/user.ini" section="Volume" key="nTalkInputHandset" defvalue="5"/>
+		<item name="VolumeTalkInputHeadset" filepath="/config/user/user.ini" section="Volume" key="nTalkInputHeadset" defvalue="5"/>
+		<item name="VolumeTalkOutputHandfree" filepath="/config/user/user.ini" section="Volume" key="nTalkOutputHandfree" defvalue="5"/>
+		<item name="VolumeTalkOutputHandset" filepath="/config/user/user.ini" section="Volume" key="nTalkOutputHandset" defvalue="5"/>
+		<item name="VolumeTalkOutputHeadset" filepath="/config/user/user.ini" section="Volume" key="nTalkOutputHeadset" defvalue="5"/>
+		<item name="VolumeToneHandfree" filepath="/config/user/user.ini" section="Volume" key="nToneHandfree" defvalue="5"/>
+		<item name="VolumeToneHandset" filepath="/config/user/user.ini" section="Volume" key="nToneHandset" defvalue="5"/>
+		<item name="VolumeToneHeadset" filepath="/config/user/user.ini" section="Volume" key="nToneHeadset" defvalue="5"/>
+		<item name="VpnSwitch" filepath="/config/system/system.ini" section="VPN" key="bEnableVPN" defvalue=""/>
+		<item name="WatchDogTime" filepath="/config/user/user.ini" section="WatchDog" key="Time" defvalue="3"/>
+		<item name="ZeroWaitTime" filepath="/config/user/user.ini" section="Zero" key="iZeroWaitTime" defvalue="5"/>	
+		<item name="SettingEnLock" filepath="/config/user/user.ini" section="PhoneSetting" key="EnLock" defvalue="0"/>
+		<item name="GroupListenInTalkingEnable" filepath="/config/user/user.ini" section="PhoneSetting" key="GroupListenInTalkingEnable" defvalue="1"/>
+    <item name="AccountNum" filepath="/factory/voip/AccountNum.cfg" section="AccountNum" key="IsAccountNum16" defvalue="0"/>
+    <item name="ServerLogLevel" filepath="/config/system/system.ini" section="sipServerOptions" key="nLogLevel" defvalue="1"/>
+    <item name="PowerLedIdle&Talk" filepath="/config/user/user.ini" section="Features" key="PowerLedIdle&Talk" defvalue="0"/>
+ 		<item name="PowerLedMail" filepath="/config/user/user.ini" section="Features" key="PowerLedMail" defvalue="1"/>
+		<item name="ExportCFGClearPWD" filepath="/config/user/user.ini" section="Features" key="bExportCFGClearPWD" defvalue="1"/>
+    <item name="BasicSwitchAccount" filepath="/config/user/WebItemsLevel.cfg" section="Account" key="switch-account" defvalue="0"/>
+    <item name="BasicWanGroup" filepath="/config/user/WebItemsLevel.cfg" section="Network" key="wan-group" defvalue="0"/>
+    <item name="BasicWanStaticip" filepath="/config/user/WebItemsLevel.cfg" section="Network" key="wan-group" defvalue="0"/>
+    <item name="BasicWandhcp" filepath="/config/user/WebItemsLevel.cfg" section="Network" key="wan-dhcp" defvalue="0"/>
+	  <item name="BasicIpaddressMode" filepath="/config/user/WebItemsLevel.cfg" section="Network-Basic" key="ipaddress-mode" defvalue="0"/>
+	  <item name="BasicIpv4config" filepath="/config/user/WebItemsLevel.cfg" section="Network-Basic" key="ipv4config" defvalue="0"/>
+	  <item name="BasicIpv6config" filepath="/config/user/WebItemsLevel.cfg" section="Network-Basic" key="ipv6config" defvalue="0"/>
+    <item name="Adv8021x" filepath="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="8021x" defvalue="0"/>
+    <item name="AdvACDSubscripPeriod" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="ACD-subscrip-period" defvalue="0"/>
+    <item name="AdvBLANumber" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="BLA-number" defvalue="0"/>
+      <item name="AdvBLASubscriptionPeriod" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="BLA-subscription-period" defvalue="0"/>
+      <item name="AdvBLFListBargeInCode" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="BLFListBargeInCode" defvalue="0"/>
+      <item name="AdvBLFListURI" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="BLF-list-URI" defvalue="0"/>
+      <item name="AdvBlfListCode" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="BlfListCode" defvalue="0"/>
+      <item name="AdvCallerIDHeader" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="caller-ID-header" defvalue="0"/>
+      <item name="AdvConferenceType" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="conference-type" defvalue="0"/>
+      <item name="AdvConferenceUri" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="conference-uri" defvalue="0"/>
+      <item name="AdvDTMFItems" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="DTMF_items" defvalue="0"/>
+      <item name="AdvDialogInfoCallPickup" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="dialog-info-call-pickup" defvalue="0"/>
+      <item name="AdvDirectCallPickupCode" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="Direct-Call-Pickup-Code" defvalue="0"/>
+      <item name="AdvDistinctiveRingTones" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="Distinctive-Ring-Tones" defvalue="0"/>
+      <item name="AdvEarlymedia" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="Earlymedia" defvalue="0"/>
+      <item name="AdvEnablePrecondition" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="enable_precondition" defvalue="0"/>
+      <item name="AdvEnableSignalEncode" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="enable-signal-encode" defvalue="0"/>
+      <item name="AdvGroupCallPickupCode" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="Group-Call-Pickup-Code" defvalue="0"/>
+      <item name="AdvLLDPItems" filepath="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="LLDP-items" defvalue="0"/>
+      <item name="AdvLocalRTPPort" filepath="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="local-RTP-port" defvalue="0"/>
+      <item name="AdvLocalSIPPort" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="local-SIP-port" defvalue="0"/>
+      <item name="AdvLoginExpire" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="login-expire" defvalue="0"/>
+      <item name="AdvMWIItems" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="MWI-items" defvalue="0"/>
+      <item name="AdvMusicServerURI" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="Music-ServerURI" defvalue="0"/>
+      <item name="AdvOpenVPN" filepath="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="open-VPN" defvalue="0"/>
+      <item name="AdvOutDialogBLF" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="Out-Dialog-BLF" defvalue="0"/>
+      <item name="AdvPortLink" filepath="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="port-link" defvalue="0"/>
+      <item name="AdvPtimeItem" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="ptime-item" defvalue="0"/>
+      <item name="AdvRegSurgePrev" filepath="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="reg-surge-prev" defvalue="0"/>
+      <item name="AdvReliableRetransmission" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="reliable_retransmission" defvalue="0"/>
+      <item name="AdvRport" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="rport" defvalue="0"/>
+      <item name="AdvSIPRegRetryTimer" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="SIP-Reg-retry-timer" defvalue="0"/>
+      <item name="AdvSIPSendLine" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="SIP-send-line" defvalue="0"/>
+      <item name="AdvSIPSendMAC" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="SIP-send-MAC" defvalue="0"/>
+      <item name="AdvSIPServerType" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="SIPServerType" defvalue="0"/>
+      <item name="AdvSNMPItems" filepath="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="SNMP-items" defvalue="0"/>
+      <item name="AdvSessionRefresher" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="session-refresher" defvalue="0"/>
+      <item name="AdvSessionTimer" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="session-timer" defvalue="0"/>
+      <item name="AdvShareLine" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="share-line" defvalue="0"/>
+      <item name="AdvSignalEncodeKey" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="signal-encode-key" defvalue="0"/>
+      <item name="AdvSipSessionTimer" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="sip-session-timer" defvalue="0"/>
+      <item name="AdvSpanToPcport" filepath="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="span-to-pc-port" defvalue="0"/>
+      <item name="AdvSubscribePeriod" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="subscribe-period" defvalue="0"/>
+      <item name="AdvSubscribeRegister" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="subscribe-register" defvalue="0"/>
+      <item name="AdvUDPKeepAlive" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="UDP_keep-alive" defvalue="0"/>
+      <item name="AdvUnregisterOnReboot" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="UnregisterOnReboot" defvalue="0"/>
+      <item name="AdvUseSessionTimer" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="use-session-timer" defvalue="0"/>
+      <item name="AdvUserEqualPhone" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="user-equal-phone" defvalue="0"/>
+      <item name="AdvVLANItems" filepath="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="VLAN-items" defvalue="0"/>
+      <item name="AdvVoiceEncryption" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="voice-encryption" defvalue="0"/>
+      <item name="AdvVoiceQoS" filepath="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="voice-QoS" defvalue="0"/>
+      <item name="AdvWebServer" filepath="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="web-server" defvalue="0"/>
+	  <item name="AdvICMPv6Status" filepath="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="ICMPv6_Status" defvalue="0"/>
+      <item name="CallDialedListContent" filepath="/config/user/WebItemsLevel.cfg" section="PhoneCallInfo" key="dialed-list-content" defvalue="0"/>
+      <item name="CallDialedListTitle" filepath="/config/user/WebItemsLevel.cfg" section="PhoneCallInfo" key="dialed-list-title" defvalue="0"/>
+      <item name="CallForwardedListContent" filepath="/config/user/WebItemsLevel.cfg" section="PhoneCallInfo" key="forwarded-list-content" defvalue="0"/>
+      <item name="CallForwardedListTitle" filepath="/config/user/WebItemsLevel.cfg" section="PhoneCallInfo" key="forwarded-list-title" defvalue="0"/>
+      <item name="CallMissedListContent" filepath="/config/user/WebItemsLevel.cfg" section="PhoneCallInfo" key="missed-list-content" defvalue="0"/>
+      <item name="CallMissedListTitle" filepath="/config/user/WebItemsLevel.cfg" section="PhoneCallInfo" key="missed-list-title" defvalue="0"/>
+      <item name="CallReceivedListContent" filepath="/config/user/WebItemsLevel.cfg" section="PhoneCallInfo" key="received-list-content" defvalue="0"/>
+      <item name="CallReceivedListTitle" filepath="/config/user/WebItemsLevel.cfg" section="PhoneCallInfo" key="received-list-title" defvalue="0"/>
+      <item name="ContactsLDAPDisplayName" filepath="/config/user/WebItemsLevel.cfg" section="LDAP" key="LDAP-display-name" defvalue="0"/>
+      <item name="ContactsLDAPNameFilter" filepath="/config/user/WebItemsLevel.cfg" section="LDAP" key="LDAP-name-filter" defvalue="0"/>
+      <item name="ContactsLDAPNumberFilter" filepath="/config/user/WebItemsLevel.cfg" section="LDAP" key="LDAP-number-filter" defvalue="0"/>
+      <item name="ContactsLDAPSearchDelay" filepath="/config/user/WebItemsLevel.cfg" section="LDAP" key="search-delay" defvalue="0"/>
+	  <item name="ContactsLDAPSwitch" filepath="/config/user/WebItemsLevel.cfg" section="LDAP" key="enable-LDAP" defvalue="0"/>
+      <item name="DsskeyMemoryKey" filepath="/config/user/WebItemsLevel.cfg" section="MemoryKey" key="memory-key" defvalue="0"/>
+      <item name="DSSKeyExtKey" filepath="/config/user/WebItemsLevel.cfg" section="ExtKey" key="ext-key" defvalue="0"/>
+      <item name="DSSKeyLineKey" filepath="/config/user/WebItemsLevel.cfg" section="LineKey" key="line-key" defvalue="0"/>
+      <item name="DSSKeyProgrammableKey" filepath="/config/user/WebItemsLevel.cfg" section="ProgramKey" key="programmable-key" defvalue="0"/>
+      <item name="FeatureKeySynchronisation" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="feature-key-synchronisation" defvalue="0"/>
+      <item name="FeaturesACDAutoAvailable" filepath="/config/user/WebItemsLevel.cfg" section="Features-ACD" key="ACD-auto-available" defvalue="0"/>
+      <item name="FeaturesACDAutoAvailableTimer" filepath="/config/user/WebItemsLevel.cfg" section="Features-ACD" key="ACD-auto-available-timer" defvalue="0"/>
+      <item name="FeaturesActionURILimitIP" filepath="/config/user/WebItemsLevel.cfg" section="Features-Remote" key="ActionURILimitIP" defvalue="0"/>
+      <item name="FeaturesAllowIntercom" filepath="/config/user/WebItemsLevel.cfg" section="Features-Intercom" key="allow-intercom" defvalue="0"/>
+      <item name="FeaturesAllowMute" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="AllowMute" defvalue="0"/>
+			<item name="FeaturesAlwaysForward" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="always-forward" defvalue="0"/>
+			<item name="FeaturesAlwaysForwardEnabled" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="always-forward-enabled" defvalue="0"/>
+      <item name="FeaturesAlwaysForwardOffCode" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="always-forward-OffCode" defvalue="0"/>
+      <item name="FeaturesAlwaysForwardOnCode" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="always-forward-OnCode" defvalue="0"/>
+      <item name="FeaturesAlwaysForwardTarget" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="always-forward-target" defvalue="0"/>
+      <item name="FeaturesAttendedTransferCall" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Attended-transfer-call" defvalue="0"/>
+      <item name="FeaturesAutoAnswerDelay" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="AutoAnswerDelay" defvalue="0"/>
+      <item name="FeaturesAutoRedial" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="auto-redial" defvalue="0"/>
+      <item name="FeaturesAutoRedialInterval" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="auto_redial_interval" defvalue="0"/>
+      <item name="FeaturesAutoRedialTimes" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="auto_redial_times" defvalue="0"/>
+      <item name="FeaturesBLFNotify" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="BLFNotify" defvalue="0"/>
+      <item name="FeaturesBlindTranOnhook" filepath="/config/user/WebItemsLevel.cfg" section="Features-Transfer" key="blind-tran-onhook" defvalue="0"/>
+      <item name="FeaturesBlindTransferCall" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Blind-transfer-call" defvalue="0"/>
+      <item name="FeaturesBusyForward" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="busy-forward" defvalue="0"/>
+      <item name="FeaturesBusyForwardEnabled" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="busy-forward-enabled" defvalue="0"/>
+      <item name="FeaturesBusyForwardOff" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Busy-Forward-Off" defvalue="0"/>
+      <item name="FeaturesBusyForwardOffCode" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="busy-forward-OffCode" defvalue="0"/>
+      <item name="FeaturesBusyForwardOn" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Busy-Forward-On" defvalue="0"/>
+      <item name="FeaturesBusyForwardOnCode" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="busy-forward-OnCode" defvalue="0"/>
+      <item name="FeaturesBusyForwardTarget" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="busy-forward-target" defvalue="0"/>
+      <item name="FeaturesBusytoIdle" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="BusytoIdle" defvalue="0"/>
+      <item name="FeaturesBusytoneDelay" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="busytone_delay" defvalue="0"/>
+      <item name="FeaturesButtonSound" filepath="/config/user/WebItemsLevel.cfg" section="Features-Audio" key="button-sound" defvalue="0"/>
+      <item name="FeaturesCallCompletion" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="call_completion" defvalue="0"/>
+      <item name="FeaturesCallEstablish" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="call-establish" defvalue="0"/>
+      <item name="FeaturesCallPark" filepath="/config/user/WebItemsLevel.cfg" section="Features-Callpickup" key="Call-Park" defvalue="0"/>
+      <item name="FeaturesCallPickup" filepath="/config/user/WebItemsLevel.cfg" section="Features-Callpickup" key="Call-Pickup" defvalue="0"/>
+      <item name="FeaturesCallTerminated" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Call-Terminated" defvalue="0"/>
+      <item name="FeaturesCallWaiting" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="call_waiting" defvalue="0"/>
+      <item name="FeaturesCallWaitingTone" filepath="/config/user/WebItemsLevel.cfg" section="Features-Audio" key="call-waiting-tone" defvalue="0"/>
+      <item name="FeaturesClosePowerLight" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="ClosePowerLight" defvalue="0"/>
+      <item name="FeaturesDNDAccount" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="DND-account" defvalue="0"/>
+      <item name="FeaturesDNDMode" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="DND-mode" defvalue="0"/>
+      <item name="FeaturesDNDOff" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="DND-Off" defvalue="0"/>
+      <item name="FeaturesDNDOffCode" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="DND-OffCode" defvalue="0"/>
+      <item name="FeaturesDNDOn" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="DND-On" defvalue="0"/>
+      <item name="FeaturesDNDOnCode" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="DND-OnCode" defvalue="0"/>
+      <item name="FeaturesDNDStatus" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="DND-Status" defvalue="0"/>
+      <item name="FeaturesDTMFRepetition" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="DTMFRepetition" defvalue="0"/>
+      <item name="FeaturesDTMFReplaceTran" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="DTMFReplaceTran" defvalue="0"/>
+      <item name="FeaturesDiversionHistoryInfo" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="Diversion-History-Info" defvalue="0"/>
+      <item name="FeaturesDsskeyBlindTran" filepath="/config/user/WebItemsLevel.cfg" section="Features-Transfer" key="DsskeyBlindTran" defvalue="0"/>
+      <item name="FeaturesDualHeadset" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="DualHeadset" defvalue="0"/>
+      <item name="FeaturesForwardAccount" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="forward-account" defvalue="0"/>
+      <item name="FeaturesForwardMode" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="forward-mode" defvalue="0"/>
+      <item name="FeaturesForwardOffCode" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Forward-Off-Code" defvalue="0"/>
+      <item name="FeaturesForwardOnCode" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Forward-On-Code" defvalue="0"/>
+      <item name="FeaturesFwdInternational" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="FwdInternational" defvalue="0"/>
+      <item name="FeaturesHandfreeSendVolume" filepath="/config/user/WebItemsLevel.cfg" section="Features-Audio" key="handfree-send-volume" defvalue="0"/>
+      <item name="FeaturesHandsetSendVolume" filepath="/config/user/WebItemsLevel.cfg" section="Features-Audio" key="handset-send-volume" defvalue="0"/>
+      <item name="FeaturesHeadForward" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="head-forward" defvalue="0"/>
+      <item name="FeaturesHeadsetPrior" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="HeadsetPrior" defvalue="0"/>
+      <item name="FeaturesHeadsetSendVolume" filepath="/config/user/WebItemsLevel.cfg" section="Features-Audio" key="headset-send-volume" defvalue="0"/>
+      <item name="FeaturesHold" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Hold" defvalue="0"/>
+      <item name="FeaturesHotlineDelay" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="hotline-delay" defvalue="0"/>
+      <item name="FeaturesHotlineNumber" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="hotline-number" defvalue="0"/>
+      <item name="FeaturesIPChange" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="IPChange" defvalue="0"/>
+      <item name="FeaturesIdletoBusy" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="IdletoBusy" defvalue="0"/>
+      <item name="FeaturesIncomingCall" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="incoming-call" defvalue="0"/>
+      <item name="FeaturesIntercomBarge" filepath="/config/user/WebItemsLevel.cfg" section="Features-Intercom" key="intercom-barge" defvalue="0"/>
+      <item name="FeaturesIntercomMute" filepath="/config/user/WebItemsLevel.cfg" section="Features-Intercom" key="intercom-mute" defvalue="0"/>
+      <item name="FeaturesIntercomTone" filepath="/config/user/WebItemsLevel.cfg" section="Features-Intercom" key="intercom-tone" defvalue="0"/>
+      <item name="FeaturesIsDeal180" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="IsDeal-180" defvalue="0"/>
+      <item name="FeaturesKeyasSend" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="key_as_send" defvalue="0"/>
+      <item name="FeaturesLogOff" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="log-off" defvalue="0"/>
+      <item name="FeaturesLogOn" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="log-on" defvalue="0"/>
+      <item name="FeaturesLogonWizard" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="logon-wizard" defvalue="0"/>
+      <item name="FeaturesMissedCall" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Missed-call" defvalue="0"/>
+      <item name="FeaturesMulticastCodec" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="MulticastCodec" defvalue="0"/>
+      <item name="FeaturesMute" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Mute" defvalue="0"/>
+      <item name="FeaturesNoAnswerForward" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="NoAnswer-forward" defvalue="0"/>
+      <item name="FeaturesNoAnswerForwardEnabled" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="NoAnswer-forward-enabled" defvalue="0"/>
+      <item name="FeaturesNoAnswerForwardOff" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="No-Answer-Forward-Off" defvalue="0"/>
+      <item name="FeaturesNoAnswerForwardOffCode" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="NoAnswer-forward-OffCode" defvalue="0"/>
+      <item name="FeaturesNoAnswerForwardOn" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="No-Answer-Forward-On" defvalue="0"/>
+      <item name="FeaturesNoAnswerForwardOnCode" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="NoAnswer-forward-OnCode" defvalue="0"/>
+      <item name="FeaturesNoAnswerForwardRingtimes" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="NoAnswer-forward-ringtimes" defvalue="0"/>
+      <item name="FeaturesNoAnswerForwardTarget" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="NoAnswer-forward-target" defvalue="0"/>
+      <item name="FeaturesOffHook" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="off-hook" defvalue="0"/>
+      <item name="FeaturesOnHook" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="on-hook" defvalue="0"/>
+      <item name="FeaturesOutgoingCall" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="outgoing-call" defvalue="0"/>
+      <item name="FeaturesPlayHoldTone" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="PlayHoldTone" defvalue="0"/>
+      <item name="FeaturesPlayHoldToneDelay" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="PlayHoldToneDelay" defvalue="0"/>
+      <item name="FeaturesPswDial" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="PswDial" defvalue="0"/>
+      <item name="FeaturesPswLength" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="PswLength" defvalue="0"/>
+      <item name="FeaturesPswPrefix" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="PswPrefix" defvalue="0"/>
+      <item name="FeaturesPushxmlServerAddr" filepath="/config/user/WebItemsLevel.cfg" section="Features-Remote" key="pushxml-server-addr" defvalue="0"/>
+      <item name="FeaturesRFC2543Hold" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="RFC-2543-Hold" defvalue="0"/>
+      <item name="FeaturesReLogOffTime" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="ReLogOffTime" defvalue="0"/>
+      <item name="FeaturesRedialTone" filepath="/config/user/WebItemsLevel.cfg" section="Features-Audio" key="redial_tone" defvalue="0"/>
+      <item name="FeaturesRegisterFail" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="register-fail" defvalue="0"/>
+      <item name="FeaturesReservePound" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="reserve-pound" defvalue="0"/>
+      <item name="FeaturesReturnCodeDND" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="return-code-DND" defvalue="0"/>
+      <item name="FeaturesReturnCodeRefuse" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="return-code-refuse" defvalue="0"/>
+      <item name="FeaturesRingerDev" filepath="/config/user/WebItemsLevel.cfg" section="Features-Audio" key="Ringer_Dev" defvalue="0"/>
+      <item name="FeaturesSRemoteNameEnable" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="SRemoteNameEnable" defvalue="0"/>
+      <item name="FeaturesSRemoteNameFlashTime" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="SRemoteNameFlashTime" defvalue="0"/>
+      <item name="FeaturesSaveCallHistory" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="SaveCallHistory" defvalue="0"/>
+      <item name="FeaturesSemiAttendTransOnHook" filepath="/config/user/WebItemsLevel.cfg" section="Features-Transfer" key="Semi-Attend-Trans-OnHook" defvalue="0"/>
+      <item name="FeaturesSemiAttendTransfer" filepath="/config/user/WebItemsLevel.cfg" section="Features-Transfer" key="semi-attend-transfer" defvalue="0"/>
+      <item name="FeaturesSendPoundKey" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="SendPoundKey" defvalue="0"/>
+      <item name="FeaturesSendSound" filepath="/config/user/WebItemsLevel.cfg" section="Features-Audio" key="send-sound" defvalue="0"/>
+      <item name="FeaturesSetupComplete" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="setup-complete" defvalue="0"/>
+      <item name="FeaturesSuppressDTMFDisplay" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="SuppressDTMFDisplay" defvalue="0"/>
+      <item name="FeaturesSuppressDTMFDisplayDelay" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="SuppressDTMFDisplayDelay" defvalue="0"/>
+      <item name="FeaturesTimeOutforDialNow" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="TimeOut-for-DialNow" defvalue="0"/>
+      <item name="FeaturesTranSendDTMF" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="TranSendDTMF" defvalue="0"/>
+      <item name="FeaturesTransferCall" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="TransferCall" defvalue="0"/>
+      <item name="FeaturesTransferModeViaDsskey" filepath="/config/user/WebItemsLevel.cfg" section="Features-Transfer" key="TransferModeViaDsskey" defvalue="0"/>
+      <item name="FeaturesTransferonConferenceHangup" filepath="/config/user/WebItemsLevel.cfg" section="Features-Transfer" key="transfer-on-conference-hang-up" defvalue="0"/>
+      <item name="FeaturesUnhold" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Unhold" defvalue="0"/>
+      <item name="FeaturesUnmute" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Unmute" defvalue="0"/>
+	  <item name="FeaturesRejectIncomingCall" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="RejectIncomingCall" defvalue="0"/>
+	  <item name="FeaturesAnswerNewInCall" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="AnswerNewInCall" defvalue="0"/>
+	  <item name="FeaturesTransferFailed" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="TransferFailed" defvalue="0"/>
+	  <item name="FeaturesTransferFinished" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="TransferFinished" defvalue="0"/>
+	  <item name="FeaturesForwardIncomingCall" filepath="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="ForwardIncomingCall" defvalue="0"/>
+    <item name="FeaturesUseLogo" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="Use_Logo" defvalue="0"/>
+    <item name="FeaturesUseOutboundinDialog" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="use-outbound-in-dialog" defvalue="0"/>
+	  <item name="FeaturesPlayLocalDTMFTone" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="play-local-DTMF-tone" defvalue="0"/>
+	  <item name="FeaturesBLFLedOffInIdle" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="led-off-in-idle" defvalue="0"/>
+	  <item name="FeaturesCallNumFilter" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="call-number-filter" defvalue="0"/>
+	  <item name="FeaturesDirectIPCall" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="allow-IP-call" defvalue="0"/>
+	  <item name="FeaturesAutoAnswer" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="IP-direct-auto-answer" defvalue="0"/>
+	  <item name="FeaturesCalllogShowNum" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="calllog-show-num" defvalue="0"/>
+	  <item name="FeaturesVoiceMailTone" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="voicemail-tone" defvalue="0"/>
+	  <item name="FeaturesDhcpHostname" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="DHCP-hostname" defvalue="0"/>
+	  <item name="FeaturesXMLBlockInCalling" filepath="/config/user/WebItemsLevel.cfg" section="Features-Remote" key="XMLBlockInCalling" defvalue="0"/>
+    <item name="FeaturesXMLSIPNotify" filepath="/config/user/WebItemsLevel.cfg" section="Features-Remote" key="XMLSIPNotify" defvalue="0"/>
+    <item name="HiddenCustomFactoryConfig" filepath="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="custom-factory-config" defvalue="0"/>
+      <item name="HiddenDNDActive" filepath="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="DND-Active" defvalue="0"/>
+      <item name="HiddenForwardActive" filepath="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="Forward-Active" defvalue="0"/>
+      <item name="HiddenPushxml" filepath="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="pushxml" defvalue="0"/>
+      <item name="HiddenSettingNetwork" filepath="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="network" defvalue="0"/>
+      <item name="HiddenSettingTelnet" filepath="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="telnet" defvalue="0"/>
+      <item name="LDAPBase" filepath="/config/user/WebItemsLevel.cfg" section="LDAP" key="base" defvalue="0"/>
+      <item name="LDAPLookupforIncomingCall" filepath="/config/user/WebItemsLevel.cfg" section="LDAP" key="LDAP-lookup-for-incoming-call" defvalue="0"/>
+      <item name="LDAPLookupforPreDial" filepath="/config/user/WebItemsLevel.cfg" section="LDAP" key="LDAP-lookup-for-PreDial" defvalue="0"/>
+      <item name="LDAPMaxhits" filepath="/config/user/WebItemsLevel.cfg" section="LDAP" key="maxhits" defvalue="0"/>
+      <item name="LDAPNameAttributes" filepath="/config/user/WebItemsLevel.cfg" section="LDAP" key="LDAP-name-attributes" defvalue="0"/>
+      <item name="LDAPNumberAttributes" filepath="/config/user/WebItemsLevel.cfg" section="LDAP" key="LDAP-number-attributes" defvalue="0"/>
+      <item name="LDAPPassword" filepath="/config/user/WebItemsLevel.cfg" section="LDAP" key="password" defvalue="0"/>
+      <item name="LDAPPort" filepath="/config/user/WebItemsLevel.cfg" section="LDAP" key="port" defvalue="0"/>
+      <item name="LDAPProtocol" filepath="/config/user/WebItemsLevel.cfg" section="LDAP" key="protocol" defvalue="0"/>
+      <item name="LDAPServerAddress" filepath="/config/user/WebItemsLevel.cfg" section="LDAP" key="server-address" defvalue="0"/>
+      <item name="LDAPSortingResults" filepath="/config/user/WebItemsLevel.cfg" section="LDAP" key="LDAP-sorting-results" defvalue="0"/>
+      <item name="LDAPUserName" filepath="/config/user/WebItemsLevel.cfg" section="LDAP" key="user-name" defvalue="0"/>
+      <item name="LocalAllContactsControl" filepath="/config/user/WebItemsLevel.cfg" section="LocalPhoneBook" key="all-contacts-control" defvalue="0"/>
+      <item name="LocalContactList" filepath="/config/user/WebItemsLevel.cfg" section="LocalPhoneBook" key="contact-list" defvalue="0"/>
+      <item name="LocalImportExportContacts" filepath="/config/user/WebItemsLevel.cfg" section="LocalPhoneBook" key="import-export-contacts" defvalue="0"/>
+      <item name="LocalOptContacts" filepath="/config/user/WebItemsLevel.cfg" section="LocalPhoneBook" key="opt-contacts" defvalue="0"/>
+      <item name="LocalbtnExportCSV" filepath="/config/user/WebItemsLevel.cfg" section="LocalPhoneBook" key="btnExportCSV" defvalue="0"/>
+      <item name="LocalbtnExportXML" filepath="/config/user/WebItemsLevel.cfg" section="LocalPhoneBook" key="btnExportXML" defvalue="0"/>
+      <item name="LocalbtnImportCSV" filepath="/config/user/WebItemsLevel.cfg" section="LocalPhoneBook" key="btnImportCSV" defvalue="0"/>
+      <item name="LocalbtnImportXML" filepath="/config/user/WebItemsLevel.cfg" section="LocalPhoneBook" key="btnImportXML" defvalue="0"/>
+      <item name="MulticastIPConfig" filepath="/config/user/WebItemsLevel.cfg" section="MulticastIP" key="MulticastIPConfig" defvalue="0"/>
+      <item name="MulticastIPPagePriorityActive" filepath="/config/user/WebItemsLevel.cfg" section="MulticastIP" key="PagePriorityActive" defvalue="0"/>
+      <item name="MulticastIPReceivePriority" filepath="/config/user/WebItemsLevel.cfg" section="MulticastIP" key="Receive_Priority" defvalue="0"/>
+      <item name="PhoneAreacodeControl" filepath="/config/user/WebItemsLevel.cfg" section="Settings-DialPlan" key="area-code-control" defvalue="0"/>
+      <item name="PhoneAutoProvisionAccount" filepath="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="account" defvalue="0"/>
+      <item name="PhoneAutoProvisionPassword" filepath="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="password" defvalue="0"/>
+      <item name="PhoneAutopTime" filepath="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="autop-time" defvalue="0"/>
+      <item name="PhoneBlockoutControl" filepath="/config/user/WebItemsLevel.cfg" section="Settings-DialPlan" key="block-out-control" defvalue="0"/>
+      <item name="PhoneCallControl" filepath="/config/user/WebItemsLevel.cfg" section="PhoneCallInfo" key="call-control" defvalue="0"/>
+      <item name="PhoneCommonAESkey" filepath="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="common-AES-key" defvalue="0"/>
+      <item name="PhoneCustomOption" filepath="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="custom-option" defvalue="0"/>
+      <item name="PhoneCustomSoftKey" filepath="/config/user/WebItemsLevel.cfg" section="Softkey" key="Custom_SoftKey" defvalue="0"/>
+      <item name="PhoneDHCPOptionValue" filepath="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="DHCP-Option-Value" defvalue="0"/>
+      <item name="PhoneDayofWeek" filepath="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="day-of-week" defvalue="0"/>
+      <item name="PhoneDialnowControl" filepath="/config/user/WebItemsLevel.cfg" section="Settings-DialPlan" key="dial-now-control" defvalue="0"/>
+      <item name="PhoneEchoCancellation" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Voice" key="echo-cancellation" defvalue="0"/>
+	  <item name="PhoneLockEnable" filepath="/config/user/WebItemsLevel.cfg" section="Features-Lock" key="Lock_Enable" defvalue="0"/>
+      <item name="PhoneEmergencySetting" filepath="/config/user/WebItemsLevel.cfg" section="Features-Lock" key="emergency_setting" defvalue="0"/>
+      <item name="PhoneJitterBuffer" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Voice" key="jitter-buffer" defvalue="0"/>
+      <item name="PhoneKeyboardLock" filepath="/config/user/WebItemsLevel.cfg" section="Features-Lock" key="keyboard_lock" defvalue="0"/>
+      <item name="PhoneLockTimeout" filepath="/config/user/WebItemsLevel.cfg" section="Features-Lock" key="Phone_lock_time_out" defvalue="0"/>
+      <item name="PhoneMACOrientedAESkey" filepath="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="MAC-Oriented-AES-key" defvalue="0"/>
+      <item name="PhoneOptConfigfile" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Config" key="opt-configfile" defvalue="0"/>
+      <item name="PhoneOptFactoryConfigfile" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Config" key="opt-factory-configfile" defvalue="0"/>
+      <item name="PhonePNPActive" filepath="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="pnp-active" defvalue="0"/>
+      <item name="PhonePersonalRing" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Ring" key="personal-ring" defvalue="0"/>
+      <item name="PhonePoweronActive" filepath="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="poweron-active" defvalue="0"/>
+      <item name="PhoneRebootDevice" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Upgrade" key="reboot_device" defvalue="0"/>
+      <item name="PhoneRepeatInterval" filepath="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="repeat-interval" defvalue="0"/>
+      <item name="PhoneRepeatlyActive" filepath="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="repeatly-active" defvalue="0"/>
+      <item name="PhoneReplaceRuleControl" filepath="/config/user/WebItemsLevel.cfg" section="Settings-DialPlan" key="replace-rule-control" defvalue="0"/>
+      <item name="PhoneResetToFactory" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Upgrade" key="reset_to_factory" defvalue="0"/>
+      <item name="PhonePcapTrace" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Config" key="pcap_trace" defvalue="0"/>
+      <item name="PhoneServerURL" filepath="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="server-URL" defvalue="0"/>
+      <item name="PhoneSoftKeyType" filepath="/config/user/WebItemsLevel.cfg" section="Softkey" key="SoftKey_Type" defvalue="0"/>
+      <item name="PhoneSyslog" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Config" key="syslog" defvalue="0"/>
+      <item name="PhoneSystemlogLevel" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Config" key="SystemlogLevel" defvalue="0"/>
+      <item name="PhoneToneItems" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Tones" key="tone-items" defvalue="0"/>
+      <item name="PhoneUnlockPIN" filepath="/config/user/WebItemsLevel.cfg" section="Features-Lock" key="Phone_Unlock_PIN" defvalue="0"/>
+      <item name="PhoneUpgradeFirmware" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Upgrade" key="upgrade_firmware" defvalue="0"/>
+      <item name="account-adv" filepath="/config/user/WebItemsLevel.cfg" section="Account" key="account-adv" defvalue="0"/>
+      <item name="account-basic" filepath="/config/user/WebItemsLevel.cfg" section="Account" key="account-basic" defvalue="0"/>
+      <item name="account-codec" filepath="/config/user/WebItemsLevel.cfg" section="Account" key="account-codec" defvalue="0"/>
+      <item name="account-register" filepath="/config/user/WebItemsLevel.cfg" section="Account" key="account-register" defvalue="0"/>
+      <item name="area-code" filepath="/config/user/WebItemsLevel.cfg" section="Settings-DialPlan" key="area-code" defvalue="0"/>
+      <item name="block-out" filepath="/config/user/WebItemsLevel.cfg" section="Settings-DialPlan" key="block-out" defvalue="0"/>
+      <item name="contacts-LDAP" filepath="/config/user/WebItemsLevel.cfg" section="Contacts" key="contacts-LDAP" defvalue="0"/>
+      <item name="contacts-basic" filepath="/config/user/WebItemsLevel.cfg" section="Contacts" key="contacts-basic" defvalue="0"/>
+      <item name="contacts-broadsoft" filepath="/config/user/WebItemsLevel.cfg" section="Contacts" key="contacts-broadsoft" defvalue="0"/>
+      <item name="contacts-callinfo" filepath="/config/user/WebItemsLevel.cfg" section="Contacts" key="contacts-callinfo" defvalue="0"/>
+      <item name="contacts-favorite" filepath="/config/user/WebItemsLevel.cfg" section="Contacts" key="contacts-favorite" defvalue="0"/>
+      <item name="contacts-multicastIP" filepath="/config/user/WebItemsLevel.cfg" section="Contacts" key="contacts-multicastIP" defvalue="0"/>
+      <item name="contacts-remote" filepath="/config/user/WebItemsLevel.cfg" section="Contacts" key="contacts-remote" defvalue="0"/>
+      <item name="dial-now" filepath="/config/user/WebItemsLevel.cfg" section="Settings-DialPlan" key="dial-now" defvalue="0"/>
+      <item name="dsskey-extkey" filepath="/config/user/WebItemsLevel.cfg" section="DSSKey" key="extkey" defvalue="0"/>
+      <item name="dsskey-linekey" filepath="/config/user/WebItemsLevel.cfg" section="DSSKey" key="linekey" defvalue="0"/>
+      <item name="dsskey-memorykey" filepath="/config/user/WebItemsLevel.cfg" section="DSSKey" key="memorykey" defvalue="0"/>
+      <item name="dsskey-programkey" filepath="/config/user/WebItemsLevel.cfg" section="DSSKey" key="programmablekey" defvalue="0"/>
+      <item name="features-acd" filepath="/config/user/WebItemsLevel.cfg" section="Features" key="features-acd" defvalue="0"/>
+      <item name="features-actionurl" filepath="/config/user/WebItemsLevel.cfg" section="Features" key="features-actionurl" defvalue="0"/>
+      <item name="features-audio" filepath="/config/user/WebItemsLevel.cfg" section="Features" key="features-audio" defvalue="0"/>
+      <item name="features-callpickup" filepath="/config/user/WebItemsLevel.cfg" section="Features" key="features-callpickup" defvalue="0"/>
+      <item name="features-forward" filepath="/config/user/WebItemsLevel.cfg" section="Features" key="features-forward" defvalue="0"/>
+      <item name="features-general" filepath="/config/user/WebItemsLevel.cfg" section="Features" key="features-general" defvalue="0"/>
+      <item name="features-intercom" filepath="/config/user/WebItemsLevel.cfg" section="Features" key="features-intercom" defvalue="0"/>
+      <item name="features-phonelock" filepath="/config/user/WebItemsLevel.cfg" section="Features" key="features-phonelock" defvalue="0"/>
+      <item name="features-remote" filepath="/config/user/WebItemsLevel.cfg" section="Features" key="features-remote" defvalue="0"/>
+      <item name="features-sms" filepath="/config/user/WebItemsLevel.cfg" section="Features" key="features-sms" defvalue="0"/>
+      <item name="features-transfer" filepath="/config/user/WebItemsLevel.cfg" section="Features" key="features-transfer" defvalue="0"/>
+	  <item name="features-bluetooth" filepath="/config/user/WebItemsLevel.cfg" section="Features" key="features-bluetooth" defvalue="0"/>
+      <item name="network-advanced" filepath="/config/user/WebItemsLevel.cfg" section="Network" key="network-advanced" defvalue="0"/>
+      <item name="network-basic" filepath="/config/user/WebItemsLevel.cfg" section="Network" key="network-basic" defvalue="0"/>
+      <item name="network-pcport" filepath="/config/user/WebItemsLevel.cfg" section="Network" key="network-pcport" defvalue="0"/>
+	  <item name="FeaturesBluetooth" filepath="/config/user/WebItemsLevel.cfg" section="Features-Bluetooth" key="bluetooth-active" defvalue="0"/>
+	  <item name="BroadsoftDirectotries" filepath="/config/user/WebItemsLevel.cfg" section="Contacts-Broadsoft" key="Directotries" defvalue="0"/>
+	  <item name="BroadsoftXSI" filepath="/config/user/WebItemsLevel.cfg" section="Contacts-Broadsoft" key="XSI" defvalue="0"/>
+	  <item name="SettingFavoriteTable" filepath="/config/user/WebItemsLevel.cfg" section="Contacts-Favorite" key="contacts-group" defvalue="0"/>
+	  <item name="SettingSearchTable" filepath="/config/user/WebItemsLevel.cfg" section="Contacts-Favorite" key="super-search" defvalue="0"/>
+      <item name="password" filepath="/config/user/WebItemsLevel.cfg" section="Security" key="password" defvalue="0"/>
+      <item name="replace-rule" filepath="/config/user/WebItemsLevel.cfg" section="Settings-DialPlan" key="replace-rule" defvalue="0"/>
+      <item name="PhoneVersionInfo" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Upgrade" key="version_info" defvalue="0"/>
+      <item name="PhoneWeeklyActive" filepath="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="weekly-active" defvalue="0"/>
+      <item name="PhonebtnAutopNow" filepath="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="btn-autop-now" defvalue="0"/>
+      <item name="PhonedhcpActive" filepath="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="dhcp-active" defvalue="0"/>
+      <item name="server_cert" filepath="/config/user/WebItemsLevel.cfg" section="Security" key="server_cert" defvalue="0"/>
+      <item name="settings-autop" filepath="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-autop" defvalue="0"/>
+      <item name="settings-config" filepath="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-config" defvalue="0"/>
+      <item name="settings-datetime" filepath="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-datetime" defvalue="0"/>
+      <item name="settings-dialplan" filepath="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-dialplan" defvalue="0"/>
+      <item name="settings-preference" filepath="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-preference" defvalue="0"/>
+      <item name="settings-ring" filepath="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-ring" defvalue="0"/>
+      <item name="settings-softkey" filepath="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-softkey" defvalue="0"/>
+      <item name="settings-tones" filepath="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-tones" defvalue="0"/>
+      <item name="settings-upgrade" filepath="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-upgrade" defvalue="0"/>
+      <item name="settings-voice" filepath="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-voice" defvalue="0"/>
+	  <item name="settings-tr069" filepath="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-tr069" defvalue="0"/>
+      <item name="trusted_cert" filepath="/config/user/WebItemsLevel.cfg" section="Security" key="trusted_cert" defvalue="0"/>
+	  <item name="PhoneTR069Header" filepath="/config/user/WebItemsLevel.cfg" section="TR069" key="head" defvalue="0"/>
+	  <item name="PhoneEnableTR069" filepath="/config/user/WebItemsLevel.cfg" section="TR069" key="EnableTR069" defvalue="0"/>
+	  <item name="PhoneACSUsername" filepath="/config/user/WebItemsLevel.cfg" section="TR069" key="ACSUsername" defvalue="0"/>
+	  <item name="PhoneACSPassword" filepath="/config/user/WebItemsLevel.cfg" section="TR069" key="ACSPassword" defvalue="0"/>
+	  <item name="PhoneACSURL" filepath="/config/user/WebItemsLevel.cfg" section="TR069" key="ACSURL" defvalue="0"/>
+	  <item name="PhoneEnablePeriodicInform" filepath="/config/user/WebItemsLevel.cfg" section="TR069" key="EnablePeriodicInform" defvalue="0"/>
+	  <item name="PhonePeriodicInformInterval" filepath="/config/user/WebItemsLevel.cfg" section="TR069" key="PeriodicInformInterval" defvalue="0"/>
+	  <item name="PhoneRequestUsername" filepath="/config/user/WebItemsLevel.cfg" section="TR069" key="RequestUsername" defvalue="0"/>
+	  <item name="PhoneRequestPassword" filepath="/config/user/WebItemsLevel.cfg" section="TR069" key="RequestPassword" defvalue="0"/>
+      <item name="AccountBasicAnonymousCallEnabled" filepath="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="anonymous_call_enabled" defvalue="0"/>
+      <item name="AccountBasicAnonymousCallOffCode" filepath="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="anonymous_call_OffCode" defvalue="0"/>
+      <item name="AccountBasicAnonymousCallOnCode" filepath="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="anonymous_call_OnCode" defvalue="0"/>
+      <item name="AccountBasicAnonymousRejectionEnabled" filepath="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="anonymous_rejection_enabled" defvalue="0"/>
+      <item name="AccountBasicAnonymousRejectionOffCode" filepath="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="anonymous_rejection_OffCode" defvalue="0"/>
+      <item name="AccountBasicAnonymousRejectionOnCode" filepath="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="anonymous_rejection_OnCode" defvalue="0"/>
+      <item name="AccountBasicAutoAnswer" filepath="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="auto-answer" defvalue="0"/>
+      <item name="AccountBasicMissCalllog" filepath="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="misscall-log" defvalue="0"/>
+      <item name="AccountBasicProxyRequire" filepath="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="proxy_require" defvalue="0"/>
+      <item name="AccountBasicRingType" filepath="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="ring-type" defvalue="0"/>
+      <item name="AdvVoiceMail" filepath="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="voice_mail" defvalue="0"/>
+      <item name="AccountCodecsGroup" filepath="/config/user/WebItemsLevel.cfg" section="Account-Codec" key="codecs-group" defvalue="0"/>
+	  <item name="RegisterAccountStatus" filepath="/config/user/WebItemsLevel.cfg" section="Account-Register" key="account_status" defvalue="0"/>	
+		<item name="RegisterAccountLabel" filepath="/config/user/WebItemsLevel.cfg" section="Account-Register" key="account_label" defvalue="0"/>
+		<item name="RegisterAccountPassword" filepath="/config/user/WebItemsLevel.cfg" section="Account-Register" key="account_password" defvalue="0"/>
+		<item name="RegisterBackupOutboundProxyServer" filepath="/config/user/WebItemsLevel.cfg" section="Account-Register" key="backup-outbound-proxy-server" defvalue="0"/>
+		<item name="RegisterDisplayName" filepath="/config/user/WebItemsLevel.cfg" section="Account-Register" key="display_name" defvalue="0"/>
+		<item name="RegisterEnabledOutboundProxyServer" filepath="/config/user/WebItemsLevel.cfg" section="Account-Register" key="enabled-outbound-proxy-server" defvalue="0"/>
+		<item name="RegisterLineActive" filepath="/config/user/WebItemsLevel.cfg" section="Account-Register" key="line_active" defvalue="0"/>
+		<item name="RegisterNATTraversal" filepath="/config/user/WebItemsLevel.cfg" section="Account-Register" key="NAT_traversal" defvalue="0"/>
+		<item name="RegisterName" filepath="/config/user/WebItemsLevel.cfg" section="Account-Register" key="register_name" defvalue="0"/>
+		<item name="RegisterOutboundProxyServer" filepath="/config/user/WebItemsLevel.cfg" section="Account-Register" key="outbound-proxy-server" defvalue="0"/>
+		<item name="RegisterSTUNServer" filepath="/config/user/WebItemsLevel.cfg" section="Account-Register" key="STUN_server" defvalue="0"/>
+		<item name="RegisterSipServer" filepath="/config/user/WebItemsLevel.cfg" section="Account-Register" key="sip_server" defvalue="0"/>
+		<item name="RegisterTransportItem" filepath="/config/user/WebItemsLevel.cfg" section="Account-Register" key="transport-item" defvalue="0"/>
+		<item name="RegisterUserName" filepath="/config/user/WebItemsLevel.cfg" section="Account-Register" key="user_name" defvalue="0"/>
+		<item name="RemotePhonebookList" filepath="/config/user/WebItemsLevel.cfg" section="Contacts-Remote" key="remote-phonebook-list" defvalue="0"/>
+		<item name="CoantactsSRemoteNameEnable" filepath="/config/user/WebItemsLevel.cfg" section="Contacts-Remote" key="SRemoteNameEnable" defvalue="0"/>
+		<item name="CoantactsSRemoteNameFlashTime" filepath="/config/user/WebItemsLevel.cfg" section="Contacts-Remote" key="SRemoteNameFlashTime" defvalue="0"/>
+		<item name="ServerCertsRecords" filepath="/config/user/WebItemsLevel.cfg" section="ServerCerts" key="server-certs-records" defvalue="0"/>
+		<item name="ServerCertsUpload" filepath="/config/user/WebItemsLevel.cfg" section="ServerCerts" key="server-certs-upload" defvalue="0"/>
+		<item name="SettingsBacklightTime" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="BacklightTime" defvalue="0"/>
+		<item name="SettingsContrastCtrl" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="contrast_ctrl" defvalue="0"/>
+		<item name="SettingsDHCPTime" filepath="/config/user/WebItemsLevel.cfg" section="Time&Date" key="DHCP-Time" defvalue="0"/>
+		<item name="SettingsDateFormatSetting" filepath="/config/user/WebItemsLevel.cfg" section="Time&Date" key="date_format_setting" defvalue="0"/>
+		<item name="SettingsDaylightTime" filepath="/config/user/WebItemsLevel.cfg" section="Time&Date" key="daylight-time" defvalue="0"/>
+		<item name="SettingsInterDigitTime" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="inter-digit-time" defvalue="0"/>
+		<item name="SettingsLiveDialpad" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="live-dialpad" defvalue="0"/>
+		<item name="SettingsManualTime" filepath="/config/user/WebItemsLevel.cfg" section="Time&Date" key="manual-time" defvalue="0"/>
+		<item name="SettingsPrimServer" filepath="/config/user/WebItemsLevel.cfg" section="Time&Date" key="prim_server" defvalue="0"/>
+		<item name="SettingsRingTypeSetting" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="ring_type_setting" defvalue="0"/>
+		<item name="SettingsSecServer" filepath="/config/user/WebItemsLevel.cfg" section="Time&Date" key="sec_server" defvalue="0"/>
+		<item name="SettingsTimeFormatSetting" filepath="/config/user/WebItemsLevel.cfg" section="Time&Date" key="time_format_setting" defvalue="0"/>
+		<item name="SettingsTimeZone" filepath="/config/user/WebItemsLevel.cfg" section="Time&Date" key="time_zone" defvalue="0"/>
+		<item name="SettingsUnusedBackLight" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="UnusedBackLight" defvalue="0"/>
+		<item name="SettingsUpdateInterval" filepath="/config/user/WebItemsLevel.cfg" section="Time&Date" key="update_interval" defvalue="0"/>
+		<item name="SettingsWatchdog" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="watchdog" defvalue="0"/>
+		<item name="SettingsWebLanguage" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="web-language" defvalue="0"/>
+		<item name="SettingsActiveLevel" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="backlight" defvalue="0"/>
+		<item name="SettingsWallpaper" filepath="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="Wallpaper" defvalue="0"/>
+		<item name="StatusAccountStatus" filepath="/config/user/WebItemsLevel.cfg" section="Status" key="AccountStatus" defvalue="0"/>
+		<item name="StatusNetwork" filepath="/config/user/WebItemsLevel.cfg" section="Status" key="network" defvalue="0"/>
+		<item name="StatusVersion" filepath="/config/user/WebItemsLevel.cfg" section="Status" key="version" defvalue="0"/>
+		<item name="StatusIPv4" filepath="/config/user/WebItemsLevel.cfg" section="Status" key="IPv4" defvalue="0"/>
+		<item name="StatusIPv6" filepath="/config/user/WebItemsLevel.cfg" section="Status" key="IPv6" defvalue="0"/>
+		<item name="StatusNetworkCommon" filepath="/config/user/WebItemsLevel.cfg" section="Status" key="NetworkCommon" defvalue="0"/>
+		<item name="BasicWanppoe" filepath="/config/user/WebItemsLevel.cfg" section="Network-Basic" key="wan-ppoe" defvalue="0"/>
+		<item name="StatusExttable" filepath="/config/user/WebItemsLevel.cfg" section="Status" key="Ext" defvalue="0"/>
+		<item name="TrustCertsOnlyAcceptTrustedCerts" filepath="/config/user/WebItemsLevel.cfg" section="TrustCerts" key="only-accept-trusted-certs" defvalue="0"/>
+		<item name="TrustCertsRecords" filepath="/config/user/WebItemsLevel.cfg" section="TrustCerts" key="trust-certs-records" defvalue="0"/>
+		<item name="TrustCertsUploadTrustCerts" filepath="/config/user/WebItemsLevel.cfg" section="TrustCerts" key="upload-trust-certs" defvalue="0"/>
+		<item name="TrustCertsUploadTrustCerts" filepath="/config/user/WebItemsLevel.cfg" section="TrustCerts" key="upload-trust-certs" defvalue="0"/>
+		<item name="TrustCertsbtndeleteCerts" filepath="/config/user/WebItemsLevel.cfg" section="TrustCerts" key="btn-delete-certs" defvalue="0"/>
+		<item name="AccountSendAnonymous" filepath="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="send_anonymous" defvalue="0"/>
+    <item name="rowTimeType" filepath="/config/user/WebItemsLevel.cfg" section="Time&Date" key="time_type" defvalue="0"/>
+    <item name="daylight-week" filepath="/config/user/WebItemsLevel.cfg" section="Time&Date" key="daylight_week" defvalue="0"/>
+    <item name="daylight-day" filepath="/config/user/WebItemsLevel.cfg" section="Time&Date" key="daylight_day" defvalue="0"/>
+    <item name="offset" filepath="/config/user/WebItemsLevel.cfg" section="Time&Date" key="offset" defvalue="0"/>
+    <item name="FeaturesDND" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="DND" defvalue="0"/>
+    <item name="FeaturesDNDEmergency" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="DND-Emergency" defvalue="0"/>
+    <item name="FeaturesDNDAuthorizedNumbers" filepath="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="DND-Authorized-Numbers" defvalue="0"/>
+    <item name="Broadsoft-Active" filepath="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="Broadsoft-Active" defvalue="0"/>
+		<item name="Redirect-Active" filepath="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="Redirect-Active" defvalue="0"/>
+		<item name="UC-Active" filepath="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="UC-Active" defvalue="0"/>
+		<item name="FeaturesEnableAutoFavorite" filepath="/config/user/WebItemsLevel.cfg" section="General-Information" key="EnableAutoFavorite" defvalue="0"/>
+		<item name="HttpUserAgent" filepath="/config/system/system.ini" section="HttpServer" key="strUserAgent" defvalue=""/>
+		<item name="BluetoothSwitch" filepath="/config/user/user.ini" section="Bluetooth" key="bEnable" defvalue="1"/>
+		<item name="BluetoothAdapterName" filepath="/config/user/user.ini" section="Bluetooth" key="strAdapterName" defvalue="Yealink-T48"/>
+		<item name="ISUME" filepath="/config/user/user.ini" section="ActionUrl" key="ISUME" defvalue="0"/>
+		<item name="EnableCSTA" filepath="/config/user/user.ini" section="CSTA" key="bEnabled" defvalue="0"/> 
+		<item name="IsAutoChangeDefaultAccount" filepath="/config/user/user.ini" section="Features" key="bAutoChangeDefaultAccount" defvalue="0"/>
+		<item name="SettingsNTPPriority" filepath="/config/user/WebItemsLevel.cfg" section="Time&Date" key="NTP_priority" defvalue="0"/>
+		<item name="PhoneZeroSwitch" filepath="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="zero_active" defvalue="0"/>
+		<item name="PhoneWaitTime" filepath="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="wait_time" defvalue="0"/>
+	</Common>
+	
+	<Account>
+		<item name="AccountACDInitialState" section="ACD" key="eInitialState" defvalue="1"/>
+		<item name="AccountACDAvailabilityState" section="ACD" key="bAvailabilityState" defvalue="1"/>
+		<item name="AccountACDLogOnStatus" section="BSACD" key="ACDLogOnStatus" defvalue="1"/>
+		<item name="AccountACDUnavailReasonSwitch" section="ACD" key="bEnableUnavailableReason" defvalue="0"/>
+		<item name="AccountAnonymousCallOffCode" section="account" key="AnonymousCall_OffCode" defvalue=""/>
+		<item name="AccountAnonymousCallOnCode" section="account" key="AnonymousCall_OnCode" defvalue=""/>
+		<item name="AccountAnonymousCallSwitch" section="account" key="AnonymousCall" defvalue="0"/>
+		<item name="AccountSendAnonymous" section="account" key="SendAnonymousCode" defvalue="0"/>
+		<item name="AccountSendAnonymousRejection" section="account" key="SendAnonymousRejectionCode" defvalue="0"/>
+		<item name="AccountAudio0Priority" section="audio0" key="priority" defvalue=""/>
+		<item name="AccountAudio0Switch" section="audio0" key="enable" defvalue="1"/>
+		<item name="AccountAudio0Type" section="audio0" key="PayloadType" defvalue=""/>
+		<item name="AccountAudio10Priority" section="audio10" key="priority" defvalue=""/>
+		<item name="AccountAudio10Switch" section="audio10" key="enable" defvalue="1"/>
+		<item name="AccountAudio10Type" section="audio10" key="PayloadType" defvalue=""/>
+		<item name="AccountAudio11Priority" section="audio11" key="priority" defvalue=""/>
+		<item name="AccountAudio11Switch" section="audio11" key="enable" defvalue="1"/>
+		<item name="AccountAudio11Type" section="audio11" key="PayloadType" defvalue=""/>
+		<item name="AccountAudio12Priority" section="audio12" key="priority" defvalue=""/>
+		<item name="AccountAudio12Switch" section="audio12" key="enable" defvalue="1"/>
+		<item name="AccountAudio12Type" section="audio12" key="PayloadType" defvalue=""/>
+		<item name="AccountAudio13Priority" section="audio13" key="priority" defvalue=""/>
+		<item name="AccountAudio13Switch" section="audio13" key="enable" defvalue="1"/>
+		<item name="AccountAudio13Type" section="audio13" key="PayloadType" defvalue=""/>
+		<item name="AccountAudio14Priority" section="audio14" key="priority" defvalue=""/>
+		<item name="AccountAudio14Switch" section="audio14" key="enable" defvalue="1"/>
+		<item name="AccountAudio14Type" section="audio14" key="PayloadType" defvalue=""/>
+		<item name="AccountAudio15Priority" section="audio15" key="priority" defvalue=""/>
+		<item name="AccountAudio15Switch" section="audio15" key="enable" defvalue="1"/>
+		<item name="AccountAudio15Type" section="audio15" key="PayloadType" defvalue=""/>
+		<item name="AccountAudio16Priority" section="audio16" key="priority" defvalue=""/>
+		<item name="AccountAudio16Switch" section="audio16" key="enable" defvalue="1"/>
+		<item name="AccountAudio16Type" section="audio16" key="PayloadType" defvalue=""/>
+		<item name="AccountAudio17Priority" section="audio17" key="priority" defvalue=""/>
+		<item name="AccountAudio17Switch" section="audio17" key="enable" defvalue="1"/>
+		<item name="AccountAudio17Type" section="audio17" key="PayloadType" defvalue=""/>
+		<item name="AccountAudio18Priority" section="audio18" key="priority" defvalue=""/>
+		<item name="AccountAudio18Switch" section="audio18" key="enable" defvalue="1"/>
+		<item name="AccountAudio18Type" section="audio18" key="PayloadType" defvalue=""/>
+		<item name="AccountAudio1Priority" section="audio1" key="priority" defvalue=""/>
+		<item name="AccountAudio1Switch" section="audio1" key="enable" defvalue="1"/>
+		<item name="AccountAudio1Type" section="audio1" key="PayloadType" defvalue=""/>
+		<item name="AccountAudio2Priority" section="audio2" key="priority" defvalue=""/>
+		<item name="AccountAudio2Switch" section="audio2" key="enable" defvalue="1"/>
+		<item name="AccountAudio2Type" section="audio2" key="PayloadType" defvalue=""/>
+		<item name="AccountAudio3Priority" section="audio3" key="priority" defvalue=""/>
+		<item name="AccountAudio3Switch" section="audio3" key="enable" defvalue="1"/>
+		<item name="AccountAudio3Type" section="audio3" key="PayloadType" defvalue=""/>
+		<item name="AccountAudio4Priority" section="audio4" key="priority" defvalue=""/>
+		<item name="AccountAudio4Switch" section="audio4" key="enable" defvalue="1"/>
+		<item name="AccountAudio4Type" section="audio4" key="PayloadType" defvalue=""/>
+		<item name="AccountAudio5Priority" section="audio5" key="priority" defvalue=""/>
+		<item name="AccountAudio5Switch" section="audio5" key="enable" defvalue="1"/>
+		<item name="AccountAudio5Type" section="audio5" key="PayloadType" defvalue=""/>
+		<item name="AccountAudio6Priority" section="audio6" key="priority" defvalue=""/>
+		<item name="AccountAudio6Switch" section="audio6" key="enable" defvalue="1"/>
+		<item name="AccountAudio6Type" section="audio6" key="PayloadType" defvalue=""/>
+		<item name="AccountAudio7Priority" section="audio7" key="priority" defvalue=""/>
+		<item name="AccountAudio7Switch" section="audio7" key="enable" defvalue="1"/>
+		<item name="AccountAudio7Type" section="audio7" key="PayloadType" defvalue=""/>
+		<item name="AccountAudio8Priority" section="audio8" key="priority" defvalue=""/>
+		<item name="AccountAudio8Switch" section="audio8" key="enable" defvalue="1"/>
+		<item name="AccountAudio8Type" section="audio8" key="PayloadType" defvalue=""/>
+		<item name="AccountAudio9Priority" section="audio9" key="priority" defvalue=""/>
+		<item name="AccountAudio9Switch" section="audio9" key="enable" defvalue="1"/>
+		<item name="AccountAudio9Type" section="audio9" key="PayloadType" defvalue=""/>
+		<item name="AccountAutoAnswerSwitch" section="AutoAnswer" key="bEnable" defvalue="0"/>
+		<item name="AccountAutoAnswerTimeout" section="AutoAnswer" key="nTimeout" defvalue="0"/>
+		<item name="AccountBLANumber" section="account" key="BLANumber" defvalue=""/>
+		<item name="AccountBLASubscribePeriod" section="account" key="BLASubscribePeriod" defvalue="300"/>
+		<item name="AccountBLAType" section="account" key="ShareLine" defvalue="0"/>
+		<item name="AccountBLFListBargeInCode" section="account" key="BlfListBargeInCode" defvalue=""/>
+		<item name="AccountBLFListCode" section="account" key="BlfListCode" defvalue=""/>
+		<item name="AccountBLFListURL" section="blf" key="BLFList_URI" defvalue=""/>
+		<item name="AccountBakOutboundHost" section="account" key="BakOutboundHost" defvalue=""/>
+		<item name="AccountBakOutboundPort" section="account" key="BakOutboundPort" defvalue="5060"/>
+		<item name="AccountBakSIPServerHost" section="account" key="BakSIPServerHost" defvalue=""/>
+		<item name="AccountBakSIPServerPort" section="account" key="BakSIPServerPort" defvalue="5060"/>
+		<item name="AccountBalanceEnable" section="account" key="BalanceEnable" defvalue="0"/>
+		<item name="AccountBalanceLink" section="account" key="BalanceLink" defvalue=""/>
+		<item name="AccountBroadsoftXSIHostAddr" section="XSI" key="XSIHostAddr" defvalue=""/>
+		<item name="AccountBroadsoftXSIPassword" section="XSI" key="XSIPassword" defvalue="" encrypt="1"/>
+		<item name="AccountBroadsoftXSIPort" section="XSI" key="XSIPort" defvalue="80"/>
+		<item name="AccountBroadsoftXSIServerType" section="XSI" key="XSIServerType" defvalue="http"/>
+		<item name="AccountBroadsoftXSIUserID" section="XSI" key="XSIUserID" defvalue=""/>
+		<item name="AccountCIDSource" section="account" key="CIDSource" defvalue="0"/>
+		<item name="AccountCallMode" section="CallOption" key="eCallMode" defvalue="1"/>
+		<item name="AccountConfType" section="account" key="conf-type" defvalue="0"/>
+		<item name="AccountConfURI" section="account" key="conf-uri" defvalue=""/>
+		<item name="AccountDPickupCode" section="account" key="DPickupCode" defvalue=""/>
+		<item name="AccountDTMFInfoType" section="DTMF" key="InfoType" defvalue="0"/>
+		<item name="AccountDTMFPayload" section="DTMF" key="DTMFPayload" defvalue="0"/>
+		<item name="AccountDTMFType" section="DTMF" key="DTMFInbandTransfer" defvalue="0"/>
+		<item name="AccountDefaultT1" section="ADVANCED" key="default_t1" defvalue="0.5"/>
+		<item name="AccountDefaultT2" section="ADVANCED" key="default_t2" defvalue="4"/>
+		<item name="AccountDefaultT4" section="ADVANCED" key="default_t4" defvalue="5"/>
+		<item name="AccountDialogPickup" section="account" key="dialoginfo_callpickup" defvalue="0"/>
+		<item name="AccountDirectIP" section="account" key="directip" defvalue="0"/>
+		<item name="AccountDisableAlertInfoURL" section="account" key="DisableAlertInfoURL" defvalue="0"/>
+		<item name="AccountDisplayName" section="account" key="DisplayName" defvalue=""/>
+		<item name="AccountEnable" section="account" key="Enable" defvalue="0"/>
+		<item name="AccountEnable100Rel" section="account" key="Enable 100Rel" defvalue="0"/>
+		<item name="AccountEnableACD" section="ACD" key="bEnable" defvalue="0"/>
+		<item name="AccountEnableCallInfo" section="CallCenter" key="bEnableCallInfo" defvalue="0"/>
+		<item name="AccountEnableDiapositionCode" section="CallCenter" key="bEnableDispCode" defvalue="0"/>
+		<item name="AccountEnableEmergencyEscalation" section="CallCenter" key="bEnableEmergency" defvalue="0"/>
+		<item name="AccountEnableHoteling" section="account" key="EnableHoteling" defvalue="0"/>
+		<item name="AccountEnableOriginatedTrace" section="CallCenter" key="bEnableTrace" defvalue="0"/>
+		<item name="AccountEnableOutDialogBLF" section="account" key="EnableOutDialogBLF" defvalue="0"/>
+		<item name="AccountEnableQueueStatus" section="CallCenter" key="bEnableQueueStatus" defvalue="0"/>
+		<item name="AccountEnableQueueStatusLight" section="CallCenter" key="bEnableQueueStatusLight" defvalue="0"/>
+		<item name="AccountEnableSessionTimer" section="account" key="EnableSessionTimer" defvalue="0"/>
+		<item name="AccountEnableUserEqualPhone" section="account" key="EnableUserEqualPhone" defvalue="0"/>
+		<item name="AccountExpire" section="account" key="Expire" defvalue="3600"/>
+		<item name="AccountFrameRate" section="vaServer" key="nFrameRate" defvalue="30"/>
+		<item name="AccountGPickupCode" section="account" key="GPickupCode" defvalue=""/>
+		<item name="AccountHotDeskingRegisteredURL" section="HotDesking" key="RegisteredURL" defvalue=""/>
+		<item name="AccountHotDeskingSipNotifyURL" section="HotDesking" key="SipNotifyURL" defvalue=""/>
+		<item name="AccountHotelingAutoLoginSwitch" section="Hoteling" key="bAutoLogin" defvalue="0"/>
+		<item name="AccountHotelingPassword" section="Hoteling" key="strPassword" defvalue="" encrypt="1"/>
+		<item name="AccountHotelingUserID" section="Hoteling" key="strUserId" defvalue=""/>
+		<item name="AccountIsHotDeskAccount" section="account" key="IsHotDeskAccount" defvalue="0"/>
+		<item name="AccountLabel" section="account" key="Label" defvalue=""/>
+		<item name="AccountMaxRTPPort" section="NAT" key="MaxRTPPort" defvalue=""/>
+		<item name="AccountMinRTPPort" section="NAT" key="MinRTPPort" defvalue=""/>
+		<item name="AccountMissCallLog" section="account" key="MissedCallLog" defvalue="1"/>
+		<item name="AccountMusicServerUri" section="account" key="MusicServerUri" defvalue=""/>
+		<item name="AccountNATEnableUDPUpdate" section="NAT" key="EnableUDPUpdate" defvalue="1"/>
+		<item name="AccountNATRport" section="NAT" key="rport" defvalue="0"/>
+		<item name="AccountNATUDPUpdateTime" section="NAT" key="UDPUpdateTime" defvalue="30"/>
+		<item name="AccountOutboundPort" section="account" key="OutboundPort" defvalue="5060"/>
+		<item name="AccountOutboundProxy" section="account" key="OutboundHost" defvalue=""/>
+		<item name="AccountOutboundSwitch" section="account" key="UseOutboundProxy" defvalue=""/>
+		<item name="AccountPassword" section="account" key="password" defvalue="" encrypt="1"/>
+		<item name="AccountPrecondition" section="account" key="precondition" defvalue="0"/>
+		<item name="AccountProxyRequire" section="account" key="proxy-require" defvalue=""/>
+		<item name="AccountPtime" section="account" key="ptime" defvalue="20"/>
+		<item name="AccountRegFailRetryInterval" section="account" key="RegFailRetryInterval" defvalue="30"/>
+		<item name="AccountRegisterLine" section="account" key="RegisterLine" defvalue="0"/>
+		<item name="AccountRegisterMAC" section="account" key="RegisterMAC" defvalue="0"/>
+		<item name="AccountRegisterName" section="account" key="AuthName" defvalue=""/>
+		<item name="AccountRejectAnonymousCallSwitch" section="account" key="RejectAnonymousCall" defvalue="0"/>
+		<item name="AccountRejectAnonymousRejectOffCode" section="account" key="AnonymousReject_OffCode" defvalue=""/>
+		<item name="AccountRejectAnonymousRejectOnCode" section="account" key="AnonymousReject_OnCode" defvalue=""/>
+		<item name="AccountRing" section="Ring" key="strRingFile" defvalue="Common"/>
+		<item name="AccountRingFile" section="Ring" key="strRingFile" defvalue=""/>
+		<item name="AccountSCAShowTime" section="account" key="SCAShowTime" defvalue="10"/>
+		<item name="AccountSIPListenPort" section="account" key="SIPListenPort" defvalue="5060"/>
+		<item name="AccountSIPServerHost" section="account" key="SIPServerHost" defvalue="0.0.0.0"/>
+		<item name="AccountSIPServerPort" section="account" key="SIPServerPort" defvalue="5060"/>
+		<item name="AccountSIPServerType" section="account" key="SIPServerType" defvalue="0"/>
+		<item name="AccountSTUNPort" section="NAT" key="STUNPort" defvalue="3478"/>
+		<item name="AccountSessionExpires" section="account" key="SessionExpires" defvalue="1800"/>
+		<item name="AccountSessionRefresher" section="account" key="SessionRefresher" defvalue="0"/>
+		<item name="AccountShowCallInfoTime" section="CallCenter" key="nShowCallInfoTime" defvalue="30"/>
+		<item name="AccountSignalEncode" section="account" key="EnableSignalEncode" defvalue="0"/>
+		<item name="AccountSignalEncodeKey" section="account" key="SignalEncodeKey" defvalue="0"/>
+		<item name="AccountSrtpEncryption" section="account" key="srtp_encryption" defvalue="0"/>
+		<item name="AccountStunServerHost" section="NAT" key="STUNServer" defvalue="0.0.0.0"/>
+		<item name="AccountStunSwitch" section="NAT" key="NATTraversal" defvalue="0"/>
+		<item name="AccountSubscribeACDExpire" section="account" key="SubscribeACDExpire" defvalue="0"/>
+		<item name="AccountSubscribeMWIExpire" section="account" key="SubscribeMWIExpire" defvalue="3600"/>
+		<item name="AccountSubscribeMWIToVM" section="account" key="SubscribeMWIToVM" defvalue="0"/>
+		<item name="AccountSubscribePeriod" section="blf" key="SubscribePeriod" defvalue="1800"/>
+		<item name="AccountSubsribeMWI" section="account" key="SubscribeMWI" defvalue="0"/>
+		<item name="AccountSubsribeRegister" section="account" key="SubscribeRegister" defvalue="0"/>
+		<item name="AccountTransport" section="account" key="Transport" defvalue="0"/>
+		<item name="AccountUnRegisterOnReboot" section="account" key="UnRegisterOnReboot" defvalue="0"/>
+		<item name="AccountUserName" section="account" key="UserName" defvalue=""/>
+		<item name="AccountVoiceMailNumber" section="account" key="VoiceMail" defvalue=""/>
+		<item name="Accountearlymedia" section="account" key="earlymedia" defvalue="0"/>
+  </Account>
+
+</IniConfig>
+<XmlConfig>
+</XmlConfig>

@@ -1,0 +1,16 @@
+<root_menu>
+
+<!-- Basic Setting菜单开始 -->
+<item id_name="language" display_name="Language" icon_name="menu_language.png" click_action="OpenSubPage(language)" long_click_action="" />
+<item id_name="date_and_time" display_name="Time & Date" icon_name="menu_date_time.png" click_action="OpenPage(date_and_time_list.xml)" long_click_action="" />
+<item id_name="display" display_name="Display" icon_name="menu_display.png" click_action="OpenPage(display_list.xml)" long_click_action="" />
+<item id_name="sound" display_name="Sound" icon_name="menu_sound.png" click_action="OpenPage(sound_list.xml)" long_click_action="" />
+<item id_name="unlock_pin" display_name="Change PIN" icon_name="menu_call_forward.png" click_action="OpenSubPage(unlock_pin)" long_click_action="" />
+<item id_name="key_guard_lock" display_name="Keypad Lock" icon_name="" click_action="OpenSubPage(key_guard_lock)" long_click_action="" />
+<item id_name="bluetooth" display_name="Bluetooth" icon_name="menu_bluetooth.png" click_action="OpenSubPage(bluetooth)" long_click_action="" user_level="" />
+<item id_name="wifi" display_name="Wifi" icon_name="menu_wifi.png" click_action="OpenSubPage(wifi)" long_click_action="" user_level="" />
+<item id_name="reboot" display_name="Reboot" icon_name="" click_action="OpenSubPage(reboot)" long_click_action="" />
+<item id_name="update" display_name="Update Configuration" icon_name="" click_action="OpenSubPage(update)" long_click_action="" />
+<!-- Basic Setting菜单结束 -->
+
+</root_menu>

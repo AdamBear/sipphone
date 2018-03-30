@@ -1,0 +1,75 @@
+#ifndef _SETTING_PAGE_DEFINE_H_
+#define _SETTING_PAGE_DEFINE_H_
+
+enum PAGE_TYPE
+{
+    MENU_PAGE_TYPE_NONE = 0,  // 不正确的页面类型.
+
+    // 以下为菜单.
+    MENU_PAGE_MAIN = 1,  // 主菜单.
+
+    // 以下为各个页面.
+    MENU_PAGE_LOCAL_CALLLOG,  // 历史记录页面.
+    MENU_PAGE_BROADSOFT_CALLLOG,  // 进入Broadsoft calllog界面.
+
+    MENU_PAGE_METASWITCH_CALLLOG,   // 进入mtsw calllog界面.
+
+    MENU_SETTING_FORWARD,// forward设置界面
+    MENU_SETTING_CUSTOM_FORWARD,// custom forward设置界面
+
+    MENU_SETTING_CUSTOM_DND,// custom dnd设置界面
+
+    MENU_SETTING_TEXTMESSAGE,// Text Message页面.
+    MENU_SETTING_VOICEMAIL,  // Voice Mail页面.
+    MENU_SETTING_NEWMESSAGE, // NewMessage页面
+    MENU_SETTING_MSGINBOX,   // 收件箱
+
+    MENU_ZEROSPTOUCH,        // ZeroSPTouch界面
+
+    // 以下为各个子页面.
+    MENU_SUB_PAGE_CALLLOG_ALL,  // 所有历史记录页面.
+    MENU_SUB_PAGE_CALLLOG_DIALED,  // 拨出记录页面.
+    MENU_SUB_PAGE_CALLLOG_RECIEVED,  // 已接记录页面.
+    MENU_SUB_PAGE_CALLLOG_MISSED,  // 未接记录页面.
+    MENU_SUB_PAGE_CALLLOG_FORWARD,  // Forward记录页面.
+
+    MENU_SETTING_MY_STATUS,     // BSFT UC Presence My status页面
+    MENU_PAGE_BUDDIES,          // BSFT Buddies页面
+    MENU_PAGE_NETWORK_FAVORITES,// BSFT Network Favorites
+
+    MENU_MULTI_FORWARD,// Multi forward设置界面
+
+    MENU_PAGE_SET_VOICEMAIL,    //view voicemail
+    MENU_PAGE_VIEW_VOICEMAIL,   //set voicemail
+
+    CC_PAGE_ACD_LOGIN,
+    CC_PAGE_CALLCENTER_ACDSELECTSTATE,
+    CC_PAGE_ACD_STATUS,
+    CC_PAGE_CALLCENTER_HOTELINGLOGIN,
+    CC_PAGE_CALLCENTER_HOTELINGLOGINACDOFF,
+    CC_PAGE_CALLCENTER_DISPOSITIONCODE,
+    CC_PAGE_CALLCENTER_EMERGENCYESCALATION,
+    CC_PAGE_MTSWACD_MLHG,
+    CC_PAGE_MTSW_COMMPORTAL,
+
+    MENU_PAGE_DND,
+    MENU_PAGE_ALWAYS_FORWARD,
+    MENU_PAGE_BUSY_FORWARD,
+    MENU_PAGE_NOANSWER_FORWARD,
+    MENU_PAGE_AUTOPCODEAUTH,
+
+    PAGE_TYPE_HOTDESK,//hotdesking login wizard
+
+    MENU_USB_INTERFACE,// USB页面.
+    MENU_SUB_PAGE_MEDIA_STATUS,  // 通话统计
+
+    MENU_PAGE_MAIN_LOCK,    // Ergocom 012客户特制Menu锁时的界面菜单
+
+    MENU_PAGE_LDAPAUTH, //LDAP鉴权界面
+
+    MENU_PAGE_STATUS,
+
+    MENU_PAGE_TYPE_MAX,
+};
+
+#endif

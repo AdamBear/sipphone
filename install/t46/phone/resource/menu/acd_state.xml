@@ -1,0 +1,9 @@
+<root_menu>
+
+<!-- ACD State菜单开始 -->
+<item id_name="login" display_name="Login" icon_name="" click_action="OpenSubPage(acd_login)" long_click_action="" />
+<item id_name="unavail_reason" display_name="Unavail Reason" icon_name="" click_action="OpenSubPage(acd_unavail_reason)" long_click_action="" />
+<item id_name="initial_state" display_name="Initial State" icon_name="" click_action="OpenSubPage(acd_initial_state)" long_click_action="" />
+<!-- ACD State菜单结束 -->
+
+</root_menu>

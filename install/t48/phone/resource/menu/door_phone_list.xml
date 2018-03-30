@@ -1,0 +1,8 @@
+<root_menu>
+
+<!-- Door Phone菜单开始 -->
+<item id_name="door_phone_setting_1" display_name="DP01 Setting" icon_name="" click_action="OpenSubPage(door_phone_setting_1)" long_click_action="" />
+<item id_name="door_phone_setting_2" display_name="DP02 Setting" icon_name="" click_action="OpenSubPage(door_phone_setting_2)" long_click_action="" />
+<!-- Door Phone菜单结束 -->
+
+</root_menu>

@@ -1,0 +1,14 @@
+<root_menu>
+
+<!-- Network菜单开始 -->
+<item id_name="wan_port" display_name="WAN Port" icon_name="" click_action="OpenSubPage(network_wan_port_option)" long_click_action="" />
+<item id_name="vlan" display_name="VLAN" icon_name="" click_action="OpenMenu(network_vlan_list.xml)" long_click_action="" />
+<item id_name="web_server" display_name="Web Server" icon_name="" click_action="OpenSubPage(network_wweb_server)" long_click_action="" />
+<item id_name="802.1x" display_name="802.1x" icon_name="" click_action="OpenSubPage(network_w802.1x)" long_click_action="" />
+<item id_name="vpn" display_name="VPN" icon_name="" click_action="OpenSubPage(network_wvpn)" long_click_action="" />
+<item id_name="lldp" display_name="LLDP" icon_name="" click_action="OpenSubPage(network_lldp)" long_click_action="" />
+<item id_name="cdp" display_name="CDP" icon_name="" click_action="OpenSubPage(vlancdp)" long_click_action="" />
+<item id_name="NAT" display_name="NAT" icon_name="" click_action="OpenSubPage(network_nat)" long_click_action="" />
+<!-- Network菜单结束 -->
+
+</root_menu>

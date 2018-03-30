@@ -1,0 +1,297 @@
+<?xml version="1.0" ?>
+<configMap>
+  <configuration dev="T19">
+  </configuration>
+  <configuration dev="T21">
+    <ledlampcolor LampID="101">
+      <color r="0x04" g="0x02" />
+    </ledlampcolor>
+    <ledlampcolor LampID="102">
+      <color r="0x10" g="0x08" />
+    </ledlampcolor>
+  </configuration>
+  <configuration dev="T23">
+    <ledlampcolor LampID="101">
+      <color r="0x04" g="0x02" />
+    </ledlampcolor>
+    <ledlampcolor LampID="102">
+      <color r="0x40" g="0x20" />
+    </ledlampcolor>
+    <ledlampcolor LampID="103">
+      <color r="0x10" g="0x08" />
+    </ledlampcolor>
+  </configuration>
+  <configuration dev="T40">
+    <ledlampcolor LampID="101">
+      <color r="0x20" g="0x40" />
+    </ledlampcolor>
+    <ledlampcolor LampID="102">
+      <color r="0x10" g="0x2" />
+    </ledlampcolor>
+    <ledlampcolor LampID="103">
+      <color r="0x8" g="0x4" />
+    </ledlampcolor>
+    </configuration>
+  <configuration dev="T27 T27G">
+    <ledlampcolor LampID="101">
+      <color r="0x80" g="0x02" />
+    </ledlampcolor>
+    <ledlampcolor LampID="102">
+      <color r="0x100" g="0x04" />
+    </ledlampcolor>
+    <ledlampcolor LampID="103">
+      <color r="0x200" g="0x08" />
+    </ledlampcolor>
+    <ledlampcolor LampID="104">
+      <color r="0x400" g="0x10" />
+    </ledlampcolor>
+    <ledlampcolor LampID="105">
+      <color r="0x80000" g="0x2000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="106">
+      <color r="0x100000" g="0x4000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="107">
+      <color r="0x200000" g="0x8000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="108">
+      <color r="0x400000" g="0x10000" />
+    </ledlampcolor>
+  </configuration>
+  <configuration dev="T29">
+    <ledlampcolor LampID="101">
+      <color r="0x80" g="0x02" />
+    </ledlampcolor>
+    <ledlampcolor LampID="102">
+      <color r="0x100" g="0x04" />
+    </ledlampcolor>
+    <ledlampcolor LampID="103">
+      <color r="0x200" g="0x08" />
+    </ledlampcolor>
+    <ledlampcolor LampID="104">
+      <color r="0x400" g="0x10" />
+    </ledlampcolor>
+    <ledlampcolor LampID="105">
+      <color r="0x800" g="0x20" />
+    </ledlampcolor>
+    <ledlampcolor LampID="106">
+      <color r="0x80000" g="0x2000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="107">
+      <color r="0x100000" g="0x4000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="108">
+      <color r="0x200000" g="0x8000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="109">
+      <color r="0x400000" g="0x10000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="110">
+      <color r="0x800000" g="0x20000" />
+    </ledlampcolor>
+  </configuration>
+  <configuration dev="T41 T41S">
+    <ledlampcolor LampID="101">
+      <color r="0x80" g="0x02" />
+    </ledlampcolor>
+    <ledlampcolor LampID="102">
+      <color r="0x80000" g="0x2000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="103">
+      <color r="0x100" g="0x04" />
+    </ledlampcolor>
+    <ledlampcolor LampID="104">
+      <color r="0x100000" g="0x4000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="105">
+      <color r="0x200" g="0x08" />
+    </ledlampcolor>
+    <ledlampcolor LampID="106">
+      <color r="0x200000" g="0x8000" />
+    </ledlampcolor>
+  </configuration>
+  <configuration dev="T42 T42S">
+    <ledlampcolor LampID="101">
+      <color r="0x80" g="0x02" />
+    </ledlampcolor>
+    <ledlampcolor LampID="102">
+      <color r="0x80000" g="0x2000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="103">
+      <color r="0x100" g="0x04" />
+    </ledlampcolor>
+    <ledlampcolor LampID="104">
+      <color r="0x100000" g="0x4000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="105">
+      <color r="0x200" g="0x08" />
+    </ledlampcolor>
+    <ledlampcolor LampID="106">
+      <color r="0x200000" g="0x8000" />
+    </ledlampcolor>
+  </configuration>
+  <configuration dev="T46 T46S">
+    <ledlampcolor LampID="101">
+      <color r="0x80" g="0x02" />
+    </ledlampcolor>
+    <ledlampcolor LampID="102">
+      <color r="0x100" g="0x04" />
+    </ledlampcolor>
+    <ledlampcolor LampID="103">
+      <color r="0x200" g="0x08" />
+    </ledlampcolor>
+    <ledlampcolor LampID="104">
+      <color r="0x400" g="0x10" />
+    </ledlampcolor>
+    <ledlampcolor LampID="105">
+      <color r="0x800" g="0x20" />
+    </ledlampcolor>
+    <ledlampcolor LampID="106">
+      <color r="0x80000" g="0x2000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="107">
+      <color r="0x100000" g="0x4000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="108">
+      <color r="0x200000" g="0x8000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="109">
+      <color r="0x400000" g="0x10000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="110">
+      <color r="0x800000" g="0x20000" />
+    </ledlampcolor>
+  </configuration>
+  <configuration dev="T48 T48S">
+  </configuration>
+  <configuration dev="T49">
+  </configuration>
+  <configuration dev="T61">
+    <ledlampcolor LampID="101">
+      <color r="0x4000" g="0x2000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="102">
+      <color r="0x1000" g="0x800" />
+    </ledlampcolor>
+    <ledlampcolor LampID="103">
+      <color r="0x200" g="0x400" />
+    </ledlampcolor>
+    <ledlampcolor LampID="104">
+      <color r="0x100" g="0x80" />
+    </ledlampcolor>
+    <ledlampcolor LampID="105">
+      <color r="0x40" g="0x20" />
+    </ledlampcolor>
+    <ledlampcolor LampID="106">
+      <color r="0x8" g="0x10" />
+    </ledlampcolor>
+  </configuration>
+  <configuration dev="T66">
+    <ledlampcolor LampID="101">
+      <color r="0x400" g="0x40" />
+    </ledlampcolor>
+    <ledlampcolor LampID="102">
+      <color r="0x1000" g="0x100" />
+    </ledlampcolor>
+    <ledlampcolor LampID="103">
+      <color r="0x800" g="0x80" />
+    </ledlampcolor>
+    <ledlampcolor LampID="104">
+      <color r="0x200" g="0x20" />
+    </ledlampcolor>
+    <ledlampcolor LampID="105">
+      <color r="0x40000" g="0x4000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="106">
+      <color r="0x100000" g="0x10000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="107">
+      <color r="0x80000" g="0x8000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="108">
+      <color r="0x20000" g="0x2000" />
+    </ledlampcolor>
+  </configuration>
+  <configuration dev="T69 T69S">
+    <ledlampcolor LampID="101">
+      <color r="0x8000" g="0x200000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="102">
+      <color r="0x8" g="0x200" />
+    </ledlampcolor>
+    <ledlampcolor LampID="103">
+      <color r="0x4000" g="0x100000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="104">
+      <color r="0x4" g="0x100" />
+    </ledlampcolor>
+    <ledlampcolor LampID="105">
+      <color r="0x2000" g="0x80000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="106">
+      <color r="0x2" g="0x80" />
+    </ledlampcolor>
+  </configuration>
+  <configuration dev="CP860">
+  </configuration>
+  <configuration dev="DECT">
+  </configuration>
+    <configuration dev="T52">
+    <ledlampcolor LampID="101">
+      <color r="0x80" g="0x02" />
+    </ledlampcolor>
+    <ledlampcolor LampID="102">
+      <color r="0x100" g="0x04" />
+    </ledlampcolor>
+    <ledlampcolor LampID="103">
+      <color r="0x200" g="0x08" />
+    </ledlampcolor>
+    <ledlampcolor LampID="104">
+      <color r="0x400" g="0x10" />
+    </ledlampcolor>
+    <ledlampcolor LampID="105">
+      <color r="0x80000" g="0x2000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="106">
+      <color r="0x100000" g="0x4000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="107">
+      <color r="0x200000" g="0x8000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="108">
+      <color r="0x400000" g="0x10000" />
+    </ledlampcolor>
+  </configuration>
+    <configuration dev="T54S">
+    <ledlampcolor LampID="101">
+      <color r="0x80" g="0x02" />
+    </ledlampcolor>
+    <ledlampcolor LampID="102">
+      <color r="0x100" g="0x04" />
+    </ledlampcolor>
+    <ledlampcolor LampID="103">
+      <color r="0x200" g="0x08" />
+    </ledlampcolor>
+    <ledlampcolor LampID="104">
+      <color r="0x400" g="0x10" />
+    </ledlampcolor>
+    <ledlampcolor LampID="105">
+      <color r="0x800" g="0x20" />
+    </ledlampcolor>
+    <ledlampcolor LampID="106">
+      <color r="0x80000" g="0x2000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="107">
+      <color r="0x100000" g="0x4000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="108">
+      <color r="0x200000" g="0x8000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="109">
+      <color r="0x400000" g="0x10000" />
+    </ledlampcolor>
+    <ledlampcolor LampID="110">
+      <color r="0x800000" g="0x20000" />
+    </ledlampcolor>
+  </configuration>
+</configMap>

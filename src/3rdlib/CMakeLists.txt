@@ -1,0 +1,23 @@
+if(ENABLE_TEST)
+    add_subdirectory(googletest)
+else()
+    add_fake_directory(TARGET googletest)
+endif()
+
+if(ENABLE_MEMCHECK)
+    add_subdirectory(memory)
+else()
+    add_fake_directory(TARGET memory)
+endif()
+
+if(ENABLE_TESTABILITY)
+	add_subdirectory(testability)  
+else()
+    add_fake_directory(TARGET testability)
+endif()
+
+if(ENABLE_JSON)
+	add_subdirectory(json) 
+else()
+    add_fake_directory(TARGET json)
+endif()

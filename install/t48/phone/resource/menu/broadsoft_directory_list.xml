@@ -1,0 +1,12 @@
+<root_menu>
+
+<!-- BroadSoft directory菜单开始 -->
+<item id_name="item_1" display_name="Item 1" icon_name="" click_action="OpenSubPage(broadsoft_directory_item_1)" long_click_action="" />
+<item id_name="item_2" display_name="Item 2" icon_name="" click_action="OpenSubPage(broadsoft_directory_item_2)" long_click_action="" />
+<item id_name="item_3" display_name="Item 3" icon_name="" click_action="OpenSubPage(broadsoft_directory_item_3)" long_click_action="" />
+<item id_name="item_4" display_name="Item 4" icon_name="" click_action="OpenSubPage(broadsoft_directory_item_4)" long_click_action="" />
+<item id_name="item_5" display_name="Item 5" icon_name="" click_action="OpenSubPage(broadsoft_directory_item_5)" long_click_action="" />
+<item id_name="item_6" display_name="Item 6" icon_name="" click_action="OpenSubPage(broadsoft_directory_item_6)" long_click_action="" />
+<!-- BroadSoft directory菜单结束 -->
+
+</root_menu>

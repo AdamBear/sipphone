@@ -1,0 +1,37 @@
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/)
+
+if(T54)
+configure_file(talkuilogiccondition.t54.h
+               talkuilogiccondition.h
+               COPYONLY)
+elseif(COLOR)
+configure_file(talkuilogiccondition.t46.h
+               talkuilogiccondition.h
+               COPYONLY)
+elseif(T42S)
+configure_file(talkuilogiccondition.t42.h
+               talkuilogiccondition.h
+               COPYONLY)
+elseif(T42)
+configure_file(talkuilogiccondition.t42.h
+               talkuilogiccondition.h
+               COPYONLY)
+elseif(T27)
+configure_file(talkuilogiccondition.t27.h
+               talkuilogiccondition.h
+               COPYONLY)
+elseif(T27g)
+configure_file(talkuilogiccondition.t27.h
+               talkuilogiccondition.h
+               COPYONLY)
+elseif(CP920)
+configure_file(talkuilogiccondition.cp920.h
+               talkuilogiccondition.h
+               COPYONLY)
+else()
+configure_file(talkuilogiccondition.t2x.h
+               talkuilogiccondition.h
+               COPYONLY)
+endif()
+
+collect()

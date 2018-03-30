@@ -1,0 +1,9 @@
+<storageTrigger>
+  <dir name="/tmp/udisk0"/>
+  <dir name="/tmp/udisk1"/>
+  <dir name="/tmp/udisk2"/>
+  <dir name="/tmp/udisk3"/>
+  <dir name="/tmp/udisk4"/>
+  <dir name="/tmp/udisk17"/>
+  <dir name="/tmp/udisk20"/>
+</storageTrigger>

@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" ?>
+<configMap>
+  <configuration dev="T19">
+    <event priority="0" eventname="AutopFinish" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="1" eventname="InCall" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="2" eventname="AcdAlert" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="3" eventname="Hold" lightTime="500" darkTime="500" LampID="0" />
+    <event priority="4" eventname="MutePowerLight" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="5" eventname="Talking" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="6" eventname="MissCall" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="7" eventname="VoiceMail" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="8" eventname="Common" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="0" eventname="sms" lightTime="0" darkTime="0" LampID="7" />
+    <event priority="0" eventname="DsskeyGreen1" lightTime="0" darkTime="0" LampID="1" />
+    <event priority="0" eventname="DsskeyGreen2" lightTime="0" darkTime="0" LampID="3" />
+    <event priority="0" eventname="DsskeyRed1" lightTime="0" darkTime="0" LampID="2" />
+    <event priority="0" eventname="DsskeyRed2" lightTime="0" darkTime="0" LampID="4" />
+    <event priority="-1" eventname="Custom"/>
+  </configuration>
+  <configuration dev="T21">
+    <event priority="0" eventname="AutopFinish" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="1" eventname="InCall" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="2" eventname="AcdAlert" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="3" eventname="Hold" lightTime="500" darkTime="500" LampID="0" />
+    <event priority="4" eventname="MutePowerLight" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="5" eventname="Talking" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="6" eventname="MissCall" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="7" eventname="VoiceMail" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="8" eventname="Common" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="0" eventname="sms" lightTime="0" darkTime="0" LampID="7" />
+    <event priority="0" eventname="DsskeyGreen1" lightTime="0" darkTime="0" LampID="101" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen2" lightTime="0" darkTime="0" LampID="102" lampstatus="g" />
+    <event priority="0" eventname="DsskeyRed1" lightTime="0" darkTime="0" LampID="101" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed2" lightTime="0" darkTime="0" LampID="102" lampstatus="r" />
+    <event priority="0" eventname="DsskeyOrange1" lightTime="0" darkTime="0" LampID="101" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange2" lightTime="0" darkTime="0" LampID="102" lampstatus="o" />
+    <event priority="-1" eventname="Custom"/>
+  </configuration>
+  <configuration dev="T23">
+    <event priority="0" eventname="AutopFinish" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="1" eventname="InCall" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="2" eventname="AcdAlert" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="3" eventname="Hold" lightTime="500" darkTime="500" LampID="0" />
+    <event priority="4" eventname="MutePowerLight" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="5" eventname="BossAdmin" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="6" eventname="Talking" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="7" eventname="MissCall" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="8" eventname="VoiceMail" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="9" eventname="Common" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="0" eventname="sms" lightTime="0" darkTime="0" LampID="7" />
+    <event priority="0" eventname="DsskeyGreen1" lightTime="0" darkTime="0" LampID="101" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen2" lightTime="0" darkTime="0" LampID="102" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen3" lightTime="0" darkTime="0" LampID="103" lampstatus="g" />
+    <event priority="0" eventname="DsskeyRed1" lightTime="0" darkTime="0" LampID="101" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed2" lightTime="0" darkTime="0" LampID="102" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed3" lightTime="0" darkTime="0" LampID="103" lampstatus="r" />
+    <event priority="0" eventname="DsskeyOrange1" lightTime="0" darkTime="0" LampID="101" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange2" lightTime="0" darkTime="0" LampID="102" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange3" lightTime="0" darkTime="0" LampID="103" lampstatus="o" />
+    <event priority="-1" eventname="Custom"/>
+  </configuration>
+  <configuration dev="T40">
+    <event priority="0" eventname="AutopFinish" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="1" eventname="InCall" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="2" eventname="AcdAlert" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="3" eventname="Hold" lightTime="500" darkTime="500" LampID="0" />
+    <event priority="4" eventname="MutePowerLight" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="5" eventname="Talking" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="6" eventname="MissCall" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="7" eventname="VoiceMail" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="8" eventname="Common" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="0" eventname="sms" lightTime="0" darkTime="0" LampID="7" />
+    <event priority="0" eventname="DsskeyGreen1" lightTime="0" darkTime="0" LampID="101" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen2" lightTime="0" darkTime="0" LampID="102" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen3" lightTime="0" darkTime="0" LampID="103" lampstatus="g" />
+    <event priority="0" eventname="DsskeyRed1" lightTime="0" darkTime="0" LampID="101" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed2" lightTime="0" darkTime="0" LampID="102" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed3" lightTime="0" darkTime="0" LampID="103" lampstatus="r" />
+    <event priority="0" eventname="DsskeyOrange1" lightTime="0" darkTime="0" LampID="101" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange2" lightTime="0" darkTime="0" LampID="102" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange3" lightTime="0" darkTime="0" LampID="103" lampstatus="o" />
+    <event priority="-1" eventname="Custom"/>
+  </configuration>
+  <configuration dev="T27 T27G">
+    <event priority="0" eventname="AutopFinish" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="1" eventname="InCall" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="2" eventname="AcdAlert" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="3" eventname="Hold" lightTime="500" darkTime="500" LampID="0" />
+    <event priority="4" eventname="MutePowerLight" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="5" eventname="Talking" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="6" eventname="MissCall" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="7" eventname="VoiceMail" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="8" eventname="Common" lightTime="0" darkTime="0" LampID="0" />
+
+    <event priority="0" eventname="sms" lightTime="0" darkTime="0" LampID="11" />
+    <event priority="0" eventname="headset" lightTime="0" darkTime="0" LampID="5" />
+
+    <event priority="0" eventname="DsskeyGreen1" lightTime="0" darkTime="0" LampID="101" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen2" lightTime="0" darkTime="0" LampID="102" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen3" lightTime="0" darkTime="0" LampID="103" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen4" lightTime="0" darkTime="0" LampID="104" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen5" lightTime="0" darkTime="0" LampID="105" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen6" lightTime="0" darkTime="0" LampID="106" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen7" lightTime="0" darkTime="0" LampID="107" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen8" lightTime="0" darkTime="0" LampID="108" lampstatus="g" />
+    <event priority="0" eventname="DsskeyRed1" lightTime="0" darkTime="0" LampID="101" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed2" lightTime="0" darkTime="0" LampID="102" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed3" lightTime="0" darkTime="0" LampID="103" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed4" lightTime="0" darkTime="0" LampID="104" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed5" lightTime="0" darkTime="0" LampID="105" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed6" lightTime="0" darkTime="0" LampID="106" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed7" lightTime="0" darkTime="0" LampID="107" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed8" lightTime="0" darkTime="0" LampID="108" lampstatus="r" />
+    <event priority="0" eventname="DsskeyOrange1" lightTime="0" darkTime="0" LampID="101" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange2" lightTime="0" darkTime="0" LampID="102" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange3" lightTime="0" darkTime="0" LampID="103" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange4" lightTime="0" darkTime="0" LampID="104" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange5" lightTime="0" darkTime="0" LampID="105" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange6" lightTime="0" darkTime="0" LampID="106" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange7" lightTime="0" darkTime="0" LampID="107" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange8" lightTime="0" darkTime="0" LampID="108" lampstatus="o" />
+    <event priority="-1" eventname="Custom"/>
+  </configuration>
+  <configuration dev="T29">
+    <event priority="0" eventname="AutopFinish" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="1" eventname="InCall" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="2" eventname="AcdAlert" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="3" eventname="Hold" lightTime="500" darkTime="500" LampID="0" />
+    <event priority="4" eventname="MutePowerLight" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="5" eventname="Talking" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="6" eventname="MissCall" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="7" eventname="VoiceMail" lightTime="1000" darkTime="1000" LampID="0" />
+	<event priority="8" eventname="PowerSaving" lightTime="500" darkTime="3000" LampID="0" />
+    <event priority="9" eventname="Common" lightTime="0" darkTime="0" LampID="0" />
+
+    <event priority="0" eventname="sms" lightTime="0" darkTime="0" LampID="12" />
+    <event priority="0" eventname="headset" lightTime="0" darkTime="0" LampID="6" />
+
+    <event priority="0" eventname="DsskeyGreen1" lightTime="0" darkTime="0" LampID="101" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen2" lightTime="0" darkTime="0" LampID="102" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen3" lightTime="0" darkTime="0" LampID="103" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen4" lightTime="0" darkTime="0" LampID="104" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen5" lightTime="0" darkTime="0" LampID="105" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen6" lightTime="0" darkTime="0" LampID="106" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen7" lightTime="0" darkTime="0" LampID="107" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen8" lightTime="0" darkTime="0" LampID="108" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen9" lightTime="0" darkTime="0" LampID="109" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen10" lightTime="0" darkTime="0" LampID="110" lampstatus="g" />
+    <event priority="0" eventname="DsskeyRed1" lightTime="0" darkTime="0" LampID="101" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed2" lightTime="0" darkTime="0" LampID="102" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed3" lightTime="0" darkTime="0" LampID="103" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed4" lightTime="0" darkTime="0" LampID="104" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed5" lightTime="0" darkTime="0" LampID="105" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed6" lightTime="0" darkTime="0" LampID="106" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed7" lightTime="0" darkTime="0" LampID="107" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed8" lightTime="0" darkTime="0" LampID="108" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed9" lightTime="0" darkTime="0" LampID="109" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed10" lightTime="0" darkTime="0" LampID="110" lampstatus="r" />
+    <event priority="0" eventname="DsskeyOrange1" lightTime="0" darkTime="0" LampID="101" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange2" lightTime="0" darkTime="0" LampID="102" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange3" lightTime="0" darkTime="0" LampID="103" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange4" lightTime="0" darkTime="0" LampID="104" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange5" lightTime="0" darkTime="0" LampID="105" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange6" lightTime="0" darkTime="0" LampID="106" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange7" lightTime="0" darkTime="0" LampID="107" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange8" lightTime="0" darkTime="0" LampID="108" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange9" lightTime="0" darkTime="0" LampID="109" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange10" lightTime="0" darkTime="0" LampID="110" lampstatus="o" />
+    <event priority="-1" eventname="Custom"/>
+  </configuration>
+  <configuration dev="T41 T41S">
+    <event priority="0" eventname="AutopFinish" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="1" eventname="InCall" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="2" eventname="AcdAlert" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="3" eventname="Hold" lightTime="500" darkTime="500" LampID="0" />
+    <event priority="4" eventname="MutePowerLight" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="5" eventname="Talking" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="6" eventname="MissCall" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="7" eventname="VoiceMail" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="8" eventname="Common" lightTime="0" darkTime="0" LampID="0" />
+
+    <event priority="0" eventname="Mute" lightTime="0" darkTime="0" LampID="4" />
+    <event priority="0" eventname="headset" lightTime="0" darkTime="0" LampID="10" />
+    <event priority="0" eventname="speaker" lightTime="0" darkTime="0" LampID="16" />
+
+    <event priority="0" eventname="DsskeyGreen1" lightTime="0" darkTime="0" LampID="101" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen2" lightTime="0" darkTime="0" LampID="102" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen3" lightTime="0" darkTime="0" LampID="103" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen4" lightTime="0" darkTime="0" LampID="104" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen5" lightTime="0" darkTime="0" LampID="105" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen6" lightTime="0" darkTime="0" LampID="106" lampstatus="g" />
+    <event priority="0" eventname="DsskeyRed1" lightTime="0" darkTime="0" LampID="101" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed2" lightTime="0" darkTime="0" LampID="102" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed3" lightTime="0" darkTime="0" LampID="103" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed4" lightTime="0" darkTime="0" LampID="104" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed5" lightTime="0" darkTime="0" LampID="105" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed6" lightTime="0" darkTime="0" LampID="106" lampstatus="r" />
+    <event priority="0" eventname="DsskeyOrange1" lightTime="0" darkTime="0" LampID="101" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange2" lightTime="0" darkTime="0" LampID="102" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange3" lightTime="0" darkTime="0" LampID="103" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange4" lightTime="0" darkTime="0" LampID="104" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange5" lightTime="0" darkTime="0" LampID="105" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange6" lightTime="0" darkTime="0" LampID="106" lampstatus="o" />
+    <event priority="-1" eventname="Custom"/>
+  </configuration>
+  <configuration dev="T42 T42S">
+    <event priority="0" eventname="AutopFinish" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="1" eventname="InCall" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="2" eventname="AcdAlert" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="3" eventname="Hold" lightTime="500" darkTime="500" LampID="0" />
+    <event priority="4" eventname="MutePowerLight" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="5" eventname="Talking" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="6" eventname="MissCall" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="7" eventname="VoiceMail" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="8" eventname="Common" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="0" eventname="Mute" lightTime="0" darkTime="0" LampID="4" />
+    <event priority="0" eventname="headset" lightTime="0" darkTime="0" LampID="10" />
+    <event priority="0" eventname="speaker" lightTime="0" darkTime="0" LampID="16" />
+    <event priority="0" eventname="DsskeyGreen1" lightTime="0" darkTime="0" LampID="101" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen2" lightTime="0" darkTime="0" LampID="102" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen3" lightTime="0" darkTime="0" LampID="103" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen4" lightTime="0" darkTime="0" LampID="104" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen5" lightTime="0" darkTime="0" LampID="105" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen6" lightTime="0" darkTime="0" LampID="106" lampstatus="g" />
+    <event priority="0" eventname="DsskeyRed1" lightTime="0" darkTime="0" LampID="101" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed2" lightTime="0" darkTime="0" LampID="102" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed3" lightTime="0" darkTime="0" LampID="103" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed4" lightTime="0" darkTime="0" LampID="104" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed5" lightTime="0" darkTime="0" LampID="105" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed6" lightTime="0" darkTime="0" LampID="106" lampstatus="r" />
+    <event priority="0" eventname="DsskeyOrange1" lightTime="0" darkTime="0" LampID="101" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange2" lightTime="0" darkTime="0" LampID="102" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange3" lightTime="0" darkTime="0" LampID="103" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange4" lightTime="0" darkTime="0" LampID="104" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange5" lightTime="0" darkTime="0" LampID="105" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange6" lightTime="0" darkTime="0" LampID="106" lampstatus="o" />
+    <event priority="-1" eventname="Custom"/>
+  </configuration>
+  <configuration dev="T46 T46S">
+    <event priority="0" eventname="AutopFinish" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="1" eventname="InCall" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="2" eventname="AcdAlert" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="3" eventname="Hold" lightTime="500" darkTime="500" LampID="0" />
+    <event priority="4" eventname="MutePowerLight" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="5" eventname="Talking" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="6" eventname="MissCall" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="7" eventname="VoiceMail" lightTime="1000" darkTime="1000" LampID="0" />
+	<event priority="8" eventname="PowerSaving" lightTime="500" darkTime="3000" LampID="0" />
+    <event priority="9" eventname="Common" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="0" eventname="Mute" lightTime="0" darkTime="0" LampID="12" />
+    <event priority="0" eventname="headset" lightTime="0" darkTime="0" LampID="6" />
+    <event priority="0" eventname="speaker" lightTime="0" darkTime="0" LampID="18" />
+    <event priority="0" eventname="DsskeyGreen1" lightTime="0" darkTime="0" LampID="101" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen2" lightTime="0" darkTime="0" LampID="102" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen3" lightTime="0" darkTime="0" LampID="103" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen4" lightTime="0" darkTime="0" LampID="104" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen5" lightTime="0" darkTime="0" LampID="105" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen6" lightTime="0" darkTime="0" LampID="106" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen7" lightTime="0" darkTime="0" LampID="107" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen8" lightTime="0" darkTime="0" LampID="108" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen9" lightTime="0" darkTime="0" LampID="109" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen10" lightTime="0" darkTime="0" LampID="110" lampstatus="g" />
+    <event priority="0" eventname="DsskeyRed1" lightTime="0" darkTime="0" LampID="101" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed2" lightTime="0" darkTime="0" LampID="102" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed3" lightTime="0" darkTime="0" LampID="103" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed4" lightTime="0" darkTime="0" LampID="104" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed5" lightTime="0" darkTime="0" LampID="105" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed6" lightTime="0" darkTime="0" LampID="106" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed7" lightTime="0" darkTime="0" LampID="107" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed8" lightTime="0" darkTime="0" LampID="108" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed9" lightTime="0" darkTime="0" LampID="109" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed10" lightTime="0" darkTime="0" LampID="110" lampstatus="r" />
+    <event priority="0" eventname="DsskeyOrange1" lightTime="0" darkTime="0" LampID="101" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange2" lightTime="0" darkTime="0" LampID="102" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange3" lightTime="0" darkTime="0" LampID="103" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange4" lightTime="0" darkTime="0" LampID="104" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange5" lightTime="0" darkTime="0" LampID="105" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange6" lightTime="0" darkTime="0" LampID="106" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange7" lightTime="0" darkTime="0" LampID="107" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange8" lightTime="0" darkTime="0" LampID="108" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange9" lightTime="0" darkTime="0" LampID="109" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange10" lightTime="0" darkTime="0" LampID="110" lampstatus="o" />
+    <event priority="-1" eventname="Custom"/>
+  </configuration>
+  <configuration dev="T48 T48S">
+    <event priority="1" eventname="InCall" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="2" eventname="AcdAlert" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="3" eventname="Hold" lightTime="500" darkTime="500" LampID="0" />
+    <event priority="4" eventname="MutePowerLight" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="5" eventname="Talking" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="6" eventname="MissCall" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="7" eventname="VoiceMail" lightTime="1000" darkTime="1000" LampID="0" />
+	<event priority="8" eventname="PowerSaving" lightTime="500" darkTime="3000" LampID="0" />
+    <event priority="9" eventname="Common" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="0" eventname="Mute" lightTime="0" darkTime="0" LampID="2" />
+    <event priority="0" eventname="headset" lightTime="0" darkTime="0" LampID="1" />
+    <event priority="0" eventname="speaker" lightTime="0" darkTime="0" LampID="3" />
+    <event priority="-1" eventname="Custom"/>
+  </configuration>
+  <configuration dev="T49">
+    <event priority="1" eventname="InCall" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="2" eventname="AcdAlert" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="3" eventname="Hold" lightTime="500" darkTime="500" LampID="0" />
+    <event priority="4" eventname="MutePowerLight" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="5" eventname="Talking" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="6" eventname="VoiceMail" lightTime="1000" darkTime="1000" LampID="0" />
+	<event priority="7" eventname="PowerSaving" lightTime="500" darkTime="3000" LampID="0" />
+    <event priority="8" eventname="Common" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="0" eventname="Mute" lightTime="0" darkTime="0" LampID="4" />
+    <event priority="0" eventname="headset" lightTime="0" darkTime="0" LampID="2" />
+    <event priority="0" eventname="sms" lightTime="0" darkTime="0" LampID="3" />
+    <event priority="0" eventname="speaker" lightTime="0" darkTime="0" LampID="1" />
+    <event priority="0" eventname="VideoInCall" lightTime="300" darkTime="300" LampID="5" />
+    <event priority="3" eventname="VideoHold" lightTime="500" darkTime="500" LampID="6" />
+    <event priority="4" eventname="VideoMute" lightTime="500" darkTime="500" LampID="6" />
+    <event priority="5" eventname="VideoTalking" lightTime="0" darkTime="0" LampID="6" />
+    <event priority="7" eventname="VideoIdle" lightTime="0" darkTime="0" LampID="5" />
+    <event priority="-1" eventname="Custom"/>
+  </configuration>
+  <configuration dev="T61">
+    <event priority="0" eventname="AutopFinish" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="1" eventname="InCall" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="2" eventname="AcdAlert" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="3" eventname="Hold" lightTime="500" darkTime="500" LampID="0" />
+    <event priority="4" eventname="MutePowerLight" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="5" eventname="Talking" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="6" eventname="MissCall" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="7" eventname="VoiceMail" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="8" eventname="Common" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="0" eventname="sms" lightTime="0" darkTime="0" LampID="1" />
+    <event priority="0" eventname="headset" lightTime="0" darkTime="0" LampID="2" />
+    <event priority="0" eventname="DsskeyGreen1" lightTime="0" darkTime="0" LampID="13" />
+    <event priority="0" eventname="DsskeyGreen2" lightTime="0" darkTime="0" LampID="11" />
+    <event priority="0" eventname="DsskeyGreen3" lightTime="0" darkTime="0" LampID="10" />
+    <event priority="0" eventname="DsskeyGreen4" lightTime="0" darkTime="0" LampID="7" />
+    <event priority="0" eventname="DsskeyGreen5" lightTime="0" darkTime="0" LampID="5" />
+    <event priority="0" eventname="DsskeyGreen6" lightTime="0" darkTime="0" LampID="4" />
+    <event priority="0" eventname="DsskeyRed1" lightTime="0" darkTime="0" LampID="14" />
+    <event priority="0" eventname="DsskeyRed2" lightTime="0" darkTime="0" LampID="12" />
+    <event priority="0" eventname="DsskeyRed3" lightTime="0" darkTime="0" LampID="9" />
+    <event priority="0" eventname="DsskeyRed4" lightTime="0" darkTime="0" LampID="8" />
+    <event priority="0" eventname="DsskeyRed5" lightTime="0" darkTime="0" LampID="6" />
+    <event priority="0" eventname="DsskeyRed6" lightTime="0" darkTime="0" LampID="3" />
+    <event priority="-1" eventname="Custom"/>
+  </configuration>
+  <configuration dev="T66">
+    <event priority="0" eventname="AutopFinish" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="1" eventname="InCall" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="2" eventname="AcdAlert" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="3" eventname="Hold" lightTime="500" darkTime="500" LampID="0" />
+    <event priority="4" eventname="MutePowerLight" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="5" eventname="Talking" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="6" eventname="MissCall" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="7" eventname="VoiceMail" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="8" eventname="Common" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="0" eventname="sms" lightTime="0" darkTime="0" LampID="1" />
+    <event priority="0" eventname="Mute" lightTime="0" darkTime="0" LampID="3" />
+    <event priority="0" eventname="headset" lightTime="0" darkTime="0" LampID="2" />
+    <event priority="0" eventname="speaker" lightTime="0" darkTime="0" LampID="4" />
+    <event priority="0" eventname="DsskeyGreen1" lightTime="0" darkTime="0" LampID="101" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen2" lightTime="0" darkTime="0" LampID="102" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen3" lightTime="0" darkTime="0" LampID="103" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen4" lightTime="0" darkTime="0" LampID="104" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen5" lightTime="0" darkTime="0" LampID="105" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen6" lightTime="0" darkTime="0" LampID="106" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen7" lightTime="0" darkTime="0" LampID="107" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen8" lightTime="0" darkTime="0" LampID="108" lampstatus="g" />
+    <event priority="0" eventname="DsskeyRed1" lightTime="0" darkTime="0" LampID="101" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed2" lightTime="0" darkTime="0" LampID="102" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed3" lightTime="0" darkTime="0" LampID="103" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed4" lightTime="0" darkTime="0" LampID="104" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed5" lightTime="0" darkTime="0" LampID="105" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed6" lightTime="0" darkTime="0" LampID="106" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed7" lightTime="0" darkTime="0" LampID="107" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed8" lightTime="0" darkTime="0" LampID="108" lampstatus="r" />
+    <event priority="0" eventname="DsskeyOrange1" lightTime="0" darkTime="0" LampID="101" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange2" lightTime="0" darkTime="0" LampID="102" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange3" lightTime="0" darkTime="0" LampID="103" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange4" lightTime="0" darkTime="0" LampID="104" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange5" lightTime="0" darkTime="0" LampID="105" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange6" lightTime="0" darkTime="0" LampID="106" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange7" lightTime="0" darkTime="0" LampID="107" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange8" lightTime="0" darkTime="0" LampID="108" lampstatus="o" />
+    <event priority="-1" eventname="Custom"/>
+  </configuration>
+  <configuration dev="T68">
+  </configuration>
+  <configuration dev="T69 T69S">
+    <event priority="0" eventname="AutopFinish" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="1" eventname="InCall" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="2" eventname="AcdAlert" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="3" eventname="Hold" lightTime="500" darkTime="500" LampID="0" />
+    <event priority="4" eventname="MutePowerLight" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="5" eventname="Talking" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="6" eventname="MissCall" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="7" eventname="VoiceMail" lightTime="1000" darkTime="1000" LampID="0" />
+	<event priority="8" eventname="PowerSaving" lightTime="500" darkTime="3000" LampID="0" />
+    <event priority="9" eventname="Common" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="0" eventname="Mute" lightTime="0" darkTime="0" LampID="4" />
+    <event priority="0" eventname="speaker" lightTime="0" darkTime="0" LampID="5" />
+    <event priority="0" eventname="headset" lightTime="0" darkTime="0" LampID="6" />
+    <event priority="0" eventname="sms" lightTime="0" darkTime="0" LampID="10" />
+    <event priority="0" eventname="power" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="0" eventname="DsskeyGreen1" lightTime="0" darkTime="0" LampID="101" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen2" lightTime="0" darkTime="0" LampID="102" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen3" lightTime="0" darkTime="0" LampID="103" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen4" lightTime="0" darkTime="0" LampID="104" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen5" lightTime="0" darkTime="0" LampID="105" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen6" lightTime="0" darkTime="0" LampID="106" lampstatus="g" />
+    <event priority="0" eventname="DsskeyRed1" lightTime="0" darkTime="0" LampID="101" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed2" lightTime="0" darkTime="0" LampID="102" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed3" lightTime="0" darkTime="0" LampID="103" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed4" lightTime="0" darkTime="0" LampID="104" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed5" lightTime="0" darkTime="0" LampID="105" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed6" lightTime="0" darkTime="0" LampID="106" lampstatus="r" />
+    <event priority="0" eventname="DsskeyOrange1" lightTime="0" darkTime="0" LampID="101" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange2" lightTime="0" darkTime="0" LampID="102" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange3" lightTime="0" darkTime="0" LampID="103" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange4" lightTime="0" darkTime="0" LampID="104" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange5" lightTime="0" darkTime="0" LampID="105" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange6" lightTime="0" darkTime="0" LampID="106" lampstatus="o" />
+    <event priority="-1" eventname="Custom"/>
+  </configuration>
+  <configuration dev="CP860">
+    <event priority="3" eventname="Mute" lightTime="0" darkTime="0" LampID="0" LampStatus="2" />
+    <event priority="0" eventname="InCall" lightTime="300" darkTime="300" LampID="0" LampStatus="2" />
+    <event priority="4" eventname="Talking" lightTime="0" darkTime="0" LampID="0" LampStatus="4" />
+    <event priority="1" eventname="Hold" lightTime="300" darkTime="300" LampID="0" LampStatus="4" />
+    <event priority="2" eventname="Held" lightTime="300" darkTime="300" LampID="0" LampStatus="4" />
+  </configuration>
+  <configuration dev="DECT">
+    <event priority="0" eventname="TCPTest" lightTime="500" darkTime="500" lampid="0,1" />
+    <event priority="0" eventname="abnormalNetwork" lightTime="500" darkTime="500" lampid="1" />
+    <event priority="1" eventname="normalNetwork" lightTime="0" darkTime="0" lampid="1" />
+    <event priority="1" eventname="Upgrading" lightTime="-1" darkTime="-1" lampid="0" />
+    <event priority="1" eventname="Factory" lightTime="500" darkTime="500" lampid="0" />
+    <event priority="2" eventname="InCall" lightTime="0" darkTime="0" lampid="2" />
+    <event priority="2" eventname="Dialing" lightTime="0" darkTime="0" lampid="2" />
+    <event priority="2" eventname="Conneting" lightTime="0" darkTime="0" lampid="2" />
+    <event priority="2" eventname="Talking" lightTime="0" darkTime="0" lampid="2" />
+    <event priority="2" eventname="Hold" lightTime="0" darkTime="0" lampid="2" />
+    <event priority="2" eventname="Mute" lightTime="0" darkTime="0" lampid="2" />
+    <event priority="3" eventname="FailAccount" lightTime="500" darkTime="500" lampid="0" />
+    <event priority="4" eventname="NewMessage" lightTime="1500" darkTime="1500" lampid="2" />
+    <event priority="4" eventname="MissCall" lightTime="1500" darkTime="1500" lampid="0" />
+    <event priority="4" eventname="ForwardCall" lightTime="1500" darkTime="1500" lampid="0" />
+    <event priority="0" eventname="RegisterMode" lightTime="800" darkTime="800" lampid="2" />
+    <event priority="1" eventname="Paging" lightTime="200" darkTime="200" lampid="2" />
+    <event priority="0" eventname="TestMode" lightTime="300" darkTime="300" lampid="0,1,2" />
+    <event priority="2" eventname="HandsetRegisted" lightTime="0" darkTime="0" lampid="2" />
+    <event priority="2" eventname="NoHandsetRegisted" lightTime="-1" darkTime="-1" lampid="2" />
+    <event priority="0" eventname="TBRTest" lightTime="100" darkTime="100" lampid="1,2" />
+    <event priority="2" eventname="PowerOn" lightTime="0" darkTime="0" lampid="0" />
+    <event priority="0" eventname="AccountRegistered" lightTime="500" darkTime="500" lampid="0" />
+    <event priority="-1" eventname="Custom"/>
+  </configuration>
+    <configuration dev="T54S">
+    <event priority="0" eventname="AutopFinish" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="1" eventname="InCall" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="2" eventname="AcdAlert" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="3" eventname="Hold" lightTime="500" darkTime="500" LampID="0" />
+    <event priority="4" eventname="MutePowerLight" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="5" eventname="Talking" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="6" eventname="MissCall" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="7" eventname="VoiceMail" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="8" eventname="PowerSaving" lightTime="500" darkTime="3000" LampID="0" />
+    <event priority="9" eventname="Common" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="0" eventname="Mute" lightTime="0" darkTime="0" LampID="6" />
+    <event priority="0" eventname="headset" lightTime="0" darkTime="0" LampID="18" />
+    <event priority="0" eventname="speaker" lightTime="0" darkTime="0" LampID="12" />
+    <event priority="0" eventname="DsskeyGreen1" lightTime="0" darkTime="0" LampID="101" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen2" lightTime="0" darkTime="0" LampID="102" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen3" lightTime="0" darkTime="0" LampID="103" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen4" lightTime="0" darkTime="0" LampID="104" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen5" lightTime="0" darkTime="0" LampID="105" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen6" lightTime="0" darkTime="0" LampID="106" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen7" lightTime="0" darkTime="0" LampID="107" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen8" lightTime="0" darkTime="0" LampID="108" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen9" lightTime="0" darkTime="0" LampID="109" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen10" lightTime="0" darkTime="0" LampID="110" lampstatus="g" />
+    <event priority="0" eventname="DsskeyRed1" lightTime="0" darkTime="0" LampID="101" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed2" lightTime="0" darkTime="0" LampID="102" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed3" lightTime="0" darkTime="0" LampID="103" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed4" lightTime="0" darkTime="0" LampID="104" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed5" lightTime="0" darkTime="0" LampID="105" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed6" lightTime="0" darkTime="0" LampID="106" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed7" lightTime="0" darkTime="0" LampID="107" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed8" lightTime="0" darkTime="0" LampID="108" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed9" lightTime="0" darkTime="0" LampID="109" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed10" lightTime="0" darkTime="0" LampID="110" lampstatus="r" />
+    <event priority="0" eventname="DsskeyOrange1" lightTime="0" darkTime="0" LampID="101" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange2" lightTime="0" darkTime="0" LampID="102" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange3" lightTime="0" darkTime="0" LampID="103" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange4" lightTime="0" darkTime="0" LampID="104" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange5" lightTime="0" darkTime="0" LampID="105" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange6" lightTime="0" darkTime="0" LampID="106" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange7" lightTime="0" darkTime="0" LampID="107" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange8" lightTime="0" darkTime="0" LampID="108" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange9" lightTime="0" darkTime="0" LampID="109" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange10" lightTime="0" darkTime="0" LampID="110" lampstatus="o" />
+    <event priority="-1" eventname="Custom"/>
+</configuration>
+ <configuration dev="T52">
+    <event priority="0" eventname="AutopFinish" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="1" eventname="InCall" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="2" eventname="AcdAlert" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="3" eventname="Hold" lightTime="500" darkTime="500" LampID="0" />
+    <event priority="4" eventname="MutePowerLight" lightTime="300" darkTime="300" LampID="0" />
+    <event priority="5" eventname="Talking" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="6" eventname="MissCall" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="7" eventname="VoiceMail" lightTime="1000" darkTime="1000" LampID="0" />
+    <event priority="8" eventname="PowerSaving" lightTime="500" darkTime="3000" LampID="0" />
+    <event priority="9" eventname="Common" lightTime="0" darkTime="0" LampID="0" />
+    <event priority="0" eventname="Mute" lightTime="0" darkTime="0" LampID="6" />
+    <event priority="0" eventname="headset" lightTime="0" darkTime="0" LampID="18" />
+    <event priority="0" eventname="speaker" lightTime="0" darkTime="0" LampID="12" />
+    <event priority="0" eventname="DsskeyGreen1" lightTime="0" darkTime="0" LampID="101" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen2" lightTime="0" darkTime="0" LampID="102" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen3" lightTime="0" darkTime="0" LampID="103" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen4" lightTime="0" darkTime="0" LampID="104" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen5" lightTime="0" darkTime="0" LampID="105" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen6" lightTime="0" darkTime="0" LampID="106" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen7" lightTime="0" darkTime="0" LampID="107" lampstatus="g" />
+    <event priority="0" eventname="DsskeyGreen8" lightTime="0" darkTime="0" LampID="108" lampstatus="g" />
+    <event priority="0" eventname="DsskeyRed1" lightTime="0" darkTime="0" LampID="101" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed2" lightTime="0" darkTime="0" LampID="102" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed3" lightTime="0" darkTime="0" LampID="103" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed4" lightTime="0" darkTime="0" LampID="104" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed5" lightTime="0" darkTime="0" LampID="105" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed6" lightTime="0" darkTime="0" LampID="106" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed7" lightTime="0" darkTime="0" LampID="107" lampstatus="r" />
+    <event priority="0" eventname="DsskeyRed8" lightTime="0" darkTime="0" LampID="108" lampstatus="r" />
+    <event priority="0" eventname="DsskeyOrange1" lightTime="0" darkTime="0" LampID="101" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange2" lightTime="0" darkTime="0" LampID="102" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange3" lightTime="0" darkTime="0" LampID="103" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange4" lightTime="0" darkTime="0" LampID="104" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange5" lightTime="0" darkTime="0" LampID="105" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange6" lightTime="0" darkTime="0" LampID="106" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange7" lightTime="0" darkTime="0" LampID="107" lampstatus="o" />
+    <event priority="0" eventname="DsskeyOrange8" lightTime="0" darkTime="0" LampID="108" lampstatus="o" />
+    <event priority="-1" eventname="Custom"/>
+</configuration>
+
+</configMap>

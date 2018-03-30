@@ -1,0 +1,14 @@
+#ifndef POPUPBOX_MESSAGE_H_
+#define POPUPBOX_MESSAGE_H_
+
+#include "innermsgdefine.h"
+
+// 逻辑层弹窗消息定义
+enum PopupboxMessageDefine
+{
+    POPUPBOX_MESSAGE_NOTIFY_BEGIN = INNER_MSG_POPUPBOX_MESSAGE_BEGIN,
+    // 弹窗显示多路FWD启用 exdata:提示语（char *)
+    MULTIFWD_ENABLED_NOTICE = POPUPBOX_MESSAGE_NOTIFY_BEGIN + 1,
+    POPUPBOX_MESSAGE_NOTIFY_END = INNER_MSG_POPUPBOX_MESSAGE_END,
+};
+#endif  // POPUPBOX_MESSAGE_H_

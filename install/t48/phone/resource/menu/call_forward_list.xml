@@ -1,0 +1,9 @@
+<root_menu>
+
+<!-- Call Forward菜单开始 -->
+<item id_name="always_forward" display_name="Always Forward" icon_name="" click_action="OpenSubPage(call_forward_always_forward)" long_click_action="" />
+<item id_name="busy_forward" display_name="Busy Forward" icon_name="" click_action="OpenSubPage(call_forward_busy_forward)" long_click_action="" />
+<item id_name="no_answer_forward" display_name="No Answer Forward" icon_name="" click_action="OpenSubPage(call_forward_no_answer_forward)" long_click_action="" />
+<!-- Call Forward菜单结束 -->
+
+</root_menu>

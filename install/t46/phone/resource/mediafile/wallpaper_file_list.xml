@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RootWallpaper>
+	<!-- 壁纸文件存放文件夹 -->
+	<Folder filter=".jpg,.jpeg,.png,.bmp">
+		<Item path="Resource:" can_read="1" can_write="0" short_name="sysdata" /> 
+		<Item path="Booked:" can_read="1" can_write="0" short_name="vardata" /> 
+		<Item path="Config:" can_read="1" can_write="1" short_name="userdata" />
+	</Folder>
+	
+	<!-- 壁纸文件的导入路径 -->
+	<Import filter=".jpg,.jpeg,.png,.bmp">
+		<Item path="Config:" />
+	</Import>
+</RootWallpaper>

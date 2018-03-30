@@ -1,0 +1,7 @@
+<root_menu>
+
+<!-- USB Disk菜单开始 -->
+<item id_name="usb_disk" display_name="USB-Disk" icon_name="" click_action="OpenSubPage(usb_disk)" long_click_action="" />
+<!-- USB Disk菜单结束 -->
+
+</root_menu>

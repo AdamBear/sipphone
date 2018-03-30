@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RootRing>
+	<!-- 铃声文件存放文件夹 -->
+	<Folder filter=".wav">
+		<Item path="Resource:" can_read="1" can_write="0" short_name="sysdata" /> 
+		<Item path="Booked:" can_read="1" can_write="0" short_name="vardata" /> 
+		<Item path="Config:" can_read="1" can_write="1" short_name="userdata" />
+	</Folder>
+	
+	<!-- 铃声文件的导入路径 -->
+	<Import filter=".wav">
+		<Item path="Config:"/>
+	</Import>
+</RootRing>

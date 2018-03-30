@@ -1,0 +1,12 @@
+<root_menu>
+
+<!-- callfeature advance菜单开始 -->
+<item id_name="general" display_name="General" icon_name="" click_action="OpenSubPage(advanced_call_feature_general)" long_click_action="" />
+<item id_name="hotline" display_name="Hot Line" icon_name="" click_action="OpenSubPage(advanced_call_feature_hotline)" long_click_action="" />
+<item id_name="defaultAccount" display_name="Default Account" icon_name="" click_action="OpenSubPage(advanced_call_feature_default_account)" long_click_action="" />
+<item id_name="autoRedial" display_name="Auto Redial" icon_name="" click_action="OpenSubPage(advanced_call_feature_auto_redial)" long_click_action="" />
+<item id_name="callCompletion" display_name="Call Completion" icon_name="" click_action="OpenSubPage(advanced_call_feature_call_completion)" long_click_action="" />
+<item id_name="multicast_paging_list" display_name="Paging List" icon_name="" click_action="OpenSubPage(multicast_paging_list)" long_click_action="" />
+<!-- callfeature advance菜单结束 -->
+
+</root_menu>

@@ -1,0 +1,10 @@
+<root_menu>
+
+<!-- Network菜单开始 -->
+<item id_name="wan_port" display_name="WAN Port" icon_name="" click_action="OpenSubPage(zero_network_wan_port)" long_click_action="" />
+<item id_name="vlan" display_name="VLAN" icon_name="" click_action="OpenSubPage(zero_network_wvlan)" long_click_action="" />
+<item id_name="802.1x" display_name="802.1x" icon_name="" click_action="OpenSubPage(zero_network_w802.1x)" long_click_action="" />
+<item id_name="vpn" display_name="VPN" icon_name="" click_action="OpenSubPage(zero_network_wvpn)" long_click_action="" />
+<!-- Network菜单结束 -->
+
+</root_menu>

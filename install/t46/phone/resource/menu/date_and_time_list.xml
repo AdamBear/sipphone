@@ -1,0 +1,9 @@
+<root_menu>
+
+<!-- Date and Time菜单开始 -->
+<item id_name="general" display_name="General" icon_name="" click_action="OpenSubPage(date_and_time_general)" long_click_action="" />
+<item id_name="dhcp_time" display_name="DHCP Time" icon_name="" click_action="OpenSubPage(date_and_time_dhcp_time)" long_click_action="" />
+<item id_name="format" display_name="Time & Date Format" icon_name="" click_action="OpenSubPage(date_and_time_format)" long_click_action="" />
+<!-- Date and Time菜单结束 -->
+
+</root_menu>

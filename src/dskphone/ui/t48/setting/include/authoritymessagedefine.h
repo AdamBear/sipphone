@@ -1,0 +1,17 @@
+#ifndef DEFINE_AUTHORITYMESSAGEDEFINE_H_
+#define DEFINE_AUTHORITYMESSAGEDEFINE_H_
+
+#include "innermsgdefine.h"
+
+// Language message define.
+enum AuthorityMessageDefine
+{
+    AUTHORITY_MESSAGE_BEGIN = INNER_MSG_AUTHORITY_MESSAGE_BEGIN,
+
+    // Current language changed. Extra: language name after change.
+    AUTHORITY_MESSAGE_AUTHORITY_CHANGED = AUTHORITY_MESSAGE_BEGIN + 1,
+
+    AUTHORITY_MESSAGE_END = INNER_MSG_AUTHORITY_MESSAGE_END,
+};
+
+#endif  // DEFINE_AUTHORITYMESSAGEDEFINE_H_

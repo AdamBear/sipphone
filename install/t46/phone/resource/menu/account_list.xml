@@ -1,0 +1,22 @@
+<root_menu>
+
+<!-- Account菜单开始 -->
+<item id_name="account_1" display_name="Account 1" icon_name="" click_action="OpenSubPage(account_1)" long_click_action="" />
+<item id_name="account_2" display_name="Account 2" icon_name="" click_action="OpenSubPage(account_2)" long_click_action="" />
+<item id_name="account_3" display_name="Account 3" icon_name="" click_action="OpenSubPage(account_3)" long_click_action="" />
+<item id_name="account_4" display_name="Account 4" icon_name="" click_action="OpenSubPage(account_4)" long_click_action="" />
+<item id_name="account_5" display_name="Account 5" icon_name="" click_action="OpenSubPage(account_5)" long_click_action="" />
+<item id_name="account_6" display_name="Account 6" icon_name="" click_action="OpenSubPage(account_6)" long_click_action="" />
+<item id_name="account_7" display_name="Account 7" icon_name="" click_action="OpenSubPage(account_7)" long_click_action="" />
+<item id_name="account_8" display_name="Account 8" icon_name="" click_action="OpenSubPage(account_8)" long_click_action="" />
+<item id_name="account_9" display_name="Account 9" icon_name="" click_action="OpenSubPage(account_9)" long_click_action="" />
+<item id_name="account_10" display_name="Account 10" icon_name="" click_action="OpenSubPage(account_10)" long_click_action="" />
+<item id_name="account_11" display_name="Account 11" icon_name="" click_action="OpenSubPage(account_11)" long_click_action="" />
+<item id_name="account_12" display_name="Account 12" icon_name="" click_action="OpenSubPage(account_12)" long_click_action="" />
+<item id_name="account_13" display_name="Account 13" icon_name="" click_action="OpenSubPage(account_13)" long_click_action="" />
+<item id_name="account_14" display_name="Account 14" icon_name="" click_action="OpenSubPage(account_14)" long_click_action="" />
+<item id_name="account_15" display_name="Account 15" icon_name="" click_action="OpenSubPage(account_15)" long_click_action="" />
+<item id_name="account_16" display_name="Account 16" icon_name="" click_action="OpenSubPage(account_16)" long_click_action="" />
+<!-- Account菜单结束 -->
+
+</root_menu>

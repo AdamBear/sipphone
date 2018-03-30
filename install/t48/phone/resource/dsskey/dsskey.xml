@@ -1,0 +1,316 @@
+<?xml version="1.0"?>
+<YealinkDsskeyConfig>
+	<!-- 
+	prompt:节点
+		id: 标志  value: 具体的提示语 将在formate、function节点中使用到
+			转义字符  空格 (&#x0020;)  Tab (&#x0009;) 回车 (&#x000D;) 换行 (&#x000A;)
+			&(&amp;)  <(&lt; )  >(&gt;)  "(&quot;)  空格(&nbsp;) '(&apos;) 
+	formate:节点
+		save: function at save time  load: function at load timer(is a static function) 
+		regexp: is regexp (need a param to match)  static: can get result at any moment without any param
+		
+		正则表达式校验，个语句一条规则，不可叠加，类型时正则表达式，在保存的时候生效 
+			id: 规则标志(在enumeration节点使用) type: 类型，当前固定为正则表达式+保存 value: 正则表达式  prompt: 提示语(对应prompt节点)
+			static: 静态的，可以直接计算结果，在加载的时候就会计算是否成立 
+			load:   定义生效的时机，在加载的时候生效 
+			save:   定义生效的时机，在保存的时候生效，还必须提供错误提示 
+			regexp: 标志是一个正则表达式	
+	function:节点
+		we have 4 kind of function supported, list as follow (... mean variable parameter )
+		当前支持4种校验函数，列举如下
+			$getintvalue(cfgID, value, op) : get int value from cfg : id(name in configMapper.xml) , value to operator, operator symbol
+			$phonetype(...) : check whether the corresponding phone type : param(phone list)
+			$and(...) : logic and operator : param(should be a id in this section)
+			$or(...) : logic or operator : param(should be a id in this section)   
+			$not(...) : logic not operator : param(should be a id in this section) 
+		静态函数节点，不需要参数，有Save属性的需要prompt参数(来自prompt节点)，各参数实际意义参见formate节点
+	authority:节点
+		id: dsskey type  value: authority level  
+		first bit: read authority   second bit: write authority  third bit: pstn read authority
+		三级权限 id: dsskey类型  value: 三级权限配置
+	default:节点
+		default setting for every dsskey, other dsskey inherit form this section
+		默认的Dsskey属性，该节点影响全局，谨慎修改，所有Dsskey类型都是从这个类型继承(继承、继承、继承，重要的事情说三遍)
+			id: dsskey类型    uri: dsskey标志   display_name: dsskey显示名（为空的不会被加载）   function:加载条件  class:联系人类型 
+			visibled:是否显示（可以是一个函数组合），不显示的dsskey不会被加载
+			name: dsskey配置页面的名称
+			ime:输入法
+			xml_node:对应dsskey配置文件中的xml节点
+			formate:校验函数（通常是一个正则表达式，可以组合）
+	enumeration:节点
+		different dsskey have it's own attribute, each dsskey have a section to mark
+		单个Dsskey类型，只存放Dsskey个体差异，原则上不对这一节点特制
+			item: dsskey attribute such as id,name,uri,class 
+			label,line,value,extension,index,username,server : support 7 kind
+	sequence:节点
+		each sequence have a different collection property, list as follow
+		不同场景下Dsskey的显示策略，不允许重复，重复优先级如下:  第一个出现的 > 后续出现的  key_list > key_event
+	-->
+	
+	<prompt >
+		<item id="1"  value="Label is invalid!" />
+		<item id="2"  value="More than maximum length" />
+		<item id="3"  value="DTMF is invalid!" />
+		<item id="4"  value="URL is invalid!" />
+		<item id="5"  value="Extension is invalid!" />
+		<item id="6"  value="Value is invalid!" />
+		<item id="7"  value="Paging Channel should be 0-30!" />
+		<item id="21"  value="AutoBLFList is on&#10; manually configing is forbidden!" />
+		<item id="22"  value="AutoFavorite is on&#10; manually configing is forbidden!" />
+		<item id="23"  value="AutoLinekey is on&#10; manually configing is forbidden!" />
+	</prompt>
+	<formate >
+		<item id="reg_fmt_label"  		type="regexp|save" value="^[^&lt;&gt;&quot;&apos;]*$" 				prompt="1" />
+		<item id="reg_fmt_length_limit" type="regexp|save" value="^.{0,99}$" 								prompt="2" />
+		<item id="reg_fmt_url" 			type="regexp|save" value="^[a-z]+://[^\s]*$" 						prompt="4" />
+		<item id="reg_fmt_dtmf" 		type="regexp|save" value="^[0-9a-fA-F\*#]+$" 						prompt="3" />	
+		<item id="reg_fmt_uri_value" 	type="regexp|save" value="^((sip|tel):)?(\+)?([\w\*#]+([\-_\.\w\*#]+)*)(@([a-zA-Z0-9]+([\.\-_][a-zA-Z0-9]+)*)(:(([0-5]?\d{1,4})|(6[0-4]\d{3})|(65[0-4]\d{2})|(655[0-2]\d)|(6553[0-5])))?)?$" 	prompt="6" />
+		<item id="reg_fmt_uri_empty" 	type="regexp|save" value="(^$)|(^((sip|tel):)?(\+)?([\w\*#]+([\-_\.\w\*#]+)*)(@([a-zA-Z0-9]+([\.\-_][a-zA-Z0-9]+)*)(:(([0-5]?\d{1,4})|(6[0-4]\d{3})|(65[0-4]\d{2})|(655[0-2]\d)|(6553[0-5])))?)?$)"  prompt="6" />
+		<item id="reg_fmt_uri_ext" 		type="regexp|save" value="^((sip|tel):)?(\+)?([\w\*#]+([\-_\.\w\*#]+)*)(@([a-zA-Z0-9]+([\.\-_][a-zA-Z0-9]+)*)(:(([0-5]?\d{1,4})|(6[0-4]\d{3})|(65[0-4]\d{2})|(655[0-2]\d)|(6553[0-5])))?)?$" 	prompt="5" />
+		<item id="reg_fmt_not_empty" 	type="regexp|save" value="^.+$"   									prompt="6" />
+		<item id="reg_fmt_all" 			type="regexp|save" value="^.*$" />
+		<item id="reg_fmt_page_ip"   	type="regexp|save" value="^2((2[4-9])|(3\d))(\.(2(([0-4]\d)|(5[0-5]))|([01]?\d{1,2}))){3}:\d{1,5}$"  prompt="6" />
+		<item id="reg_fmt_channel_id"   type="regexp|save" value="^([0-2]?\d|30)$" 			prompt="7" />
+	</formate>
+	<function >	
+		<item id="BSFTActive" 				type="static|load" 		value="getintvalue(BSFTActive, 1, ==)" />
+		<item id="NetworkCalllogSwitch" 	type="static|load" 		value="getintvalue(NetworkCalllogSwitch, 1, ==)"    msg="48"  />
+		<item id="AutoLinekeysSwitch" 		type="static|load" 		value="getintvalue(AutoLinekeysSwitch, 0, >)" 		msg="108" />
+		<item id="AutoBlfListEnable" 		type="static|save" 		value="getintvalue(AutoBlfListEnable, 0, ==)" 		msg="92"  prompt="21" />
+		<item id="AutoBlfListSwtich" 		type="static|load" 		value="getintvalue(AutoBlfListEnable, 0, ==)" />
+		<item id="EnableAutoFavorite" 		type="static|save" 		value="getintvalue(EnableAutoFavorite, 0, ==)" 		msg="95"  prompt="22" />
+		<item id="SMSEnable" 				type="static|load" 		value="getintvalue(SMSEnable, 1, ==)"  				msg="24" />
+		<item id="IntercomLedEnable" 		type="static|load" 		value="getintvalue(IntercomLedEnable, 1, ==)"       msg="140" />
+		<item id="GetBalanceEnable" 		type="static|load" 		value="getintvalue(GetBalanceEnable, 1, ==)"  />
+		<item id="EnableUC" 				type="static|load" 		value="getintvalue(EnableUC, 1, ==)"  />
+		<item id="EdkSwitch" 				type="static|load" 		value="getintvalue(EdkSwitch, 1, ==)"  				msg="130" />
+		<item id="BLFListCustomSet"   		type="static|load" 		value="getintvalue(BLFListCustomSet, 1, ==)"  		msg="92" />
+		<item id="LdapSwitch"          		type="static|load" 		value="getintvalue(LdapSwitch, 1, ==)"  			msg="35" />
+		<item id="PlcmPhoneEnable" 			type="static|load" 		value="getintvalue(PlcmPhoneEnable, 1, ==)"  		msg="306" />
+		<item id="EnableChangePresenceStatus"  type="static|load" 	value="getintvalue(EnableChangePresenceStatus, 1, ==)"  msg="137" />
+		<item id="bUCOn"            		type="static|load" 		value="and($EnableUC,$BSFTActive)"  />
+		<item id="bManualBlflist"           type="static|load" 		value="and($AutoBlfListSwtich,$BLFListCustomSet)"  />
+		<item id="bUCMyStatus"            	type="static|load" 		value="and($EnableUC,$BSFTActive,$EnableChangePresenceStatus)"  />
+		<item id="bDNDAllow" 				type="static|load" 		value="getintvalue(DndForbidden, 0, ==)"  msg="28" />
+	  	<item id="bFWDAllow" 				type="static|load" 		value="getintvalue(ForwardForbidden, 0, ==)" msg="28" />	
+		<item id="bBSFTCalllog"            	type="static|load" 		value="and($BSFTActive,$NetworkCalllogSwitch)"  />
+		<item id="AutoLinekeysDisable" 		type="static|save" 		value="not($AutoLinekeysSwitch)" 		prompt="23" />
+		
+		<item id="bPhoneTypeCp860" 	type="static|load" 		value="phonetype(PT_CP860)" />
+		<item id="bNotCp860" 		type="static|load" 		value="not(bPhoneTypeCp860)" />
+		<item id="bPhoneTypeT19" 	type="static|load" 		value="phonetype(PT_T19)" />
+		<item id="bNotT19" 			type="static|load" 		value="not(bPhoneTypeT19)" />
+		<item id="bSingleAccount" 	type="static|load" 		value="phonetype(PT_T19,PT_CP860)" />
+		<item id="bHaveLinekey"     type="static|load" 		value="not(bSingleAccount)" />
+		<item id="bNotHaveLabel" 	type="static|load" 		value="phonetype(PT_T61)" />
+		<item id="bHaveLabel"     	type="static|load" 		value="not(bNotHaveLabel)" />
+		<item id="bShowFloat" 		type="static|load" 		value="phonetype(PT_T41,PT_T42,PT_T43S,PT_T43P,PT_T27,PT_T27S,PT_T66,PT_T29,PT_T46,PT_T46S,PT_T54S,PT_T52)" />
+		<item id="bSupportSwitchExp" type="static|load" 	value="phonetype(PT_T27,PT_T27S,PT_T29,PT_T66)" />
+		<item id="bSupportBTLine" 	 type="static|load" 	value="phonetype(PT_T29,PT_T46,PT_T46S,PT_T48,PT_T48S,PT_T54S,PT_T52)" />
+	</function>
+	<authority >
+	</authority>
+	<default >
+		<item id="0"   uri=""    display_name=""  function=""  class=""  redirect="0" >
+			<label visibled="$bHaveLabel" name="Label" ime="2aB" xml_node="label"  formate="$reg_fmt_label,$reg_fmt_length_limit" />
+			<line  visibled="false" name="Account ID" xml_node="line" />
+			<value visibled="false" name="Value" ime="123" xml_node="value" formate="$reg_fmt_uri_value,$reg_fmt_length_limit" />
+			<extension visibled="false" name="Extension" ime="123" xml_node="extension" formate="$reg_fmt_uri_ext,$reg_fmt_length_limit" />
+		</item>
+	</default>
+	<enumeration >
+		<item id="0"    uri="N/A"  display_name="N/A" >
+			<label visibled="false" />
+		</item>
+		<item id="1"    uri="Conference"  display_name="Conference" >
+			<value visibled="true" formate="reg_fmt_uri_empty" />
+		</item>
+		<item id="2"    uri="Forward"  display_name="Forward" function="$bFWDAllow" >
+			<value visibled="true" formate="reg_fmt_uri_empty" />
+		</item>
+		<item id="3"    uri="Transfer"  display_name="Transfer" >
+			<value visibled="true" formate="reg_fmt_uri_empty" />
+		</item>
+		<item id="4"    uri="Hold"  	display_name="Hold" />
+		<item id="5"    uri="DND"  		display_name="DND" function="$bDNDAllow" redirect="512" />
+		<item id="6"    uri="Redial"  	display_name="Redial" />
+		<item id="7"    uri="CallReturn"  display_name="Call Return" />
+		<item id="8"    uri="SMS"   	  display_name="SMS"  function="$SMSEnable" />
+		<item id="9"    uri="PickUp"   display_name="Pick Up" >
+			<line  visibled="$bHaveLinekey" />
+			<value visibled="true" formate="reg_fmt_all" />
+		</item>
+		<item id="10"   uri="CallPark"  display_name="Call Park" >
+			<line  visibled="$bHaveLinekey" />
+			<value visibled="true"  formate="reg_fmt_uri_empty" />
+		</item>
+		<item id="11"   uri="DTMF"  display_name="DTMF" > 
+			<value visibled="true"  ime="123" formate="$reg_fmt_dtmf" />
+		</item>		
+		<item id="12"   uri="VoiceMail"  display_name="Voice Mail" >
+			<line  visibled="$bHaveLinekey" />
+			<value visibled="true"  />
+		</item>
+		<item id="13"   uri="SpeedDial"         display_name="SpeedDial" >
+			<line  visibled="$bHaveLinekey" />
+			<value visibled="true"  />
+			<!-- <value visibled="true"  formate="$reg_fmt_dtmf" /> -->
+		</item>
+		<item id="14"   uri="Intercom"   display_name="Intercom" >
+			<line   visibled="$bHaveLinekey" />
+			<value  visibled="true" formate="reg_fmt_uri_empty" />
+			<extension  visibled="$IntercomLedEnable" xml_node="pickup_value" formate="reg_fmt_uri_empty" />
+		</item>
+		<item id="15"   uri="Line"   display_name="Line"  function="$AutoLinekeysDisable" >
+			<line   visibled="$bHaveLinekey" readonly="$AutoLinekeysSwitch" />
+			<value   visibled="true" name="User Name" readonly="true"  />
+			<extension  visibled="true" name="Server" readonly="true" />
+			<linevalue   visibled="$bShowFloat" readonly="$AutoLinekeysSwitch" name="Value" xml_node="value" />
+		</item>
+		<item id="16"   uri="BLF"            	display_name="BLF" >
+			<line   visibled="$bHaveLinekey" />
+			<value  visibled="true"  />
+			<extension  visibled="true" xml_node="pickup_value" formate="reg_fmt_uri_empty" />
+		</item>
+		<item id="17"   uri="URL"            	display_name="URL" >
+			<value  visibled="true"  ime="abc" formate="$reg_fmt_url" />
+		</item>
+		<item id="18"   uri="GroupListen"       display_name="Group Listening" />
+		<item id="19"   uri="PublicHold"        display_name="Public Hold" />					
+		<item id="20"   uri="PrivateHold"       display_name="Private Hold" />
+		<!--<item id="21"   uri="ShareLine"         display_name=""  />-->
+		<item id="22"   uri="XMLGroup"          display_name="XML Group" class="remote_dir" >
+			<line   visibled="false" xml_node="xml_phonebook" />
+			<index  visibled="true"  name="PhoneBook Name" />
+		</item>
+		<item id="23"   uri="GroupPickUp"       display_name="Group Pick Up" >
+			<line   visibled="$bHaveLinekey" />
+			<value  visibled="true" formate="reg_fmt_all" />
+		</item>
+		<item id="24"   uri="Paging"            display_name="Paging" >
+			<value  visibled="true"  formate="$reg_fmt_page_ip" />
+			<extension  visibled="true"  name="Channel"  formate="$reg_fmt_channel_id" default="0" />
+		</item>
+		<item id="25"   uri="Record"            display_name="Record" />
+		<item id="26"   uri="Voice Record"      display_name="Voice Record" >
+			<line   visibled="$bHaveLinekey" />
+			<value  visibled="true"  />
+		</item>
+		<item id="27"   uri="XMLBrowser"        display_name="XML Browser" >
+			<value  visibled="true"  ime="abc" formate="$reg_fmt_url" />
+		</item>
+		<item id="28"   uri=""            	  	display_name="History" class="local_log"  >
+			<line   visibled="false" xml_node="history_type" />
+			<index  visibled="true"  name="History" />
+		</item>
+		<item id="29"   uri=""            	  	display_name=""  />
+		<item id="30"   uri=""            	  	display_name="Menu" />
+		<item id="31"   uri=""            	  	display_name="SwitchAccount"  function="$bHaveLinekey" />
+		<item id="32"   uri=""					display_name="NewSMS" />
+		<item id="33"   uri=""            	  	display_name="Status" />	
+		<item id="34"   uri="HotDesking"        display_name="Hot Desking"  function="$bNotCp860" />
+		<item id="35"   uri="URLRecord"         display_name="URL Record" >
+			<value  visibled="true"  ime="abc" formate="$reg_fmt_url" />
+		</item>
+		<item id="36"   uri=""            	  	display_name="" >
+			<line  visibled="$bHaveLinekey"  />
+		</item>	
+		<item id="37"   uri=""            	  	display_name="Switch"  function="$bSupportSwitchExp" />		
+		<item id="38"   uri="LDAP"              display_name="LDAP" function="$LdapSwitch" />
+		<item id="39"   uri="BLFList"           display_name="BLF List" function="$AutoBlfListEnable" >
+			<label visibled="$bManualBlflist" />
+			<line  visibled="$bHaveLinekey" />
+			<index  visibled="$bManualBlflist"  name="Value"  />
+			<extension  visibled="false" xml_node="" />
+		</item>	
+		<item id="40"   uri="Prefix"            display_name="Prefix" >
+			<value  visibled="true"  />
+		</item>
+		<item id="41"   uri="Zero-SP-Touch"     display_name="Zero Touch" />		
+		<item id="42"   uri="ACD"            	display_name="ACD" />
+		<item id="43"   uri=""            	  	display_name="LocalMenu" />
+		<item id="44"   uri=""                  display_name="Network Directory"  function="$BSFTActive" redirect="61" />
+		<item id="45"   uri="LocalGroup"        display_name="Local Group"  class="local_dir" >	
+			<line   visibled="false" xml_node="xml_phonebook" />
+			<index  visibled="true"  name="Local Group" />
+		</item>
+		<item id="46"   uri="BroadSoftGroup"    display_name="NetworkDirectoryGroup" class="bsft_dir" function="$BSFTActive" >
+			<line   visibled="false" xml_node="xml_phonebook" />
+			<index  visibled="true"  name="Network Group" />
+		</item>
+		<item id="47"   uri=""            	  	display_name="XMLMenu" class="remote_dir" >
+			<line   visibled="false" xml_node="xml_phonebook" />
+		</item>
+		<item id="48"   uri="Get Balance"       display_name="Get Balance" function="$GetBalanceEnable" >
+			<line  visibled="$bHaveLinekey"  />
+		</item>	
+		<item id="49"   uri="CustomButton"      display_name="CustomButton" >
+			<line  visibled="$bHaveLinekey"  />
+		</item>	
+		<item id="50"   uri="KeyPad Lock"       display_name="KeypadLock" />
+		<item id="51"   uri=""            	  	display_name="SwitchAccountUp" function="$bHaveLinekey" />
+		<item id="52"   uri=""            	  	display_name="SwitchAccountDown" function="$bHaveLinekey" />
+		<item id="53"   uri=""            	  	display_name="NetworkCallLog" function="$bBSFTCalllog" />		
+		<item id="54"   uri=""            	  	display_name="NetworkCalllogGroup"  class="bsft_log" function="$bBSFTCalllog" >
+			<line   visibled="false" xml_node="xml_phonebook" />
+			<index  visibled="true"  name="Network Group" />
+		</item>	
+		<item id="55"   uri="Meet-me"           display_name="Meet-me"  function="$BSFTActive" >
+			<line   visibled="$bHaveLinekey" />
+			<value  visibled="true"  name="Bridge ID" formate="$reg_fmt_not_empty" />
+			<extension  visibled="true"  name="PIN/ID"  formate="reg_fmt_all"  xml_node="pickup_value" passwd="true" />
+		</item>	
+		<item id="56"   uri=""            	   display_name="Retrieve Park" >
+			<line   visibled="$bHaveLinekey" />
+			<value  visibled="true" formate="reg_fmt_uri_empty" />
+		</item>
+		<item id="57"   uri="Hoteling"          display_name="Hoteling"  function="$BSFTActive" />		
+		<item id="58"   uri="Trace"             display_name="ACD Trace" function="$BSFTActive" />
+		<item id="59"   uri="DispCode"       	display_name="DispCode"  function="$BSFTActive" >
+			<value  visibled="true" formate="reg_fmt_all" />
+		</item>
+		<item id="60"   uri="Emergency"         display_name="Emergency" function="$BSFTActive" >
+			<value  visibled="true" formate="reg_fmt_all" />
+		</item>
+		<item id="61"   uri="Directories"       display_name="Directories" />
+		<item id="62"   uri="NetworkFavorites"  display_name="Network Favorites" function="$bUCOn" />
+		<item id="63"   uri="UC Favorite"       display_name="UC Favorite"  function="$bUCOn,$EnableAutoFavorite" >	
+			<label visibled="false" />
+			<line   visibled="$bHaveLinekey" />
+		</item>
+		<item id="64"   uri="Buddies"           display_name="Buddies"  	function="$bUCOn" />
+		<item id="65"   uri="My Status"         display_name="My Status" 	function="$bUCMyStatus" />
+		<item id="66"   uri="Paging List"       display_name="Paging List" />
+		<!--67-70 MTSW customized -->
+		<item id="72"   uri="Missed Call"       display_name="Missed Call" />
+		<item id="73"   uri=""            	  	display_name="Custom Key" 	function="$EdkSwitch" >	
+			<value  visibled="true" formate="$reg_fmt_not_empty" />
+		</item>
+		<item id="77"   uri=""                  display_name="Mobile Account" function="$bSupportBTLine" />
+		<item id="81"   uri="BLF Group"         display_name="BLF Group" >
+			<line   visibled="$bHaveLinekey" />
+			<value  visibled="true"  />
+			<extension  visibled="true"  xml_node="pickup_value" />
+		</item>
+		<item id="82"   uri="Un-Park"           display_name="Un-Park" >	
+			<value  visibled="true" formate="$reg_fmt_all" />
+		</item>
+		<item id="83"   uri="XML Info"          display_name="XML Info" />
+		<item id="84"   uri="Phonebook"         display_name="Phonebook"  function="$PlcmPhoneEnable" />
+	</enumeration>
+	<sequence >
+		<programkey 
+			key_event="9,10,11,12,18,41,40,20,22,23,24,66,25,34,38,45,46,48,50,61,27,1,2,3,4,5,7,8" 
+			key_list="0,28,5,30,51,52,8,32,2,7,9,22,47,33,13,45,43,50,38,23,66,46,44,27,55,61,40,41,34,14,24,73,84" >
+		</programkey>
+		<linekey
+			key_event="10,46,64,65,7,1,5,11,61,2,18,23,48,4,38,45,62,24,66,9,40,20,25,8,3,12,27,22,41,50,34,84"	
+			key_list="0,13,16,15,512,14,39,56,17,35,42,55,57,58,59,60,63,77,73" >
+		</linekey>
+		<memorykey></memorykey>
+		<expkey
+			key_event="10,46,64,65,7,1,5,11,61,2,18,23,48,4,38,45,62,24,66,9,40,20,25,8,3,12,27,22,41,50,34,84"	
+			key_list="0,37,13,16,15,512,14,39,56,17,35,42,55,57,58,59,60,63,77,73" >
+		</expkey>
+	</sequence>
+</YealinkDsskeyConfig>

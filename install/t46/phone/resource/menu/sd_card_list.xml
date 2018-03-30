@@ -1,0 +1,7 @@
+<root_menu>
+
+<!-- SD Card菜单开始 -->
+<item id_name="sd_card" display_name="SD Card" icon_name="" click_action="OpenSubPage(sd_card)" long_click_action="" />
+<!-- SD Card菜单结束 -->
+
+</root_menu>

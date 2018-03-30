@@ -1,0 +1,8 @@
+<root_menu>
+
+<!-- network_check菜单开始 -->
+<item id_name="ping" display_name="Ping" icon_name="" click_action="OpenSubPage(networkping)" long_click_action="" />
+<item id_name="traceroute" display_name="Trace Route" icon_name="" click_action="OpenSubPage(networktraceroute)" long_click_action="" />
+<!-- network_check菜单结束 -->
+
+</root_menu>

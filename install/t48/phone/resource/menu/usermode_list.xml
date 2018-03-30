@@ -1,0 +1,7 @@
+<root_menu>
+
+<!-- UserMode页面开始 -->
+<item id_name="userMode" display_name="UserMode" click_action="OpenSubPage(userMode)" long_click_action=""/>
+<!-- UserMode页面结束 -->
+
+</root_menu>	

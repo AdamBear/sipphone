@@ -1,0 +1,24 @@
+<root_menu>
+
+<!-- Memory Keys菜单开始 -->
+<item id_name="item_1" display_name="Memory Key 1" icon_name="" click_action="OpenSubPage(memory_key_item_1)" long_click_action="" />
+<item id_name="item_2" display_name="Memory Key 2" icon_name="" click_action="OpenSubPage(memory_key_item_2)" long_click_action="" />
+<item id_name="item_3" display_name="Memory Key 3" icon_name="" click_action="OpenSubPage(memory_key_item_3)" long_click_action="" />
+<item id_name="item_4" display_name="Memory Key 4" icon_name="" click_action="OpenSubPage(memory_key_item_4)" long_click_action="" />
+<item id_name="item_5" display_name="Memory Key 5" icon_name="" click_action="OpenSubPage(memory_key_item_5)" long_click_action="" />
+<item id_name="item_6" display_name="Memory Key 6" icon_name="" click_action="OpenSubPage(memory_key_item_6)" long_click_action="" />
+<item id_name="item_7" display_name="Memory Key 7" icon_name="" click_action="OpenSubPage(memory_key_item_7)" long_click_action="" />
+<item id_name="item_8" display_name="Memory Key 8" icon_name="" click_action="OpenSubPage(memory_key_item_8)" long_click_action="" />
+<item id_name="item_9" display_name="Memory Key 9" icon_name="" click_action="OpenSubPage(memory_key_item_9)" long_click_action="" />
+<item id_name="item_10" display_name="Memory Key 10" icon_name="" click_action="OpenSubPage(memory_key_item_10)" long_click_action="" />
+<item id_name="item_11" display_name="Memory Key 11" icon_name="" click_action="OpenSubPage(memory_key_item_11)" long_click_action="" />
+<item id_name="item_12" display_name="Memory Key 12" icon_name="" click_action="OpenSubPage(memory_key_item_12)" long_click_action="" />
+<item id_name="item_13" display_name="Memory Key 13" icon_name="" click_action="OpenSubPage(memory_key_item_13)" long_click_action="" />
+<item id_name="item_14" display_name="Memory Key 14" icon_name="" click_action="OpenSubPage(memory_key_item_14)" long_click_action="" />
+<item id_name="item_15" display_name="Memory Key 15" icon_name="" click_action="OpenSubPage(memory_key_item_15)" long_click_action="" />
+<item id_name="item_16" display_name="Memory Key 16" icon_name="" click_action="OpenSubPage(memory_key_item_16)" long_click_action="" />
+<item id_name="item_17" display_name="Memory Key 17" icon_name="" click_action="OpenSubPage(memory_key_item_17)" long_click_action="" />
+<item id_name="item_18" display_name="Memory Key 18" icon_name="" click_action="OpenSubPage(memory_key_item_18)" long_click_action="" />
+<!-- Memory Keys菜单结束 -->
+
+</root_menu>

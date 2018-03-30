@@ -1,0 +1,8 @@
+<root_menu>
+
+<!-- diagnostics菜单开始 -->
+<item id_name="networkcheck" display_name="Network" icon_name="" click_action="OpenPage(network_check_list.xml)" long_click_action="" />
+
+<!-- diagnostics菜单结束 -->
+
+</root_menu>

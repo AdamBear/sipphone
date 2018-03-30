@@ -1,0 +1,6 @@
+<root_menu>
+
+<item id_name="browse_usb_record" display_name="Browse Recordings" icon_name="" click_action="OpenSubPage(browse_usb_record)" long_click_action="" />
+<item id_name="browse_usb_storage" display_name="Storage Media Properties" icon_name="" click_action="OpenSubPage(browse_usb_storage)" long_click_action="" />
+
+</root_menu>

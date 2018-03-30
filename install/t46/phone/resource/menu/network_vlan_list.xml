@@ -1,0 +1,7 @@
+<root_menu>
+<!-- VLAN菜单开始 -->
+<item id_name="wan_port" display_name="WAN Port" icon_name="" click_action="OpenSubPage(network_wvlan)" long_click_action="" />
+<item id_name="pc_prot" display_name="PC Port" icon_name="" click_action="OpenSubPage(network_pcvlan)" long_click_action="" />
+<item id_name="dhcp_vlan" display_name="DHCP VLAN" icon_name="" click_action="OpenSubPage(network_dhcpvlan)" long_click_action="" />
+<!-- VLAN菜单结束 -->
+</root_menu>

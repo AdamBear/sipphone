@@ -1,0 +1,125 @@
+﻿<?xml version="1.0"?>
+<resource>
+	
+	<!--系统图片-->
+	<object name="images" fileType=".png">
+		<item type="system" path="/phone/resource/system/theme/images" />
+		<item type="system" path="/phone/resource/system/theme/black/images" dev="T41S T42S"/>
+		<item type="system" path="/phone/resource/system/theme/t4x/images" dev="T46S"/>
+		<item type="system" path="/phone/resource/system/theme/t52/images" dev="T52"/>
+		<item type="system" path="/phone/resource/system/theme/t54/images" dev="T54S"/>
+		<item type="system" path="/phone/resource/system/theme/t48/images" dev="T48S"/>
+	</object>
+	
+	<!--壁纸-->
+	<object name="wallpaper" fileType=".png,.jpg,.jpeg,.bmp,.dob">
+		<item type="default" path="/phone/resource/system/sys-res/image/Default.jpg" />
+		<item type="default" path="/phone/resource/system/sys-res/t4x/image/Default.jpg" dev="T46S"/>
+		<item type="default" path="/phone/resource/system/sys-res/t52/image/Default.jpg" dev="T52"/>
+		<item type="default" path="/phone/resource/system/sys-res/t54/image/Default.jpg" dev="T54S"/>
+		<item type="default" path="/phone/resource/system/sys-res/t48/image/Default.jpg" dev="T48S"/>
+		<item type="system" path="/phone/resource/system/wallpaper" />
+		<item type="system" path="/phone/resource/system/wallpaper/black" dev="T41S T42S"/>
+		<item type="system" path="/phone/resource/system/wallpaper/t4x" dev="T46S"/>
+		<item type="system" path="/phone/resource/system/wallpaper/t52" dev="T52"/>
+		<item type="system" path="/phone/resource/system/wallpaper/t54" dev="T54S"/>
+		<item type="system" path="/phone/resource/system/wallpaper/t48" dev="T48S"/>
+		<item type="imported" path="/data/userdata/wallpaper" />
+		<item type="user" path="/phone/resource/customed/wallpaper" />		
+	</object>
+	
+	<!--EXP壁纸-->
+	<object name="expwallpaper" fileType=".png,.jpg,.jpeg,.bmp,.dob">
+		<item type="default" path="/phone/resource/system/sys-res/exp50/Default.jpg"/>
+		<item type="system" path="/phone/resource/system/wallpaper/exp50" />
+		<item type="imported" path="/data/userdata/wallpaper" />
+		<item type="user" path="/phone/resource/customed/expwallpaper" />		
+	</object>
+	
+	<!--联系人头像-->
+	<object name="contact" fileType=".png,.jpg,.jpeg,.bmp">
+		<item type="default" path="/phone/resource/system/sys-res/image/default_contact_image.png" />
+		<item type="default" path="/phone/resource/system/sys-res/t4x/image/default_contact_image.png" dev="T46S"/>
+		<item type="default" path="/phone/resource/system/sys-res/t52/image/default_contact_image.png" dev="T52"/>
+		<item type="default" path="/phone/resource/system/sys-res/t54/image/default_contact_image.png" dev="T54S"/>
+		<item type="default" path="/phone/resource/system/sys-res/t48/image/default_contact_image.png" dev="T48S"/>
+		<item type="system" path="/phone/resource/system/contact" />
+		<item type="system" path="/phone/resource/system/contact/black" dev="T41S T42S"/>
+		<item type="system" path="/phone/resource/system/contact/t4x" dev="T46S"/>
+		<item type="system" path="/phone/resource/system/contact/t52" dev="T52"/>
+		<item type="system" path="/phone/resource/system/contact/t54" dev="T54S"/>
+		<item type="system" path="/phone/resource/system/contact/t48" dev="T48S"/>
+		<item type="imported" path="/data/userdata/contact-image" />
+		<item type="user" path="/phone/resource/customed/contact" />		
+	</object>
+	
+	<!--铃声-->
+	<object name="ringtone" fileType=".wav">
+		<item type="system" path="/phone/resource/system/sound"/>
+		<item type="imported" path="/data/userdata/sound" />
+		<item type="user" path="/phone/resource/customed/sound" />
+	</object>
+	
+	<!--broadsoft铃声路径-->
+	<object name="ring" fileType=".wav">
+		<item type="system" path="/phone/resource/system/ring" />
+	</object>
+		
+	<!--主题-->
+	<object name="theme" fileType="folder">
+		<item type="system" path="/phone/resource/system/theme" />
+		<item type="system" path="/phone/resource/system/theme/black/images" dev="T41S T42S"/>
+		<item type="system" path="/phone/resource/system/theme/t4x" dev="T46S"/>
+		<item type="system" path="/phone/resource/system/theme/t52" dev="T52"/>
+		<item type="system" path="/phone/resource/system/theme/t54" dev="T54S"/>
+		<item type="system" path="/phone/resource/system/theme/t48" dev="T48S"/>
+	</object>
+	
+	<!--字体-->
+	<object name="fonts" fileType=".ttf">
+		<item type="system" path="/phone/resource/system/fonts" />
+		<item type="system" path="/phone/resource/system/fonts/black" dev="T41S T42S"/>
+		<item type="system" path="/phone/resource/system/fonts/t4x" dev="T46S T48S T52 T54S"/>
+	</object>
+	
+	<!--语言-->
+	<object name="language" fileType=".lang">
+		<item type="system" path="/phone/resource/system/language" />
+		<item type="system" path="/phone/resource/system/language/black" dev="T41S T42S"/>
+		<item type="system" path="/phone/resource/system/language/t4x" dev="T46S T52 T54S"/>
+		<item type="system" path="/phone/resource/system/language/t48" dev="T48S"/>
+		<item type="imported" path="/config/language" />
+	</object>
+	
+	<!--电子相册-->
+	<object name="ePhoto" fileType=".png">
+		<item type="system" path="/phone/resource/system/ePhoto" />
+		<item type="imported" path="/data/userdata/ePhoto" />
+	</object>
+	
+	<!--sys-res-->
+	<object name="sys-res" fileType=".png,.jpg">
+		<item type="system" path="/phone/resource/system/sys-res" />
+		<item type="system" path="/phone/resource/system/sys-res/t4x" dev="T46S"/>
+		<item type="system" path="/phone/resource/system/sys-res/t52" dev="T52"/>
+		<item type="system" path="/phone/resource/system/sys-res/t54" dev="T54S"/>
+		<item type="system" path="/phone/resource/system/sys-res/t48" dev="T48S"/>
+	</object>
+		
+	<!--xml-pic-->
+	<object name="xml-pic" fileType=".png">
+		<item type="system" path="/phone/resource/system/xml_pic" />
+		<item type="system" path="/phone/resource/system/xml_pic/t4x" dev="T46S T52 T54S"/>
+		<item type="system" path="/phone/resource/system/xml_pic/t48" dev="T48S"/>
+	</object>
+	
+	<!--screensaver-->
+	<object name="screensaver" fileType=".png,.jpg,.jpeg,.bmp">
+		<item type="system" path="/phone/resource/system/screensaver" />
+		<item type="system" path="/phone/resource/system/screensaver/t4x" dev="T46S"/>
+		<item type="system" path="/phone/resource/system/screensaver/t52" dev="T52"/>
+		<item type="system" path="/phone/resource/system/screensaver/t54" dev="T54S"/>
+		<item type="system" path="/phone/resource/system/screensaver/t48" dev="T48S"/>
+		<item type="imported" path="/data/userdata/screensaver" />
+	</object>
+</resource>

@@ -1,0 +1,7 @@
+<root_menu>
+
+<!-- Call Waiting菜单开始 -->
+<item id_name="call_waiting" display_name="Call Waiting" icon_name="" click_action="OpenSubPage(call_waiting)" long_click_action="" />
+<!-- Call Waiting菜单结束 -->
+
+</root_menu>

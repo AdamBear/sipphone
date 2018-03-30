@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+説明：action必须唯一
+-->
+
+<relation_actiontree>
+		<!--公共部分-->
+		<common_relation>
+				<Features action="call_feature_list">
+		    		<CallWaiting action="call_waiting" />
+		    		<AutoAnswer action="auto_answer_list">
+		    				<LineX action="auto_answer_line_" />
+		    		</AutoAnswer>
+		    		<DssKeys action="dss_key_list">
+		    				<LineKeyX action="line_key_item_" />
+		    				<ExtKeyX action="expand_key_item_" />
+		    		</DssKeys>
+		    		<Intercom action="intercom" />
+		    		<Anonymous action="anonymous_call_list">
+		    				<LineX action="anonymous_call_line_" />
+		    		</Anonymous>
+		    		<Diagnostics action="diagnostics_list">
+						<network action="Diagnostics_Network">
+							<ping action="Diagnostics_Ping">
+							</ping>
+							<traceroute action="Diagnostics_TraceRoute">
+							</traceroute>
+						</network>
+					</Diagnostics>
+		    		<Others action="advanced_call_feature_list">
+		    				<General action="advanced_call_feature_general" />
+		    				<HotLine action="advanced_call_feature_hotline" />
+		    				<DefaultAccount action="advanced_call_feature_default_account" />
+		    				<AutoRedial action="advanced_call_feature_auto_redial" />
+		    				<CallCompletion action="advanced_call_feature_call_completion" />
+		    				<PagingList action="multicast_paging_list">
+		    						<EditPagingAddress action="edit_paging_group" />
+		    				</PagingList>
+		    		</Others>
+		  	</Features>
+		
+				<Message action="message_list">
+						<VoiceMial action="voice_mail_list">
+								<SetVoiceMail action="set_voice_mail" />
+						</VoiceMial>
+						<TextMessage action="text_message_list" />
+				</Message>
+				
+				<Histroy action="call_info">
+						<LocalCallLog action="local_call_log_list" />
+						<NetworkCallLog action="broadsoft_calllog_list" />
+				</Histroy>
+
+				<Directory action="Main_Contacts">
+						<LocalDir action="local_contact_list" />
+						<NetworkDir action="blacklist_list" />
+						<RemoteDir action="remote_contact_list" />
+						<NetworkDir action="broadsoft_contact_list" />
+						<UCDir action="uc_contact_list" />
+				</Directory>
+		
+				<Basic action="basic_setting_list">
+						<Language action="language" />
+						<TimeAndDate action="date_and_time_list">
+								<General action="date_and_time_general">
+										<Sntp action="date_and_time_sntp" />
+										<Manual action="date_and_time_manual" />
+								</General>
+								<DHCPTime action="date_and_time_dhcp_time" />
+								<TimeAndDateFormat action="date_and_time_format" />
+						</TimeAndDate>
+						<Display action="display_list">
+								<Backlight action="display_general" />
+								<Contrast action="contrast" />
+								<Wallpaper action="display_wallpaper" />
+								<Dsskey_Wallpaper action="display_dsskey_wallpaper" /> <!--T48特有界面-->
+								<Screensaver action="screensaver" />
+								<Transparency action="transparency" /> <!--T48|T54|T52特有界面-->
+								<Idle_Clock_Show action="idle_clock_setting" /> <!--T54特有界面-->
+						</Display>
+						<Sound action="sound_list">
+								<KeyTone action="sound_general" />
+								<RingTones action="sound_ringtone">
+										<AccountRingTones action="accountsound_ringtone_" />
+								</RingTones>
+								<BLF_Ring_Type action="blf_ring_type" />
+						</Sound>
+						<UnlockPIN action="phone_unlock_pin" />
+						<CheckKeyGuardLock action="check_key_guard_lock" /> <!--T48特有界面-->
+						<Bluetooth action="bluetooth">
+								<EditMyDeviceInformation action="bluetooth_detail" />
+						</Bluetooth>
+				</Basic>
+				
+				<Advanced action="advanced_setting_list">
+						<Account action="account_list">
+								<AccountX action="account_" />
+						</Account>
+						<Network action="network_list">
+								<WANPort action="wan_port_title">
+										<IPvXWANPort action="network_wan_port" />
+								</WANPort>
+								<VLAN action="network_vlan_list">
+										<WANPort action="wanport" />
+										<PCPort action="pcport" />
+										<DHCPVLAN action="dhcpvlan" />
+								</VLAN>
+								<WebServer action="network_wweb_server" />
+								<w8021x action="network_w802.1x" />
+								<VPN action="network_wvpn" />
+								<LLDP action="network_lldp" />
+								<CDP action="vlancdp" />
+								<NAT action="network_nat" />
+						</Network>
+						<SetPassword action="set_password" />
+						<AutoProvision action="auto_provision" />
+						<RebootSet action="reboot" />
+						<ResetConfig action="reset_config" />
+						<FWDInternational action="FWD_international" />
+				</Advanced>
+		</common_relation>
+
+		<!--普通版本-->
+		<general_relation>
+				<Features action="call_feature_list">
+						<CallForward action="call_forward_list">
+								<AlwaysForward action="call_forward_always_forward" />
+								<BusyForward action="call_forward_busy_forward" />
+								<NoAnswerForward action="call_forward_no_answer_forward" />
+						</CallForward>
+						<DoNotDisturb action="dnd" />
+				</Features>
+		</general_relation>
+
+		<!--UC版本-->
+		<broadsoft_relation>
+				<Features action="call_feature_list">
+						<CallControl action="callControl">
+								<Anywhere action="anywhere">
+										<EditLocation action="anywhere_Edit" />
+								</Anywhere>
+								<RemoteOffice action="remote_office" />
+								<CallForward action="call_forward_list">
+										<AlwaysForward action="call_forward_always_forward" />
+										<BusyForward action="call_forward_busy_forward" />
+										<NoAnswerForward action="call_forward_no_answer_forward" />
+								</CallForward>
+								<DoNotDisturb action="dnd" />
+								<HideNumber action="hide_numbers" />
+								<AnonymousRejection action="anonymous_rejections" />
+								<SimultaneousRingPersonal action="simultaneous_ring">
+										<EditNumber action="simultaneous_ring_new" />
+								</SimultaneousRingPersonal>
+								<InitialACDState action="initial_state" />
+								<ACDState action="acd_status_select" />
+								<ForWardNotReachable action="callcontrol_forwardnotreachable" />				  
+								<FWDNotReachablePage action="Call_Forwarding_Not_Reachable" />
+								<GroupNightForward action="GroupNightForward" />
+								<Mobility action="Mobility" />
+								<CallControlLineSelect action="callcontrol_lineselect" />
+								<ExecutiveDetailsPage action="executive_details" />
+								<CallRecordPage action="call_record" />
+								<BsftCallWaitingPage action="bsft_callwaiting" />
+								<ForwardSelectivePage action="forward_selective" />	
+						</CallControl>
+				</Features>
+		</broadsoft_relation>
+</relation_actiontree>

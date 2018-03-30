@@ -1,0 +1,9 @@
+<backlight>
+<event priority="6" eventname="reset"  initlight="1" time="0" />
+<event priority="6" eventname="lighten" initlight="1" time="0" />
+<event priority="6" eventname="forwardcall" initlight="1" time="0" />
+<event priority="6" eventname="misscall" initlight="1" time="0" />
+<event priority="6" eventname="network" initlight="1" time="0" />
+<event priority="6" eventname="account" initlight="1" time="0" />
+<event priority="0" eventname="talk" initlight="1" time="-1" />
+</backlight>

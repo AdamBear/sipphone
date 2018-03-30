@@ -1,0 +1,11 @@
+<root_menu>
+
+<!-- Text Message菜单开始 -->
+<item id_name="new_message" display_name="New Message" icon_name="" click_action="OpenMessagePage(text_message_new_message)" long_click_action="" />
+<item id_name="text_message_inbox" display_name="Inbox" icon_name="" click_action="OpenMessagePage(text_message_inbox)" long_click_action="" />
+<item id_name="text_message_sentbox" display_name="Sentbox" icon_name="" click_action="OpenMessagePage(text_message_sentbox)" long_click_action="" />
+<item id_name="text_message_outbox" display_name="Outbox" icon_name="" click_action="OpenMessagePage(text_message_outbox)" long_click_action="" />
+<item id_name="text_message_draftbox" display_name="Draftbox" icon_name="" click_action="OpenMessagePage(text_message_draftbox)" long_click_action="" />
+<!-- Text Message菜单结束 -->
+
+</root_menu>

@@ -1,0 +1,18 @@
+if(ENABLE_QT_LIB AND ENABLE_PCH AND (NOT MSVC))
+    find_package(Qt4 REQUIRED)
+    include(${QT_USE_FILE})
+    add_definitions(${QT_DEFINITIONS} -DIS_QT_BUILD=1)
+    include_directories(${CMAKE_CURRENT_BINARY_DIR})
+    if(DEBUG_MODE)
+        set(PCH_DEBUG_FLAG "-DQT_DEBUG")
+    else()
+        set(PCH_DEBUG_FLAG "-DQT_NO_DEBUG")
+    endif()
+    precompile_header(qtheaders.h "-fPIC ${PCH_DEBUG_FLAG}")
+    dirctory_use_pch(.)
+endif()
+
+add_subdirectory(common)
+
+add_subdirectory(${host_dir})
+add_fake_directory(EXCLUDE ${host_dir})

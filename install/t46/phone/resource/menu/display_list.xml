@@ -1,0 +1,10 @@
+<root_menu>
+
+<!-- Display菜单开始 -->
+<item id_name="general" display_name="Backlight" icon_name="" click_action="OpenSubPage(display_general)" long_click_action="" />
+<item id_name="contrast" display_name="Contrast" icon_name="" click_action="OpenSubPage(contrast)" long_click_action="" />
+<item id_name="wallpaper" display_name="Wallpaper" icon_name="" click_action="OpenSubPage(display_wallpaper)" long_click_action="" />
+<item id_name="screensaver" display_name="Screensaver" icon_name="" click_action="OpenSubPage(screensaver)" long_click_action="" />
+<!-- Display菜单结束 -->
+
+</root_menu>

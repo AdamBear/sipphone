@@ -1,0 +1,9 @@
+<root_menu>
+
+<!-- Resource菜单开始 -->
+<item id_name="usb_disk" display_name="USB-Disk" icon_name="menu_usb.png" click_action="OpenSubPage(usb_disk)" long_click_action="" />
+<item id_name="sd_card" display_name="SD-Card" icon_name="menu_sd.png" click_action="OpenSubPage(sd_card)" long_click_action="" />
+<!-- Resource菜单结束 -->
+
+</root_menu>	
+

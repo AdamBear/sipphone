@@ -1,0 +1,12 @@
+﻿<root_menu>
+
+<!-- Advanced Setting菜单开始 -->
+<item id_name="account" display_name="Accounts" icon_name="menu_account.png" click_action="OpenSubPage(account_list)" long_click_action="" user_level="" visible="iniGetString(/config/user/user.ini, FeatureSwitch, bEnableAccountShow, 1)" />
+<item id_name="network" display_name="Network" icon_name="menu_network.png" click_action="OpenPage(network_list.xml)" long_click_action="" user_level="" />
+<item id_name="set_password" display_name="Change Password" icon_name="menu_set_password.png" click_action="OpenSubPage(set_password)" long_click_action="" user_level="" />
+<item id_name="auto_provision" display_name="Auto Provision" icon_name="menu_auto_provision.png" click_action="OpenSubPage(auto_provision)" long_click_action="" user_level="" />
+<item id_name="reset_config" display_name="Reset Config" icon_name="" click_action="OpenSubPage(reset_config)" long_click_action="" />
+<item id_name="FWD_international" display_name="FWD International" icon_name="" click_action="OpenSubPage(FWD_international)" long_click_action="" user_level="" />
+<!-- Advanced Setting菜单结束 -->
+
+</root_menu>	

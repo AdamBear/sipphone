@@ -1,0 +1,17 @@
+#ifndef __FB_SCREEN_DEFINE_H__
+#define __FB_SCREEN_DEFINE_H__
+
+
+#define FB_SCREEN_PARAM_SECTION "Param"
+#define FB_SCREEN_PARAM_KEY_DEVICE_NAME "DeviceName"
+#define FB_SCREEN_PARAM_KEY_MEM_NAME "MenName"
+#define FB_SCREEN_PARAM_KEY_FORMAT "Format"
+#define FB_SCREEN_PARAM_KEY_ROTATE "Rotate"
+#define FB_SCREEN_PARAM_KEY_SYNC "Sync"
+#define FB_SCREEN_PARAM_KEY_WAIT_COMMAND "WaitCmd"
+#define FB_SCREEN_PARAM_KEY_SYNC_COMMAND "SyncCmd"
+#define FB_SCREEN_PARAM_KEY_FULLSCREEN_SYNC "FullScreenSync"
+
+#define FB_DEBUG 0
+
+#endif

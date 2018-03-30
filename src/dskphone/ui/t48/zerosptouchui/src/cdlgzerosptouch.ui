@@ -1,0 +1,94 @@
+<ui version="4.0" >
+ <class>CDlgZeroSPTouchClass</class>
+ <widget class="QDialog" name="CDlgZeroSPTouchClass" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>242</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>CDlgZeroSPTouch</string>
+  </property>
+  <widget class="QLabel" name="labText" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>451</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frmRedirector" >
+   <property name="geometry" >
+    <rect>
+     <x>200</x>
+     <y>50</y>
+     <width>471</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow" >
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="labUserName" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>15</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>User Name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labPassword" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Password</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="editPassword" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>50</y>
+      <width>228</width>
+      <height>34</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="editUserName" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>10</y>
+      <width>228</width>
+      <height>34</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <resources/>
+ <connections/>
+</ui>

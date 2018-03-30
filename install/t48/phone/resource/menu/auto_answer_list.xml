@@ -1,0 +1,22 @@
+<root_menu>
+
+<!-- Auto answer菜单开始 -->
+<item id_name="line_1" display_name="Line 1" icon_name="" click_action="OpenSubPage(auto_answer_line_1)" long_click_action="" />
+<item id_name="line_2" display_name="Line 2" icon_name="" click_action="OpenSubPage(auto_answer_line_2)" long_click_action="" />
+<item id_name="line_3" display_name="Line 3" icon_name="" click_action="OpenSubPage(auto_answer_line_3)" long_click_action="" />
+<item id_name="line_4" display_name="Line 4" icon_name="" click_action="OpenSubPage(auto_answer_line_4)" long_click_action="" />
+<item id_name="line_5" display_name="Line 5" icon_name="" click_action="OpenSubPage(auto_answer_line_5)" long_click_action="" />
+<item id_name="line_6" display_name="Line 6" icon_name="" click_action="OpenSubPage(auto_answer_line_6)" long_click_action="" />
+<item id_name="line_7" display_name="Line 7" icon_name="" click_action="OpenSubPage(auto_answer_line_7)" long_click_action="" />
+<item id_name="line_8" display_name="Line 8" icon_name="" click_action="OpenSubPage(auto_answer_line_8)" long_click_action="" />
+<item id_name="line_9" display_name="Line 9" icon_name="" click_action="OpenSubPage(auto_answer_line_9)" long_click_action="" />
+<item id_name="line_10" display_name="Line 10" icon_name="" click_action="OpenSubPage(auto_answer_line_10)" long_click_action="" />
+<item id_name="line_11" display_name="Line 11" icon_name="" click_action="OpenSubPage(auto_answer_line_11)" long_click_action="" />
+<item id_name="line_12" display_name="Line 12" icon_name="" click_action="OpenSubPage(auto_answer_line_12)" long_click_action="" />
+<item id_name="line_13" display_name="Line 13" icon_name="" click_action="OpenSubPage(auto_answer_line_13)" long_click_action="" />
+<item id_name="line_14" display_name="Line 14" icon_name="" click_action="OpenSubPage(auto_answer_line_14)" long_click_action="" />
+<item id_name="line_15" display_name="Line 15" icon_name="" click_action="OpenSubPage(auto_answer_line_15)" long_click_action="" />
+<item id_name="line_16" display_name="Line 16" icon_name="" click_action="OpenSubPage(auto_answer_line_16)" long_click_action="" />
+<!-- Auto answer菜单结束 -->
+
+</root_menu>

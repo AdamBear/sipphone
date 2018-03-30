@@ -1,0 +1,5 @@
+if(ENABLE_TEST)
+	add_all_subdirectories()
+else()
+    add_fake_directory(PREFIX mock)
+endif()

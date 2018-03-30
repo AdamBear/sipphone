@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<resource>
+  <object name="contact" type="1">
+    <item hidepath="Resource:"   realpath="/phone/resource/system/contact/" />
+    <item hidepath="Resource:"   realpath="/phone/resource/system/contact/black/" dev="T41S T42S"/>
+	<item hidepath="Resource:"   realpath="/phone/resource/system/contact/t52/" dev="T52"/>
+	<item hidepath="Resource:"   realpath="/phone/resource/system/contact/t54/" dev="T54S"/>
+	<item hidepath="Resource:"   realpath="/phone/resource/system/contact/t4x/" dev="T46S"/>
+	<item hidepath="Resource:"   realpath="/phone/resource/system/contact/t48/" dev="T48S"/>
+    <item hidepath="Booked:"     realpath="/phone/resource/customed/contact/"/>
+    <item hidepath="Config:"     realpath="/data/userdata/contact-image/"/>
+    <item hidepath="Default:"    realpath="/phone/resource/system/sys-res/image/"/>
+	<item hidepath="Default:"    realpath="/phone/resource/system/sys-res/black/image/" dev="T41S T42S"/>
+	<item hidepath="Default:"    realpath="/phone/resource/system/sys-res/t52/image/" dev="T52"/>
+	<item hidepath="Default:"    realpath="/phone/resource/system/sys-res/t54/image/" dev="T54S"/>
+	<item hidepath="Default:"    realpath="/phone/resource/system/sys-res/t4x/image/" dev="T46S"/>
+	<item hidepath="Default:"    realpath="/phone/resource/system/sys-res/t48/image/" dev="T48S"/>
+  </object>
+  <object name="ephoto" type="2">
+    <item hidepath="Resource:" realpath="/phone/resource/system/ePhoto/"/>
+    <item hidepath="Booked:"     realpath="/phone/resource/customed/ePhoto/"/>
+    <item hidepath="Config:"     realpath="/data/userdata/ePhoto/"/>
+    <item hidepath="Default:"    realpath="/phone/resource/system/sys-res/ePhoto/"/>
+  </object>
+  <object name="ring" type="3">
+    <item type="3" hidepath="Resource:"   realpath="/phone/resource/system/sound/"/>
+	<!--
+    <item type="3" hidepath="Resource:"   realpath="/phone/resource/system/sound/black/" dev="T27G T41S T42S"/>
+	<item type="3" hidepath="Resource:"   realpath="/phone/resource/system/sound/t4x/" dev="T46S"/>
+	<item type="3" hidepath="Resource:"   realpath="/phone/resource/system/sound/t48/" dev="T48S"/>
+	-->
+    <item type="3" hidepath="Booked:"     realpath="/phone/resource/customed/sound/"/>
+    <item type="3" hidepath="Config:"     realpath="/data/userdata/sound/"/>
+	<item type="3" hidepath="Default:"    realpath="/phone/resource/system/sys-res/sound/"/>
+	<item type="3" hidepath="Default:"    realpath="/phone/resource/system/sys-res/black/sound/" dev="T41S T42S"/>
+	<item type="3" hidepath="Default:"    realpath="/phone/resource/system/sys-res/t4x/sound/" dev="T46S T52 T54S"/>
+	<item type="3" hidepath="Default:"    realpath="/phone/resource/system/sys-res/t48/sound/" dev="T48S"/>
+  </object>
+  <object name="wallpaper" type="4">
+    <item hidepath="Resource:"   realpath="/phone/resource/system/wallpaper/"/>
+    <item hidepath="Resource:"   realpath="/phone/resource/system/wallpaper/black/" dev="T41S T42S"/>
+	<item hidepath="Resource:"   realpath="/phone/resource/system/wallpaper/t52/" dev="T52"/>
+	<item hidepath="Resource:"   realpath="/phone/resource/system/wallpaper/t54/" dev="T54S"/>
+	<item hidepath="Resource:"   realpath="/phone/resource/system/wallpaper/t4x/" dev="T46S"/>
+	<item hidepath="Resource:"   realpath="/phone/resource/system/wallpaper/t48/" dev="T48S"/>
+    <item hidepath="Booked:"     realpath="/phone/resource/customed/wallpaper/"/>
+    <item hidepath="Config:"     realpath="/data/userdata/wallpaper/"/>
+    <item hidepath="Default:"    realpath="/phone/resource/system/sys-res/image/"/>
+    <item hidepath="Default:"    realpath="/phone/resource/system/sys-res/black/image/" dev="T41S T42S"/>
+	<item hidepath="Default:"    realpath="/phone/resource/system/sys-res/t52/image/" dev="T52"/>
+	<item hidepath="Default:"    realpath="/phone/resource/system/sys-res/t54/image/" dev="T54S"/>
+	<item hidepath="Default:"    realpath="/phone/resource/system/sys-res/t4x/image/" dev="T46S"/>
+	<item hidepath="Default:"    realpath="/phone/resource/system/sys-res/t48/image/" dev="T48S"/>
+  </object>
+  <object name="screensaver" type="5">
+    <item hidepath="Resource:"   realpath="/phone/resource/system/screensaver/"/>
+    <item hidepath="Resource:"   realpath="/phone/resource/system/screensaver/black/" dev="T41S T42S"/>
+	<item hidepath="Resource:"   realpath="/phone/resource/system/screensaver/t52/" dev="T52"/>
+	<item hidepath="Resource:"   realpath="/phone/resource/system/screensaver/t54/" dev="T54S"/>
+	<item hidepath="Resource:"   realpath="/phone/resource/system/screensaver/t4x/" dev="T46S"/>
+	<item hidepath="Resource:"   realpath="/phone/resource/system/screensaver/t48/" dev="T48S"/>
+    <item hidepath="Config:"     realpath="/data/userdata/screensaver/"/>
+  </object>
+  <object name="expwallpaper" type="6">
+    <item hidepath="Resource:"   realpath="/phone/resource/system/wallpaper/exp50/"/>
+    <item hidepath="Booked:"     realpath="/phone/resource/customed/expwallpaper/"/>
+    <item hidepath="Config:"     realpath="/data/userdata/wallpaper/"/>
+    <item hidepath="Default:"    realpath="/phone/resource/system/sys-res/exp50/"/>
+  </object>
+</resource>
+<path>
+<item name="theme" path="/phone/resource/system/theme/images/"/>
+<item name="theme" path="/phone/resource/system/theme/" dev="T29 T46 T48"/>
+<item name="theme" path="/phone/resource/system/theme/black/images/" dev="T41S T42S"/>
+<item name="theme" path="/phone/resource/system/theme/t52/" dev="T52"/>
+<item name="theme" path="/phone/resource/system/theme/t54/" dev="T54S"/>
+<item name="theme" path="/phone/resource/system/theme/t4x/" dev="T46S"/>
+<item name="theme" path="/phone/resource/system/theme/t48/" dev="T48S"/>
+<item name="ring" path="/phone/resource/system/sound/"/>
+<!--
+<item name="ring" path="/phone/resource/system/sound/black/" dev="T27G T41S T42S T46S T48S"/>
+-->
+<!--
+<item name="ring" path="/phone/resource/system/sound/t4x/" dev="T46S"/>
+<item name="ring" path="/phone/resource/system/sound/t48/" dev="T48S"/>
+-->
+<item name="settingframe" path="/phone/resource/menuconfig/frame/frame.xml"/>
+<item name="menu" path="/phone/resource/menuconfig/menu/"/>
+<item name="menu" path="/phone/resource/menu/" dev="T29 T46 T48"/>
+<item name="menu" path="/phone/resource/menu/t52/" dev="T52"/>
+<item name="menu" path="/phone/resource/menu/t54/" dev="T54S"/>
+<item name="menu" path="/phone/resource/menu/t4x/" dev="T46S"/>
+<item name="menu" path="/phone/resource/menu/t48/" dev="T48S"/>
+<item name="fonts" path="/phone/resource/system/fonts/"/>
+<item name="fonts" path="/phone/resource/system/fonts/black/" dev="T41S T42S"/>
+<item name="fonts" path="/phone/resource/system/fonts/t4x/" dev="T46S T48S T52 T54S"/>
+<!--
+<item name="fonts" path="/phone/resource/system/fonts/t48/" dev="T48S"/>
+-->
+<item name="lang" path="/phone/resource/system/language/"/>
+<item name="lang" path="/phone/resource/system/language/black/" dev="T41S T42S"/>
+<item name="lang" path="/phone/resource/system/language/t4x/" dev="T46S T52 T54S"/>
+<item name="lang" path="/phone/resource/system/language/t48/" dev="T48S"/>
+<item name="backlight" path="/phone/resource/device-res/backLight/backLight.xml"/>
+<item name="backlight" path="/phone/resource/device-res/backLight/black/backLight.xml" dev="T41S T42S T46S T48S T52 T54S"/>
+<!--
+<item name="backlight" path="/phone/resource/device-res/backLight/t4x/backLight.xml" dev="T46S T48S"/>
+<item name="backlight" path="/phone/resource/device-res/backLight/t48/backLight.xml" dev="T48S"/>
+-->
+<item name="wallpaper" path="/phone/resource/system/wallpaper/"/>
+<item name="wallpaper" path="/phone/resource/system/wallpaper/black/" dev="T41S T42S"/>
+<item name="wallpaper" path="/phone/resource/system/wallpaper/t52/" dev="T52"/>
+<item name="wallpaper" path="/phone/resource/system/wallpaper/t54/" dev="T54S"/>
+<item name="wallpaper" path="/phone/resource/system/wallpaper/t4x/" dev="T46S"/>
+<item name="wallpaper" path="/phone/resource/system/wallpaper/t48/" dev="T48S"/>
+<item name="expwallpaper" path="/phone/resource/system/wallpaper/exp50/"/>
+<item name="screensaver" path="/phone/resource/system/screensaver/"/>
+<item name="screensaver" path="/phone/resource/system/screensaver/black/" dev="T41S T42S"/>
+<item name="screensaver" path="/phone/resource/system/screensaver/t52/" dev="T52"/>
+<item name="screensaver" path="/phone/resource/system/screensaver/t54/" dev="T54S"/>
+<item name="screensaver" path="/phone/resource/system/screensaver/t4x/" dev="T46S"/>
+<item name="screensaver" path="/phone/resource/system/screensaver/t48/" dev="T48S"/>
+<item name="xmlpic" path="/phone/resource/system/xml_pic/" />
+<item name="xmlpic" path="/phone/resource/system/xml_pic/black/" dev="T41S T42S"/>
+<item name="xmlpic" path="/phone/resource/system/xml_pic/t4x/" dev="T46S T52 T54S"/>
+<item name="xmlpic" path="/phone/resource/system/xml_pic/t48/" dev="T48S"/>
+<item name="sys-res" path="/phone/resource/system/sys-res/"/>
+<item name="sys-res" path="/phone/resource/system/sys-res/black/" dev="T41S T42S"/>
+<item name="sys-res" path="/phone/resource/system/sys-res/t52/" dev="T52"/>
+<item name="sys-res" path="/phone/resource/system/sys-res/t54/" dev="T54S"/>
+<item name="sys-res" path="/phone/resource/system/sys-res/t4x/" dev="T46S"/>
+<item name="sys-res" path="/phone/resource/system/sys-res/t48/" dev="T48S"/>
+<item name="contact" path="/phone/resource/system/contact/"/>
+<item name="contact" path="/phone/resource/system/contact/black/" dev="T41S T42S"/>
+<item name="contact" path="/phone/resource/system/contact/t52/" dev="T52"/>
+<item name="contact" path="/phone/resource/system/contact/t54/" dev="T54S"/>
+<item name="contact" path="/phone/resource/system/contact/t4x/" dev="T46S"/>
+<item name="contact" path="/phone/resource/system/contact/t48/" dev="T48S"/>
+<item name="edkconfig" path="/phone/resource/edkconfig/edkmap.xml"/>
+<item name="edkconfig" path="/phone/resource/edkconfig/black/edkmap.xml" dev="T41S T42S"/>
+<item name="edkconfig" path="/phone/resource/edkconfig/t4x/edkmap.xml" dev="T46S T52 T54S"/>
+<item name="edkconfig" path="/phone/resource/edkconfig/t48/edkmap.xml" dev="T48S"/>
+<item name="systemlogo" path="/phone/resource/system/wallpaper/"/>
+<item name="systemlogo" path="/phone/resource/system/wallpaper/black/"  dev="T41S T42S"/>
+<!--  彩屏不存在这个配置
+<item name="systemlogo" path="/phone/resource/system/wallpaper/t4x/" dev="T46S"/>
+<item name="systemlogo" path="/phone/resource/system/wallpaper/t48/" dev="T48S"/>
+-->
+<item name="itemmap" path="/phone/resource/level/ItemNameMap.csv"/>
+<item name="actiontree" path="/phone/resource/level/black/ActionTreeRelation.xml" dev="T41S T42S"/>
+<item name="actiontree" path="/phone/resource/level/t4x/ActionTreeRelation.xml" dev="T46S T48S T52 T54S"/>
+</path>

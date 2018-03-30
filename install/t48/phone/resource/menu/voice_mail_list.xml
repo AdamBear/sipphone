@@ -1,0 +1,8 @@
+<root_menu>
+
+<!-- Voice Mail菜单开始 -->
+<item id_name="view_voice_mail" display_name="View Voice Mail" icon_name="" click_action="OpenSubPage(view_voice_mail)" long_click_action="" />
+<item id_name="set_voice_mail" display_name="Set Voice Mail Code" icon_name="" click_action="OpenSubPage(set_voice_mail)" long_click_action="" />
+<!-- Voice Mail菜单结束 -->
+
+</root_menu>

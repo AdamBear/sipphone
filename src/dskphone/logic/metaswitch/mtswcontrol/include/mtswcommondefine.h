@@ -1,0 +1,54 @@
+#if IF_FEATURE_METASWITCH
+#ifndef __MTSW_COMMON_DEFINE_H__
+#define __MTSW_COMMON_DEFINE_H__
+
+#include <yllist.h>
+#include <ylstring.h>
+
+enum MtswActionType
+{
+    MTSW_UT_None = 0,
+    MTSW_UT_Login,
+    MTSW_UT_KeepAlive,
+
+    ACTIONTYPE_VMLIST,
+    ACTIONTYPE_VMFILE,
+    ACTIONTYPE_MARK,
+    ACTIONTYPE_DELETE,
+    ACTIONTYPE_CALLLOG,
+
+    ACTION_CALLLOGLIST,
+
+    ACTION_CONTACTLIST,
+    ACTION_EXTENTION,
+    ACTION_MLHG,
+    ACTION_MLHG_GROUP,
+    ACTION_GROUP,
+    ACTION_CONTACTANDGROUP,
+    ACTION_CONTACTLIST_ADD,
+    ACTION_CONTACTLIST_DELETE,
+    ACTION_CONTACTLIST_EDIT,
+
+    EMTSWLOGDTYPE_All,
+    EMTSWLOGDTYPE_AcdState,
+    EMTSWLOGDTYPE_Queues,
+    EMTSWLOGDTYPE_MemberList,
+    EMTSWLOGDTYPE_MLHG,
+    EMTSWLOGDTYPE_DispCode,
+    EMTSWLOGDTYPE_Post,
+    EMTSWLOGDTYPE_Login,
+    EMTSWLOGDTYPE_ChangeState,
+};
+
+
+enum UI_LoginType
+{
+    UI_NORMAL = 0,
+    UI_DIR,
+    UI_CALLLOG,
+    UI_ACD,
+    UI_VM,
+};
+
+#endif
+#endif

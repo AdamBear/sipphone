@@ -1,0 +1,37 @@
+
+#ifndef __DIRECTORY_LIST_ACTION_H__
+#define __DIRECTORY_LIST_ACTION_H__
+
+#include "baseui/framelistaction.h"
+
+// 联系人群组标题Action
+enum
+{
+    LIST_TITLE_ACTION_DIR_SEARCH            = LIST_TITLE_ACTION_BASE + 1,           // 进入搜索界面
+    LIST_TITLE_ACTION_DIR_ADD_CONTACT       = LIST_TITLE_ACTION_BASE + 2,           // 添加联系人
+    LIST_TITLE_ACTION_DIR_SETTING           = LIST_TITLE_ACTION_BASE + 3,           // 进入更多界面
+    LIST_TITLE_ACTION_DIR_ADD_GROUP         = LIST_TITLE_ACTION_BASE + 4,           // 添加一个群组
+    LIST_TITLE_ACTION_DIR_CLEAR_CROUP        = LIST_TITLE_ACTION_BASE + 5,          // 删除该组下全部记录
+};
+
+// 联系人列表标题Action
+enum
+{
+    LIST_TITLE_ACTION_MOVE_CONTACT          = LIST_TITLE_ACTION_CHECK_STATE + 1,    // 移动联系人
+    LIST_TITLE_ACTION_ADD_BLACKLIST         = LIST_TITLE_ACTION_CHECK_STATE + 2,    // 添加到黑名单
+    LIST_TITLE_ACTION_DEL_CONTACT           = LIST_TITLE_ACTION_CHECK_STATE + 3,    // 删除联系人
+    LIST_TITLE_ACTION_DIAL_CONTACT          = LIST_TITLE_ACTION_CHECK_STATE + 4,    // 拔号
+    LIST_TITLE_ACTION_EDIT_CALLLOG          = LIST_TITLE_ACTION_CHECK_STATE + 5,    // CallLog进入拔号界面
+    LIST_TITLE_ACTION_MOVE_MTSW_CONTACT     = LIST_TITLE_ACTION_CHECK_STATE + 6,    // 移动metaswitch联系人
+    LIST_TITLE_ACTION_SORT_CONTACT          = LIST_TITLE_ACTION_CHECK_STATE + 7,    // SORT metaswitch联系人
+    LIST_TITLE_ACTION_ADD_FAVORITE          = LIST_TITLE_ACTION_CHECK_STATE + 8,    //
+    LIST_TITLE_ACTION_REMOVE_FAVORITE       = LIST_TITLE_ACTION_CHECK_STATE + 9,    //
+};
+
+enum
+{
+    LIST_TITLE_ACTION_PRE_PAGE              = CONTACT_ITEM_ACTION_SEARCH + 1,
+    LIST_TITLE_ACTION_NEXT_PAGE             = CONTACT_ITEM_ACTION_SEARCH + 2,
+};
+
+#endif

@@ -1,0 +1,9 @@
+svn_push:
+  stage: deploy
+  script:
+    - bash scripts/svn_push.sh
+
+create_MR:
+  stage: deploy
+  script:
+    - bash scripts/create_MR.sh

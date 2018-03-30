@@ -1,0 +1,2800 @@
+﻿<autopTranslator dev="VP">
+	<!--
+		Version：test4T4X 0.2
+		节点介绍：
+		#object: 代表一个更新的功能对象，包含了多个更新单元和子功能对象。
+		#item:   代表更新的一个配置项。表示一个最小的更新单元。
+
+	  属性介绍
+	  $name:   关键字，此文件中唯一，且唯一性不区分类型.
+	           autop程序根据更新配置中的关键字描述在此文件中找对应$name的类型、路径等信息，以完成自动更新.
+	  $action: 更新后同步执行的操作, 如发消息.
+	  $reboot: 是否需要重启，如果要重启，则会在所以配置更新完成后执行。
+		
+	  $path:   目标文件路径。如果目标为目录，则要加'/'结尾。原因：在转换功能进行匹配时会以此为标志决定是否只比较目录。
+	  $section: CFG类型的更新时，指示配置项在配置文件中的section名。
+	  					其它更新类型中，此属性主要用于从M1-M7的转换，因为M1多是通过类型来标识各更新项的。
+	  					
+    $key    : CFG类型的更新时，指示配置项在配置文件中的key名
+    					其它更新类型中，此属性主要用于从M1-M7的转换，因为M1多是通过类型来标识各更新项的。
+    $indexMask: 当前功能对象包含的序号替换符。如果为空，则表示无序号。
+                要考虑的情况：
+								1. 多个文件中包括相同的section。如账号：account0-5
+								2. 一个文件中有多个section。 如Codec： audio0-10
+		$range: 主要用于对节点中的path,section,key进行index的替换。
+								在新模板中，index都是从1开始的一个跨度。range则表示了其合法跨度及进行替换时的起始序号.
+								如：
+								账号的替换range为 0-5，如果指定的配置为account.1.enable = 1，
+									则生成替换序规则：0(range起始序号) + 1(当前配置指定的index) - 1 = 0。
+									所以由sipAccount{i}.cfg =》sipAccount0.cfg
+								再如linekey。range为 11-16，如果指定的配置为 dsskey.line_key.2.type = 13,
+								  则生成替换序规则：11(range起始序号) + 2(当前配置指定的index) - 1 = 12。
+								  所以由memory{i} =》memory12
+								  
+    以下属性为object和item都可有的。说明如下：
+    $action属性，父节点的$action会插入在返回action的最前面。
+    $path,$section属性，如果当前item有指定此属性，则以当前item的配置为准，如果未指定，则使用父节点的。
+    $reboot 属性, 父子节点此属性的或操作。
+	-->
+	<cfg>
+		
+		<!-- 
+      属性介绍:
+      $encrypt: 更新的配置值是否需要加密后写入文件. 
+    -->
+   <!-- xsi -->
+    <object name="xsi" path="/config/user/user.ini" section="BroadSoft" action="msgBroadcastPostMessage(0x10007, 77, 0)" >		
+				<item name="user" key="BroadTouchUserName" valueType="string"/>
+				<item name="password" key="BroadTouchPassword" valueType="string"/>
+				<item name="host" key="BroadTouchHost" valueType="string"/>	
+		</object>
+  <!-- network -->
+		<object name="network" path="/config/system/system.ini" section="Network" reboot="1">			
+			<item name="primary_dns" key="strWanPrimaryDNS" valueType="string"/>
+			<item name="secondary_dns" key="strWanSecondaryDNS" valueType="string"/>
+			<item name="vpn_enable" section="VPN" key="bEnableVPN" valueType="boolean"/>
+			<item name="ip_address_mode" key="IPAddressMode" valueType="int"/>
+			<item name="web_server_type" section="Webserver Type" key="WebType" valueType="unsignedInt"/>
+			<item name="span_to_pc_port" key="SpanToPCPort" valueType="boolean"/>
+			<item name="dhcp_host_name" key="option12_value" section="dhcp_option_value" valueType="boolean"/>
+			<item name="static_dns_enable" key="bEnableStaticDNS" valueType="boolean"/>
+			<item name="ipv6_static_dns_enable" key="IPv6StaticDNS" section="Network" valueType="boolean"/>
+			<!--IPv6 -->
+			<item name="ip_address_mode" key="IPAddressMode" valueType="int"/>
+			<item name="ipv6_prefix" key="IPv6Prefix" valueType="int"/>
+			<item name="ipv6_primary_dns" key="IPv6WanPrimaryDNS" valueType="string"/>
+			<item name="ipv6_secondary_dns" key="IPv6WanSecondaryDNS" valueType="string"/>
+			<object name="ipv6_internet_port" >		
+				<item name="type" key="IPv6WANType" valueType="unsignedInt"/>
+				<item name="ip" key="IPv6WanIP" valueType="string"/>
+				<item name="gateway" key="IPv6WanGateway" valueType="string"/>	
+			</object>
+			<object name="ipv6_icmp_v6" >	
+				<item name="enable" key="IPv6AutoIPConf" valueType="boolean"/>
+			</object>
+			<!-- 23837 -->
+			<object name="dns" section="DNS">	
+				<item name="ttl_enable" key="DnsUsettl" valueType="boolean"/>
+			</object>
+			<object name="promisc_mode" section="802.1X">	
+				<item name="enable" key="PromiscMode" valueType="boolean"/>
+			</object>
+			
+			<object name="internet_port" >		
+				<item name="type" key="eWANType" valueType="unsignedInt"/>
+				<item name="ip" key="strWanIP" valueType="string"/>
+				<item name="mask" key="strWanMask" valueType="string"/>
+				<item name="gateway" key="strWanGateway" valueType="string"/>
+				<item name="speed_duplex" section="Ethernet" key="WANPortLink" valueType="string"/>	
+			</object>
+			<object name="pc_port" >	
+				<item name="ip" key="strLanIP" valueType="string"/>
+				<item name="mask" key="strLanMask" valueType="string"/>
+				<item name="dhcp_server" key="bLanDHCPServer" valueType="boolean"/>
+				<item name="speed_duplex" section="Ethernet" key="PCPortLink" valueType="unsignedInt"/>
+				<item name="enable" key="UsePcPort" valueType="boolean"/>
+			</object>
+			<object name="pppoe" >	
+				<item name="user" key="strPPPoEUser" valueType="string"/>
+				<item name="password" key="strPPPoEPin" encrypt="1" valueType="string"/>
+			</object>
+			<object name="dhcp" >
+				<item name="lease_time" key="strDHCPLease" reboot="0" valueType="unsignedInt"/>
+				<item name="start_ip" key="strDHCPClientBegin" valueType="string"/>
+				<item name="end_ip" key="strDHCPClientEnd" valueType="string"/>
+			</object>
+			<object name="vlan" section="VLAN" >
+				<item name="internet_port_enable" key="bEnable" valueType="boolean"/>
+				<item name="internet_port_vid" key="nID" valueType="unsignedInt"/>	
+				<item name="internet_port_priority" key="nPriority" valueType="unsignedInt"/>
+				<item name="pc_port_enable" key="bPcSwitch" valueType="boolean"/>
+				<item name="pc_port_vid" key="nPcVid" valueType="unsignedInt"/>
+				<item name="pc_port_mode" key="nPcMode" valueType="unsignedInt"/>
+				<item name="pc_port_priority" key="nPcPriority" valueType="unsignedInt"/>
+				<item name="dhcp_enable" key="VlanDHCP" valueType="boolean"/>
+				<item name="dhcp_option" key="DHCPOption" valueType="unsignedchar"/>			
+			</object>
+			<object name="port" >
+				<item name="http"  section="HttpServer" key="nPort_http" reboot="0" valueType="unsignedInt" />
+				<item name="https" section="HttpsServer" key="nPort_https" reboot="0" valueType="unsignedInt"/>
+				<item name="max_rtpport" section="RTPPORT" key="MaxRTPPort" valueType="unsignedInt"/>
+				<item name="min_rtpport" section="RTPPORT" key="MinRTPPort" valueType="unsignedInt"/>
+			</object>
+			<object name="snmp" section="SNMP" >	
+				<item name="enable" key="bEnable" valueType="boolean"/>	
+				<item name="port" key="nPort" valueType="unsignedInt"/>
+				<item name="trust_ip" key="strServerName" valueType="string"/>
+			</object>	
+			<object name="qos" section="QoS">
+				<item name="rtptos" key="nRTPQoS" valueType="unsignedInt"/>
+				<item name="signaltos" key="nSIPQoS" valueType="unsignedInt"/>
+			</object>
+			<object name="802_1x" section="802.1X" >		
+				<item name="mode" key="bEnable" valueType="boolean"/>	
+				<item name="identity" key="nIdentity" valueType="string"/>
+				<item name="md5_password" key="strMD5Passwd" valueType="string" encrypt="1" />
+				<item name="root_cert_file_name" key="ca_cert" valueType="string"/>
+				<item name="client_cert_file_name" key="client_cert" valueType="string"/>
+			</object>
+			<object name="lldp" section="LLDP" >	
+				<item name="enable" key="bEnableLLDP" valueType="boolean"/>
+				<item name="packet_interval" key="nPacketInterval" valueType="unsignedInt"/>
+			</object>
+			<object name="sip" section="sipServerOptions" path="/config/system/system.ini" reboot="1">	
+				<object name="tag_mac_to_ua">
+					<item name="enable" key="tagMACtoUA"/>
+				</object>
+			</object>
+		</object>		
+		<!-- syslog -->
+    		<object name="syslog" path="/config/system/system.ini" section="Syslog" reboot="1" note="syslog note">   	
+			<item name="mode" key="LogType" valueType="unsignedInt"/>
+			<item name="server" key="SyslogServer" reboot="1" valueType="string" />
+			<item name="log_level" section="sipServerOptions" key="nLogLevel" valueType="unsignedInt" />
+		</object>			
+		<!-- telnet -->
+		<object name="features" path="/config/user/user.ini" section="Features" action="" >
+			<item name="temode" key="Temode" valueType="boolean"/>
+		</object>			
+		<!-- TR069 -->
+		<object name="managementserver" path="/config/TR069/tr069.ini" section="ManagementServer" action="msgBroadcastPostMessage(0x10007, 23, 0)" note="managementserver note">			
+			<item name="enable" key="EnableTR069" valueType="boolean"/>
+			<item name="username" key="Username" valueType="string"/>
+			<item name="password" key="Password" valueType="string" encrypt="1"/>
+			<item name="url" key="url" valueType="string"/>
+			<item name="connection_request_username" key="ConnectionRequestUsername" valueType="string"/>
+			<item name="connection_request_password" key="ConnectionRequestPassword" valueType="string" encrypt="1"/>
+			<item name="periodic_inform_enable" key="PeriodicInformEnable" valueType="boolean"/>
+			<item name="periodic_inform_interval" key="PeriodicInformInterval" valueType="unsignedInt"/>
+		</object>				
+		<!-- autoprovision -->
+		<object name="auto_provision" path="/config/system/system.ini" section="AutoProvision">
+			<item name="pnp_enable" key="bEnablePNP" valueType="boolean"/>
+			<item name="common_file_name" key="strCommName" valueType="string"/>
+			<!--BugID:13494-->
+			<item name="pnp_out_dialog_msg_enable" key="PNPOutDialogMSGEnable" valueType="boolean"/>					
+			<item name="pnp_domain_name" key="PNPDomainName" valueType="string"/>
+			<item name="pnp_event_vendor" key="PNPEventVendor" valueType="string"/>			
+			<item name="url_priority" key="url_priority" valueType="boolean"/>
+
+			<item name="power_on" key="bEnablePowerOn" valueType="boolean"/>
+			<item name="aes_key_in_file" key="decrypt_cfg_use_security_file" valueType="boolean"/>
+			<item name="cfg_erase_pwd" key="CfgErasePwd" valueType="int"/>
+			<item name="downgrade_enable" key="Downgrade" valueType="boolean"/>
+			<object name="custom">
+				<item name="sync" key="CustomSync" valueType="boolean"/>
+				<item name="protect" key="CustomProtect" valueType="boolean"/>	
+			</object>	
+			<object name="repeat">
+				<item name="enable" key="bEnableRepeat" valueType="boolean"/>
+				<item name="minutes" key="nRepeatMinutes" valueType="unsignedInt"/>		
+			</object>		
+			<object name="server">
+				<item name="url" key="strServerURL" valueType="string"/>	
+				<item name="username" key="strUserName" valueType="string"/>
+				<item name="password" key="strPassword" valueType="string" encrypt="1"/>
+			</object>
+			<object name="weekly">
+				<item name="enable" key="bEnableWeekly" valueType="boolean"/>
+				<item name="mask" key="strWeeklyMask" valueType="unsignedInt"/>
+			</object>
+			<object name="schedule">
+				<item name="time_from" key="strWeeklyBeginTime" valueType="string"/>
+				<item name="time_to" key="strWeeklyEndTime" valueType="string"/>	
+			</object>
+			<object name="dhcp_option">
+				<item name="enable" key="bEnableDHCPOption" valueType="boolean"/>
+				<item name="option60_value" section= "dhcp_option_value" key="option60_value" valueType="string"/>
+				<item name="list_user_options" key="listUserOptions" valueType="string"/>
+			</object>	
+			<object name="aes_key_16">
+				<item name="com" key="strKeyAES16" valueType="string" encrypt="1"/>	
+				<item name="mac" key="strKeyAES16MAC" valueType="string" encrypt="1"/>	
+			</object>
+			<object name="config_version" section="UpdateVersion">
+				<item name="com" key="ComConfigVersion" valueType="string"/>	
+				<item name="mac" key="MacConfigVersion" valueType="string"/>
+			</object>		
+		</object>						
+		<object name="watch_dog" path="/config/system/system.ini" action="msgBroadcastPostMessage(0x10007, 41, 0)" >
+			<item name="enable" section="WatchDog" key="bEnable" valueType="boolean"/>
+			<item name="time" section="WatchDog" key="Time" valueType="int" path="/config/user/user.ini"/>
+		</object>						
+		<!-- account -->
+		<object name="account" indexMask="{i}" range="0-16" reboot="0" section="account" path="/config/user/voip/sipAccount{i}.cfg" action="msgBroadcastPostMessage(0x10007, 3, {i})" >
+			<!--此处为新加-->
+			<object name="BSACD">
+	<item name="ACDLogOnStatus" section="BSACD" key="ACDLogOnStatus"/>
+</object>
+<object name="account">
+	<item name="BalanceEnable" section="account" key="BalanceEnable"/>
+</object>
+<object name="account">
+	<item name="BalanceLink" section="account" key="BalanceLink"/>
+</object>
+<object name="account">
+	<item name="directip" section="account" key="directip"/>
+</object>
+<object name="HotDesking">
+	<item name="RegisteredURL" section="HotDesking" key="RegisteredURL"/>
+</object>
+<object name="HotDesking">
+	<item name="SipNotifyURL" section="HotDesking" key="SipNotifyURL"/>
+</object>
+<object name="account">
+	<item name="IsHotDeskAccount" section="account" key="IsHotDeskAccount"/>
+</object>
+<object name="NAT">
+	<item name="MaxRTPPort" section="NAT" key="MaxRTPPort"/>
+</object>
+<object name="NAT">
+	<item name="MinRTPPort" section="NAT" key="MinRTPPort"/>
+</object>
+<object name="account">
+	<item name="SCAShowTime" section="account" key="SCAShowTime"/>
+</object>
+<object name="account">
+	<item name="VoiceMail" section="account" key="VoiceMail"/>
+</object>
+			<item name="alert_info_url_enable" key="DisableAlertInfoURL" valueType="!boolean" action="msgBroadcastPostMessage(0x10007, 2, 0)"/>
+			<item name="retry_counts" key="RetryCounts" valueType="int"/>
+			<item name="group_pickup_code" key="GPickupCode" valueType="string"/>
+			<item name="direct_pickup_code"  key="DPickupCode" valueType="string"/>
+			<item name="out_dialog_blf_enable" key="EnableOutDialogBLF" valueType="boolean"/>
+			<item name="subscribe_acd_expires" key="SubscribeACDExpire" valueType="unsignedInt"/>
+			<item name="earlymedia" key="earlymedia" valueType="unsignedInt"/>
+			<item name="reason_code" indexMask="{i}" key="Code.{i}" section="ReasonCode" valueType="int"/>
+			<item name="reason_code_name" indexMask="{i}" key="CodeName.{i}" section="ReasonCode" valueType="string"/>
+			<item name="bw_disp_code" indexMask="{i}" key="Code.{i}" section="BWDispCode" valueType="int"/>
+			<item name="bw_disp_code_name" indexMask="{i}" key="CodeName.{i}" section="BWDispCode" valueType="string"/>
+			<item name="supervisor_info_code" indexMask="{i}" key="Code.{i}" section="SupervisorInfo" valueType="int"/>
+			<item name="supervisor_info_code_name" indexMask="{i}" key="CodeName.{i}" section="SupervisorInfo" valueType="int"/>
+			<item name="callpark_enable" key="EnableBroadworksCallpark" valueType="boolean"/>
+			<item name="unregister_on_reboot" key="UnRegisterOnReboot" valueType="boolean"/>
+			<item name="dns_srv_type" key="DnsSrvType" valueType="unsignedInt"/>
+			<item name="naptr_build" key="NaptrBuild" valueType="boolean"/>
+			<item name="static_cache_pri" key="StaticCachePri" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 44, 0)"/>
+			<item name="dns_cache_type" key="DnsCacheType" valueType="int" action="msgBroadcastPostMessage(0x10007, 44, 0)"/>
+			<item name="compact_header_enable" key="EnableCompactHeader" valueType="boolean"/>
+			<item name="dns_query_timeout" key="DnsQueryTimeOut" valueType="unsignedInt"/>
+			<item name="srv_ttl_timer_enable" key="EnableSRVTTLTimer" valueType="boolean" reboot="1"/>
+			<item name="init_register_auth_enable" key="InitRegisterAuth" valueType="boolean"/>
+
+			<item name="failback_mode.legacy" key="FailbackMode" valueType="int"/>
+			<!--
+				item name="failback_timeout" key="FailbackTimeout" section="sipserver1" valueType="saludtnggs_int"/ 
+			-->
+			<item name="failback_timeout.legacy" key="FailbackTimeout" valueType="int"/>
+			<!--item name="reregister_enable" key="reRegisterOn" section="sipserver1" valueType="saludtnggs_boolean"/-->
+			<item name="reregister_enable.legacy" key="ReRegisterOn" valueType="boolean"/>
+			<item name="session_timer_min_se" key="SessionMinSE" valueType="int"/>
+			<item name="update_ack_while_dialing" key="UpdateAckDisplay" valueType="boolean"/>
+			<item name="refer_event_header" key="ReferEventHeader" valueType="boolean"/>
+			<!-- http://10.2.1.199/Bug.php?BugID=48040 -->
+			<item name="send_anonymous_code" key="SendAnonymousCode" valueType="boolean"/>
+			<!-- 23769 -->
+			<item name="call_id_mode" key="CallIDType" valueType="int"/>	
+			<!-- 23850 -->
+			<item name="blf_notify_parse_type" key="BlfNotifyParseType" valueType="boolean"/>
+			<object name="fallback">
+				<item name="redundancy_type" key="RedundancyType" valueType="boolean"/>
+				<item name="timeout" key="FallbackTimeout" valueType="unsignedInt" />
+			</object>
+			<object name="xsi" section="XSI" action="msgBroadcastPostMessage(0x10007, 49, 0)" >		
+				<item name="server_type" key="XSIServerType" valueType="string"/>
+				<item name="port" key="XSIPort" valueType="int"/>	
+				<item name="user" key="XSIUserID" valueType="string"/>
+				<item name="password" key="XSIPassword" valueType="string" encrypt="1"/>
+				<item name="host" key="XSIHostAddr" valueType="string"/>
+		 </object>
+			<object name="sip_server" indexMask="{i}" range="1-4" section="sipserver{i}">
+				<item name="address" key="server" valueType="string"/>
+				<item name="expires" key="expires" valueType="unsignedint"/>
+				<item name="transport_type" key="transport" valueType="int"/>
+				<item name="retry_counts" key="RetryCounts" valueType="unsigedint"/>
+				<item name="failback_mode" key="FailbackMode" valueType="int"/>
+				<item name="failback_timeout" key="FailbackTimeout" valueType="unsigedint"/>
+				<item name="register_on_enable" key="ReRegisterOn" valueType="boolean"/>
+				<item name="port" key="port" valueType="unsignedInt" />
+			</object>
+			<object name="call_center" section="CallCenter" >
+				<item name="call_info_enable" key="bEnableCallInfo" valueType="boolean" />
+				<item name="show_call_info_time" key="nShowCallInfoTime" valueType="int"/>
+				<item name="disp_code_enable" key="bEnableDispCode" valueType="boolean"/>
+				<item name="trace_enable" key="bEnableTrace" valueType="boolean" />
+				<item name="emergency_enable" key="bEnableEmergency" valueType="boolean"/>
+				<item name="queue_status_enable" key="bEnableQueueStatus" valueType="boolean"/>
+				<item name="queue_status_light_enable" key="bEnableQueueStatusLight" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 90, 0)" />
+			</object>
+			<object name="outbound_proxy" indexMask="{i}" range="1-4" section="outboundProxy{i}">
+				<item name="address" key="server" valueType="string"/>
+				<item name="expires" key="expires" valueType="unsignedint"/>
+				<item name="transport_type" key="transport" valueType="int"/>
+				<item name="retry_counts" key="RetryCounts" valueType="unsigedint"/>
+				<item name="failback_mode" key="FailbackMode" valueType="int"/>
+				<item name="failback_timeout" key="FailbackTimeout" valueType="unsigedint"/>
+				<item name="register_on_enable" key="ReRegisterOn" valueType="boolean"/>
+				<item name="port" key="port" valueType="unsignedInt" />
+			</object>
+									
+			<item name="enable" key="Enable" valueType="boolean"/>
+			<item name="label" key="Label" valueType="string"/>
+			<item name="display_name" key="DisplayName" valueType="string"/>
+			<item name="auth_name" key="AuthName" valueType="string"/>
+			<item name="user_name" key="UserName" valueType="string"/>
+			<item name="password" key="password" valueType="string" encrypt="1"/>
+			<item name="music_on_hold_type" key="MusicOnHoldType" reboot="1" valueType="boolean"/>
+			<!-- SIPServer -->
+
+			<item name="sip_server_host.legacy" key="SIPServerHost" valueType="string" />
+			
+			<item name="sip_server_port.legacy" key="SIPServerPort" valueType="unsignedInt"/>
+			<item name="sip_server_host_readonly" key="bSIPServerHostReadOnly" valueType="unsignedInt"/>
+			<!-- outbound -->
+			<item name="outbound_proxy_enable" key="UseOutboundProxy" valueType="boolean" />
+			<item name="outbound_host" key="OutboundHost" valueType="string"/>
+			<item name="outbound_port" key="OutboundPort" valueType="unsignedInt"/>
+			<!-- BakOutbound -->
+			<item name="backup_outbound_host" key="BakOutboundHost" valueType="string"/>
+			<item name="backup_outbound_port" key="BakOutboundPort" valueType="unsignedInt"/>
+			<!--bugID:19651-->
+			<item name="backup_sip_server_host" key="BakSIPServerHost" valueType="string"/>
+			<item name="backup_sip_server_port" key="BakSIPServerPort" valueType="unsignedInt"/>
+			<item name="transport.legacy" key="Transport" valueType="unsignedInt" />
+			<!--item name="transport" key="transport" section="sipserver1" valueType="saludtnggs_unsignedInt" /-->
+			<item name="proxy_require" key="proxy-require" valueType="string" />
+			<!-- anonymous-->
+			<item name="anonymous_call" key="AnonymousCall" valueType="boolean"/>
+			<item name="anonymous_call_oncode" key="AnonymousCall_OnCode" valueType="string" />
+			<item name="anonymous_call_offcode" key="AnonymousCall_OffCode" valueType="string"/>
+			<item name="reject_anonymous_call" key="RejectAnonymousCall" valueType="boolean"/>
+			<item name="anonymous_reject_oncode" key="AnonymousReject_OnCode" valueType="string"/>
+			<item name="anonymous_reject_offcode" key="AnonymousReject_OffCode" valueType="string" />
+			<!-- show balance-->
+			<item name="balance_enable" key="bBalanceEnable" valueType="boolean"/>
+			<item name="balance_link_url" key="strBalanceLink" valueType="string"/>
+			
+			<item name="sip_listen_port" key="SIPListenPort" valueType="unsignedInt"/>
+			<item name="expires.legacy" key="Expire" valueType="unsignedInt" />
+			<item name="100rel_enable" key="Enable 100Rel" valueType="boolean" />	
+			<item name="precondition" key="precondition" valueType="boolean" />	
+			<item name="subscribe_register" key="SubscribeRegister" valueType="boolean" />	
+			<item name="subscribe_mwi" key="SubscribeMWI" valueType="boolean" />
+			<item name="cid_source" key="CIDSource" valueType="unsignedInt" />
+			<item name="cid_source_privacy" key="CIDSourcePRIVACY" valueType="boolean"/>
+			<item name="cid_source_ppi" key="CIDSourcePPI" valueType="boolean"/>
+			<item name="cp_source" key="CPSource" valueType="unsignedInt" />	
+			<item name="enable_user_equal_phone" key="EnableUserEqualPhone" valueType="boolean" />			
+			<item name="srtp_encryption" key="srtp_encryption" valueType="boolean" />			
+			<item name="ptime" key="ptime" valueType="unsignedInt" />			
+			<item name="shared_line" key="ShareLine" valueType="unsignedInt" />	
+			<item name="bla_number" key="BLANumber" valueType="string" />
+			<item name="bla_subscribe_period" key="BLASubscribePeriod" valueType="unsignedInt" />		
+			<item name="dialoginfo_callpickup" key="dialoginfo_callpickup" valueType="boolean" />
+			<item name="missed_calllog" key="MissedCallLog" valueType="boolean" />
+			<item name="subscribe_mwi_expires" key="SubscribeMWIExpire" valueType="unsignedInt" />
+			<item name="subscribe_mwi_to_vm" key="SubscribeMWIToVM" valueType="boolean" />			
+			<item name="register_mac" key="RegisterMAC" valueType="boolean" />
+			<item name="register_line" key="RegisterLine" valueType="boolean" />			
+			<item name="reg_fail_retry_interval" key="RegFailRetryInterval" valueType="unsignedInt" />			
+			<item name="conf_type" key="conf-type" valueType="unsignedInt" />
+			<item name="conf_uri" key="conf-uri" valueType="string" />	
+			<item name="blf_list_code" key="BlfListCode" valueType="string"/>
+			<item name="subscribe_acd_expires" key="SubscribeACDExpire" valueType="unsignedInt" />
+			<item name="blf_list_barge_in_code" key="BlfListBargeInCode" valueType="string"/>
+			<item name="sip_server_type" key="SIPServerType" valueType="unsignedInt" />
+			<item name="neg_h264_method" key="iNegH264Method" valueType="unsignedInt" />			
+			<item name="enable_signal_encode" key="EnableSignalEncode" valueType="boolean" />
+			<item name="signal_encode_key" key="SignalEncodeKey" valueType="string" />
+			<item name="auto_answer" section= "AutoAnswer" key="bEnable" valueType="boolean"/>
+			<item name="music_server_uri" key="MusicServerUri" valueType="string"/>
+			<!--bugID:19566-->
+			<item name="sip_trust_ctrl" key="SIPTrustCtrl" valueType="boolean"/>
+			<!--bugID:http://10.2.1.199/Bug.php?BugID=47667-->
+			<item name="bw_acd_reason_code" indexMask="{i}" range="1-1000"  section="BSACDReasonCode" key="{i}" valueType="string"/>	
+			
+			<!-- Session -->
+			<object name="session_timer">
+				<item name="enable" key="EnableSessionTimer" valueType="boolean"/>
+				<item name="expires" key="SessionExpires" valueType="unsignedInt" />
+				<item name="refresher" key="SessionRefresher" valueType="unsignedInt"/>
+			</object>
+			<!-- DTMF -->
+			<object name="dtmf" section="DTMF" >
+				<item name="type" key="DTMFInbandTransfer" valueType="string"/>
+				<item name="info_type" key="InfoType" valueType="unsignedInt"/>
+				<item name="dtmf_payload" key="DTMFPayload" valueType="unsignedInt"/>
+			</object>
+			<!-- NAT -->
+			<object name="nat" section="NAT">
+				<item name="nat_traversal" key="NATTraversal" valueType="boolean"/>
+				<item name="stun_server" key="STUNServer" valueType="string"/>
+				<item name="stun_port" key="STUNPort" valueType="unsignedInt"/>
+				<item name="udp_update_enable" key="EnableUDPUpdate" valueType="boolean"/>
+				<item name="udp_update_time" key="UDPUpdateTime" valueType="unsignedInt"/>
+				<item name="rport" key="rport" valueType="boolean"/>	
+			</object>		
+			<!-- advanced -->
+			<object name="advanced" section="ADVANCED">
+				<item name="timer_t1" key="default_t1" valueType="float"/>
+				<item name="timer_t2" key="default_t2" valueType="float"/>
+				<item name="timer_t4" key="default_t4" valueType="float"/>		
+				<item name="audio_bandwidth" key="AudioBandwidth" valueType="string"/>
+				<item name="video_frame_rate" section="vaServer" key="nFrameRate" valueType="string"/>
+				<item name="video_i_frame_refresh_time" section="vaServer" key="nSlowIDRSpan" valueType="string"/>
+				
+				<!--BUGID:19561-->
+				<item name="video_fast_idr_count" section="vaServer" key="nFastIDRCount" valueType="int"/>
+				<item name="video_fast_interval" section="vaServer" key="nFastInterval" valueType="int"/>
+				
+				<item name="video_bandwidth" key="VideoBandwidth" valueType="string"/>
+				<item name="total_bandwidth" key="TotalBandwidth" valueType="string"/>
+			</object>
+			<!-- ringtone -->
+			<object name="ringtone">
+				<item name="ring_type" section="Ring" key="strRingFile" valueType="string"/>
+			</object>
+			<!-- blf -->
+			<object name="blf" section="blf">
+				<item name="subscribe_period" key="SubscribePeriod" valueType="unsignedInt"/>
+				<item name="blf_list_uri" key="BLFList_URI" valueType="srting"/>
+				<item name="subscribe_event" key="SubscribeEvent" valueType="boolean"/>
+			</object>
+			<!-- ACD -->
+			<!--BugID:19514-->
+			<object name="acd" section="ACD" >
+				<item name="enable" key="bEnable" valueType="boolean"/>
+				<item name="unavailable_reason_enable" key="bEnableUnavailableReason" valueType="boolean" />
+				<item name="available" key="bAvailabilityState" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 34, 0)" />
+				<item name="initial_state" key="eInitialState" valueType="int" />
+			</object>
+				<object name="reason_code_sec" section="ReasonCode" reboot="1">
+				<item name="code" key="Code" valueType="int"/>
+			</object>
+			<!-- voice codecs -->
+			<object name="codec" indexMask="{i}" range="0-12" section="audio{i}">
+				<item name="enable" key="enable"  valueType="boolean" />
+				<item name="payload_type" key="PayloadType"  valueType="int" />
+				<item name="priority" key="priority"  valueType="string" />
+				<item name="rtpmap" key="rtpmap"  valueType="string" />
+			</object>
+			<!-- video codecs -->
+			<object name="video_codec" indexMask="{i}" range="0-2" reboot="0" section="video{i}"  >
+				<item name="enable" key="enable"  valueType="boolean" />
+				<item name="payload_type" key="PayloadType"  valueType="int" />
+				<item name="priority" key="priority"  valueType="string" />
+				<item name="rtpmap" key="rtpmap"  valueType="string" />
+				<item name="para" key="para"  valueType="string" />
+			</object>
+			
+			<!--BugID:19522-->
+			<!-- call_option -->
+			<object name="call_option"  section="CallOption"  >
+				<item name="call_mode" key="eCallMode"  valueType="int" />
+				<item name="local_video_enable" key="bActiveCamera"  valueType="boolean" />				
+			</object>
+			
+			<!--BugID:19600-->
+			<!-- Hoteling -->									
+			<object name="hoteling" >
+				<item name="enable" key="EnableHoteling" section="account" valueType="boolean"/>
+				<item name="user_id" key="strUserId" section="Hoteling" valueType="string"/>
+				<item name="password" key="strPassword" section="Hoteling" valueType="string" encrypt="1"/>
+				<item name="auto_login_enable" key="bAutoLogin" section="Hoteling" valueType="string"/>		
+			</object>
+			
+		</object>
+		<object name="dns_cache_a" indexMask="{i}" range="0-12" section="DNSCacheA{i}" path="/config/system/system.ini">
+				<item name="name" key="name" valueType="string"/>
+				<item name="ip" key="ip" valueType="string"/>
+				<item name="ttl" key="ttl" valueType="unsigedint"/>
+			</object>	
+			<object name="dns_cache_srv" indexMask="{i}" range="0-12" section="DNSCacheSRV{i}" path="/config/system/system.ini">
+				<item name="name" key="name" valueType="string"/>
+				<item name="port" key="port" valueType="unsigedint"/>
+				<item name="priority" key="priority" valueType="unsigedint"/>
+				<item name="target" key="target" valueType="string"/>
+				<item name="weight" key="weight" valueType="unsigedint"/>
+				<item name="ttl" key="ttl" valueType="unsigedint"/>
+			</object>
+			<object name="dns_cache_naptr" indexMask="{i}" range="0-12" section="DNSCacheNAPTR{i}" path="/config/system/system.ini">
+				<item name="name" key="name" valueType="string"/>
+				<item name="flags" key="flags" valueType="char"/>
+				<item name="order" key="order" valueType="unsigedint"/>
+				<item name="preference" key="preference" valueType="unsigedint"/>
+				<item name="replace" key="replacement" valueType="string"/>
+				<item name="service" key="service" valueType="string"/>
+				<item name="ttl" key="ttl" valueType="unsigedint"/>
+			</object>	
+		<!-- voice_mail -->
+		<object name="voice_mail" section="account" >
+			<item name="number" indexMask="{i}" range="0-5" path="/config/user/voip/sipAccount{i}.cfg" key="VoiceMail" valueType="string" valueLen="256"/>
+		</object>
+		<!-- sip -->
+		<!-- sip -->
+		<object name="sip" path="/config/system/system.ini" section="sipServerOptions" action="msgBroadcastPostMessage(0x10007, 2, {i})" note="sip note">
+			<item name="use_23_as_pound"  key="bUse23AsPound" valueType="boolean"/>
+			<item name="tls_port_random"  key="TlsPortRandom" valueType="boolean" reboot="1"/>
+			<item name="rfc2543_hold" key="bRFC2543Hold" valueType="string"/>
+			<item name="use_out_bound_in_dialog" key="bUseOutBoundInDialog" valueType="boolean"/>		
+			<item name="reg_surge_prevention" section="REGSURGE" key="RegSurgePrevention" valueType="unsignedInt" reboot="1"/>
+			<item name="check_autop_result_before_register" section="REGSURGE" key="CheckAutopResultBeforRegister" valueType="boolean" reboot="1"/>
+			<item name="send_response_by_request" key="SendResponseByRequest" valueType="boolean" reboot="1"/>
+			<item name="thread_priority" key="SIPThreadPriority" valueType="int" reboot="1"/>
+			<item name="notify_reboot_enable" key="iNotifyReboot" valueType="int"/>	
+		</object>
+		<!-- voice -->
+		<object name="voice" section="Volume" path="/config/user/user.ini" action="msgBroadcastPostMessage(0x10007, 17, 0);msgPostMessageEx(vaServer,0x70012,17,0,0)" note="voice note">
+			<item name="ring_vol" key="nRing" valueType="unsignedInt" />
+			<item name="group_spk_vol" key="GroupSpkVol" section="PhoneSetting" valueType="unsignedInt" />
+			<item name="vad" section="Profile" key="VAD" path="/config/user/vpm.cfg" valueType="boolean" />
+			<item name="cng" section="Profile" key="CNG" path="/config/user/vpm.cfg" valueType="boolean" />
+			<item name="echo_cancellation" section="Profile" key="ECHO" path="/config/user/vpm.cfg" valueType="boolean" />
+			<item name="side_tone" section="Profile" key="SIDE_TONE" path="/config/user/vpm.cfg" valueType="boolean" />
+			<item name="call_preview_mode" section="Profile" key="tone_strategy" path="/config/user/user.ini" valueType="unsignedInt"/>
+			<item name="headset_send" section="Profile" key="headset_send" path="/config/user/vpm.cfg" valueType="int" reboot="1"  action="msgBroadcastPostMessage(0x10007, 9, 0)" />			
+			<item name="handset_send" section="Profile" key="handset_send" path="/config/user/vpm.cfg" valueType="int" reboot="1" action="msgBroadcastPostMessage(0x10007, 9, 0)" />
+			<item name="handfree_send" section="Profile" key="handfree_send" path="/config/user/vpm.cfg" valueType="int" reboot="1" action="msgBroadcastPostMessage(0x10007, 9, 0)" />
+			<item name="rtcp_int" section="Profile" key="rtcp_interval" valueType="int" path="/config/user/vpm.cfg"/>	
+			<object name="handfree" action="msgBroadcastPostMessage(0x10007, 12, 0)">
+				<item name="spk_vol" key="nTalkOutputHandfree" valueType="unsignedInt"/>
+				<item name="tone_vol" key="nToneHandfree" valueType="unsignedInt"/>			
+			</object>
+			<object name="handset" action="msgBroadcanTalkOutputHandsetstPostMessage(0x10007, 12, 0)">
+				<!--item name="spk_vol" key="" valueType="unsignedInt"/-->
+				<item name="tone_vol" key="nToneHandset" valueType="unsignedInt"/>			
+			</object>
+			<object name="headset" action="msgBroadcastPostMessage(0x10007, 12, 0)">
+				<item name="spk_vol" key="nTalkOutputHeadset" valueType="unsignedInt"/>
+				<item name="tone_vol" key="nToneHeadset" valueType="unsignedInt"/>			
+			</object>
+			<object name="jib" section="Jitter" path="/config/user/vpm.cfg" >
+				<item name="adaptive" key="Adaptive" valueType="unsignedInt"/>
+				<item name="min" key="Min" valueType="unsignedInt"/>
+				<item name="max" key="Max" valueType="unsignedInt"/>
+				<item name="normal" key="Nominal" valueType="unsignedInt"/>
+			</object>	
+			<object name="tone" section="Tone Param" path="/config/user/vpm.cfg" >
+				<item name="country" section="vpm_tone_Country" key="Country" valueType="string" action="msgBroadcastPostMessage(0x10007, 12, 0)"/>
+				<item name="dial" key="dial" valueType="string"/>
+				<item name="ring" key="ring" valueType="string"/>
+				<item name="busy" key="busy" valueType="string"/>
+				<item name="congestion" key="congestion" valueType="string"/>
+				<item name="callwaiting" key="callwaiting" valueType="string"/>
+				<item name="dialrecall" key="dialrecall" valueType="string"/>
+				<item name="record" key="record" valueType="string"/>
+				<item name="info" key="info" valueType="string"/>
+				<item name="stutter" key="stutter" valueType="string"/>
+				<item name="message" key="message" valueType="string"/>
+				<item name="autoanswer" key="autoanswer" valueType="string"/>
+			</object>
+		</object>
+		<!-- wui -->
+		<object name="wui" path="/config/system/system.ini" reboot="1">
+			<item name="https_enable" section="HttpsServer" key="bEnable_https" valueType="unsignedInt"/>
+			<item name="http_enable" section="HttpServer" key="bEnable_http" valueType="unsignedInt"/>
+		</object>
+		<!-- security -->
+		<object name="security" path="/config/system/system.ini"  note="security note">		
+			<item name="trust_certificates" section="https" key="TrustCertificates" valueType="boolean" />
+			<item name="var_enable" section="Advanced" key="var_enabled" path="/config/user/user.ini" valueType="boolean" reboot="1"/>
+			<object name="user_name" section="UserName" path="/config/user/user.ini">
+				<item name="user" key="user" valueType="string"/>
+				<item name="admin" key="admin" valueType="string"/>
+				<item name="var" key="var" valueType="string" />
+			</object>
+		</object>
+		<!-- security TLS CERT -->
+		<object name="security" path="/config/system/system.ini" section="https" note="security cert" reboot="1" >
+			<item name="ca_cert" key="CaCert" valueType="int" />
+			<item name="dev_cert" key="DevCert" valueType="int" />
+			<item name="cn_validation" key="CNValidation" valueType="int" />
+		</object>	
+		<!-- account-dnd -->
+		<object name="account" indexMask="{i}" range="0-16"  section="DNDAccount{i}" path="/config/user/user.ini" action="msgBroadcastPostMessage(0x10007, 30, 0)">
+			<object name="dnd" >
+				<item name="enable" key="DND" valueType="boolean"/>
+				<item name="on_code" key="DND_On_Code" valueType="string"/>
+				<item name="off_code" key="DND_Off_Code" valueType="string"/>
+			</object>
+		</object>
+		<object name="account" indexMask="{i}" range="0-16"  section="Account{i}" path="/config/user/user.ini" action="msgBroadcastPostMessage(0x10007, 1, 0)">
+			<object name="always_fwd" >
+				<item name="enable" key="AF_bEnable" valueType="boolean"/>
+				<item name="target" key="AF_strTarget" valueType="string"/>
+				<item name="off_code" key="AF_strOnCode" valueType="string"/>
+				<item name="on_code" key="AF_strOffCode" valueType="string"/>
+			</object>	
+			
+			<object name="busy_fwd" >
+				<item name="enable" key="BF_bEnable" valueType="string"/>
+				<item name="target" key="BF_strTarget" valueType="string"/>
+				<item name="off_code" key="BF_strOnCode" valueType="string"/>
+				<item name="on_code" key="BF_strOffCode" valueType="string"/>
+			</object>	
+			
+			<object name="timeout_fwd" >
+				<item name="enable" key="TF_bEnable" valueType="string"/>
+				<item name="target" key="TF_strTarget" valueType="string"/>
+				<item name="off_code" key="TF_strOffCode" valueType="string"/>
+				<item name="on_code" key="TF_strOnCode" valueType="string"/>
+				<item name="timeout" key="Timeout" valueType="int"/>
+			</object>
+		</object>
+		<!-- FWD -->
+ 		<object name="forward" path="/config/user/user.ini" action="msgBroadcastPostMessage(0x10007, 1, 0)">
+ 			<item name="dsskey_value_enable" key="IsDssKeyFWDEnable" section="Features" valueType="boolean" action="msgPostMessageEx(app_vpPhone, 0x10007, 11, 0, 0)"/>
+			<object name="always" section="AlwaysForward">
+				<item name="enable" key="bEnable" valueType="boolean"/>
+				<item name="target" key="strTarget" valueType="string"/>
+				<item name="on_code" key="strOnCode" valueType="string"/>
+				<item name="off_code" key="strOffCode" valueType="string"/>
+			</object>
+			<object name="busy" section="BusyForward">
+				<item name="enable" key="bEnable" valueType="boolean"/>
+				<item name="target" key="strTarget" valueType="string"/>
+				<item name="on_code" key="strOnCode" valueType="string"/>
+				<item name="off_code" key="strOffCode" valueType="string"/>
+			</object>
+			<object name="no_answer" section="NoAnswerForward">
+				<item name="enable" key="bEnable" valueType="boolean"/>
+				<item name="target" key="strTarget" valueType="string"/>
+				<item name="timeout" key="Timeout" valueType="string"/>
+				<item name="on_code" key="strOnCode" valueType="string"/>
+				<item name="off_code" key="strOffCode" valueType="string"/>
+			</object>
+			<object name="international" section="Forward International" path="/config/user/user.ini">
+				<item name="enable" key="Enable" valueType="boolean"/>
+			</object>
+		</object>	
+		<!--transfer -->
+		<object name="transfer" path="/config/user/user.ini" section="Transfer" action="msgPostMessageEx(app_vpPhone, 0x10007, 2, 0, 0)">
+			<item name="semi_attend_tran_enable" key="bSemiAttendedTranEnable" valueType="boolean"/>
+			<item name="blind_tran_on_hook_enable" key="bOnhookBlindTranEnable" valueType="boolean"/>
+			<item name="tran_others_after_conf_enable" key="bTranAfterConfExitEnable" valueType="boolean"/>
+			<item name="on_hook_trans_enable" key="bOnhookAttendTranEnable" valueType="boolean"/>
+			<item name="hang_up_after_success_trans" key="bHangUpAfterSuccessTrans" valueType="boolean"/>
+			<item name="dsskey_deal_type" key="DSSKeyDealType" valueType="int"/>
+			<item name="multi_call_trans_enable" key="BeAllowTransExistCall" valueType="boolean" action="msgPostMessageEx(app_vpPhone, 0x10007, 11, 0, 0)"/>
+		</object>
+		<!--Action URL-->
+		<object name="action_url" path="/config/user/user.ini" section="ActionUrl">
+    	<item name="setup_completed" key="SetupCompleted" valueType="string"/>
+			<item name="log_on" key="LogOn" valueType="string"/>
+			<!--item name="registered" key="LogOn" valueType="string"/-->
+			<item name="log_off" key="LogOff" valueType="string"/>
+			<!--item name="unregistered" key="LogOff" valueType="string"/-->
+			<item name="register_failed" key="RegisterFailed" valueType="string"/>
+			<item name="off_hook" key="Offhook" valueType="string"/>
+			<item name="on_hook" key="Onhook" valueType="string"/>		
+			<item name="incoming_call" key="IncomingCall" valueType="string"/>
+			<item name="outgoing_call" key="CallOut" valueType="string"/>
+			<item name="call_established" key="Established" valueType="string"/>
+			<item name="dnd_on" key="OpenDnd" valueType="string"/>
+			<item name="dnd_off" key="CloseDnd" valueType="string"/>	
+			<item name="always_fwd_on" key="OpenAlwaysForward" valueType="string"/>
+			<item name="always_fwd_off" key="CloseAlwaysForward" valueType="string"/>
+			<item name="busy_fwd_on" key="OpenBusyForward" valueType="string"/>
+			<item name="busy_fwd_off" key="CloseBusyForward" valueType="string"/>
+			<item name="no_answer_fwd_on" key="OpenNoAnswerForward" valueType="string"/>
+			<item name="no_answer_fwd_off" key="CloseNoAnswerForward" valueType="string"/>		
+			<item name="transfer_call" key="TransferCall" valueType="string"/>
+			<item name="blind_transfer_call" key="BlindTransfer" valueType="string"/>
+			<item name="attended_transfer_call" key="AttendedTransfer" valueType="string"/>
+			<item name="hold" key="Hold" valueType="string"/>
+			<item name="unhold" key="Unhold" valueType="string"/>
+			<item name="mute" key="Mute" valueType="string"/>
+			<item name="unmute" key="UnMute" valueType="string"/>	
+			<item name="missed_call" key="MissedCall" valueType="string"/>
+			<item name="call_terminated" key="Terminated" valueType="string"/>	
+			<item name="busy_to_idle" key="BusyToIdle" valueType="string"/>	
+			<item name="idle_to_busy" key="IdleToBusy" valueType="string"/>	
+			<item name="ip_change" key="IpChanged" valueType="string"/>				
+			<item name="forward_incoming_call" key="ForwardIncomingCall" valueType="string"/>
+			<item name="reject_incoming_call" key="RejectIncomingCall" valueType="string"/>
+			<item name="call_interrupt" key="CallInterrupt" valueType="string"/>
+			<item name="call_remote_canceled" key="CallRemoteCanceled" valueType="string"/>
+			<item name="answer_new_incoming_call" key="AnswerNewInCall" valueType="string"/>
+			<item name="reject_new_incoming_call" key="RejectNewInCall" valueType="string"/>					
+			<item name="cancel_callout" key="CancelCallOut" valueType="string"/>
+			<item name="remote_busy" key="RemoteBusy" valueType="string"/>
+			<item name="transfer_finished" key="TransferFinished" valueType="string"/>
+			<item name="transfer_failed" key="TransferFailed" valueType="string"/>
+			<item name="ume_server" key="UCServer" reboot="1" valueType="string" valueLen="256"/>
+			<item name="report_server" key="RemoteIP" valueType="string"/>
+			<item name="is_ume" key="ISUME" valueType="boolean" reboot="1"/>
+			<item name="show_msgbox" key="bActionURIShowMsgBox" section="Features" valueType="boolean"/>
+		</object>		
+		<!--lang -->	
+		<object name="lang" path="/config/user/user.ini" section="Language">
+			<item name="wui"  key="WebLanguage" valueType="string" section="Lang"/>
+			<item name="gui"  key="ActiveWebLanguage" valueType="string" action="msgBroadcastPostMessage(0x10007, 16, 0);msgBroadcastPostMessage(0x10007, 16, 1)"/>					
+		</object>
+		
+		<!--BugID:19522-->
+		<!--alert_infoX-->
+		<object name="distinctive_ring_tones" path="/config/user/user.ini" action="msgBroadcastPostMessage(0x10007, 57, 0)">
+			<object name="alert_info" indexMask="{i}" range="0-9" section="AlertInfo{i}">
+				<item name="text" key="Text" valueType="string"/>
+				<item name="ringer" key="Ringer" valueType="int"/>
+			</object>
+		</object>
+				
+		<!--local_time -->	
+		<object name="local_time" path="/config/system/system.ini" section="LocalTime"  action="msgBroadcastPostMessage(0x10007, 27, 0);msgBroadcastPostMessage(0x10007, 27, 1);msgBroadcastPostMessage(0x10007, 27, 2)">
+    			<item name="time_zone" key="strTimeName" valueType="string"/>  
+			<item name="time_zone_name" key="strZoneName" valueType="string"/>
+			<item name="manual_time_enable" key="bNTPEnable" valueType="!boolean"/>
+			<item name="ntp_server1" key="strPrimaryNTPServer" valueType="string"/>
+			<item name="ntp_server2" key="strSecondaryNTPServer" valueType="string"/>
+			<item name="interval" key="nNTPLeaseSeconds" valueType="int"/>
+			<item name="summer_time" key="iDSTType" valueType="int"/>
+			<item name="dst_time_type" key="iDSTTimeType" valueType="int"/>
+			<item name="start_time" key="StartTime" valueType="Special"/>
+			<item name="end_time" key="EndTime" valueType="Special"/>
+			<item name="offset_time" key="OffSetTime" valueType="int"/>
+			<item name="time_format" key="eTimeFormat" valueType="int"/>
+			<item name="date_format" key="eDateFormat" valueType="int"/>
+			<item name="dhcp_time" key="bEnableDHCPTime" valueType="boolean"/>
+			<item name="manual_ntp_srv_prior" key="NtpCfgPriorDhcp" valueType="boolean"/>						
+		</object>
+		<!--auto_redial-->
+		<object name="auto_redial" path="/config/user/user.ini" section="AutoRedial">
+			<item name="enable" key="bEnable" valueType="boolean"/>
+			<item name="interval" key="nInterval" valueType="int"/>
+			<item name="times" key="nTimes" valueType="int"/>			
+		</object>
+		<!--zero_touch-->
+		<object name="zero_touch" path="/config/user/user.ini" section="Zero">
+			<item name="enable" key="ForbidZero" valueType="!boolean"/>
+			<item name="wait_time" key="iZeroWaitTime" valueType="int"/>								
+		</object>
+		<!--push_xml-->
+		<object name="push_xml" path="/config/user/user.ini" section="PushXML" >	
+			<item name="server" key="ServerIP" valueType="string"/>
+			<item name="block_in_calling" key="BlockInCalling" valueType="boolean"/>
+			<item name="sip_notify" key="SIPNotify" valueType="boolean"/> 		
+		</object>	
+		
+		<!--dialplan-->
+		<object name="dialplan" >
+			<object name="area_code" section="AreaCode" path="/config/user/user.ini" action="msgBroadcastPostMessage(0x10007, 18, 0)">
+				<item name="code" key="strcode" valueType="string"/>
+				<item name="min_len" key="strminlen" valueType="string"/>
+				<item name="max_len" key="strmaxlen" valueType="string"/>
+				<item name="line_id" key="strLineID" valueType="string"/>	
+			</object>
+			<object name="block_out" path="/config/user/user.ini" action="msgBroadcastPostMessage(0x10007, 19, 0)">	
+    				<item name="number" section="BlockOut" key="{i}"  indexMask="{i}" range="1-10" valueType="string" />
+    				<item name="line_id" section="BlockOutLineID" key="{i}" indexMask="{i}" range="1-10" valueType="string"/>    				
+    	</object>
+		</object>
+		
+		<!--broadsoft sync -->
+		<object name="bw" path="/config/user/user.ini" section="Features">
+			<item name="calllog_and_dir" key="BWCallLogandDir" section="BroadSoft" valueType="boolean"/>
+			<item name="feature_key_sync" key="bBroadsoftFeatureKeySync" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 37, 0)" />						
+			<item name="directory_enable" key="bBroadsoftActive" section="Directory" valueType="boolean" reboot="1" />
+			<!--item name="enable" key="bBroadsoftActive" section="Directory" valueType="boolean" reboot="1" /-->
+			<item name="behave_calllog" key="BeHaveCallLog" section="BroadSoft" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 28, 0)" reboot="1" />
+			<item name="behave_bw_dir" key="BeHaveBWDir" section="BroadSoft" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 28, 0)" reboot="1" />	
+		</object>
+		
+		<!--ldap-->
+		 <object name="ldap"  section="LDAP" path="/config/user/LDAP.cfg" action="msgBroadcastPostMessage(0x10007, 35, 0)" note="ldap note">
+			<item name="enable" key="bEnable" valueType="boolean"/>
+			<item name="customize_label" key="strLdapName" valueType="string"/>			
+			<item name="name_filter" key="strNameFilter" valueType="string"/>
+			<item name="number_filter" key="strNumberFilter" valueType="string"/>
+			<item name="host" key="strServerName" valueType="string"/>
+			<item name="port" key="nServerPort" valueType="unsignedInt"/>
+			<item name="base" key="strBase" valueType="string"/>
+			<item name="user" key="strUserName" valueType="string"/>
+			<item name="password" key="strUserPin" valueType="string" encrypt="1"/>
+			<item name="max_hits" key="nMaxHits" valueType="int"/>
+			<item name="name_attr" key="strNameAttr" valueType="string"/>
+			<item name="numb_attr" key="strNumbAttr" valueType="string"/>
+			<item name="display_name" key="strDisplayName" valueType="string"/>
+			<item name="version" key="nProtocolVersion" valueType="int"/>
+			<item name="call_in_lookup" key="bLookup4CallIn" valueType="boolean"/>
+			<item name="ldap_sort" key="bSortResult" valueType="boolean"/>
+			<item name="search_delay" key="nSearchDelay" valueType="int"/>
+			<item name="dial_lookup" key="bLookup4Dial" valueType="boolean"/>						
+		</object>
+		<!--call_waiting-->
+		<object name="call_waiting" path="/config/user/user.ini" section="CallWaiting" action="msgBroadcastPostMessage(0x10007, 11, 0)" >	
+			<item name="enable" key="bEnable" valueType="boolean"/>
+			<item name="tone" key="bToneEnable" valueType="boolean"/>
+			<item name="on_code" key="Call_WaitingOnCode" section="Features" valueType="string" action="msgPostMessage(app_vpPhone,0x10007, 11, 0)"/>
+			<item name="off_code" key="Call_WaitingOffCode" section="Features" valueType="string" action="msgPostMessage(app_vpPhone,0x10007, 11, 0)"/> 				
+		</object>
+		<!--features-->
+		<object name="features" path="/config/user/user.ini" >
+			<item name="fwd_mode" key="FWDMode" valueType="int" section="Features" action="msgBroadcastPostMessage(0x10007, 1, 0)"/>
+			<item name="dnd_mode" key="DNDMode" valueType="int" section="Features" action="msgBroadcastPostMessage(0x10007, 30, 0)"/>
+			<item name="bluetooth_enable" key="bEnable" valueType="boolean" section="Bluetooth" action="msgPostMessage(bluetooththread,2649, 0, 0)"/>
+			<item name="fwd_diversion_enable" key="DiversionEnable" section="Features" valueType="boolean"/>
+			<item name="factory_pwd_enable" key="IdleResetNeedPwd" section="Features" valueType="boolean"/>
+			<item name="headset_prior" key="HeadsetPrior" section="Features" valueType="boolean"/>
+			<item name="power_led_on" key="ClosePowerLight" section="Features" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 90, 0)"/>
+			<item name="auto_answer_delay" key="AutoAnswerDelay" section="Features" valueType="int"/>
+			<item name="alert_info_tone" key="AlertInfoTone" section="Features" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 11, 0)"/>
+			<item name="dsskey_blind_tran" key="DsskeyBlindTran" section="Transfer" valueType="boolean"/>
+			<item name="blf_and_callpark_idle_led_enable" key="BLFLedOffIdle" section="Features" valueType="boolean" action="msgBroadcastPostMessage(0x30029, 0, 0)"/>
+			<item name="idle_talk_power_led_flash_enable" key="PowerLedIdle&amp;Talk" section="Features" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 90, 0)"/>
+			<item name="voice_mail_tone_enable" key="VoiceMailTone" section="Features" valueType="boolean"/>
+			<item name="call_num_filter" key="CallNumFilter" section="Features" valueType="string"/>
+			<item name="allow_mute" key="AllowMute" valueType="boolean" section="PhoneSetting" action="msgBroadcastPostMessage(0x10007, 11, 0)"/>
+			<item name="emergency_ring" key="EmergencyRing" valueType="string" section="PhoneSetting" action="msgBroadcastPostMessage(0x10007, 27, 0)"/>
+			<item name="partition_tone" key="PartitionTone" valueType="boolean" section="PhoneSetting" action="msgBroadcastPostMessage(0x10007, 27, 0)"/>
+			<item name="send_pound_key" key="bSendPoundKey" valueType="boolean" section="Features" action="msgBroadcastPostMessage(0x10007, 11, 0)"/>
+			<item name="headset_training" key="HeadSetTraining" valueType="boolean" section="PhoneSetting" action="msgBroadcastPostMessage(0x10007, 11, 0)"/>
+			<item name="hold_trans_delay" key="HoldTranDelay" section="Features" valueType="boolean"/>
+			<item name="auto_release_bla_line" key="AutoReleaseLineBySrv" section="Features" valueType="boolean"/>
+			<item name="play_local_dtmf_tone_enable" section="Features" key="PLAY_LOCAL_DTMF_TONE" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 11, 0)"/>
+			<item name="blf_led_mode_legacy" key="BLfNotifyType" section="Features" valueType="int" action="msgBroadcastPostMessage(0x3002a,0, 0)"/>
+			<item name="blf_led_mode" section="BLFLed" key="BLFLedMode" valueType="int" action="msgBroadcastPostMessage(0x3002a,0, 0)"/>
+			<item name="uc_enable" key="bEnabledUC" section="Features" valueType="boolean" reboot="1"/>
+			<item name="uc_username" key="strUserID" section="Presence" valueType="string" reboot="1"/>
+			<item name="uc_password" key="strPassWord" section="Presence" valueType="string" reboot="1"/>	
+			<item name="dnd_refuse_code" key="nDNDRefuseCode" section="RefuseCode" valueType="int"/>
+			<item name="normal_refuse_code" key="nNormalRefuseCode" section="RefuseCode" valueType="int"/>
+			<item name="call_completion_enable" key="bCallCompletionEnable" section="Features" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 32, 0)"/>			
+			<item name="hotline_number" key="strNumber" valueType="string" section="Hotline"/>
+			<item name="hotline_delay" key="nTimeDelay" valueType="int" section="Hotline"/>			
+			<item name="busy_tone_delay" key="nBusyToneDelay" valueType="int" section="BusyTone"/>			
+			<item name="send_key_tone" key="bSendKeySoundOn" valueType="boolean" section="Volume"/>			
+			<item name="key_tone" key="bButtonSoundOn" valueType="boolean" section="Volume"/>			
+			<item name="redial_tone" key="strReDialtoneNumber" valueType="string" section="ReDialtone"/>		
+			<item name="save_call_history" key="bSaveCallHistory" valueType="boolean" section="Features" action="msgBroadcastPostMessage(0x10007, 65,0);msgBroadcastPostMessage(0x10007, 37, 0)"/>
+			<item name="rtp_adapte" key="rtp_adaptation" valueType="boolean" path="/config/user/vpm.cfg" section="Profile" action="msgBroadcastPostMessage(0x10007, 17,0)"/>			
+			<!--item name="action_uri_limit_ip" key="LimitIP" valueType="string" section="ActionURI" action="msgBroadcastPostMessage(0x10007, 12, 0)"/-->
+			<item name="action_uri_allowed_ip" key="LimitIP" valueType="string" section="ActionURI" action="msgBroadcastPostMessage(0x10007, 12, 0)"/>
+			<item name="action_uri_reboot_now" key="RebootNowEnable" valueType="boolean" section="ActionURI"/>			
+			<item name="relog_offtime" key="ReLogOffTime" valueType="string" section="Features" reboot="1"/>
+			<item name="blf_list_version" key="IsBLFListVersion" valueType="boolean" section="Features" reboot="1"/>
+			<item name="export_cfg_erase_pwd" key="bExportCFGClearPWD" valueType="boolean" section="Features"/>
+			<item name="group_listen_in_talking_enable" key="GroupListenInTalkingEnable" section="Features" valueType="boolean"/>
+			<item name="reset_by_long_press_enable" key="ResetByLongPress" section="Features" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 11, 0)"/>
+			<!--BugID:23652-->
+			<item name="call_invite_format" key="CallInviteFormatTel" section="Features" valueType="boolean"/>
+			<!--22890-->
+			<item name="blf_pickup_only_send_code" key="IsBLFPickupOnlySendCode" section="Features" valueType="boolean"/>
+			<!--24189-->
+			<item name="upload_server" key="UploadServer" section="Features" valueType="string"/>
+			<!--BugID:19566-->
+			<item name="direct_ip_call_enable" key="bEnableDirectIP" valueType="boolean" section="Features" path="/config/user/user.ini" />			
+			<item name="fullscreen_local_visible" key="bLocalViewVisible" valueType="boolean" section="FullScreen"/>
+			<!--item name="key_as_send" key="eType" valueType="unsignedint" section="KeyAsSend" action="msgBroadcastPostMessage(0x10007, 22, 0)"/-->		
+			
+			<!--BugID:19600-->
+			<item name="conference_enable" key="bEnableConference" valueType="boolean" section="Features" reboot="1" />
+			<object name="hoteling">
+				<item name="enable" key="bEnableHoteling" section="Features" valueType="boolean" reboot="1"/>			
+			</object>
+			
+					<!--DTMF BugID:19749-->
+			<object name="dtmf" path="/config/user/user.ini" section="Features">
+				<item name="display_encrypt" key="bEnableSuppressDTMFDisplay" section="Features" valueType="boolean"/>
+				<item name="display_encrypt_delay" key="bEnableSuppressDTMFDisplayDelay" section="Features" valueType="int"/>
+				<item name="repetition" key="dtmf_rep" section="Profile" path="/config/user/vpm.cfg" valueType="int" action="msgBroadcastPostMessage(0x10007, 17, 0)"/>
+				<item name="hide" key="HideDTMF" valueType="boolean"/>
+				<item name="hide_delay" key="HideDTMFDelay" valueType="boolean"/>
+				<item name="transfer" key="TransferDTMF" valueType="string"/>
+				<item name="replace_tran" key="DTMF_Replace_Tran" valueType="boolean"/>
+			</object>	
+		
+			<object name="dnd" section="DND">
+				<item name="allow" key="DND" valueType="!boolean" section="Forbidden" action="msgBroadcastPostMessage(0x10007, 28, 0)" />
+				<item name="enable" key="bEnable" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 30, 0)" />
+				<item name="on_code" key="strOnCode" valueType="string" />
+				<item name="off_code" key="strOffCode" valueType="string" />
+				<item name="emergency_enable" key="Enable" section="DNDEmergency" valueType="string" action="msgBroadcastPostMessage(0x10007, 30, 0)" />
+				<item name="emergency_authorized_number" key="DND_Authorized_Numbers" section="DNDEmergency" valueType="string" action="msgBroadcastPostMessage(0x10007, 30, 0)" />
+			</object>
+			<object name="fwd" section="Forbidden">
+				<item name="allow" key="FWD" valueType="!boolean" action="msgBroadcastPostMessage(0x10007, 28, 0)"/>
+			</object>    			  
+			<object name="intercom" section="Intercom">
+				<item name="allow" key="bAllowed" valueType="boolean"/>
+				<item name="mute" key="bIntercomMuteEnable" valueType="boolean"/>
+				<item name="tone" key="bIntercomToneEnable" valueType="boolean"/>
+				<item name="barge" key="bIntercomBargeEnable" valueType="boolean"/>
+			</object>
+			<object name="pound_key" section="KeyAsSend" action="msgBroadcastPostMessage(0x10007, 22, 0)">
+				<item name="mode" key="eType" valueType="boolean"/>
+			</object>
+			<object name="ringer_device" section="RingerDevice">
+				<item name="is_use_headset" key="eUseHeadSet" valueType="boolean" />
+			</object>
+			<object name="custom_factory_config" path="/config/user/user.ini" section="FactoryConfig" action="msgBroadcastPostMessage(0x10007, 28, 0)">
+				<item name="enable" key="CustomEnabled" valueType="boolean"/>
+			</object>
+			<object name="remote_phonebook" section="SRemoteName">
+				<item name="enable" key="Enable" valueType="boolean"/> 
+				<item name="flash_time" key="FlashTime" valueType="int"/>
+			</object>
+			<object name="play_hold_tone" section="Features" >
+				<item name="enable" key="PlayHoldTone" valueType="boolean"/>
+				<item name="delay" key="PlayHoldToneDelay" valueType="int"/>    			
+			</object>
+			<object name="password_dial" section="Features" >
+				<item name="enable" key="PswDialEnable" valueType="boolean"/>
+				<item name="prefix" key="PswPrefix" valueType="int"/>
+				<item name="length" key="PswLength" valueType="int"/>
+			</object>
+			<!--pickup-->
+			<object name="pickup" section="Pickup" >
+				<item name="group_pickup_enable" key="GPickup" valueType="boolean"/>
+				<item name="group_pickup_code" key="GPickupCode" valueType="string"/>
+				<item name="direct_pickup_enable" key="DPickup" valueType="boolean"/>
+				<item name="direct_pickup_code" key="DPickupCode" valueType="string"/>
+				<item name="blf_visual_enable" key="Indication_BLFPickup" valueType="boolean"/>
+				<item name="blf_audio_enable" key="AllowBlfRing" valueType="boolean"/>
+			</object>
+			<object name="ldap" section="Features" >
+				<item name="input_type" key="IMEType" valueType="int" action="msgPostMessageEx(app_vpPhone, 0x10007, 11, 0, 0)"/>
+			</object>
+			<!--object name="end_call_net_disconnect" section="PhoneSetting" >
+				<item name="enable" key="InvalidNetEndCall" valueType="boolean"/>    			
+			</object-->					
+		</object>
+		
+		<!--ACD BugID:19660-->
+		<object name="acd" path="/config/user/user.ini" action="msgBroadcastPostMessage(0x10007, 39, 0)" >
+				<item name="enable" key="bEnableACD" section="Features" valueType="boolean" reboot="1" />
+				<item name="auto_available_timer" key="AutoAvailableTimer" section="Features" valueType="unsignedInt"/>
+				<!--item name="auto_available" key="bEnableACD" section="Features" valueType="unsignedInt"/-->
+				<item name="bw" key="Broadsoft" section="ACD" valueType="boolean" reboot="1"/>
+		</object>		
+	
+		
+		<!--phone_setting-->
+		<object name="phone_setting" path="/config/user/user.ini"  >	
+			<item name="inter_digit_time" key="nInterDigitTime" section="Features" valueType="int"/>
+			<item name="ring_type" key="strRingFile" section="Ring" valueType="string" action="msgBroadcastPostMessage(0x10007, 53, 0)"/>
+			<!--item name="lock" key="Lock" section="Phone_Lock" valueType="int" action="msgBroadcastPostMessage(0x10007, 20, 0)"/-->
+			<item name="page_tip" key="PageTip" section="Page" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 91, 0)"/>			
+			<item name="active_backlight_level" key="nActiveLevel" valueType="int" section="Backlight" action="msgBroadcastPostMessage(0x10007, 85, 0)" />			
+			<item name="inactive_backlight_level" key="nInactiveLevel" valueType="int" section="Backlight" action="msgBroadcastPostMessage(0x10007, 85, 0)" />
+			<item name="backlight_time" key="nBacklightTime" valueType="int" section="Backlight" action="msgBroadcastPostMessage(0x10007, 85, 0)" /> 						
+			<item name="backgrounds" key="strCurrentWallpaper" valueType="string" section="Wallpaper" path="/config/system/system.ini" action="msgBroadcastPostMessage(0x10007, 86, 0)" />			
+			<item name="predial_autodial" key="bPreDialAutoDial" section="Features" valueType="boolean"/>
+			<item name="is_deal180" key="bDeal180" section="Features" valueType="boolean"/>
+			<item name="dialnow_delay" key="nDialNowDelay" valueType="int" section="Features" />
+			<item name="shortcuts_enable" key="bShortCutsEnable" valueType="boolean" section="Idle"/>
+			<item name="contrast" key="Contrast" section="PhoneSetting" valueType="int" action="msgBroadcastPostMessage(0x10007, 85, 0)"/>
+			<item name="contact_menu_hidden_items" key="ContactMenuHiddenItems" section="Contact" valueType="string"/>
+			<item name="ring_for_tranfailed" key="RingForTranFailed" section="PhoneSetting" valueType="string" />
+			<item name="logon_wizard" key="LogonWizard" section="PhoneSetting" valueType="boolean"/>
+			<item name="custom_softkey_enable" key="IsDefineKey" section="PhoneSetting" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 36, 0)"/>
+			<item name="product_name" key="ProductName" section="PhoneSetting" valueType="string" action="msgBroadcastPostMessage(0x10007, 38, 0)"/>
+			<!--item name="change_183_to_180" key="BeChange183to180" path="/phone/factory/user/WebItemsLevel.cfg" section="Nology" valueType="boolean"/-->
+			<item name="headsetkey_mode" key="HeadSetKeyInTalk" section="HeadSet" action="msgBroadcastPostMessage(0x10007, 11, 0)" valueType="boolean"/>
+			<!--BUGID:19198 Idle logo-->
+			<item name="show_logo" key="bShowLogo" valueType="boolean" section="Idle" reboot="1"/>
+			<!--BUGID:19283-->
+			<item name="show_application" key="bApplicationSwitch" valueType="boolean" section="FeatureSwitch" reboot="1"/>
+			<item name="reserve_certs_enable" key="IsReserveCerts" valueType="boolean" section="PhoneSetting"/>
+			<item name="show_call_log_sip_uri" key="bShowServer" valueType="boolean" section="CallLog" reboot="1"/>
+			<item name="show_call_forward" key="bCallForwardShowSwitch" valueType="boolean" section="Forward" reboot="1"/>
+			<item name="hold_power_led_flash_enable" key="PowerLedHold" section="PowerLed" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 11, 0)"/>
+			<item name="common_power_led_enable" key="PowerLed_Common" section="PowerLed" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 90, 0)"/>
+			<item name="ring_power_led_flash_enable" key="PowerLed_Ring" section="PowerLed" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 90, 0)"/>
+			<item name="mail_power_led_flash_enable" key="PowerLed_Mail" section="PowerLed" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 90, 0)"/>
+			<item name="mute_power_led_flash_enable" key="PowerLed_Mute" section="PowerLed" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 90, 0)"/>
+			<item name="hold_and_held_power_led_flash_enable" key="PowerLed_HoldHeld" section="PowerLed" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 90, 0)"/>
+			<item name="talk_and_dial_power_led_enable" key="PowerLed_TalkDial" section="PowerLed" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 90, 0)"/>	
+			
+			<!--BUGID:21223-->
+			<item name="video_conference_enable" key="bEnableVideoConf" valueType="boolean" section="Features" />
+			<item name="blf_list_enable" key="bEnableBLFList" valueType="boolean" section="Features" reboot="1"/>
+			<item name="blf_list_sequence_type" key="SequenceType" section="AutoBlflist" valueType="unsignedint" action="msgBroadcastPostMessage(0x10007, 92, 0)"/>
+			<item name="auto_blf_list_enable" key="Enable" section="AutoBlflist" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 92, 0)"/>		
+				<!--BUGID:19556-->
+			<item name="parse_ring_url_enable" key="bEnableParseRingURL" valueType="boolean" section="Features" />
+			<item name="tel_mode" key="bEnableTelMode" valueType="boolean" section="Features"/>
+			<item name="action_uri_enable" key="bEnableActionURI" valueType="boolean" section="Features" />
+			<item name="account_show_enable" key="bEnableAccountShow" valueType="boolean" section="FeatureSwitch" reboot="1" />		
+				
+			<!--BUGID:17684-->
+			<item name="sms_popup_enable" key="bEnableSMSPopup" valueType="boolean" section="Features" action="msgBroadcastPostMessage(0x10007, 71, 0)"/>
+			
+			<!--BUGID:19660-->
+			<item name="dsskey_hide_enable" key="bEnableDssKeyHide" valueType="boolean" section="Features" reboot="1"/>
+			<item name="softkey_enable" key="bEnableSoftKeyReload" valueType="boolean" section="Features" reboot="1"/>
+			<item name="show_code403" key="Code403" valueType="string" section="ShowCodeInfo"/>
+			
+			<!--BUGID:19631-->
+			<item name="delete_all_trusted_cert_enable" key="delete_all_trusted_cert_enable" valueType="boolean" section="PhoneSetting"/>
+			<!--BUGID:19434 此客户的M7配置写错，写成vedio-->
+			<object name="video">
+				<item name="send_frame_request" section="vaServer" key="bSendIFrameRequest" path="/config/system/system.ini" valueType="boolean"/>
+				
+				<!--BUGID:19561-->
+				<item name="fast_idr_count" section="vaServer" key="nFastIDRCount" path="/config/system/system.ini" valueType="int"/>
+				<item name="fast_interval" section="vaServer" key="nFastInterval" path="/config/system/system.ini" valueType="int"/>			
+			</object>	
+			<object name="dsskey_favorite_auto">
+				<item name="enable" section="Dsskey" key="EnableAutoFavorite" valueType="boolean"/>
+			</object>	
+			<!--object name="sip_ua_attach_mac" path="/config/system/system.ini" section="sipServerOptions" reboot="1">
+				<item name="enable" key="tagMACtoUA" valueType="boolean"/>
+			</object-->
+			<object name="lcd_logo" section="Features" action="msgBroadcastPostMessage(0x10007, 21, 0)">
+				<item name="mode" key="LCD_Logo" valueType="boolean"/>
+			</object>
+			<object name="phone_lock" section="Phone_Lock" path="/config/user/user.ini" action="msgBroadcastPostMessage(0x10007, 20, 0)">				
+				<item name="unlock_pin" key="Unlock_PIN" valueType="string"/>
+				<item name="lock_time_out" key="lock_time_out" valueType="int"/>
+				<item name="lock_key_type" key="Lock" valueType="int"/>
+			</object>
+			<object name="emergency" section="Emergency" action="msgBroadcastPostMessage(0x10007, 20, 0)">
+				<item name="number" key="strNumberList" valueType="string"/>    			
+			</object>
+			<object name="end_call_net_disconnect" section="PhoneSetting" >
+				<item name="enable" key="InvalidNetEndCall" valueType="boolean"/>    			
+			</object>	
+			
+		</object>
+		<!--SuperSearch-->
+		<object name="super_search" path="/config/user/user.ini" section="Features" action="msgBroadcastPostMessage(0x10007, 67, 0)">
+			<item name="recent_call" key="RecentCallEnable" valueType="boolean"/>
+			<item name="dial_pad" key="bSoftKeyboard" valueType="boolean"/>
+		</object>
+    		<!--custom_mac_cfg-->
+    <object name="custom_mac_cfg">
+			<item name="url" path="/tmp/autop_tmp_config.cfg" section="CUSTOM_MAC_CFG_PATH" readOnly="1" key="server_address" />
+		</object>
+		<!--custom_factory_configuration-->
+		<object name="custom_factory_configuration" path="/config/system/system.ini" >
+			<item name="enable" section="Factory" key="bEnableCustom" valueType="boolean" />
+			<item name="effect_imm" section="CustomFactory" key="effect_imm" valueType="boolean" />
+		</object>	
+		<!--custom_mac_cfg-->
+		<!--object name="custom_mac_cfg">
+			<item name="url" path="/tmp/download.cfg" section="CUSTOM_MAC_CFG_PATH" key="server_address" />
+		</object-->		
+		<!--autop_Codec-->
+		<object name="autoprovision" indexMask="{i}" range="1-50" section="autoprovision{i}" path="/config/system/autop_code.cfg" reboot="1">
+			<item name="name" key="Name" valueType="string"/>
+			<item name="code" key="code" valueType="string"/>
+			<item name="url" key="server_address" valueType="string"/>
+			<item name="user" key="user" valueType="string"/>
+			<item name="password" key="password" valueType="string"/>
+			<item name="com_aes" key="AES" valueType="string"/>
+			<item name="mac_aes" key="MAC_AES" valueType="string"/>
+		</object>
+		
+		<!--directory-->
+		<object name="directory" section="Directory" path="/config/user/user.ini" >
+			<item name="update_time_interval" key="UpdateInterVal" valueType="int" action="msgBroadcastPostMessage(0x10007, 54, 0)"/>
+			<item name="incoming_call_match_enable" key="bRemoteDirectorySearchOn" valueType="boolean"/>
+		</object>
+		
+		<!--PacketCapture-->
+		<object name="packet_capture" section="PacketCapture" path="/config/system/system.ini" reboot="1" >
+			<item name="captur_at_boot_enable" key="bEnable" valueType="boolean"/>
+		</object>
+		
+		<!--BUGID:19125 TVOut-->
+		<object name="tvout" section="TVOut" path="/config/user/user.ini" reboot="0" >
+			<item name="enable" key="bEnable" valueType="boolean"/>
+			<item name="mode" key="eMode" valueType="boolean"/>
+			<item name="format" key="eFormat" valueType="boolean"/>
+		</object>	
+		
+		<!--BUGID:19121 Font-->
+		<object name="font" section="Font" path="/config/system/system.ini" reboot="1" >
+			<item name="sizecoef" key="fSizeCoef" valueType="string"/>
+		</object>	
+		
+	<!--BugID:19582-->
+		<object name="bw_phonebook"  path="/config/user/user.ini" action="msgBroadcastPostMessage(0x10007, 49, 0)">			
+			<item name="search_list_v1" indexMask="{i}" range="0-6" section="BroadSoft" key="Item{i}SearchListV1" />
+			<item name="search_list_v2" indexMask="{i}" range="0-6" section="BroadSoft" key="Item{i}SearchListV2" valueLen="64"/>
+			<item name="search_mode_or" indexMask="{i}" range="0-6" section="BroadSoft" key="Item{i}SearchModeOr" />
+			<item name="personal_displayname" key="NetworkDirectoryPersonalDisplayname" section="BroadSoft" valueType="string" action="msgBroadcastPostMessage(0x10007, 49, 0)"/>
+			<item name="group_displayname" key="NetworkDirectoryGroupDisplayname" section="BroadSoft" valueType="string" action="msgBroadcastPostMessage(0x10007, 49, 0)"/>
+			<item name="common_displayname" key="NetworkDirectoryCommonDisplayname" section="BroadSoft" valueType="string" action="msgBroadcastPostMessage(0x10007, 49, 0)"/>
+			<item name="enterprise_displayname" key="NetworkDirectoryEnterpriseDisplayname" section="BroadSoft" valueType="string" action="msgBroadcastPostMessage(0x10007, 49, 0)"/>
+			<item name="group_displayname" key="NetworkDirectoryGroupDisplayname" section="BroadSoft" valueType="string" action="msgBroadcastPostMessage(0x10007, 49, 0)"/>
+			<item name="custom" key="EnableCustom" section="Directory" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 49, 0)"/>
+			<item name="type" key="NetworkDirectoryType" section="BroadSoft" valueType="int" action="msgBroadcastPostMessage(0x10007, 49, 0)"/>
+			<item name="group_enable" key="EnableGroup" section="BroadSoft" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 49, 0)"/>
+			<item name="personal_enable" key="EnablePersonal" section="BroadSoft" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 49, 0)"/>
+			<item name="group_common_enable" key="EnableGroupCommon" section="BroadSoft" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 49, 0)"/>
+			<item name="group_common_displayname" key="NetworkDirectoryGroupCommonDisplayname" section="BroadSoft" valueType="string" action="msgBroadcastPostMessage(0x10007, 49, 0)"/>
+			<item name="enterprise_enable" key="EnableEnterprise" section="BroadSoft" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 49, 0)"/>
+			<item name="enterprise_common_enable" key="EnableEnterpriseCommon" section="BroadSoft" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 49, 0)"/>
+			<item name="enterprise_common_displayname" key="NetworkDirectoryEnterpriseCommonDisplayname" section="BroadSoft" valueType="string" action="msgBroadcastPostMessage(0x10007, 49, 0)"/>
+			<item name="common" key="EnableCommon" section="BroadSoft" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 49, 0)"/>
+			<item name="call_log_enable" key="bNetworkCallLogEnable" section="BroadSoft" valueType="boolean" action="msgBroadcastPostMessage(0x10007, 48, 0)"/>
+		</object>
+	<!--Redirect-->
+	  <object name="redirect">
+			<item name="enable" path="/config/system/system.ini" section="Redirect" key="bEnable" />
+		</object>
+		
+		<!--hotdesking -->	
+		<object name="hotdesking" path="/config/user/user.ini" action="msgBroadcastPostMessage(0x10007, 44, 0)">
+    	<item name="startup_register_name_enable" section="HotDesking_StartUp" key="RegisterName" valueType="boolean"/>
+			<item name="startup_username_enable" section="HotDesking_StartUp" key="UserName" valueType="boolean"/>
+			<item name="startup_password_enable" section="HotDesking_StartUp" key="Password" valueType="boolean"/>
+			<item name="startup_sip_server_enable" section="HotDesking_StartUp" key="SipServer" valueType="boolean"/>
+			<item name="startup_outbound_enable" section="HotDesking_StartUp" key="Outbound" valueType="boolean"/>
+			
+			<item name="dsskey_register_name_enable" section="HotDesking_Dsskey" key="RegisterName" valueType="boolean"/>
+			<item name="dsskey_username_enable" section="HotDesking_Dsskey" key="UserName" valueType="boolean"/>
+			<item name="dsskey_password_enable" section="HotDesking_Dsskey" key="Password" valueType="boolean"/>
+			<item name="dsskey_sip_server_enable" section="HotDesking_Dsskey" key="SipServer" valueType="boolean"/>
+			<item name="dsskey_outbound_enable" section="HotDesking_Dsskey" key="Outbound" valueType="boolean"/>				
+		</object>
+		<!-- call_park -->
+		<object name="call_park" section="CallPark" path="/config/user/user.ini">
+				<item name="enable" key="bEnabledCallPark" valueType="boolean" />
+				<item name="group_enable" key="bEnabledGroupCallPark" valueType="boolean" />
+				<item name="park_ring" key="eParkRing" valueType="boolean" />
+				<item name="park_visual_notify_enable" key="bEnabledParkVisualNotify" valueType="boolean" />
+		</object>
+		<!--<object name="dsskey" path="/yealink/config/vpPhone/vpPhone.ini" action="msgPostMessage(app_vpPhone,0x10007, 38, 4)" reboot="1">-->		 
+		<object name="memorykey" indexMask="{i}" section="memory{i}" range="1-10" path="/config/user/vpPhone.ini" action="msgPostMessageEx(app_vpPhone, 0x10007, 2, 0, _ASSCII[{i}]);msgBroadcastPostMessage(0x10007, 10, 0)">
+				<item name="line" key="Line" valueType="int.LineID" />
+				<item name="value" key="Value" valueType="string" /> 
+				<item name="pickup_value" key="PickupValue" valueType="string" />
+				<item name="type" key="DKtype" valueType="int" /> 
+				<item name="xml_phonebook" key="XMLPhoneBook" valueType="string" />
+				<item name="sub_type" key="type" valueType="int" />
+			</object>
+		<object name="linekey" indexMask="{i}" section="memory{i}" range="11-16" path="/config/user/vpPhone.ini" action="msgPostMessageEx(app_vpPhone, 0x10007, 2, 0, _ASSCII[{i}]);msgBroadcastPostMessage(0x10007, 10, 0)">
+				<item name="line" key="Line" valueType="int.LineID" />
+				<item name="value" key="Value" valueType="string" />
+				<item name="pickup_value" key="PickupValue" valueType="string" />
+				<item name="type" key="DKtype" valueType="int" />
+				<item name="xml_phonebook" key="XMLPhoneBook" valueType="string" />
+				<item name="label" key="Label" valueType="string" />
+			</object>
+		<object name="programablekey" indexMask="{i}" section="programablekey{i}" range="1-15" path="/config/user/vpPhone.ini" action="msgPostMessageEx(app_vpPhone, 0x10007, 31, 0, {i})">
+				<item name="type" key="DKtype" valueType="int" />  
+				<item name="line" key="Line" valueType="int.LineID" />
+				<item name="value" key="Value" valueType="string" />
+				<item name="xml_phonebook" key="XMLPhoneBook" valueType="string" />
+				<item name="history_type" key="HistoryType" valueType="int" />
+				<item name="label" key="Label" valueType="string" />
+				<item name="pickup_value" key="PickupValue" valueType="string" />		
+			</object>
+		<!--</object>-->
+		<!--multicast-->
+		<object name="multicast" path="/config/user/MulticastPage.cfg" action="msgBroadcastPostMessage(0x10007, 42, 0)" >	
+			<item name="codec" section="audio" key="PayloadType" valueType="string"/>
+			
+			<object name="receive_priority" section="ReceivePriority" >
+				<item name="enable" key="Active" valueType="boolean"/>
+				<item name="priority" key="Priority" valueType="int"/>
+			</object>
+			
+			<object name="listen_address" section="ListenAddress{i}"  indexMask="{i}" range="1-10">
+				<item name="label" key="Label" valueType="string"/>
+				<item name="ip_address" key="IPAddress" valueType="string"/>
+			</object>			
+		</object>	
+			<object name="PhoneSetting">
+	<item name="AASecIntercom" path="/config/user/user.ini" section="PhoneSetting" key="AASecIntercom"/>
+</object>
+<object name="CSTA">
+	<item name="bEnabled" path="/config/user/user.ini" section="CSTA" key="bEnabled"/>
+</object>
+<object name="TPG">
+	<item name="Option_PNP" path="/config/system/system.ini" section="TPG" key="Option_PNP"/>
+</object>
+<object name="Features">
+	<item name="AutoRefuseTime" path="/config/user/user.ini" section="Features" key="AutoRefuseTime"/>
+</object>
+<object name="Zero">
+	<item name="AutopNow" path="/config/user/user.ini" section="Zero" key="AutopNow"/>
+</object>
+<object name="BroadSoft">
+	<item name="bAddCountryCode" path="/config/user/user.ini" section="BroadSoft" key="bAddCountryCode"/>
+</object>
+<object name="PhoneSetting">
+	<item name="BackLight" path="/config/user/user.ini" section="PhoneSetting" key="BackLight"/>
+</object>
+<object name="Features">
+	<item name="CallInAnonymous" path="/config/user/user.ini" section="Features" key="CallInAnonymous"/>
+</object>
+<object name="CallReturn">
+	<item name="strNumber" path="/config/user/user.ini" section="CallReturn" key="strNumber"/>
+</object>
+<object name="CallReturn">
+	<item name="strServer" path="/config/user/user.ini" section="CallReturn" key="strServer"/>
+</object>
+<object name="CallReturn">
+	<item name="strUser" path="/config/user/user.ini" section="CallReturn" key="strUser"/>
+</object>
+<object name="Features">
+	<item name="CallListShowNum" path="/config/user/user.ini" section="Features" key="CallListShowNum"/>
+</object>
+<object name="BeIPConflicted">
+	<item name="ConflictedIP" path="/config/system/system.ini" section="BeIPConflicted" key="ConflictedIP"/>
+</object>
+<object name="BeIPConflicted">
+	<item name="ConflictedMAC" path="/config/system/system.ini" section="BeIPConflicted" key="ConflictedMAC"/>
+</object>
+<object name="Wildix">
+	<item name="ContactDisplayFirst" path="/config/user/user.ini" section="Wildix" key="ContactDisplayFirst"/>
+</object>
+<object name="Features">
+	<item name="CorrectAccount" path="/config/user/user.ini" section="Features" key="CorrectAccount"/>
+</object>
+<object name="Features">
+	<item name="Direct2LocalContact" path="/config/user/user.ini" section="Features" key="Direct2LocalContact"/>
+</object>
+<object name="Features">
+	<item name="AlwaysSetFWD" path="/config/user/user.ini" section="Features" key="AlwaysSetFWD"/>
+</object>
+<object name="Features">
+	<item name="AutoSetAccount" path="/config/user/user.ini" section="Features" key="AutoSetAccount"/>
+</object>
+<object name="PhoneSetting">
+	<item name="SendPoundKey" path="/config/user/user.ini" section="PhoneSetting" key="SendPoundKey"/>
+</object>
+<object name="ReplaceRule">
+	<item name="ReplaceAll" path="/config/user/user.ini" section="ReplaceRule" key="ReplaceAll"/>
+</object>
+<object name="PhoneSetting">
+	<item name="EnLock" path="/config/user/user.ini" section="PhoneSetting" key="EnLock"/>
+</object>
+<object name="RefuseCode">
+	<item name="nFWDRefuseCode" path="/config/user/user.ini" section="RefuseCode" key="nFWDRefuseCode"/>
+</object>
+<object name="Features">
+	<item name="IsForbidFWDIncoming" path="/config/user/user.ini" section="Features" key="IsForbidFWDIncoming"/>
+</object>
+<object name="Forward International">
+	<item name="Number" path="/config/user/user.ini" section="Forward International" key="Number"/>
+</object>
+<object name="Forward">
+	<item name="LastType" path="/config/Features/Forward.cfg" section="Forward" key="LastType"/>
+</object>
+<object name="Transfer">
+	<item name="HangUpAfterSuccessTrans" path="/config/user/user.ini" section="Transfer" key="HangUpAfterSuccessTrans"/>
+</object>
+<object name="Features">
+	<item name="HeadsetAsCancel" path="/config/user/user.ini" section="Features" key="HeadsetAsCancel"/>
+</object>
+<object name="History">
+	<item name="bSaved" path="/config/user/user.ini" section="History" key="bSaved"/>
+</object>
+<object name="HttpServer">
+	<item name="strUserAgent" path="/config/system/system.ini" section="HttpServer" key="strUserAgent"/>
+</object>
+<object name="Features">
+	<item name="ILBC_enabled" path="/config/user/user.ini" section="Features" key="ILBC_enabled"/>
+</object>
+<object name="HotDesking">
+	<item name="IsHotDeskAccount" path="/config/user/voip/sipAccount0.cfg" section="HotDesking" key="IsHotDeskAccount"/>
+</object>
+<object name="Phone_Lock">
+	<item name="Is_lock" path="/config/user/user.ini" section="Phone_Lock" key="Is_lock"/>
+</object>
+<object name="LDAP">
+	<item name="TLS_mode" path="/config/user/LDAP.cfg" section="LDAP" key="TLS_mode"/>
+</object>
+<object name="HeadSet">
+	<item name="LastHeadSet" path="/config/user/user.ini" section="HeadSet" key="LastHeadSet"/>
+</object>
+<object name="Logo">
+	<item name="DelayTime" path="/config/user/user.ini" section="Logo" key="DelayTime"/>
+</object>
+<object name="Features">
+	<item name="Max_Calls" path="/config/user/user.ini" section="Features" key="Max_Calls"/>
+</object>
+<object name="MemoryLight">
+	<item name="DND" path="/config/user/vpPhone.ini" section="MemoryLight" key="DND"/>
+</object>
+<object name="MemoryLight">
+	<item name="FWD" path="/config/user/vpPhone.ini" section="MemoryLight" key="FWD"/>
+</object>
+<object name="802.1X">
+	<item name="CA_FileName" path="/config/system/system.ini" section="802.1X" key="CA_FileName"/>
+</object>
+<object name="802.1X">
+	<item name="Device_FileName" path="/config/system/system.ini" section="802.1X" key="Device_FileName"/>
+</object>
+<object name="Network">
+	<item name="bBridgeMode" path="/config/system/system.ini" section="Network" key="bBridgeMode"/>
+</object>
+<object name="NoAnswerForward">
+	<item name="nRingCount" path="/config/user/user.ini" section="NoAnswerForward" key="nRingCount"/>
+</object>
+<object name="PacketCapture">
+	<item name="strClipFilePrefix" path="/config/user/user.ini" section="PacketCapture" key="strClipFilePrefix"/>
+</object>
+<object name="PacketCapture">
+	<item name="nFileCount" path="/config/user/user.ini" section="PacketCapture" key="nFileCount"/>
+</object>
+<object name="version">
+	<item name="FIRMWARE_VERSION" path="/version" section="version" readOnly="1" key="FIRMWARE_VERSION"/>
+</object>
+<object name="date">
+	<item name="date" path="/version" section="date" readOnly="1" key="date"/>
+</object>
+<object name="PowerLed">
+	<item name="PowerLedIdle" path="/config/user/user.ini" section="PowerLed" key="PowerLedIdle"/>
+</object>
+<object name="PowerLed">
+	<item name="PowerLedMail" path="/config/user/user.ini" section="PowerLed" key="PowerLedMail"/>
+</object>
+<object name="PowerLed">
+	<item name="PowerLedMute" path="/config/user/user.ini" section="PowerLed" key="PowerLedMute"/>
+</object>
+<object name="PhoneSetting">
+	<item name="PressDigitTime" path="/config/user/user.ini" section="PhoneSetting" key="PressDigitTime"/>
+</object>
+<object name="Redial">
+	<item name="RedialDisplayName" path="/config/user/user.ini" section="Redial" key="RedialDisplayName"/>
+</object>
+<object name="Redial">
+	<item name="RedialNum" path="/config/user/user.ini" section="Redial" key="RedialNum"/>
+</object>
+<object name="Redial">
+	<item name="RedialServerName" path="/config/user/user.ini" section="Redial" key="RedialServerName"/>
+</object>
+<object name="Redial">
+	<item name="RedialUserName" path="/config/user/user.ini" section="Redial" key="RedialUserName"/>
+</object>
+<object name="Redirect">
+	<item name="DelayTime" path="/config/system/system.ini" section="Redirect" key="DelayTime"/>
+</object>
+<object name="Redirect">
+	<item name="strPassword" path="/config/system/system.ini" section="Redirect" key="strPassword"/>
+</object>
+<object name="Redirect">
+	<item name="UserName" path="/config/system/system.ini" section="Redirect" key="UserName"/>
+</object>
+<object name="Redirect">
+	<item name="WaitTimes" path="/config/system/system.ini" section="Redirect" key="WaitTimes"/>
+</object>
+<object name="Features">
+	<item name="bRestartTalkAfter183" path="/config/user/user.ini" section="Features" key="bRestartTalkAfter183"/>
+</object>
+<object name="Features">
+	<item name="ResumeAfterTran" path="/config/user/user.ini" section="Features" key="ResumeAfterTran"/>
+</object>
+<object name="PhoneSetting">
+	<item name="EnLock" path="/config/user/user.ini" section="PhoneSetting" key="EnLock"/>
+</object>
+<object name="sip">
+	<item name="UnregisterOnReboot" path="/config/user/user.ini" section="sip" key="UnregisterOnReboot"/>
+</object>
+<object name="sipServerOptions">
+	<item name="VoiceEncryptType" path="/config/system/system.ini" section="sipServerOptions" key="VoiceEncryptType"/>
+</object>
+<object name="Features">
+	<item name="SpecialAutoAnswerTone" path="/config/user/user.ini" section="Features" key="SpecialAutoAnswerTone"/>
+</object>
+<object name="HotDesking_StartUp">
+	<item name="HotDeskingURL" path="/config/user/user.ini" section="HotDesking_StartUp" key="HotDeskingURL"/>
+</object>
+<object name="HotDesking_StartUp">
+	<item name="AutopURL" path="/config/user/user.ini" section="HotDesking_StartUp" key="AutopURL"/>
+</object>
+<object name="HotDesking_StartUp">
+	<item name="OfficePhoneAutopURL" path="/config/user/user.ini" section="HotDesking_StartUp" key="OfficePhoneAutopURL"/>
+</object>
+<object name="HotDesking_StartUp">
+	<item name="CallCenterAutopURL" path="/config/user/user.ini" section="HotDesking_StartUp" key="CallCenterAutopURL"/>
+</object>
+<object name="Features">
+	<item name="StatusChangeIsNotPopWind" path="/config/user/user.ini" section="Features" key="StatusChangeIsNotPopWind"/>
+</object>
+<object name="sipServerOptions">
+	<item name="bSubscribeIntercom" path="/config/system/system.ini" section="sipServerOptions" key="bSubscribeIntercom"/>
+</object>
+<object name="DeviceInfo">
+	<item name="ManufacturerOUI" path="/config/TR069/tr069.ini" section="DeviceInfo" key="ManufacturerOUI"/>
+</object>
+<object name="DeviceInfo">
+	<item name="ProductClass" path="/config/TR069/tr069.ini" section="DeviceInfo" key="ProductClass"/>
+</object>
+<object name="Telnet">
+	<item name="bEnable_Telnet" path="/config/system/system.ini" section="Telnet" key="bEnable_Telnet"/>
+</object>
+<object name="Logo">
+	<item name="TextLogo" path="/config/user/user.ini" section="Logo" key="TextLogo"/>
+</object>
+<object name="Tone Param">
+	<item name="callwaiting2" path="/config/user/vpm.cfg" section="Tone Param" key="callwaiting2"/>
+</object>
+<object name="Tone Param">
+	<item name="callwaiting3" path="/config/user/vpm.cfg" section="Tone Param" key="callwaiting3"/>
+</object>
+<object name="Tone Param">
+	<item name="callwaiting4" path="/config/user/vpm.cfg" section="Tone Param" key="callwaiting4"/>
+</object>
+<object name="Trace">
+	<item name="Level" path="/config/user/MulticastPage.cfg" section="Trace" key="Level"/>
+</object>
+<object name="Broadsoft_UC">
+	<item name="strPassword" path="/config/user/user.ini" section="Broadsoft UC" key="strPassword"/>
+</object>
+<object name="Broadsoft_UC">
+	<item name="strUsername" path="/config/user/user.ini" section="Broadsoft UC" key="strUsername"/>
+</object>
+<object name="Forward">
+	<item name="UseLocalFwd" path="/config/Features/Forward.cfg" section="Forward" key="UseLocalFwd"/>
+</object>
+<object name="Advanced">
+	<item name="var_enabled" path="/config/system/system.ini" section="Advanced" key="var_enabled"/>
+</object>
+<object name="Volume">
+	<item name="nColorRingback" path="/config/user/user.ini" section="Volume" key="nColorRingback"/>
+</object>
+<object name="VolumeSet">
+	<item name="bProfile" path="/config/system/system.ini" section="VolumeSet" key="bProfile"/>
+</object>
+<object name="Volume">
+	<item name="nTalkOutputHandset" path="/config/user/user.ini" section="Volume" key="nTalkOutputHandset"/>
+</object>
+<object name="Zero">
+	<item name="IsShowNetWorkAndURL" path="/config/user/user.ini" section="Zero" key="IsShowNetWorkAndURL"/>
+</object>
+<object name="Features">
+	<item name="RebootInTalking" path="/config/user/user.ini" section="Features" key="RebootInTalking"/>
+</object>
+<object name="Account">
+	<item name="switch_account" path="/config/user/WebItemsLevel.cfg" section="Account" key="switch-account"/>
+</object>
+<object name="Network">
+	<item name="wan_group" path="/config/user/WebItemsLevel.cfg" section="Network" key="wan-group"/>
+</object>
+<object name="Network">
+	<item name="wan_group" path="/config/user/WebItemsLevel.cfg" section="Network" key="wan-group"/>
+</object>
+<object name="Network">
+	<item name="wan_dhcp" path="/config/user/WebItemsLevel.cfg" section="Network" key="wan-dhcp"/>
+</object>
+<object name="Network_Basic">
+	<item name="ipaddress_mode" path="/config/user/WebItemsLevel.cfg" section="Network-Basic" key="ipaddress-mode"/>
+</object>
+<object name="Network_Basic">
+	<item name="ipv4config" path="/config/user/WebItemsLevel.cfg" section="Network-Basic" key="ipv4config"/>
+</object>
+<object name="Network_Basic">
+	<item name="wan_ppoe" path="/config/user/WebItemsLevel.cfg" section="Network-Basic" key="wan-ppoe"/>
+</object>
+<object name="Network_Basic">
+	<item name="ipv6config" path="/config/user/WebItemsLevel.cfg" section="Network-Basic" key="ipv6config"/>
+</object>
+<object name="Network_PCPort">
+	<item name="pcport_active" path="/config/user/WebItemsLevel.cfg" section="Network-PCPort" key="pcport-active"/>
+</object>
+<object name="Network_Advanced">
+	<item name="8021x" path="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="8021x"/>
+</object>
+<object name="Account_Adv">
+	<item name="ACD_subscrip_period" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="ACD-subscrip-period"/>
+</object>
+<object name="Account_Adv">
+	<item name="BLA_number" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="BLA-number"/>
+</object>
+<object name="Account_Adv">
+	<item name="BLA_subscription_period" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="BLA-subscription-period"/>
+</object>
+<object name="Account_Adv">
+	<item name="BLFListBargeInCode" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="BLFListBargeInCode"/>
+</object>
+<object name="Account_Adv">
+	<item name="BLF_list_URI" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="BLF-list-URI"/>
+</object>
+<object name="Account_Adv">
+	<item name="BlfListCode" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="BlfListCode"/>
+</object>
+<object name="Account_Adv">
+	<item name="caller_ID_header" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="caller-ID-header"/>
+</object>
+<object name="Account_Adv">
+	<item name="conference_type" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="conference-type"/>
+</object>
+<object name="Account_Adv">
+	<item name="conference_uri" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="conference-uri"/>
+</object>
+<object name="Account_Adv">
+	<item name="DTMF_items" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="DTMF_items"/>
+</object>
+<object name="Account_Adv">
+	<item name="dialog_info_call_pickup" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="dialog-info-call-pickup"/>
+</object>
+<object name="Account_Adv">
+	<item name="Direct_Call_Pickup_Code" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="Direct-Call-Pickup-Code"/>
+</object>
+<object name="Account_Adv">
+	<item name="Distinctive_Ring_Tones" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="Distinctive-Ring-Tones"/>
+</object>
+<object name="Account_Adv">
+	<item name="Earlymedia" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="Earlymedia"/>
+</object>
+<object name="Account_Adv">
+	<item name="enable_precondition" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="enable_precondition"/>
+</object>
+<object name="Account_Adv">
+	<item name="enable_signal_encode" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="enable-signal-encode"/>
+</object>
+<object name="Account_Adv">
+	<item name="Group_Call_Pickup_Code" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="Group-Call-Pickup-Code"/>
+</object>
+<object name="Network_Advanced">
+	<item name="LLDP_items" path="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="LLDP-items"/>
+</object>
+<object name="Network_Advanced">
+	<item name="local_RTP_port" path="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="local-RTP-port"/>
+</object>
+<object name="Account_Adv">
+	<item name="local_SIP_port" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="local-SIP-port"/>
+</object>
+<object name="Account_Adv">
+	<item name="login_expire" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="login-expire"/>
+</object>
+<object name="Account_Adv">
+	<item name="MWI_items" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="MWI-items"/>
+</object>
+<object name="Account_Adv">
+	<item name="Music_ServerURI" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="Music-ServerURI"/>
+</object>
+<object name="Network_Advanced">
+	<item name="open_VPN" path="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="open-VPN"/>
+</object>
+<object name="Account_Adv">
+	<item name="Out_Dialog_BLF" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="Out-Dialog-BLF"/>
+</object>
+<object name="Network_Advanced">
+	<item name="port_link" path="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="port-link"/>
+</object>
+<object name="Account_Adv">
+	<item name="ptime_item" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="ptime-item"/>
+</object>
+<object name="Network_Advanced">
+	<item name="reg_surge_prev" path="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="reg-surge-prev"/>
+</object>
+<object name="Account_Adv">
+	<item name="reliable_retransmission" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="reliable_retransmission"/>
+</object>
+<object name="Account_Adv">
+	<item name="rport" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="rport"/>
+</object>
+<object name="Account_Adv">
+	<item name="SIP_Reg_retry_timer" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="SIP-Reg-retry-timer"/>
+</object>
+<object name="Account_Adv">
+	<item name="SIP_send_line" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="SIP-send-line"/>
+</object>
+<object name="Account_Adv">
+	<item name="SIP_send_MAC" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="SIP-send-MAC"/>
+</object>
+<object name="Account_Adv">
+	<item name="SIPServerType" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="SIPServerType"/>
+</object>
+<object name="Network_Advanced">
+	<item name="SNMP_items" path="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="SNMP-items"/>
+</object>
+<object name="Account_Adv">
+	<item name="session_refresher" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="session-refresher"/>
+</object>
+<object name="Account_Adv">
+	<item name="session_timer" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="session-timer"/>
+</object>
+<object name="Account_Adv">
+	<item name="share_line" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="share-line"/>
+</object>
+<object name="Account_Adv">
+	<item name="signal_encode_key" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="signal-encode-key"/>
+</object>
+<object name="Account_Adv">
+	<item name="sip_session_timer" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="sip-session-timer"/>
+</object>
+<object name="Network_Advanced">
+	<item name="span_to_pc_port" path="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="span-to-pc-port"/>
+</object>
+<object name="Account_Adv">
+	<item name="subscribe_period" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="subscribe-period"/>
+</object>
+<object name="Account_Adv">
+	<item name="subscribe_register" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="subscribe-register"/>
+</object>
+<object name="Account_Adv">
+	<item name="UDP_keep_alive" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="UDP_keep-alive"/>
+</object>
+<object name="Account_Adv">
+	<item name="UnregisterOnReboot" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="UnregisterOnReboot"/>
+</object>
+<object name="Account_Adv">
+	<item name="use_session_timer" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="use-session-timer"/>
+</object>
+<object name="Account_Adv">
+	<item name="user_equal_phone" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="user-equal-phone"/>
+</object>
+<object name="Network_Advanced">
+	<item name="VLAN_items" path="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="VLAN-items"/>
+</object>
+<object name="Account_Adv">
+	<item name="voice_encryption" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="voice-encryption"/>
+</object>
+<object name="Network_Advanced">
+	<item name="voice_QoS" path="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="voice-QoS"/>
+</object>
+<object name="Network_Advanced">
+	<item name="web_server" path="/config/user/WebItemsLevel.cfg" section="Network-Advanced" key="web-server"/>
+</object>
+<object name="PhoneCallInfo">
+	<item name="dialed_list_content" path="/config/user/WebItemsLevel.cfg" section="PhoneCallInfo" key="dialed-list-content"/>
+</object>
+<object name="PhoneCallInfo">
+	<item name="dialed_list_title" path="/config/user/WebItemsLevel.cfg" section="PhoneCallInfo" key="dialed-list-title"/>
+</object>
+<object name="PhoneCallInfo">
+	<item name="forwarded_list_content" path="/config/user/WebItemsLevel.cfg" section="PhoneCallInfo" key="forwarded-list-content"/>
+</object>
+<object name="PhoneCallInfo">
+	<item name="forwarded_list_title" path="/config/user/WebItemsLevel.cfg" section="PhoneCallInfo" key="forwarded-list-title"/>
+</object>
+<object name="PhoneCallInfo">
+	<item name="missed_list_content" path="/config/user/WebItemsLevel.cfg" section="PhoneCallInfo" key="missed-list-content"/>
+</object>
+<object name="PhoneCallInfo">
+	<item name="missed_list_title" path="/config/user/WebItemsLevel.cfg" section="PhoneCallInfo" key="missed-list-title"/>
+</object>
+<object name="PhoneCallInfo">
+	<item name="received_list_content" path="/config/user/WebItemsLevel.cfg" section="PhoneCallInfo" key="received-list-content"/>
+</object>
+<object name="PhoneCallInfo">
+	<item name="received_list_title" path="/config/user/WebItemsLevel.cfg" section="PhoneCallInfo" key="received-list-title"/>
+</object>
+<object name="LDAP">
+	<item name="LDAP_display_name" path="/config/user/WebItemsLevel.cfg" section="LDAP" key="LDAP-display-name"/>
+</object>
+<object name="LDAP">
+	<item name="LDAP_name_filter" path="/config/user/WebItemsLevel.cfg" section="LDAP" key="LDAP-name-filter"/>
+</object>
+<object name="LDAP">
+	<item name="LDAP_number_filter" path="/config/user/WebItemsLevel.cfg" section="LDAP" key="LDAP-number-filter"/>
+</object>
+<object name="LDAP">
+	<item name="search_delay" path="/config/user/WebItemsLevel.cfg" section="LDAP" key="search-delay"/>
+</object>
+<object name="MemoryKey">
+	<item name="memory_key" path="/config/user/WebItemsLevel.cfg" section="MemoryKey" key="memory-key"/>
+</object>
+<object name="ExtKey">
+	<item name="ext_key" path="/config/user/WebItemsLevel.cfg" section="ExtKey" key="ext-key"/>
+</object>
+<object name="LineKey">
+	<item name="line_key" path="/config/user/WebItemsLevel.cfg" section="LineKey" key="line-key"/>
+</object>
+<object name="ProgramKey">
+	<item name="programmable_key" path="/config/user/WebItemsLevel.cfg" section="ProgramKey" key="programmable-key"/>
+</object>
+<object name="General_Information">
+	<item name="feature_key_synchronisation" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="feature-key-synchronisation"/>
+</object>
+<object name="Features_ACD">
+	<item name="ACD_auto_available" path="/config/user/WebItemsLevel.cfg" section="Features-ACD" key="ACD-auto-available"/>
+</object>
+<object name="Features_ACD">
+	<item name="ACD_auto_available_timer" path="/config/user/WebItemsLevel.cfg" section="Features-ACD" key="ACD-auto-available-timer"/>
+</object>
+<object name="Features_Remote">
+	<item name="ActionURILimitIP" path="/config/user/WebItemsLevel.cfg" section="Features-Remote" key="ActionURILimitIP"/>
+</object>
+<object name="Features_Remote">
+	<item name="XMLBlockInCalling" path="/config/user/WebItemsLevel.cfg" section="Features-Remote" key="XMLBlockInCalling"/>
+</object>
+<object name="Features_Intercom">
+	<item name="allow_intercom" path="/config/user/WebItemsLevel.cfg" section="Features-Intercom" key="allow-intercom"/>
+</object>
+<object name="General_Information">
+	<item name="AllowMute" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="AllowMute"/>
+</object>
+<object name="Forward_DND">
+	<item name="always_forward" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="always-forward"/>
+</object>
+<object name="Forward_DND">
+	<item name="always_forward_enabled" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="always-forward-enabled"/>
+</object>
+<object name="Forward_DND">
+	<item name="always_forward_OffCode" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="always-forward-OffCode"/>
+</object>
+<object name="Forward_DND">
+	<item name="always_forward_OnCode" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="always-forward-OnCode"/>
+</object>
+<object name="Forward_DND">
+	<item name="always_forward_target" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="always-forward-target"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="Attended_transfer_call" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Attended-transfer-call"/>
+</object>
+<object name="General_Information">
+	<item name="AutoAnswerDelay" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="AutoAnswerDelay"/>
+</object>
+<object name="General_Information">
+	<item name="auto_redial" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="auto-redial"/>
+</object>
+<object name="General_Information">
+	<item name="auto_redial_interval" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="auto_redial_interval"/>
+</object>
+<object name="General_Information">
+	<item name="auto_redial_times" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="auto_redial_times"/>
+</object>
+<object name="General_Information">
+	<item name="BLFNotify" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="BLFNotify"/>
+</object>
+<object name="Features_Transfer">
+	<item name="blind_tran_onhook" path="/config/user/WebItemsLevel.cfg" section="Features-Transfer" key="blind-tran-onhook"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="Blind_transfer_call" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Blind-transfer-call"/>
+</object>
+<object name="Forward_DND">
+	<item name="busy_forward" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="busy-forward"/>
+</object>
+<object name="Forward_DND">
+	<item name="busy_forward_enabled" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="busy-forward-enabled"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="Busy_Forward_Off" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Busy-Forward-Off"/>
+</object>
+<object name="Forward_DND">
+	<item name="busy_forward_OffCode" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="busy-forward-OffCode"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="Busy_Forward_On" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Busy-Forward-On"/>
+</object>
+<object name="Forward_DND">
+	<item name="busy_forward_OnCode" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="busy-forward-OnCode"/>
+</object>
+<object name="Forward_DND">
+	<item name="busy_forward_target" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="busy-forward-target"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="BusytoIdle" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="BusytoIdle"/>
+</object>
+<object name="General_Information">
+	<item name="busytone_delay" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="busytone_delay"/>
+</object>
+<object name="Features_Audio">
+	<item name="button_sound" path="/config/user/WebItemsLevel.cfg" section="Features-Audio" key="button-sound"/>
+</object>
+<object name="General_Information">
+	<item name="call_completion" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="call_completion"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="call_establish" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="call-establish"/>
+</object>
+<object name="Features_Callpickup">
+	<item name="Call_Park" path="/config/user/WebItemsLevel.cfg" section="Features-Callpickup" key="Call-Park"/>
+</object>
+<object name="Features_Callpickup">
+	<item name="Call_Pickup" path="/config/user/WebItemsLevel.cfg" section="Features-Callpickup" key="Call-Pickup"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="Call_Terminated" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Call-Terminated"/>
+</object>
+<object name="General_Information">
+	<item name="call_waiting" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="call_waiting"/>
+</object>
+<object name="Features_Audio">
+	<item name="call_waiting_tone" path="/config/user/WebItemsLevel.cfg" section="Features-Audio" key="call-waiting-tone"/>
+</object>
+<object name="General_Information">
+	<item name="ClosePowerLight" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="ClosePowerLight"/>
+</object>
+<object name="Forward_DND">
+	<item name="DND_account" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="DND-account"/>
+</object>
+<object name="Forward_DND">
+	<item name="DND_mode" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="DND-mode"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="DND_Off" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="DND-Off"/>
+</object>
+<object name="Forward_DND">
+	<item name="DND_OffCode" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="DND-OffCode"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="DND_On" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="DND-On"/>
+</object>
+<object name="Forward_DND">
+	<item name="DND_OnCode" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="DND-OnCode"/>
+</object>
+<object name="Forward_DND">
+	<item name="DND_Status" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="DND-Status"/>
+</object>
+<object name="General_Information">
+	<item name="DTMFRepetition" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="DTMFRepetition"/>
+</object>
+<object name="General_Information">
+	<item name="DTMFReplaceTran" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="DTMFReplaceTran"/>
+</object>
+<object name="General_Information">
+	<item name="Diversion_History_Info" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="Diversion-History-Info"/>
+</object>
+<object name="Features_Transfer">
+	<item name="DsskeyBlindTran" path="/config/user/WebItemsLevel.cfg" section="Features-Transfer" key="DsskeyBlindTran"/>
+</object>
+<object name="General_Information">
+	<item name="DualHeadset" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="DualHeadset"/>
+</object>
+<object name="Forward_DND">
+	<item name="forward_account" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="forward-account"/>
+</object>
+<object name="Forward_DND">
+	<item name="forward_mode" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="forward-mode"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="Forward_Off_Code" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Forward-Off-Code"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="Forward_On_Code" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Forward-On-Code"/>
+</object>
+<object name="General_Information">
+	<item name="FwdInternational" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="FwdInternational"/>
+</object>
+<object name="Features_Audio">
+	<item name="handfree_send_volume" path="/config/user/WebItemsLevel.cfg" section="Features-Audio" key="handfree-send-volume"/>
+</object>
+<object name="Features_Audio">
+	<item name="handset_send_volume" path="/config/user/WebItemsLevel.cfg" section="Features-Audio" key="handset-send-volume"/>
+</object>
+<object name="Forward_DND">
+	<item name="head_forward" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="head-forward"/>
+</object>
+<object name="General_Information">
+	<item name="HeadsetPrior" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="HeadsetPrior"/>
+</object>
+<object name="Features_Audio">
+	<item name="headset_send_volume" path="/config/user/WebItemsLevel.cfg" section="Features-Audio" key="headset-send-volume"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="Hold" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Hold"/>
+</object>
+<object name="General_Information">
+	<item name="hotline_delay" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="hotline-delay"/>
+</object>
+<object name="General_Information">
+	<item name="hotline_number" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="hotline-number"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="IPChange" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="IPChange"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="IdletoBusy" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="IdletoBusy"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="incoming_call" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="incoming-call"/>
+</object>
+<object name="Features_Intercom">
+	<item name="intercom_barge" path="/config/user/WebItemsLevel.cfg" section="Features-Intercom" key="intercom-barge"/>
+</object>
+<object name="Features_Intercom">
+	<item name="intercom_mute" path="/config/user/WebItemsLevel.cfg" section="Features-Intercom" key="intercom-mute"/>
+</object>
+<object name="Features_Intercom">
+	<item name="intercom_tone" path="/config/user/WebItemsLevel.cfg" section="Features-Intercom" key="intercom-tone"/>
+</object>
+<object name="General_Information">
+	<item name="IsDeal_180" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="IsDeal-180"/>
+</object>
+<object name="General_Information">
+	<item name="key_as_send" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="key_as_send"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="log_off" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="log-off"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="log_on" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="log-on"/>
+</object>
+<object name="General_Information">
+	<item name="logon_wizard" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="logon-wizard"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="Missed_call" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Missed-call"/>
+</object>
+<object name="General_Information">
+	<item name="MulticastCodec" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="MulticastCodec"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="Mute" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Mute"/>
+</object>
+<object name="Forward_DND">
+	<item name="NoAnswer_forward" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="NoAnswer-forward"/>
+</object>
+<object name="Forward_DND">
+	<item name="NoAnswer_forward_enabled" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="NoAnswer-forward-enabled"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="No_Answer_Forward_Off" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="No-Answer-Forward-Off"/>
+</object>
+<object name="Forward_DND">
+	<item name="NoAnswer_forward_OffCode" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="NoAnswer-forward-OffCode"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="No_Answer_Forward_On" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="No-Answer-Forward-On"/>
+</object>
+<object name="Forward_DND">
+	<item name="NoAnswer_forward_OnCode" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="NoAnswer-forward-OnCode"/>
+</object>
+<object name="Forward_DND">
+	<item name="NoAnswer_forward_ringtimes" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="NoAnswer-forward-ringtimes"/>
+</object>
+<object name="Forward_DND">
+	<item name="NoAnswer_forward_target" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="NoAnswer-forward-target"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="off_hook" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="off-hook"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="on_hook" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="on-hook"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="outgoing_call" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="outgoing-call"/>
+</object>
+<object name="General_Information">
+	<item name="PlayHoldTone" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="PlayHoldTone"/>
+</object>
+<object name="General_Information">
+	<item name="PlayHoldToneDelay" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="PlayHoldToneDelay"/>
+</object>
+<object name="General_Information">
+	<item name="PswDial" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="PswDial"/>
+</object>
+<object name="General_Information">
+	<item name="PswLength" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="PswLength"/>
+</object>
+<object name="General_Information">
+	<item name="PswPrefix" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="PswPrefix"/>
+</object>
+<object name="Features_Remote">
+	<item name="pushxml_server_addr" path="/config/user/WebItemsLevel.cfg" section="Features-Remote" key="pushxml-server-addr"/>
+</object>
+<object name="General_Information">
+	<item name="RFC_2543_Hold" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="RFC-2543-Hold"/>
+</object>
+<object name="General_Information">
+	<item name="ReLogOffTime" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="ReLogOffTime"/>
+</object>
+<object name="Features_Audio">
+	<item name="redial_tone" path="/config/user/WebItemsLevel.cfg" section="Features-Audio" key="redial_tone"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="register_fail" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="register-fail"/>
+</object>
+<object name="General_Information">
+	<item name="reserve_pound" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="reserve-pound"/>
+</object>
+<object name="General_Information">
+	<item name="return_code_DND" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="return-code-DND"/>
+</object>
+<object name="General_Information">
+	<item name="return_code_refuse" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="return-code-refuse"/>
+</object>
+<object name="Features_Audio">
+	<item name="Ringer_Dev" path="/config/user/WebItemsLevel.cfg" section="Features-Audio" key="Ringer_Dev"/>
+</object>
+<object name="General_Information">
+	<item name="SRemoteNameEnable" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="SRemoteNameEnable"/>
+</object>
+<object name="General_Information">
+	<item name="SRemoteNameFlashTime" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="SRemoteNameFlashTime"/>
+</object>
+<object name="General_Information">
+	<item name="SaveCallHistory" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="SaveCallHistory"/>
+</object>
+<object name="Features_Transfer">
+	<item name="Semi_Attend_Trans_OnHook" path="/config/user/WebItemsLevel.cfg" section="Features-Transfer" key="Semi-Attend-Trans-OnHook"/>
+</object>
+<object name="Features_Transfer">
+	<item name="semi_attend_transfer" path="/config/user/WebItemsLevel.cfg" section="Features-Transfer" key="semi-attend-transfer"/>
+</object>
+<object name="General_Information">
+	<item name="SendPoundKey" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="SendPoundKey"/>
+</object>
+<object name="Features_Audio">
+	<item name="send_sound" path="/config/user/WebItemsLevel.cfg" section="Features-Audio" key="send-sound"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="setup_complete" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="setup-complete"/>
+</object>
+<object name="General_Information">
+	<item name="SuppressDTMFDisplay" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="SuppressDTMFDisplay"/>
+</object>
+<object name="General_Information">
+	<item name="SuppressDTMFDisplayDelay" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="SuppressDTMFDisplayDelay"/>
+</object>
+<object name="General_Information">
+	<item name="TimeOut_for_DialNow" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="TimeOut-for-DialNow"/>
+</object>
+<object name="General_Information">
+	<item name="TranSendDTMF" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="TranSendDTMF"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="TransferCall" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="TransferCall"/>
+</object>
+<object name="Features_Transfer">
+	<item name="TransferModeViaDsskey" path="/config/user/WebItemsLevel.cfg" section="Features-Transfer" key="TransferModeViaDsskey"/>
+</object>
+<object name="Features_Transfer">
+	<item name="transfer_on_conference_hang_up" path="/config/user/WebItemsLevel.cfg" section="Features-Transfer" key="transfer-on-conference-hang-up"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="Unhold" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Unhold"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="Unmute" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="Unmute"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="RejectIncomingCall" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="RejectIncomingCall"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="AnswerNewInCall" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="AnswerNewInCall"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="TransferFailed" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="TransferFailed"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="TransferFinished" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="TransferFinished"/>
+</object>
+<object name="Features_ActionURL">
+	<item name="ForwardIncomingCall" path="/config/user/WebItemsLevel.cfg" section="Features-ActionURL" key="ForwardIncomingCall"/>
+</object>
+<object name="General_Information">
+	<item name="Use_Logo" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="Use_Logo"/>
+</object>
+<object name="General_Information">
+	<item name="use_outbound_in_dialog" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="use-outbound-in-dialog"/>
+</object>
+<object name="General_Information">
+	<item name="play_local_DTMF_tone" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="play-local-DTMF-tone"/>
+</object>
+<object name="General_Information">
+	<item name="led_off_in_idle" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="led-off-in-idle"/>
+</object>
+<object name="General_Information">
+	<item name="call_number_filter" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="call-number-filter"/>
+</object>
+<object name="General_Information">
+	<item name="allow_IP_call" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="allow-IP-call"/>
+</object>
+<object name="General_Information">
+	<item name="IP_direct_auto_answer" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="IP-direct-auto-answer"/>
+</object>
+<object name="General_Information">
+	<item name="calllog_show_num" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="calllog-show-num"/>
+</object>
+<object name="General_Information">
+	<item name="voicemail_tone" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="voicemail-tone"/>
+</object>
+<object name="General_Information">
+	<item name="DHCP_hostname" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="DHCP-hostname"/>
+</object>
+<object name="General_Information">
+	<item name="allow_trans_exist_call" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="allow-trans-exist-call"/>
+</object>
+<object name="General_Information">
+	<item name="reboot_in_talking" path="/config/user/WebItemsLevel.cfg" section="General-Information" key="reboot-in-talking"/>
+</object>
+<object name="Features_Remote">
+	<item name="XMLSIPNotify" path="/config/user/WebItemsLevel.cfg" section="Features-Remote" key="XMLSIPNotify"/>
+</object>
+<object name="HiddenSetting">
+	<item name="custom_factory_config" path="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="custom-factory-config"/>
+</object>
+<object name="HiddenSetting">
+	<item name="DND_Active" path="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="DND-Active"/>
+</object>
+<object name="HiddenSetting">
+	<item name="Forward_Active" path="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="Forward-Active"/>
+</object>
+<object name="HiddenSetting">
+	<item name="phone_setting" path="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="phone-setting"/>
+</object>
+<object name="HiddenSetting">
+	<item name="pushxml" path="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="pushxml"/>
+</object>
+<object name="HiddenSetting">
+	<item name="Broadsoft_Active" path="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="Broadsoft-Active"/>
+</object>
+<object name="HiddenSetting">
+	<item name="Redirect_Active" path="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="Redirect-Active"/>
+</object>
+<object name="HiddenSetting">
+	<item name="UC_Active" path="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="UC-Active"/>
+</object>
+<object name="HiddenSetting">
+	<item name="network" path="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="network"/>
+</object>
+<object name="HiddenSetting">
+	<item name="telnet" path="/config/user/WebItemsLevel.cfg" section="HiddenSetting" key="telnet"/>
+</object>
+<object name="LDAP">
+	<item name="base" path="/config/user/WebItemsLevel.cfg" section="LDAP" key="base"/>
+</object>
+<object name="LDAP">
+	<item name="LDAP_lookup_for_incoming_call" path="/config/user/WebItemsLevel.cfg" section="LDAP" key="LDAP-lookup-for-incoming-call"/>
+</object>
+<object name="LDAP">
+	<item name="LDAP_lookup_for_PreDial" path="/config/user/WebItemsLevel.cfg" section="LDAP" key="LDAP-lookup-for-PreDial"/>
+</object>
+<object name="LDAP">
+	<item name="maxhits" path="/config/user/WebItemsLevel.cfg" section="LDAP" key="maxhits"/>
+</object>
+<object name="LDAP">
+	<item name="LDAP_name_attributes" path="/config/user/WebItemsLevel.cfg" section="LDAP" key="LDAP-name-attributes"/>
+</object>
+<object name="LDAP">
+	<item name="LDAP_number_attributes" path="/config/user/WebItemsLevel.cfg" section="LDAP" key="LDAP-number-attributes"/>
+</object>
+<object name="LDAP">
+	<item name="password" path="/config/user/WebItemsLevel.cfg" section="LDAP" key="password"/>
+</object>
+<object name="LDAP">
+	<item name="port" path="/config/user/WebItemsLevel.cfg" section="LDAP" key="port"/>
+</object>
+<object name="LDAP">
+	<item name="protocol" path="/config/user/WebItemsLevel.cfg" section="LDAP" key="protocol"/>
+</object>
+<object name="LDAP">
+	<item name="server_address" path="/config/user/WebItemsLevel.cfg" section="LDAP" key="server-address"/>
+</object>
+<object name="LDAP">
+	<item name="LDAP_sorting_results" path="/config/user/WebItemsLevel.cfg" section="LDAP" key="LDAP-sorting-results"/>
+</object>
+<object name="LDAP">
+	<item name="user_name" path="/config/user/WebItemsLevel.cfg" section="LDAP" key="user-name"/>
+</object>
+<object name="LocalPhoneBook">
+	<item name="all_contacts_control" path="/config/user/WebItemsLevel.cfg" section="LocalPhoneBook" key="all-contacts-control"/>
+</object>
+<object name="LocalPhoneBook">
+	<item name="contact_list" path="/config/user/WebItemsLevel.cfg" section="LocalPhoneBook" key="contact-list"/>
+</object>
+<object name="LocalPhoneBook">
+	<item name="import_export_contacts" path="/config/user/WebItemsLevel.cfg" section="LocalPhoneBook" key="import-export-contacts"/>
+</object>
+<object name="LocalPhoneBook">
+	<item name="opt_contacts" path="/config/user/WebItemsLevel.cfg" section="LocalPhoneBook" key="opt-contacts"/>
+</object>
+<object name="LocalPhoneBook">
+	<item name="btnExportCSV" path="/config/user/WebItemsLevel.cfg" section="LocalPhoneBook" key="btnExportCSV"/>
+</object>
+<object name="LocalPhoneBook">
+	<item name="btnExportXML" path="/config/user/WebItemsLevel.cfg" section="LocalPhoneBook" key="btnExportXML"/>
+</object>
+<object name="LocalPhoneBook">
+	<item name="btnImportCSV" path="/config/user/WebItemsLevel.cfg" section="LocalPhoneBook" key="btnImportCSV"/>
+</object>
+<object name="LocalPhoneBook">
+	<item name="btnImportXML" path="/config/user/WebItemsLevel.cfg" section="LocalPhoneBook" key="btnImportXML"/>
+</object>
+<object name="MulticastIP">
+	<item name="MulticastIPConfig" path="/config/user/WebItemsLevel.cfg" section="MulticastIP" key="MulticastIPConfig"/>
+</object>
+<object name="MulticastIP">
+	<item name="PagePriorityActive" path="/config/user/WebItemsLevel.cfg" section="MulticastIP" key="PagePriorityActive"/>
+</object>
+<object name="MulticastIP">
+	<item name="Receive_Priority" path="/config/user/WebItemsLevel.cfg" section="MulticastIP" key="Receive_Priority"/>
+</object>
+<object name="Settings_DialPlan">
+	<item name="area_code_control" path="/config/user/WebItemsLevel.cfg" section="Settings-DialPlan" key="area-code-control"/>
+</object>
+<object name="Settings_AutoProvision">
+	<item name="account" path="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="account"/>
+</object>
+<object name="Settings_AutoProvision">
+	<item name="password" path="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="password"/>
+</object>
+<object name="Settings_AutoProvision">
+	<item name="autop_time" path="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="autop-time"/>
+</object>
+<object name="Settings_DialPlan">
+	<item name="block_out_control" path="/config/user/WebItemsLevel.cfg" section="Settings-DialPlan" key="block-out-control"/>
+</object>
+<object name="PhoneCallInfo">
+	<item name="call_control" path="/config/user/WebItemsLevel.cfg" section="PhoneCallInfo" key="call-control"/>
+</object>
+<object name="Settings_AutoProvision">
+	<item name="common_AES_key" path="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="common-AES-key"/>
+</object>
+<object name="Settings_AutoProvision">
+	<item name="custom_option" path="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="custom-option"/>
+</object>
+<object name="Softkey">
+	<item name="Custom_SoftKey" path="/config/user/WebItemsLevel.cfg" section="Softkey" key="Custom_SoftKey"/>
+</object>
+<object name="Settings_AutoProvision">
+	<item name="DHCP_Option_Value" path="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="DHCP-Option-Value"/>
+</object>
+<object name="Settings_AutoProvision">
+	<item name="day_of_week" path="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="day-of-week"/>
+</object>
+<object name="Settings_AutoProvision">
+	<item name="zero_active" path="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="zero_active"/>
+</object>
+<object name="Settings_AutoProvision">
+	<item name="wait_time" path="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="wait_time"/>
+</object>
+<object name="Settings_DialPlan">
+	<item name="dial_now_control" path="/config/user/WebItemsLevel.cfg" section="Settings-DialPlan" key="dial-now-control"/>
+</object>
+<object name="Settings_Voice">
+	<item name="echo_cancellation" path="/config/user/WebItemsLevel.cfg" section="Settings-Voice" key="echo-cancellation"/>
+</object>
+<object name="Features_Lock">
+	<item name="emergency_setting" path="/config/user/WebItemsLevel.cfg" section="Features-Lock" key="emergency_setting"/>
+</object>
+<object name="Settings_Voice">
+	<item name="jitter_buffer" path="/config/user/WebItemsLevel.cfg" section="Settings-Voice" key="jitter-buffer"/>
+</object>
+<object name="Features_Lock">
+	<item name="keyboard_lock" path="/config/user/WebItemsLevel.cfg" section="Features-Lock" key="keyboard_lock"/>
+</object>
+<object name="Features_Lock">
+	<item name="Phone_lock_time_out" path="/config/user/WebItemsLevel.cfg" section="Features-Lock" key="Phone_lock_time_out"/>
+</object>
+<object name="Settings_AutoProvision">
+	<item name="MAC_Oriented_AES_key" path="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="MAC-Oriented-AES-key"/>
+</object>
+<object name="Settings_Config">
+	<item name="opt_configfile" path="/config/user/WebItemsLevel.cfg" section="Settings-Config" key="opt-configfile"/>
+</object>
+<object name="Settings_Config">
+	<item name="opt_factory_configfile" path="/config/user/WebItemsLevel.cfg" section="Settings-Config" key="opt-factory-configfile"/>
+</object>
+<object name="Settings_AutoProvision">
+	<item name="pnp_active" path="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="pnp-active"/>
+</object>
+<object name="Settings_Ring">
+	<item name="personal_ring" path="/config/user/WebItemsLevel.cfg" section="Settings-Ring" key="personal-ring"/>
+</object>
+<object name="Settings_AutoProvision">
+	<item name="poweron_active" path="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="poweron-active"/>
+</object>
+<object name="Settings_Upgrade">
+	<item name="reboot_device" path="/config/user/WebItemsLevel.cfg" section="Settings-Upgrade" key="reboot_device"/>
+</object>
+<object name="Settings_AutoProvision">
+	<item name="repeat_interval" path="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="repeat-interval"/>
+</object>
+<object name="Settings_AutoProvision">
+	<item name="repeatly_active" path="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="repeatly-active"/>
+</object>
+<object name="Settings_DialPlan">
+	<item name="replace_rule_control" path="/config/user/WebItemsLevel.cfg" section="Settings-DialPlan" key="replace-rule-control"/>
+</object>
+<object name="Settings_Upgrade">
+	<item name="reset_to_factory" path="/config/user/WebItemsLevel.cfg" section="Settings-Upgrade" key="reset_to_factory"/>
+</object>
+<object name="Settings_Config">
+	<item name="pcap_trace" path="/config/user/WebItemsLevel.cfg" section="Settings-Config" key="pcap_trace"/>
+</object>
+<object name="Settings_AutoProvision">
+	<item name="server_URL" path="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="server-URL"/>
+</object>
+<object name="Softkey">
+	<item name="SoftKey_Type" path="/config/user/WebItemsLevel.cfg" section="Softkey" key="SoftKey_Type"/>
+</object>
+<object name="Settings_Config">
+	<item name="syslog" path="/config/user/WebItemsLevel.cfg" section="Settings-Config" key="syslog"/>
+</object>
+<object name="Settings_Config">
+	<item name="SystemlogLevel" path="/config/user/WebItemsLevel.cfg" section="Settings-Config" key="SystemlogLevel"/>
+</object>
+<object name="Settings_Tones">
+	<item name="tone_items" path="/config/user/WebItemsLevel.cfg" section="Settings-Tones" key="tone-items"/>
+</object>
+<object name="Features_Lock">
+	<item name="Phone_Unlock_PIN" path="/config/user/WebItemsLevel.cfg" section="Features-Lock" key="Phone_Unlock_PIN"/>
+</object>
+<object name="Settings_Upgrade">
+	<item name="upgrade_firmware" path="/config/user/WebItemsLevel.cfg" section="Settings-Upgrade" key="upgrade_firmware"/>
+</object>
+<object name="Account">
+	<item name="account_adv" path="/config/user/WebItemsLevel.cfg" section="Account" key="account-adv"/>
+</object>
+<object name="Account">
+	<item name="account_basic" path="/config/user/WebItemsLevel.cfg" section="Account" key="account-basic"/>
+</object>
+<object name="Account">
+	<item name="account_codec" path="/config/user/WebItemsLevel.cfg" section="Account" key="account-codec"/>
+</object>
+<object name="Account">
+	<item name="account_register" path="/config/user/WebItemsLevel.cfg" section="Account" key="account-register"/>
+</object>
+<object name="Settings_DialPlan">
+	<item name="area_code" path="/config/user/WebItemsLevel.cfg" section="Settings-DialPlan" key="area-code"/>
+</object>
+<object name="Settings_DialPlan">
+	<item name="block_out" path="/config/user/WebItemsLevel.cfg" section="Settings-DialPlan" key="block-out"/>
+</object>
+<object name="Contacts">
+	<item name="contacts_LDAP" path="/config/user/WebItemsLevel.cfg" section="Contacts" key="contacts-LDAP"/>
+</object>
+<object name="Contacts">
+	<item name="contacts_basic" path="/config/user/WebItemsLevel.cfg" section="Contacts" key="contacts-basic"/>
+</object>
+<object name="Contacts">
+	<item name="contacts_broadsoft" path="/config/user/WebItemsLevel.cfg" section="Contacts" key="contacts-broadsoft"/>
+</object>
+<object name="Contacts">
+	<item name="contacts_callinfo" path="/config/user/WebItemsLevel.cfg" section="Contacts" key="contacts-callinfo"/>
+</object>
+<object name="Contacts">
+	<item name="contacts_favorite" path="/config/user/WebItemsLevel.cfg" section="Contacts" key="contacts-favorite"/>
+</object>
+<object name="Contacts">
+	<item name="contacts_multicastIP" path="/config/user/WebItemsLevel.cfg" section="Contacts" key="contacts-multicastIP"/>
+</object>
+<object name="Contacts">
+	<item name="contacts_remote" path="/config/user/WebItemsLevel.cfg" section="Contacts" key="contacts-remote"/>
+</object>
+<object name="Settings_DialPlan">
+	<item name="dial_now" path="/config/user/WebItemsLevel.cfg" section="Settings-DialPlan" key="dial-now"/>
+</object>
+<object name="DSSKey">
+	<item name="extkey" path="/config/user/WebItemsLevel.cfg" section="DSSKey" key="extkey"/>
+</object>
+<object name="DSSKey">
+	<item name="linekey" path="/config/user/WebItemsLevel.cfg" section="DSSKey" key="linekey"/>
+</object>
+<object name="DSSKey">
+	<item name="memorykey" path="/config/user/WebItemsLevel.cfg" section="DSSKey" key="memorykey"/>
+</object>
+<object name="DSSKey">
+	<item name="programmablekey" path="/config/user/WebItemsLevel.cfg" section="DSSKey" key="programmablekey"/>
+</object>
+<object name="Features">
+	<item name="features_acd" path="/config/user/WebItemsLevel.cfg" section="Features" key="features-acd"/>
+</object>
+<object name="Features">
+	<item name="features_actionurl" path="/config/user/WebItemsLevel.cfg" section="Features" key="features-actionurl"/>
+</object>
+<object name="Features">
+	<item name="features_audio" path="/config/user/WebItemsLevel.cfg" section="Features" key="features-audio"/>
+</object>
+<object name="Features">
+	<item name="features_callpickup" path="/config/user/WebItemsLevel.cfg" section="Features" key="features-callpickup"/>
+</object>
+<object name="Features">
+	<item name="features_forward" path="/config/user/WebItemsLevel.cfg" section="Features" key="features-forward"/>
+</object>
+<object name="Features">
+	<item name="features_general" path="/config/user/WebItemsLevel.cfg" section="Features" key="features-general"/>
+</object>
+<object name="Features">
+	<item name="features_intercom" path="/config/user/WebItemsLevel.cfg" section="Features" key="features-intercom"/>
+</object>
+<object name="Features">
+	<item name="features_phonelock" path="/config/user/WebItemsLevel.cfg" section="Features" key="features-phonelock"/>
+</object>
+<object name="Features">
+	<item name="features_remote" path="/config/user/WebItemsLevel.cfg" section="Features" key="features-remote"/>
+</object>
+<object name="Features">
+	<item name="features_sms" path="/config/user/WebItemsLevel.cfg" section="Features" key="features-sms"/>
+</object>
+<object name="Features">
+	<item name="features_transfer" path="/config/user/WebItemsLevel.cfg" section="Features" key="features-transfer"/>
+</object>
+<object name="Network">
+	<item name="network_advanced" path="/config/user/WebItemsLevel.cfg" section="Network" key="network-advanced"/>
+</object>
+<object name="Network">
+	<item name="network_basic" path="/config/user/WebItemsLevel.cfg" section="Network" key="network-basic"/>
+</object>
+<object name="Network">
+	<item name="network_pcport" path="/config/user/WebItemsLevel.cfg" section="Network" key="network-pcport"/>
+</object>
+<object name="Contacts_Broadsoft">
+	<item name="Directotries" path="/config/user/WebItemsLevel.cfg" section="Contacts-Broadsoft" key="Directotries"/>
+</object>
+<object name="Contacts_Broadsoft">
+	<item name="XSI" path="/config/user/WebItemsLevel.cfg" section="Contacts-Broadsoft" key="XSI"/>
+</object>
+<object name="Contacts_Favorite">
+	<item name="contacts_group" path="/config/user/WebItemsLevel.cfg" section="Contacts-Favorite" key="contacts-group"/>
+</object>
+<object name="Contacts_Favorite">
+	<item name="super_search" path="/config/user/WebItemsLevel.cfg" section="Contacts-Favorite" key="super-search"/>
+</object>
+<object name="Security">
+	<item name="password" path="/config/user/WebItemsLevel.cfg" section="Security" key="password"/>
+</object>
+<object name="Settings_DialPlan">
+	<item name="replace_rule" path="/config/user/WebItemsLevel.cfg" section="Settings-DialPlan" key="replace-rule"/>
+</object>
+<object name="Settings_Upgrade">
+	<item name="version_info" path="/config/user/WebItemsLevel.cfg" section="Settings-Upgrade" key="version_info"/>
+</object>
+<object name="Settings_AutoProvision">
+	<item name="weekly_active" path="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="weekly-active"/>
+</object>
+<object name="Settings_AutoProvision">
+	<item name="btn_autop_now" path="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="btn-autop-now"/>
+</object>
+<object name="Settings_AutoProvision">
+	<item name="dhcp_active" path="/config/user/WebItemsLevel.cfg" section="Settings-AutoProvision" key="dhcp-active"/>
+</object>
+<object name="Security">
+	<item name="server_cert" path="/config/user/WebItemsLevel.cfg" section="Security" key="server_cert"/>
+</object>
+<object name="Settings">
+	<item name="settings_autop" path="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-autop"/>
+</object>
+<object name="Settings">
+	<item name="settings_config" path="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-config"/>
+</object>
+<object name="Settings">
+	<item name="settings_datetime" path="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-datetime"/>
+</object>
+<object name="Settings">
+	<item name="settings_dialplan" path="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-dialplan"/>
+</object>
+<object name="Settings">
+	<item name="settings_preference" path="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-preference"/>
+</object>
+<object name="Settings">
+	<item name="settings_ring" path="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-ring"/>
+</object>
+<object name="Settings">
+	<item name="settings_softkey" path="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-softkey"/>
+</object>
+<object name="Settings">
+	<item name="settings_tones" path="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-tones"/>
+</object>
+<object name="Settings">
+	<item name="settings_upgrade" path="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-upgrade"/>
+</object>
+<object name="Settings">
+	<item name="settings_voice" path="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-voice"/>
+</object>
+<object name="Settings">
+	<item name="settings_tr069" path="/config/user/WebItemsLevel.cfg" section="Settings" key="settings-tr069"/>
+</object>
+<object name="Security">
+	<item name="trusted_cert" path="/config/user/WebItemsLevel.cfg" section="Security" key="trusted_cert"/>
+</object>
+<object name="TR069">
+	<item name="head" path="/config/user/WebItemsLevel.cfg" section="TR069" key="head"/>
+</object>
+<object name="TR069">
+	<item name="EnableTR069" path="/config/user/WebItemsLevel.cfg" section="TR069" key="EnableTR069"/>
+</object>
+<object name="TR069">
+	<item name="ACSUsername" path="/config/user/WebItemsLevel.cfg" section="TR069" key="ACSUsername"/>
+</object>
+<object name="TR069">
+	<item name="ACSURL" path="/config/user/WebItemsLevel.cfg" section="TR069" key="ACSURL"/>
+</object>
+<object name="TR069">
+	<item name="EnablePeriodicInform" path="/config/user/WebItemsLevel.cfg" section="TR069" key="EnablePeriodicInform"/>
+</object>
+<object name="TR069">
+	<item name="PeriodicInformInterval" path="/config/user/WebItemsLevel.cfg" section="TR069" key="PeriodicInformInterval"/>
+</object>
+<object name="TR069">
+	<item name="RequestUsername" path="/config/user/WebItemsLevel.cfg" section="TR069" key="RequestUsername"/>
+</object>
+<object name="TR069">
+	<item name="RequestPassword" path="/config/user/WebItemsLevel.cfg" section="TR069" key="RequestPassword"/>
+</object>
+<object name="Account_Basic">
+	<item name="send_anonymous" path="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="send_anonymous"/>
+</object>
+<object name="Account_Basic">
+	<item name="anonymous_call_enabled" path="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="anonymous_call_enabled"/>
+</object>
+<object name="Account_Basic">
+	<item name="anonymous_call_OffCode" path="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="anonymous_call_OffCode"/>
+</object>
+<object name="Account_Basic">
+	<item name="anonymous_call_OnCode" path="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="anonymous_call_OnCode"/>
+</object>
+<object name="Account_Basic">
+	<item name="anonymous_rejection_enabled" path="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="anonymous_rejection_enabled"/>
+</object>
+<object name="Account_Basic">
+	<item name="anonymous_rejection_OffCode" path="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="anonymous_rejection_OffCode"/>
+</object>
+<object name="Account_Basic">
+	<item name="anonymous_rejection_OnCode" path="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="anonymous_rejection_OnCode"/>
+</object>
+<object name="Account_Basic">
+	<item name="auto_answer" path="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="auto-answer"/>
+</object>
+<object name="Account_Basic">
+	<item name="misscall_log" path="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="misscall-log"/>
+</object>
+<object name="Account_Basic">
+	<item name="proxy_require" path="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="proxy_require"/>
+</object>
+<object name="Account_Basic">
+	<item name="ring_type" path="/config/user/WebItemsLevel.cfg" section="Account-Basic" key="ring-type"/>
+</object>
+<object name="Account_Adv">
+	<item name="voice_mail" path="/config/user/WebItemsLevel.cfg" section="Account-Adv" key="voice_mail"/>
+</object>
+<object name="Account_Codec">
+	<item name="codecs_group" path="/config/user/WebItemsLevel.cfg" section="Account-Codec" key="codecs-group"/>
+</object>
+<object name="Account_Register">
+	<item name="account_status" path="/config/user/WebItemsLevel.cfg" section="Account-Register" key="account_status"/>
+</object>
+<object name="Account_Register">
+	<item name="account_label" path="/config/user/WebItemsLevel.cfg" section="Account-Register" key="account_label"/>
+</object>
+<object name="Account_Register">
+	<item name="account_password" path="/config/user/WebItemsLevel.cfg" section="Account-Register" key="account_password"/>
+</object>
+<object name="Account_Register">
+	<item name="backup_outbound_proxy_server" path="/config/user/WebItemsLevel.cfg" section="Account-Register" key="backup-outbound-proxy-server"/>
+</object>
+<object name="Account_Register">
+	<item name="display_name" path="/config/user/WebItemsLevel.cfg" section="Account-Register" key="display_name"/>
+</object>
+<object name="Account_Register">
+	<item name="enabled_outbound_proxy_server" path="/config/user/WebItemsLevel.cfg" section="Account-Register" key="enabled-outbound-proxy-server"/>
+</object>
+<object name="Account_Register">
+	<item name="line_active" path="/config/user/WebItemsLevel.cfg" section="Account-Register" key="line_active"/>
+</object>
+<object name="Account_Register">
+	<item name="NAT_traversal" path="/config/user/WebItemsLevel.cfg" section="Account-Register" key="NAT_traversal"/>
+</object>
+<object name="Account_Register">
+	<item name="register_name" path="/config/user/WebItemsLevel.cfg" section="Account-Register" key="register_name"/>
+</object>
+<object name="Account_Register">
+	<item name="outbound_proxy_server" path="/config/user/WebItemsLevel.cfg" section="Account-Register" key="outbound-proxy-server"/>
+</object>
+<object name="Account_Register">
+	<item name="STUN_server" path="/config/user/WebItemsLevel.cfg" section="Account-Register" key="STUN_server"/>
+</object>
+<object name="Account_Register">
+	<item name="sip_server" path="/config/user/WebItemsLevel.cfg" section="Account-Register" key="sip_server"/>
+</object>
+<object name="Account_Register">
+	<item name="transport_item" path="/config/user/WebItemsLevel.cfg" section="Account-Register" key="transport-item"/>
+</object>
+<object name="Account_Register">
+	<item name="user_name" path="/config/user/WebItemsLevel.cfg" section="Account-Register" key="user_name"/>
+</object>
+<object name="Contacts_Remote">
+	<item name="remote_phonebook_list" path="/config/user/WebItemsLevel.cfg" section="Contacts-Remote" key="remote-phonebook-list"/>
+</object>
+<object name="Contacts_Remote">
+	<item name="SRemoteNameEnable" path="/config/user/WebItemsLevel.cfg" section="Contacts-Remote" key="SRemoteNameEnable"/>
+</object>
+<object name="Contacts_Remote">
+	<item name="SRemoteNameFlashTime" path="/config/user/WebItemsLevel.cfg" section="Contacts-Remote" key="SRemoteNameFlashTime"/>
+</object>
+<object name="ServerCerts">
+	<item name="server_certs_records" path="/config/user/WebItemsLevel.cfg" section="ServerCerts" key="server-certs-records"/>
+</object>
+<object name="ServerCerts">
+	<item name="server_certs_upload" path="/config/user/WebItemsLevel.cfg" section="ServerCerts" key="server-certs-upload"/>
+</object>
+<object name="Settings_Preference">
+	<item name="BacklightTime" path="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="BacklightTime"/>
+</object>
+<object name="Settings_Preference">
+	<item name="contrast_ctrl" path="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="contrast_ctrl"/>
+</object>
+<object name="Time_Date">
+	<item name="DHCP_Time" path="/config/user/WebItemsLevel.cfg" section="Time&Date" key="DHCP-Time"/>
+</object>
+<object name="Time_Date">
+	<item name="date_format_setting" path="/config/user/WebItemsLevel.cfg" section="Time&Date" key="date_format_setting"/>
+</object>
+<object name="Time_Date">
+	<item name="daylight_time" path="/config/user/WebItemsLevel.cfg" section="Time&Date" key="daylight-time"/>
+</object>
+<object name="Time_Date">
+	<item name="time_type" path="/config/user/WebItemsLevel.cfg" section="Time&Date" key="time_type"/>
+</object>
+<object name="Time_Date">
+	<item name="daylight_week" path="/config/user/WebItemsLevel.cfg" section="Time&Date" key="daylight_week"/>
+</object>
+<object name="Time_Date">
+	<item name="daylight_day" path="/config/user/WebItemsLevel.cfg" section="Time&Date" key="daylight_day"/>
+</object>
+<object name="Time_Date">
+	<item name="offset" path="/config/user/WebItemsLevel.cfg" section="Time&Date" key="offset"/>
+</object>
+<object name="Settings_Preference">
+	<item name="inter_digit_time" path="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="inter-digit-time"/>
+</object>
+<object name="Settings_Preference">
+	<item name="live_dialpad" path="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="live-dialpad"/>
+</object>
+<object name="Time_Date">
+	<item name="manual_time" path="/config/user/WebItemsLevel.cfg" section="Time&Date" key="manual-time"/>
+</object>
+<object name="Time_Date">
+	<item name="prim_server" path="/config/user/WebItemsLevel.cfg" section="Time&Date" key="prim_server"/>
+</object>
+<object name="Settings_Preference">
+	<item name="ring_type_setting" path="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="ring_type_setting"/>
+</object>
+<object name="Time_Date">
+	<item name="sec_server" path="/config/user/WebItemsLevel.cfg" section="Time&Date" key="sec_server"/>
+</object>
+<object name="Time_Date">
+	<item name="time_format_setting" path="/config/user/WebItemsLevel.cfg" section="Time&Date" key="time_format_setting"/>
+</object>
+<object name="Time_Date">
+	<item name="time_zone" path="/config/user/WebItemsLevel.cfg" section="Time&Date" key="time_zone"/>
+</object>
+<object name="Settings_Preference">
+	<item name="UnusedBackLight" path="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="UnusedBackLight"/>
+</object>
+<object name="Time_Date">
+	<item name="update_interval" path="/config/user/WebItemsLevel.cfg" section="Time&Date" key="update_interval"/>
+</object>
+<object name="Settings_Preference">
+	<item name="watchdog" path="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="watchdog"/>
+</object>
+<object name="Settings_Preference">
+	<item name="web_language" path="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="web-language"/>
+</object>
+<object name="Settings_Preference">
+	<item name="backlight" path="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="backlight"/>
+</object>
+<object name="Settings_Preference">
+	<item name="Wallpaper" path="/config/user/WebItemsLevel.cfg" section="Settings-Preference" key="Wallpaper"/>
+</object>
+<object name="Status">
+	<item name="AccountStatus" path="/config/user/WebItemsLevel.cfg" section="Status" key="AccountStatus"/>
+</object>
+<object name="Status">
+	<item name="network" path="/config/user/WebItemsLevel.cfg" section="Status" key="network"/>
+</object>
+<object name="Status">
+	<item name="version" path="/config/user/WebItemsLevel.cfg" section="Status" key="version"/>
+</object>
+<object name="Status">
+	<item name="IPv4" path="/config/user/WebItemsLevel.cfg" section="Status" key="IPv4"/>
+</object>
+<object name="Status">
+	<item name="IPv6" path="/config/user/WebItemsLevel.cfg" section="Status" key="IPv6"/>
+</object>
+<object name="Status">
+	<item name="NetworkCommon" path="/config/user/WebItemsLevel.cfg" section="Status" key="NetworkCommon"/>
+</object>
+<object name="Status">
+	<item name="Ext" path="/config/user/WebItemsLevel.cfg" section="Status" key="Ext"/>
+</object>
+<object name="TrustCerts">
+	<item name="only_accept_trusted_certs" path="/config/user/WebItemsLevel.cfg" section="TrustCerts" key="only-accept-trusted-certs"/>
+</object>
+<object name="TrustCerts">
+	<item name="trust_certs_records" path="/config/user/WebItemsLevel.cfg" section="TrustCerts" key="trust-certs-records"/>
+</object>
+<object name="TrustCerts">
+	<item name="upload_trust_certs" path="/config/user/WebItemsLevel.cfg" section="TrustCerts" key="upload-trust-certs"/>
+</object>
+<object name="TrustCerts">
+	<item name="upload_trust_certs" path="/config/user/WebItemsLevel.cfg" section="TrustCerts" key="upload-trust-certs"/>
+</object>
+<object name="TrustCerts">
+	<item name="btn_delete_certs" path="/config/user/WebItemsLevel.cfg" section="TrustCerts" key="btn-delete-certs"/>
+</object>
+<object name="Forward_DND">
+	<item name="DND" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="DND"/>
+</object>
+<object name="Forward_DND">
+	<item name="DND_Emergency" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="DND-Emergency"/>
+</object>
+<object name="Forward_DND">
+	<item name="DND_Authorized_Numbers" path="/config/user/WebItemsLevel.cfg" section="Forward&DND" key="DND-Authorized-Numbers"/>
+</object>
+
+<object name="AutoProvision">
+	<item name="strCommName" path="/factory/system/system.ini" section="AutoProvision" key="strCommName"/>
+</object>
+<object name="Nology">
+	<item name="BeChange183to180" path="/factory/user/user.ini" section="Nology" key="BeChange183to180"/>
+</object>
+<object name="List">
+	<item name="CustomListAll" path="/tmp/Custom.cfg" section="List" key="CustomListAll"/>
+</object>
+<object name="Info">
+	<item name="strFailReason" path="/tmp/Custom.cfg" section="Info" key="strFailReason"/>
+</object>
+<object name="Info">
+	<item name="eListStauts" path="/tmp/Custom.cfg" section="Info" key="eListStauts"/>
+</object>
+<object name="List">
+	<item name="CustomListUse" path="/tmp/Custom.cfg" section="List" key="CustomListUse"/>
+</object>
+<object name="SpecialFunctions">
+	<item name="Contact_Default_IME" path="/factory/user/user.ini" section="SpecialFunctions" key="Contact_Default_IME"/>
+</object>
+<object name="login_note">
+	<item name="text" path="/factory/user/user.ini" section="login_note" key="text"/>
+</object>
+<object name="Features">
+	<item name="Direct2LocalContact" path="/config/config/user/user.ini" section="Features" key="Direct2LocalContact"/>
+</object>
+<object name="DisplayName">
+	<item name="Value" path="/tmp/InitSave" section="DisplayName" key="Value"/>
+</object>
+<object name="SpecialFunctions">
+	<item name="EnableSilenceMode" path="/factory/user/user.ini" section="SpecialFunctions" key="EnableSilenceMode"/>
+</object>
+<object name="SpecialFunctions">
+	<item name="EnableForceToPlayBusytone" path="/factory/user/user.ini" section="SpecialFunctions" key="EnableForceToPlayBusytone"/>
+</object>
+<object name="SpecialFunctions">
+	<item name="GetBalanceEnable" path="/factory/user/user.ini" section="SpecialFunctions" key="GetBalanceEnable"/>
+</object>
+<object name="Ergocom">
+	<item name="IsIntercomLed" path="/factory/user/user.ini" section="Ergocom" key="IsIntercomLed"/>
+</object>
+<object name="Joyce">
+	<item name="IsJoyce" path="/factory/user/user.ini" section="Joyce" key="IsJoyce"/>
+</object>
+<object name="SpecialFunctions">
+	<item name="LocalContactDefaultIME" path="/phone/factory/user/user.ini" section="SpecialFunctions" key="LocalContactDefaultIME"/>
+</object>
+<object name="SpecialFunctions">
+	<item name="NotHoldByIntercomCall" path="/factory/user/user.ini" section="SpecialFunctions" key="NotHoldByIntercomCall"/>
+</object>
+<object name="OLD_VER">
+	<item name="HwVer" path="/tmp/InitSave" section="OLD_VER" key="HwVer"/>
+</object>
+<object name="OLD_VER">
+	<item name="HwVer" path="/tmp/InitSave" section="OLD_VER" key="HwVer"/>
+</object>
+<object name="SpecialFunctions">
+	<item name="SMSEnableInLock" path="/factory/user/user.ini" section="SpecialFunctions" key="SMSEnableInLock"/>
+</object>
+<object name="YUK">
+	<item name="SoftkeyChangedCallIncome" path="/factory/user/user.ini" section="YUK" key="SoftkeyChangedCallIncome"/>
+</object>
+<object name="YUK">
+	<item name="StarOnlyStarDial" path="/factory/user/user.ini" section="YUK" key="StarOnlyStarDial"/>
+</object>
+<object name="SpecialFunctions">
+	<item name="SupportKorean" path="/factory/user/user.ini" section="SpecialFunctions" key="SupportKorean"/>
+</object>
+<object name="PROC">
+	<item name="STATUS" path="/tmp/UpdateStatus" section="PROC" key="STATUS"/>
+</object>
+<object name="SpecialFunctions">
+	<item name="UserEnable" path="/factory/user/user.ini" section="SpecialFunctions" key="UserEnable"/>
+</object>
+<object name="SpecialFunctions">
+	<item name="SMSEnable" path="/factory/user/user.ini" section="SpecialFunctions" key="SMSEnable"/>
+</object>
+	</cfg>
+	
+</autopTranslator>

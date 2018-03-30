@@ -1,0 +1,33 @@
+<root_menu>
+
+<!-- DSS Keys菜单开始 -->
+<item id_name="item_1" display_name="Line Key 1" icon_name="" click_action="OpenSubPage(line_key_item_1)" long_click_action="" />
+<item id_name="item_2" display_name="Line Key 2" icon_name="" click_action="OpenSubPage(line_key_item_2)" long_click_action="" />
+<item id_name="item_3" display_name="Line Key 3" icon_name="" click_action="OpenSubPage(line_key_item_3)" long_click_action="" />
+<item id_name="item_4" display_name="Line Key 4" icon_name="" click_action="OpenSubPage(line_key_item_4)" long_click_action="" />
+<item id_name="item_5" display_name="Line Key 5" icon_name="" click_action="OpenSubPage(line_key_item_5)" long_click_action="" />
+<item id_name="item_6" display_name="Line Key 6" icon_name="" click_action="OpenSubPage(line_key_item_6)" long_click_action="" />
+<item id_name="item_7" display_name="Line Key 7" icon_name="" click_action="OpenSubPage(line_key_item_7)" long_click_action="" />
+<item id_name="item_8" display_name="Line Key 8" icon_name="" click_action="OpenSubPage(line_key_item_8)" long_click_action="" />
+<item id_name="item_9" display_name="Line Key 9" icon_name="" click_action="OpenSubPage(line_key_item_9)" long_click_action="" />
+<item id_name="item_10" display_name="Line Key 10" icon_name="" click_action="OpenSubPage(line_key_item_10)" long_click_action="" />
+<item id_name="item_11" display_name="Line Key 11" icon_name="" click_action="OpenSubPage(line_key_item_11)" long_click_action="" />
+<item id_name="item_12" display_name="Line Key 12" icon_name="" click_action="OpenSubPage(line_key_item_12)" long_click_action="" />
+<item id_name="item_13" display_name="Line Key 13" icon_name="" click_action="OpenSubPage(line_key_item_13)" long_click_action="" />
+<item id_name="item_14" display_name="Line Key 14" icon_name="" click_action="OpenSubPage(line_key_item_14)" long_click_action="" />
+<item id_name="item_15" display_name="Line Key 15" icon_name="" click_action="OpenSubPage(line_key_item_15)" long_click_action="" />
+<item id_name="item_16" display_name="Line Key 16" icon_name="" click_action="OpenSubPage(line_key_item_16)" long_click_action="" />
+<item id_name="item_17" display_name="Line Key 17" icon_name="" click_action="OpenSubPage(line_key_item_17)" long_click_action="" />
+<item id_name="item_18" display_name="Line Key 18" icon_name="" click_action="OpenSubPage(line_key_item_18)" long_click_action="" />
+<item id_name="item_19" display_name="Line Key 19" icon_name="" click_action="OpenSubPage(line_key_item_19)" long_click_action="" />
+<item id_name="item_20" display_name="Line Key 20" icon_name="" click_action="OpenSubPage(line_key_item_20)" long_click_action="" />
+<item id_name="item_21" display_name="Line Key 21" icon_name="" click_action="OpenSubPage(line_key_item_21)" long_click_action="" />
+<item id_name="item_22" display_name="Line Key 22" icon_name="" click_action="OpenSubPage(line_key_item_22)" long_click_action="" />
+<item id_name="item_23" display_name="Line Key 23" icon_name="" click_action="OpenSubPage(line_key_item_23)" long_click_action="" />
+<item id_name="item_24" display_name="Line Key 24" icon_name="" click_action="OpenSubPage(line_key_item_24)" long_click_action="" />
+<item id_name="item_25" display_name="Line Key 25" icon_name="" click_action="OpenSubPage(line_key_item_25)" long_click_action="" />
+<item id_name="item_26" display_name="Line Key 26" icon_name="" click_action="OpenSubPage(line_key_item_26)" long_click_action="" />
+<item id_name="item_27" display_name="Line Key 27" icon_name="" click_action="OpenSubPage(line_key_item_27)" long_click_action="" />
+<!-- DSS Keys菜单结束 -->
+
+</root_menu>

@@ -1,0 +1,7 @@
+<root_menu>
+
+<!-- Phone Setting²Ëµ¥¿ªÊ¼ -->
+<item id_name="key_guard_lock" display_name="Keypad Lock" icon_name="" click_action="OpenSubPage(key_guard_lock)" long_click_action="" />
+<!-- Phone Setting -->
+
+</root_menu>

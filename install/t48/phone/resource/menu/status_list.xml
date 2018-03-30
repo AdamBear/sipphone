@@ -1,0 +1,10 @@
+<root_menu>
+
+<!-- Status页面开始 -->
+<item id_name="status_general" display_name="General" icon_name="" click_action="OpenSubPage(status_general)" long_click_action="" />
+<item id_name="network" display_name="Network" icon_name="" click_action="OpenSubPage(status_network)" long_click_action="" />
+<item id_name="phone" display_name="Phone" icon_name="" click_action="OpenSubPage(status_phone)" long_click_action="" />
+<item id_name="accounts" display_name="Accounts" icon_name="" click_action="OpenSubPage(status_accounts)" long_click_action="" />
+<!-- Status页面结束 -->
+
+</root_menu>	
