@@ -1,0 +1,92 @@
+Index: src/dskphone/logic/contacts/directory/src/broadsoftcontactmanager.cpp
+===================================================================
+--- src/dskphone/logic/contacts/directory/src/broadsoftcontactmanager.cpp	(版本 2529)
++++ src/dskphone/logic/contacts/directory/src/broadsoftcontactmanager.cpp	(工作副本)
+@@ -191,7 +191,17 @@
+ 	}
+ 	//sip XSI 鉴权
+ 
+-	ResetCustomListStatus();
++	static bool s_bBootFirst = true; // 是否开机第一次
++	if (!s_bBootFirst)
++	{
++		// 第一次初始化加载的时候不需要写custom配置
++		ResetCustomListStatus();
++	}
++	else
++	{
++		s_bBootFirst = false;
++	}
++	
+ 
+     bool bIsAllSipAuth = (configParser_GetConfigInt(kszAllowSipAuth) == 1);
+ 
+Index: src/dskphone/logic/keyguard/src/keyguardmanager.cpp
+===================================================================
+--- src/dskphone/logic/keyguard/src/keyguardmanager.cpp	(版本 2529)
++++ src/dskphone/logic/keyguard/src/keyguardmanager.cpp	(工作副本)
+@@ -82,7 +82,7 @@
+ // 重新读取话机配置
+ void CKeyGuardManager::ReloadConfig()
+ {
+-	SetKeyGuardType((KEY_GUARD_TYPE)configParser_GetConfigInt(kszKeyGuardType));
++	m_eKeyGuardType = (KEY_GUARD_TYPE)configParser_GetConfigInt(kszKeyGuardType);
+ 	EnableKeyGuard(configParser_GetConfigInt(kszKeyGuardEnable));
+ 	SetLockTimerValue(configParser_GetConfigInt(kszLockTimeout)*1000);
+ }
+Index: src/dskphone/logic/talk/talklogic/src/talklogicmanager.cpp
+===================================================================
+--- src/dskphone/logic/talk/talklogic/src/talklogicmanager.cpp	(版本 2529)
++++ src/dskphone/logic/talk/talklogic/src/talklogicmanager.cpp	(工作副本)
+@@ -2,6 +2,7 @@
+ #include "talkdsskey.h"
+ #include "modtalklogic.h"
+ 
++extern bool g_bAfterInit;
+ // 处理msg tone
+ bool ProcessPlayMsgTone();
+ 
+@@ -808,23 +809,28 @@
+ 		userInfo.strDisplay = strContactName;
+ 	}
+ 
+-	// 更新回拨信息
+-	// 保存回拨信息
+-	configParser_SetConfigString(kszCallReturnUser, acc_GetUsername(iAccountID).c_str());
+-	configParser_SetConfigString(kszCallReturnNumber, userInfo.strNumber.c_str());
+-	// GUIID=17494回拨带server IP的账号出问题
+-	// 如果呼叫记录的本地号码同本地服务器相同,或者本地帐号服务器与对方帐号服务器不相同，
+-	// 满足前两个条件之一，并且本地帐号服务器为正确的IP，则应用对方的服务器作为服务器呼出
+-	if (netIsValidIP(acc_GetServerName(iAccountID).c_str()) 
+-		&& (configParser_GetCfgItemStringValue(kszAccountUserName, iAccountID) == acc_GetServerName(iAccountID))
+-		|| acc_GetServerName(iAccountID) != userInfo.strServer)
++	// 上电不写配置
++	if (g_bAfterInit)
+ 	{
+-		configParser_SetConfigString(kszCallReturnServer, userInfo.strServer.c_str());
++		// 更新回拨信息
++		// 保存回拨信息
++		configParser_SetConfigString(kszCallReturnUser, acc_GetUsername(iAccountID).c_str());
++		configParser_SetConfigString(kszCallReturnNumber, userInfo.strNumber.c_str());
++		// GUIID=17494回拨带server IP的账号出问题
++		// 如果呼叫记录的本地号码同本地服务器相同,或者本地帐号服务器与对方帐号服务器不相同，
++		// 满足前两个条件之一，并且本地帐号服务器为正确的IP，则应用对方的服务器作为服务器呼出
++		if (netIsValidIP(acc_GetServerName(iAccountID).c_str()) 
++			&& (configParser_GetCfgItemStringValue(kszAccountUserName, iAccountID) == acc_GetServerName(iAccountID))
++			|| acc_GetServerName(iAccountID) != userInfo.strServer)
++		{
++			configParser_SetConfigString(kszCallReturnServer, userInfo.strServer.c_str());
++		}
++		else
++		{
++			configParser_SetConfigString(kszCallReturnServer, acc_GetServerName(iAccountID).c_str());
++		}
+ 	}
+-	else
+-	{
+-		configParser_SetConfigString(kszCallReturnServer, acc_GetServerName(iAccountID).c_str());
+-	}
++
+ 	
+ 	// 是否允许Always FWD, for broadsoft
+  	if (userInfo.bIsFwdEnable && fwd_ForwardIncomingCall(iAccountID, iCallID, FWT_ALWAYS))

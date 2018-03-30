@@ -1,0 +1,132 @@
+cppcheck:
+  stage: build
+  script:
+    - bash scripts/cppcheck.sh
+  only:
+    - branches
+  except:
+    - schedules
+
+
+.build_template: &build_definition
+  stage: build
+  script:
+    - bash scripts/build.sh
+  artifacts:
+    name: "${CI_BUILD_NAME}_${CI_BUILD_REF_NAME}"
+    paths:
+      - dist_$CI_BUILD_NAME
+    expire_in: 1 week
+
+.screen_pack_template: &screen_pack_definition
+  stage: deploy
+  script:
+    - bash scripts/screen_exx_pack.sh
+  only:
+    - tags
+
+.dsk_pack_template: &dsk_pack_definition
+  stage: deploy
+  script:
+    - bash scripts/dsk_t4xg_pack.sh
+  only:
+    - tags
+
+t23:
+  <<: *build_definition
+  only:
+    - tags
+    
+t23pack:
+  <<: *screen_pack_definition
+
+t27:
+  <<: *build_definition
+  only:
+    - tags
+
+t27pack:
+  <<: *screen_pack_definition
+
+t27g:
+  <<: *build_definition
+  only:
+    - tags
+
+t27gpack:
+  <<: *screen_pack_definition
+
+t40g:
+  <<: *build_definition
+  only:
+    - tags  
+
+t40gpack:
+  <<: *screen_pack_definition
+    
+t42s:
+  <<: *build_definition
+
+t46:
+  <<: *build_definition
+  only:
+    - tags
+
+t46pack:
+  <<: *dsk_pack_definition
+
+cp920:
+  <<: *build_definition
+  only:
+
+cp920pack:
+  <<: *screen_pack_definition
+
+t46s:
+  <<: *build_definition
+  only:
+    - tags
+
+t48:
+  <<: *build_definition
+  only:
+    - tags
+
+t48pack:
+  <<: *dsk_pack_definition
+
+t48s:
+  <<: *build_definition
+
+t54:
+  <<: *build_definition
+
+t54pack:
+  stage: deploy
+  script:
+    - bash scripts/dsk_t5x_pack.sh
+  only:
+    - tags
+
+t4xspack:
+  stage: deploy
+  script:
+    - bash scripts/dsk_t4xs_pack.sh
+  only:
+    - tags
+
+
+size_analysis:
+  stage: test
+  only:
+    - develop
+  script:
+    - SIZE_REPORT=`find dist_* -type f | xargs du -b`
+    - echo "projectName=$CI_PROJECT_PATH:$SIZE_REPORT"
+    - curl --data-urlencode "projectName=$CI_PROJECT_PATH" --data-urlencode "data=$SIZE_REPORT" "http://appgit.yealink.com:13000/project/$CI_PROJECT_ID/$CI_COMMIT_SHA"
+
+job:everyday-size_report:
+  only:
+    - schedules
+  script:
+    - bash scripts/size_report.sh

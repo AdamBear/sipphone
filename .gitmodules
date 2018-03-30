@@ -1,0 +1,17 @@
+[submodule "src/baselibs"]
+	path = src/baselibs
+	url = ../../sip-phone/baselibs-dist.git
+	branch = develop
+[submodule "cmakeinclude"]
+	path = cmakeinclude
+	url = ../../sip-phone/cmakeinclude.git
+	branch = master
+[submodule "src/3rdlib/googletest"]
+	path = src/3rdlib/googletest
+	url = ../../google/googletest.git
+[submodule "src/include/configiddefine"]
+	path = src/include/configiddefine
+	url = ../../sip-phone/configiddefine.git
+[submodule "src/include/commondefine"]
+	path = src/include/commondefine
+	url = ../../sip-phone/commondefine.git

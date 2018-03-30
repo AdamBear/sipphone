@@ -1,0 +1,203 @@
+Index: src/dskphone/logic/contacts/directory/src/broadsoftcontactmanager.cpp
+===================================================================
+--- src/dskphone/logic/contacts/directory/src/broadsoftcontactmanager.cpp	(revision 2859)
++++ src/dskphone/logic/contacts/directory/src/broadsoftcontactmanager.cpp	(working copy)
+@@ -190,9 +190,19 @@
+ 		return false;
+ 	}
+ 	//sip XSI 鉴权
++	
++	static bool s_bBootFirst = true; // 是否开机第一次
++	if (!s_bBootFirst)
++	{
++		// 第一次初始化加载的时候不需要写custom配置
++		ResetCustomListStatus();
++	}
++	else
++	{
++		s_bBootFirst = false;
++	}
++	
+ 
+-	ResetCustomListStatus();
+-
+     bool bIsAllSipAuth = (configParser_GetConfigInt(kszAllowSipAuth) == 1);
+ 
+ 	yl::string strXSIUserId = configParser_GetConfigString(configParser_GetAccountConfigName(kszAccountXSIUserID,knAccountId).c_str());
+Index: src/dskphone/logic/keyguard/src/keyguardmanager.cpp
+===================================================================
+--- src/dskphone/logic/keyguard/src/keyguardmanager.cpp	(revision 2859)
++++ src/dskphone/logic/keyguard/src/keyguardmanager.cpp	(working copy)
+@@ -82,7 +82,7 @@
+ // 重新读取话机配置
+ void CKeyGuardManager::ReloadConfig()
+ {
+-	SetKeyGuardType((KEY_GUARD_TYPE)configParser_GetConfigInt(kszKeyGuardType));
++	m_eKeyGuardType = (KEY_GUARD_TYPE)configParser_GetConfigInt(kszKeyGuardType);
+ 	EnableKeyGuard(configParser_GetConfigInt(kszKeyGuardEnable));
+ 	SetLockTimerValue(configParser_GetConfigInt(kszLockTimeout)*1000);
+ }
+Index: src/dskphone/logic/talk/talklogic/src/talklogicmanager.cpp
+===================================================================
+--- src/dskphone/logic/talk/talklogic/src/talklogicmanager.cpp	(revision 2859)
++++ src/dskphone/logic/talk/talklogic/src/talklogicmanager.cpp	(working copy)
+@@ -2,6 +2,8 @@
+ #include "talkdsskey.h"
+ #include "modtalklogic.h"
+ 
++extern bool g_bAfterInit;
++
+ // 处理msg tone
+ bool ProcessPlayMsgTone();
+ 
+@@ -828,23 +830,27 @@
+ 		userInfo.strDisplay = strContactName;
+ 	}
+ 
+-	// 更新回拨信息
+-	// 保存回拨信息
+-	configParser_SetConfigString(kszCallReturnUser, acc_GetUsername(iAccountID).c_str());
+-	configParser_SetConfigString(kszCallReturnNumber, userInfo.strNumber.c_str());
+-	// GUIID=17494回拨带server IP的账号出问题
+-	// 如果呼叫记录的本地号码同本地服务器相同,或者本地帐号服务器与对方帐号服务器不相同，
+-	// 满足前两个条件之一，并且本地帐号服务器为正确的IP，则应用对方的服务器作为服务器呼出
+-	if (netIsValidIP(acc_GetServerName(iAccountID).c_str()) 
+-		&& (configParser_GetCfgItemStringValue(kszAccountUserName, iAccountID) == acc_GetServerName(iAccountID))
+-		|| acc_GetServerName(iAccountID) != userInfo.strServer)
++	// 上电不写配置
++	if (g_bAfterInit)
+ 	{
+-		configParser_SetConfigString(kszCallReturnServer, userInfo.strServer.c_str());
++		// 更新回拨信息
++		// 保存回拨信息
++		configParser_SetConfigString(kszCallReturnUser, acc_GetUsername(iAccountID).c_str());
++		configParser_SetConfigString(kszCallReturnNumber, userInfo.strNumber.c_str());
++		// GUIID=17494回拨带server IP的账号出问题
++		// 如果呼叫记录的本地号码同本地服务器相同,或者本地帐号服务器与对方帐号服务器不相同，
++		// 满足前两个条件之一，并且本地帐号服务器为正确的IP，则应用对方的服务器作为服务器呼出
++		if (netIsValidIP(acc_GetServerName(iAccountID).c_str()) 
++			&& (configParser_GetCfgItemStringValue(kszAccountUserName, iAccountID) == acc_GetServerName(iAccountID))
++			|| acc_GetServerName(iAccountID) != userInfo.strServer)
++		{
++			configParser_SetConfigString(kszCallReturnServer, userInfo.strServer.c_str());
++		}
++		else
++		{
++			configParser_SetConfigString(kszCallReturnServer, acc_GetServerName(iAccountID).c_str());
++		}
+ 	}
+-	else
+-	{
+-		configParser_SetConfigString(kszCallReturnServer, acc_GetServerName(iAccountID).c_str());
+-	}
+ 	
+ 	// 是否允许Always FWD, for broadsoft
+  	if (userInfo.bIsFwdEnable
+Index: src/dskphone/ui/t2x/settingui/defineloadfunc.cpp
+===================================================================
+--- src/dskphone/ui/t2x/settingui/defineloadfunc.cpp	(revision 2859)
++++ src/dskphone/ui/t2x/settingui/defineloadfunc.cpp	(working copy)
+@@ -600,7 +600,7 @@
+ 		GetAccountDetailData(pData, iAccountID);
+ 		g_pLoadData = pData;
+ 		// 修改标题的显示 都显示为Line%d的形式
+-		char buffer[20] = {0};
++		char buffer[64] = {0};
+ 		sprintf(buffer, "%s %d", _LANG(TRID_LINE), iAccountID + 1);
+ 		_Drawer.SetTitleContent(_SettingFrame.GetTitleWidgetID(), buffer);	
+ 	}
+@@ -936,7 +936,7 @@
+ 		}
+ 
+ 		int iAccountNum = acc_AccountNum();
+-		char buffer[16] = {0};
++		char buffer[64] = {0};
+ 		for (int i = 0; i < iAccountNum; i++)
+ 		{
+ 			sprintf(buffer, "%s %d", _LANG(TRID_LINE), i + 1);
+@@ -1189,7 +1189,7 @@
+ 
+ 		int iAccountNum = acc_AccountNum();
+ 		pConfigInfo->strVecExtraData.push_back(_LANG(TRID_STATUS));
+-		char buffer[12] = {0};
++		char buffer[64] = {0};
+ 		for (int i = 1; i < iAccountNum + 1; i++)
+ 		{
+ 			sprintf(buffer, "%s%d", _LANG(TRID_ACCOUNT), i);
+Index: src/dskphone/ui/t2x/testmode/src/testphonet21.cpp
+===================================================================
+--- src/dskphone/ui/t2x/testmode/src/testphonet21.cpp	(revision 2859)
++++ src/dskphone/ui/t2x/testmode/src/testphonet21.cpp	(working copy)
+@@ -67,3 +67,32 @@
+ {
+ 	return _Font_10;
+ }
++
++BOOL CTestPhoneT21::ChangeEchoState( int iKey, ECHO_MODE& eMode )
++{
++	ECHO_MODE eOldMode = eMode;
++	if (CTestPhone::ChangeEchoState(iKey, eMode))
++	{
++		if (eOldMode != EM_HEADSET
++			&& eMode == EM_HEADSET)
++		{
++			// 进入耳麦回音测试，关闭免提灯
++			//LightOff(T61_LIGHT_SPK);
++		}
++		else if (eOldMode == EM_HEADSET
++			&& eMode == EM_HANDSET)
++		{
++			// 进入手柄回音测试，关闭耳麦
++			//LightOff(T61_LIGHT_HEADSET);
++		}
++		else if (eOldMode == EM_EHS
++			&& eMode != EM_EHS)
++		{
++			//DrawHeadSetIcon(FALSE);
++		}
++
++		return TRUE;
++	}
++
++	return FALSE;
++}
+\ No newline at end of file
+Index: src/dskphone/ui/t2x/testmode/src/testphonet21.h
+===================================================================
+--- src/dskphone/ui/t2x/testmode/src/testphonet21.h	(revision 2859)
++++ src/dskphone/ui/t2x/testmode/src/testphonet21.h	(working copy)
+@@ -14,6 +14,7 @@
+ 
+ 	virtual VOID FlushLightIndex();
+ 	virtual VOID InitCmpString();
++	virtual BOOL ChangeEchoState(int iKey, ECHO_MODE& eMode);
+ 
+ };
+ 
+Index: src/dskphone/ui/t2x/testmode/src/testphonet66.cpp
+===================================================================
+--- src/dskphone/ui/t2x/testmode/src/testphonet66.cpp	(revision 2859)
++++ src/dskphone/ui/t2x/testmode/src/testphonet66.cpp	(working copy)
+@@ -14,6 +14,8 @@
+ 
+     m_bHasEXP = true;
+     m_bSkipEHSTest = TRUE;
++
++	memset(m_iLightIndex, 0, sizeof(int) * 32);
+ }
+ 
+ CTestPhoneT66::~CTestPhoneT66()
+Index: src/dskphone/ui/t2x/testmode/src/teststate.cpp
+===================================================================
+--- src/dskphone/ui/t2x/testmode/src/teststate.cpp	(revision 2859)
++++ src/dskphone/ui/t2x/testmode/src/teststate.cpp	(working copy)
+@@ -1655,7 +1655,8 @@
+ 	if (0 == strlen(pBuffer) 
+ 		|| 0 == strcmp(pBuffer, "%NULL%"))
+ 	{
+-		etlGetProfileString("/config/user/ADVnumber.cfg", "sn", "sn", pBuffer, "");
++		// autop那些都是延用旧的路径，还是使用vpPhone，因此gui也修改成与其统一。
++		etlGetProfileString("/config/vpPhone/ADVnumber.cfg", "sn", "sn", pBuffer, "");
+ 
+ 		strcpy(pBufferData, pBuffer);
+ 		if (strlen(pBufferData) != 0)
