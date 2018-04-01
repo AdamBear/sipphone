@@ -108,9 +108,9 @@ bool CDooorPhoneListener::OpenDoor(const CSessionProxy& proxy)
         return false;
     }
 
-    EDL_COMPATIBLE eType = application_GetEDLCType();
+    EDL_COMPATIBLE eType = application_GetEDLCType();//获取服务器对sip info的支持情况
 
-    if (eType == EDLC_SERVER || proxy.IsTalkSession())
+    if (eType == EDLC_SERVER || proxy.IsTalkSession())//服务器支持 or 通话Session
     {
         yl::string strDtmf = application_GetDTMFString(iSessionID);
         TALK_INFO("OpenDoor session[%d] dtmf[%s]", iSessionID, strDtmf.c_str());
@@ -125,7 +125,7 @@ bool CDooorPhoneListener::OpenDoor(const CSessionProxy& proxy)
 
         return true;
     }
-    else if (eType == EDLC_PHONE || eType == EDLC_PHONE_SIP)
+    else if (eType == EDLC_PHONE || eType == EDLC_PHONE_SIP)//服务器不支持但是话机要支持
     {
         if (!proxy.IsRinging())
         {
@@ -134,7 +134,7 @@ bool CDooorPhoneListener::OpenDoor(const CSessionProxy& proxy)
 
         // 焦点不一样，处理需要有变化。最后结果是当前session失去焦点
         // 来电时，如果所有session都Hold则来电直接设置为焦点造成了这个差异，当前不打算去掉这个
-        CSessionStateProxy focus;
+        CSessionStateProxy focus;//构造函数返回焦点的Session ID
         if (focus == proxy)
         {
             CListenInfo* priv = GetSessionData(focus);
@@ -175,6 +175,7 @@ bool CDooorPhoneListener::OpenDoor(const CSessionProxy& proxy)
     return false;
 }
 
+//恢复hold状态
 bool CDooorPhoneListener::RestoreHoldStatus(const CSessionProxy& proxy)
 {
     CListenInfo* priv = GetSessionData(proxy);
